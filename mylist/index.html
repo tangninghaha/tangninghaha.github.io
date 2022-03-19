@@ -20,7 +20,7 @@
   <meta content="Tangninghaha的博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1647670748816" as="style">
+  <link rel="preload" href="/css/style.css?time=1647691260826" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1809,8 +1809,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1647670748816" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1647670748816"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1647691260826" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1647691260826"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2397,6 +2397,27 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
           
           
+            
+            
+              
+                <li>
+                  <a class="menuitem flat-box" href="/" onclick="return false;" title="Click me!" >
+                    <i class='fas fa-compact-disc fa-fw music'></i>音乐
+                  </a>
+                  <ul class="list-v">
+                    <li>
+                      <div class="aplayer-container">
+                        
+
+
+                      </div>
+                    </li>
+                  </ul>
+                <li>
+              
+            
+          
+          
 				</ul>
 			</div>
 
@@ -2543,6 +2564,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                   <i class='fas fa-moon fa-fw'></i>暗黑
                 </a>
               <li>
+            
+          
+            
+              
+            
+              
             
           
             
@@ -2801,7 +2828,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sat Mar 19 2022 14:19:08 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Sat Mar 19 2022 20:01:00 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2022-03-19 日</div>
           
         </div>
@@ -2925,6 +2952,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <br><br>
     
       
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
         <br>
         <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
           
@@ -3001,8 +3036,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1647670748816')
-      volantis.js('/js/message.js?time=1647670748816', () => {
+      volantis.css('/css/message.css?time=1647691260826')
+      volantis.js('/js/message.js?time=1647691260826', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3047,8 +3082,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1647670748816')
-      volantis.js('/js/message.js?time=1647670748816', () => {
+      volantis.css('/css/message.css?time=1647691260826')
+      volantis.js('/js/message.js?time=1647691260826', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3107,8 +3142,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1647670748816')
-      volantis.js('/js/message.js?time=1647670748816', () => {
+      volantis.css('/css/message.css?time=1647691260826')
+      volantis.js('/js/message.js?time=1647691260826', () => {
         hideMessage(done);
       });
     } else {
@@ -3229,6 +3264,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           </li>
         
       
+        
+          <hr class="menuLoad-Content">
+        
+      
+        
+      
     </ul>
   </div>
   <script>
@@ -3244,7 +3285,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1647670748816')
+    volantis.js('/js/rightMenu.js?time=1647691260826')
   </script>
 
 
@@ -3357,19 +3398,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1647670748816")
+        volantis.js("/js/plugins/sites.js?time=1647691260826")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1647670748816")
+        volantis.js("/js/plugins/friends.js?time=1647691260826")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1647670748816")
+        volantis.js("/js/plugins/contributors.js?time=1647691260826")
       }
     
   };
@@ -3462,7 +3503,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1647670748816.js"></script>
+<script src="/js/app.js?time=1647691260826.js"></script>
 
 
 <!-- optional -->
@@ -3475,7 +3516,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1647670748816");
+    return volantis.js("/js/search/hexo.js?time=1647691260826");
   }
 
   function loadSearchService() {
