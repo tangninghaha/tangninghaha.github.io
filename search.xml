@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>笔记:四边形不等式优化证明</title>
+    <url>/2022/03/27/9d3cab0f1a97/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>在dp中，有一个重要的优化，那就是四边形不等式优化，具体是如何证明的呢？</p>
+<span id="more"></span>
+
+<h2 id="笔记-四边形不等式的证明"><a href="#笔记-四边形不等式的证明" class="headerlink" title="[笔记]四边形不等式的证明"></a>[笔记]四边形不等式的证明</h2><div class="story post-story"><h3 id="引理"><a href="#引理" class="headerlink" title="引理"></a>引理</h3><p>如果有$f[l][r]&#x3D;\min_{k&#x3D;l}^{r-1}{f[l][k]+f[k+1][r]}+w(l,r) \qquad (1 \leqslant l&lt;r \leqslant n)$</p>
+<p>并且$w(l,r)$满足区间包含单调性和四边形不等式，则状态$f[l][r]$满足四边形不等式。</p>
+<h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><p>若有状态f满足四边形不等式，令$ m[i][j]&#x3D;min(k:f[l][r]) $表示此时的最优决策点。那么<br>$$<br>m[i][j-1] \leqslant m[i][j] \leqslant m[i+1][j]\qquad(i+1&lt;j)<br>$$<br>考虑用反证法证明。</p>
+<p>设$u&#x3D;m[i][j], k_1&#x3D;m[i][j-1],k_2&#x3D;m[i+1][j]$，分类讨论。</p>
+<p>若$u&lt;k_1$，则有$u+1 \leqslant k_1+1 \leqslant j-1 \leqslant j$（此处显然第一个等号和第三个等号无法取到，但是为了满足四边形不等式，就加上等号），根据四边形不等式，可得:</p>
+<p>$$<br>f[u+1][j-1]+f[k_1+1][j] \leqslant f[u+1][j]+f[k_1+1][j-1]<br>$$</p>
+<p>又因为$u$是$m[i][j]$的最佳分割点，那么又可得：</p>
+<p>$$<br>f[i][u]+f[u+1][j] \leqslant f[i][k_1]+f[k_1+1][j]<br>$$</p>
+<p>两式相加，得：</p>
+<p>$$<br>f[u+1][j-1]+f[k_1+1][j]+f[i][u]+f[u+1][j] \leqslant f[u+1][j]+f[k_1+1][j-1]+f[i][k_1]+f[k_1+1][j]<br>$$</p>
+<p>两边相消，得：</p>
+<p>$$<br>f[u+1][j-1]+f[i][u] \leqslant f[k_1+1][j-1]+f[i][k_1]<br>$$</p>
+<p>此时，以$u$为割点答案比最佳的$k_1$点为答案小，与题设不符。</p>
+<p>若$k_2 &lt; u$，类似地，有$i \leqslant i+1 \leqslant k_2 \leqslant u$（此处显然第一个等号和第三个等号无法取到，但是为了满足四边形不等式，就加上等号），根据四边形不等式，可得：<br>$$<br>f[i][k_2]+f[i+1][u] \leqslant f[i][u]+f[i+1][k_2]<br>$$<br>又因为$u$是$m[i][j]$的最佳分割点，又可得：<br>$$<br>f[i][u]+f[u+1][j] \leqslant f[i][k_2]+f[k_2+1][j]<br>$$</p>
+<p>两式相加，得：<br>$$<br>f[i][k_2]+f[i+1][u]+f[i][u]+f[u+1][j] \leqslant f[i][u]+f[i+1][k_2]+f[i][k_2]+f[k_2+1][j]<br>$$<br>两边相消，得：<br>$$<br>f[i+1][u]+f[u+1][j] \leqslant f[i+1][k_2]+f[k_2+1][j]<br>$$<br>此时，以$u$为割点答案比最佳的$k_2$点为答案小，与题设不符。</p>
+<p>综上所述，命题成立。</p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>$O(n^2)$</p>
+
+</div>]]></content>
+      <categories>
+        <category>信息学</category>
+      </categories>
+      <tags>
+        <tag>DP优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>骆驼祥子资料</title>
-    <url>/2022/03/13/%E9%AA%86%E9%A9%BC%E7%A5%A5%E5%AD%90%E8%B5%84%E6%96%99/</url>
+    <url>/2022/03/13/5450c1096a3f/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>骆驼祥子资料</p>
 <p>By TangNing</p>
 <span id="more"></span>
