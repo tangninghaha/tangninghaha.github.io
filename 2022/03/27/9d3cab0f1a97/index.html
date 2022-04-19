@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="zh-CN,default">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.0.0-rc.6'>
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/5.0.0-rc.100'>
   <meta name="generator" content="Hexo 5.4.2">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
   <link rel="canonical" href="https://tangninghaha.github.io/2022/03/27/9d3cab0f1a97/"/>
   <!-- 渲染优化 -->
-  <!-- <meta http-equiv='x-dns-prefetch-control' content='on' />
-  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin> -->
+    <meta http-equiv='x-dns-prefetch-control' content='on' />
+      <link rel='dns-prefetch' href='https://npm.elemecdn.com'>
+      <link rel="preconnect" href="https://npm.elemecdn.com" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
+    <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
   <meta name="HandheldFriendly" content="True" >
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta content="Tangninghaha的博客" name="application-name">
-  <meta content="Tangninghaha的博客" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1649559068455" as="style">
+  <!-- import head_begin begin -->
+  <!-- import head_begin end -->
+  <!-- Custom Files headBegin begin-->
+  
+  <!-- Custom Files headBegin end-->
+    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/tangninghaha/Pictures/ICO.ico">
+  <link rel="preload" href="/css/style.64e85941.css" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
+  <!-- feed -->
   <!-- 页面元数据 -->
+  <pjax>
   <title>笔记:四边形不等式优化证明 - Tangninghaha的博客</title>
   <meta name="keywords" content="四边形不等式,Tangning">
-  <meta name="description" content="四边形不等式的证明">
+  <meta desc name="description" content="四边形不等式的证明 - Tangninghaha - Tangninghaha的博客">
+  
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔记:四边形不等式优化证明">
 <meta property="og:url" content="https://tangninghaha.github.io/2022/03/27/9d3cab0f1a97/index.html">
 <meta property="og:site_name" content="Tangninghaha的博客">
 <meta property="og:description" content="四边形不等式的证明">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tangninghaha.github.io/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="og:image" content="https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-03-27T14:36:25.000Z">
-<meta property="article:modified_time" content="2022-04-10T02:50:29.653Z">
+<meta property="article:modified_time" content="2022-04-19T04:39:07.645Z">
 <meta property="article:author" content="Tangninghaha">
 <meta property="article:tag" content="DP优化">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tangninghaha.github.io/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-  <!-- feed -->
-  <!-- import meta -->
-  <!-- link -->
-    <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/tangninghaha/Pictures/ICO.ico">
-  <!-- import link -->
+<meta name="twitter:image" content="https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+  </pjax>
   <style>
     /* 首屏样式 */
     #safearea {
@@ -93,6 +96,22 @@ article + article,
   outline: none;
   margin: 0;
   padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #44d7b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
 }
 html {
   color: var(--color-text);
@@ -828,7 +847,7 @@ button {
     --color-mode: 'dark';
   }
   :root:not([color-scheme]) {
-    --color-site-body: #000;
+    --color-site-body: #121212;
     --color-read-bkg: #222;
     --color-read-post: #444;
     --color-site-bg: #222;
@@ -854,15 +873,11 @@ button {
   :root:not([color-scheme]) img {
     filter: brightness(70%) !important;
   }
-  :root:not([color-scheme]) #wrapper .title {
-    color: var(--color-meta) !important;
-  }
-  :root:not([color-scheme]) .l_header ul.nav-list-h>li>a,
-  :root:not([color-scheme]) ul.list-v >li>a {
-    color: var(--color-list) !important;
-  }
   :root:not([color-scheme]) .blur {
-    background: var(--color-site-bg) !important;
+    background: rgba(34,34,34,0.9) !important;
+  }
+  :root:not([color-scheme]) .white-box.blur {
+    background: rgba(68,68,68,0.9) !important;
   }
   :root:not([color-scheme]) .nav-main .u-search-input {
     background: var(--color-card) !important;
@@ -871,7 +886,7 @@ button {
     background: var(--color-block) !important;
   }
   :root:not([color-scheme]) #l_main .article .prev-next>a:hover {
-    background: var(--color-card) !important;
+    background: var(--color-site-bg) !important;
   }
   :root:not([color-scheme]) .article blockquote {
     background: var(--color-block) !important;
@@ -895,9 +910,15 @@ button {
   :root:not([color-scheme]) #u-search .modal-body .modal-results .result:hover {
     background: var(--color-block) !important;
   }
+  :root:not([color-scheme]) .u-search-input:hover {
+    background: var(--color-block) !important;
+  }
+  :root:not([color-scheme]) .u-search-input:focus {
+    background: var(--color-site-body) !important;
+  }
 }
 [color-scheme='dark'] {
-  --color-site-body: #000;
+  --color-site-body: #121212;
   --color-read-bkg: #222;
   --color-read-post: #444;
   --color-site-bg: #222;
@@ -923,15 +944,11 @@ button {
 [color-scheme='dark'] img {
   filter: brightness(70%) !important;
 }
-[color-scheme='dark'] #wrapper .title {
-  color: var(--color-meta) !important;
-}
-[color-scheme='dark'] .l_header ul.nav-list-h>li>a,
-[color-scheme='dark'] ul.list-v >li>a {
-  color: var(--color-list) !important;
-}
 [color-scheme='dark'] .blur {
-  background: var(--color-site-bg) !important;
+  background: rgba(34,34,34,0.9) !important;
+}
+[color-scheme='dark'] .white-box.blur {
+  background: rgba(68,68,68,0.9) !important;
 }
 [color-scheme='dark'] .nav-main .u-search-input {
   background: var(--color-card) !important;
@@ -940,7 +957,7 @@ button {
   background: var(--color-block) !important;
 }
 [color-scheme='dark'] #l_main .article .prev-next>a:hover {
-  background: var(--color-card) !important;
+  background: var(--color-site-bg) !important;
 }
 [color-scheme='dark'] .article blockquote {
   background: var(--color-block) !important;
@@ -963,6 +980,12 @@ button {
 }
 [color-scheme='dark'] #u-search .modal-body .modal-results .result:hover {
   background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:hover {
+  background: var(--color-block) !important;
+}
+[color-scheme='dark'] .u-search-input:focus {
+  background: var(--color-site-body) !important;
 }
 @media screen and (max-width: 500px) {
   [color-scheme='dark'] .l_header .m_search {
@@ -1812,8 +1835,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1649559068455" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1649559068455"></noscript>
+  <link rel="stylesheet" href="/css/style.64e85941.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.64e85941.css"></noscript>
     <script>
       let userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -1890,9 +1913,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
 
   volantis.GLOBAL_CONFIG ={
-    cdn: {"js":{"app":"/js/app.js?time=1649559068455","sites":"/js/plugins/sites.js?time=1649559068455","friends":"/js/plugins/friends.js?time=1649559068455","parallax":"/js/plugins/parallax.js?time=1649559068455","rightMenu":"/js/plugins/rightMenu.js?time=1649559068455","contributors":"/js/plugins/contributors.js?time=1649559068455","message":"/js/thirdparty/message.js?time=1649559068455","search":"/js/search/hexo.js?time=1649559068455"},"css":{"style":"/css/style.css?time=1649559068455","message":"/css/message.css?time=1649559068455"}},
-    default: {"avatar":"/media/placeholder/avatar/round/3442075.svg","link":"/media/placeholder/link/8f277b4ee0ecd.svg","cover":"/media/placeholder/cover/76b86c0226ffd.svg","image":"/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1649559068455),
+    debug: false,
+    cdn: {"js":{"app":"/js/app.80db1a18.js","parallax":"/js/plugins/parallax.8bf0ab10.js","rightMenu":"/js/plugins/rightMenu.1d2dd3e0.js","rightMenus":"/js/plugins/rightMenus.3669cc79.js","sites":"/js/plugins/tags/sites.76bf19b8.js","friends":"/js/plugins/tags/friends.f372da57.js","contributors":"/js/plugins/tags/contributors.aec80453.js","search":"/js/search/hexo.06d40311.js"},"css":{"style":"/css/style.64e85941.css"}},
+    default: {"avatar":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg","link":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg","image":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1650343228779),
     sidebar: {
       for_page: ["blogger","category","tagcloud","webinfo"],
       for_post: ["toc"],
@@ -1908,8 +1932,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       }
     },
     plugins: {
-      message: {"enable":true,"icon":{"default":"fas fa-info-circle light-blue","quection":"fas fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
-      fancybox: {"css":"/libs/@fancyapps/ui/dist/fancybox.css","js":"/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      message: {"enable":true,"css":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/izitoast/dist/css/iziToast.min.css","js":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fas fa-info-circle light-blue","quection":"fas fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      fancybox: {"css":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/@fancyapps/ui/dist/fancybox.css","js":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/@fancyapps/ui/dist/fancybox.umd.js"},
       aplayer: {
         id: 3175833810,
         enable:null
@@ -1919,7 +1943,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         layout: ["home","hr","source_theme","hr","print","darkmode"],
         music_alwaysShow: true,
         customPicUrl: {"enable":false,"old":null,"new":null}
-      }
+      },      
+      rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","menus.link","hr","menus.darkMode","plugins.articlePage","music"],"options":{"iconPrefix":"fa-solid","articleShowLink":false,"musicAlwaysShow":false,"corsAnywhere":null},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-solid fa-arrow-left","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-solid fa-arrow-right","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-solid fa-redo","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-solid fa-arrow-up","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-solid fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-solid fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-solid fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-solid fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-solid fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-solid fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-solid fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-solid fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-solid fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-solid fa-images","event":"window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-solid fa-print","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-solid fa-book-open","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-solid fa-moon","event":"volantis.dark.toggle()","group":"darkMode"}]}}
     }
   }
 
@@ -2149,7 +2174,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   volantis.import = {
     jQuery: () => {
       if (typeof jQuery == "undefined") {
-        return volantis.js("/libs/jquery/dist/jquery.min.js")
+        return volantis.js("https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/jquery/dist/jquery.min.js")
       } else {
         return new Promise(resolve => {
           resolve()
@@ -2271,22 +2296,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   /******************************************************************************/
   //图像加载出错时的处理
   function errorImgAvatar(img) {
-    img.src = "/media/placeholder/avatar/round/3442075.svg";
+    img.src = "https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/placeholder/avatar/round/3442075.svg";
     img.onerror = null;
   }
   function errorImgCover(img) {
-    img.src = "/media/placeholder/cover/76b86c0226ffd.svg";
+    img.src = "https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/placeholder/cover/76b86c0226ffd.svg";
     img.onerror = null;
   }
   /******************************************************************************/
 </script>
 
-  <!-- Custom Files head begin-->
+  <!-- import head_end begin -->
+  <!-- import head_end end -->
+  <!-- Custom Files headEnd begin-->
   
-  <!-- Custom Files head end-->
+  <!-- Custom Files headEnd end-->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+    <!-- import body_begin begin-->
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    
+    <!-- Custom Files bodyBegin end-->
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2690,7 +2722,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="https://tangninghaha.github.io/2022/03/27/9d3cab0f1a97/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Tangninghaha的博客">
@@ -2704,7 +2736,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
     <span hidden>
-      <meta itemprop="image" content="/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="image" content="https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
   <div class="article-meta" id="top">
@@ -2835,10 +2867,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-10T02:50:29+00:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-04-19T04:39:07+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2022年4月10日</p>
+    <p>更新于：2022年4月19日</p>
   </a>
 </div>
 
@@ -2918,6 +2950,33 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
+        <a class='prev' href='/2022/04/19/7799d076d525/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>GDOI2022PJ游记</p>
+          <p class='content'>今年第一次参加GDOI。参加了两天的普及组，还好周末作业不多，否则就写不完作业了。
+
+
+成绩单：
+
+
+
+题目名称
+得分
+
+
+
+zouji
+100
+
+
+sequence
+0
+
+
+line
+100
+...</p>
+        </a>
+      
       
         <a class='next' href='/2022/03/13/5450c1096a3f/'>
           <p class='title'>骆驼祥子资料<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
@@ -2939,7 +2998,7 @@ By TangNing
   
 
   
-  <article class="post white-box reveal shadow" id="comments">
+  <article class="post white-box reveal shadow floatable blur" id="comments">
     <span hidden>
       <meta itemprop="discussionUrl" content="/2022/03/27/9d3cab0f1a97/index.html#comments">
     </span>
@@ -2964,7 +3023,7 @@ By TangNing
 
 
 
-  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
+  <section class="widget toc-wrapper shadow floatable blur desktop mobile pjax" id="toc-div" >
     
   <header>
     
@@ -3026,7 +3085,6 @@ By TangNing
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="笔记:四边形不等式优化证明";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3116,7 +3174,7 @@ By TangNing
 
 <script>
   
-  volantis.css("/libs/@fortawesome/fontawesome-free/css/all.min.css");
+  volantis.css("https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/@fortawesome/fontawesome-free/css/all.min.css");
   
   
   
@@ -3127,7 +3185,7 @@ By TangNing
 
 <!-- internal -->
 
-<script src="/js/app.js?time=1649559068455.js"></script>
+<script src="/js/app.80db1a18.js"></script>
 
 
 
@@ -3224,7 +3282,361 @@ By TangNing
       
     </ul>
   </div>
-  <script>volantis.js('/js/plugins/rightMenu.js?time=1649559068455')</script>
+  <script>volantis.js('/js/plugins/rightMenu.1d2dd3e0.js')</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="rightmenu-wrapper">
+  <ul class="list-v rightmenu" id="rightmenu-content">
+    
+  <li class='navigation menuNavigation-Content'>
+
+ 
+    <a class="nav icon-only fix-cursor-default" onclick="history.back()"><i class="fa-solid fa-arrow-left fa-fw"></i></a>
+
+
+ 
+    <a class="nav icon-only fix-cursor-default" onclick="history.forward()"><i class="fa-solid fa-arrow-right fa-fw"></i></a>
+
+
+ 
+    <a class="nav icon-only fix-cursor-default" onclick="window.location.reload()"><i class="fa-solid fa-redo fa-fw"></i></a>
+
+
+ 
+    <a class="nav icon-only fix-cursor-default" onclick="VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)"><i class="fa-solid fa-arrow-up fa-fw"></i></a>
+
+
+  </li>
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyPaste" data-event="copyPaste" data-group="inputBox">
+      <i class="fa-solid fa-paste fa-fw"></i>
+      粘贴文本
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyAll" data-event="copyAll" data-group="inputBox">
+      <i class="fa-solid fa-object-ungroup fa-fw"></i>
+      全选文本
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyCut" data-event="copyCut" data-group="inputBox">
+      <i class="fa-solid fa-cut fa-fw"></i>
+      剪切文本
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyText" data-event="copyText" data-group="seletctText">
+      <i class="fa-solid fa-copy fa-fw"></i>
+      复制文本
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="searchWord" data-event="OpenSearch(__text__)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      站内搜索
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="bingSearch" data-event="window.open(`https://cn.bing.com/search?q=${__text__}`)" data-group="seletctText">
+      <i class="fa-solid fa-search fa-fw"></i>
+      必应搜索
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="openTab" data-event="window.open(__link__)" data-group="elementCheck">
+      <i class="fa-solid fa-external-link-square-alt fa-fw"></i>
+      新标签页打开
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyLink" data-event="copyLink" data-group="elementCheck">
+      <i class="fa-solid fa-link fa-fw"></i>
+      复制链接地址
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="copyImg" data-event="copyImg" data-group="elementImage">
+      <i class="fa-solid fa-image fa-fw"></i>
+      复制图片
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="googleImg" data-event="window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)" data-group="elementImage">
+      <i class="fa-solid fa-images fa-fw"></i>
+      谷歌识图
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="help" target="_blank" rel="noopener" href="https://volantis.js.org/faqs/" data-group="link">
+      <i class="fa-solid fa-question fa-fw"></i>
+      常见问题
+    </a>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="examples" target="_blank" rel="noopener" href="https://volantis.js.org/examples/" data-group="link">
+      <i class="fa-solid fa-rss fa-fw"></i>
+      示例博客
+    </a>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="contributors" target="_blank" rel="noopener" href="https://volantis.js.org/contributors/" data-group="link">
+      <i class="fa-solid fa-fan fa-fw"></i>
+      加入社区
+    </a>
+  </li> 
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="source_docs" target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs/" data-group="link">
+      <i class="fa-solid fa-code-branch fa-fw"></i>
+      本站源码
+    </a>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <a class="vlts-menu fix-cursor-default" id="source_theme" target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/" data-group="link">
+      <i class="fa-solid fa-code-branch fa-fw"></i>
+      主题源码
+    </a>
+  </li> 
+
+
+
+    <hr class="menuLoad-Content" >
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="darkMode" data-event="volantis.dark.toggle()" data-group="darkMode">
+      <i class="fa-solid fa-moon fa-fw"></i>
+      暗黑模式
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="printMode" data-event="printMode" data-group="articlePage">
+      <i class="fa-solid fa-print fa-fw"></i>
+      打印页面
+    </span>
+  </li> 
+
+
+
+  <li class="menuLoad-Content">
+    <span class="vlts-menu fix-cursor-default event" id="readMode" data-event="readMode" data-group="articlePage">
+      <i class="fa-solid fa-book-open fa-fw"></i>
+      阅读模式
+    </span>
+  </li> 
+
+
+<div id="menuMusic">
+  <li class='music name menuOption-Content'>
+    <p class='nav music-title fix-cursor-default'></p>
+  </li>
+  <li class='music ctrl'>
+    <a class='nav icon-only backward fix-cursor-default' href="/" onclick="return false;" title="backward">
+      <i class='fa-solid fa-step-backward fa-fw'></i>
+    </a>
+    <a class='nav icon-only toggle fix-cursor-default' href="/" onclick="return false;" title="toggle">
+      <i class='fa-solid fa-play fa-fw'></i>
+    </a>
+    <a class='nav icon-only forward fix-cursor-default' href="/" onclick="return false;" title="forward">
+      <i class='fa-solid fa-step-forward fa-fw'></i>
+    </a>
+  </li>
+  <li class='music volume'>
+    <div class='nav volume'>
+      <div class="aplayer-volume-bar-wrap">
+        <div class="aplayer-volume-bar fix-cursor-pointer">
+          <div class="aplayer-volume"></div>
+          <i class='left fa-solid fa-volume-off fa-fw'></i>
+          <i class='right fa-solid fa-volume-up fa-fw'></i>
+        </div>
+      </div>
+    </div>
+  </li>
+</div>
+
+  </ul>
+</div>
+<script src="/js/plugins/rightMenus.3669cc79.js"></script>
+<script>
+  const RightMenusFunction = {};
+   
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+
+
+  <!-- RightMenusFunction['copyPaste'] = (fun) => {fun()} -->
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['copyAll'] = (fun) => {fun()} -->
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['copyCut'] = (fun) => {fun()} -->
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['copyText'] = (fun) => {fun()} -->
+  
+  
+ 
+
+  
+  RightMenusFunction['searchWord'] = (__text__) => {OpenSearch(__text__)}
+  
+  
+ 
+
+  
+  RightMenusFunction['bingSearch'] = (__text__) => {window.open(`https://cn.bing.com/search?q=${__text__}`)}
+  
+  
+ 
+
+  
+  RightMenusFunction['openTab'] = (__link__) => {window.open(__link__)}
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['copyLink'] = (fun) => {fun()} -->
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['copyImg'] = (fun) => {fun()} -->
+  
+  
+ 
+
+  
+  RightMenusFunction['googleImg'] = (__link__) => {window.open(`https://www.google.com.hk/searchbyimage?image_url=${__link__}`)}
+  
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+  
+ 
+
+  
+  RightMenusFunction['darkMode'] = () => {volantis.dark.toggle()}
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['printMode'] = (fun) => {fun()} -->
+  
+  
+ 
+
+
+  <!-- RightMenusFunction['readMode'] = (fun) => {fun()} -->
+  
+  
+ 
+  
+
+</script>
 
 
 
@@ -3353,19 +3765,19 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1649559068455")
+        volantis.js("/js/plugins/tags/sites.76bf19b8.js")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1649559068455")
+        volantis.js("/js/plugins/tags/friends.f372da57.js")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1649559068455")
+        volantis.js("/js/plugins/tags/contributors.aec80453.js")
       }
     
   };
@@ -3379,7 +3791,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script defer src="/libs/vanilla-lazyload/dist/lazyload.min.js"></script>
+  <script defer src="https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/vanilla-lazyload/dist/lazyload.min.js"></script>
 <script>
   // https://www.npmjs.com/package/vanilla-lazyload
   // Set the options globally
@@ -3418,7 +3830,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 	hoverDelay: 0
   };
 </script>
-<script defer src="/libs/flying-pages/flying-pages.min.js"></script>
+<script defer src="https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/flying-pages/flying-pages.min.js"></script>
 
 
 
@@ -3428,7 +3840,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="text/javascript">
+      <script type="text/javascript">
   volantis.layoutHelper("comments",`<div id="gitalk-container"></div>`)
   function pjax_gitalk() {
     if(!document.querySelector("#gitalk-container"))return;
@@ -3453,6 +3865,8 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   volantis.pjax.push(pjax_gitalk);
 </script>
 
+    
+
 
 
 
@@ -3462,14 +3876,14 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- optional -->
 
   <script>
-  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/")
-    ? "/" || "/"
-    : "//" || "/";
+  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/") ?
+    "/" || "/" :
+    "//" || "/";
   const SearchServiceDataPath = SearchServiceDataPathRoot + "content.json";
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1649559068455");
+    return volantis.js("/js/search/hexo.06d40311.js");
   }
 
   function loadSearchService() {
@@ -3479,16 +3893,23 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     });
 
     document.querySelectorAll(".u-search-form").forEach((e) => {
-      e.addEventListener("submit", (event)=>{event.preventDefault();}, false);
+      e.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }, false);
     });
   }
 
   // 打开并搜索 字符串 s
   function OpenSearch(s) {
-    loadSearchScript().then(() => {
+    if (typeof SearchService === 'undefined')
+      loadSearchScript().then(() => {
+        SearchService.setQueryText(s);
+        SearchService.search();
+      });
+    else {
       SearchService.setQueryText(s);
       SearchService.search();
-    });
+    }
   }
 
   // 访问含有 ?s=xxx  的链接时打开搜索 // 与搜索引擎 structured data 相关: /scripts/helpers/structured-data/lib/config.js
@@ -3504,7 +3925,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     e.addEventListener("focus", loadSearchService, false);
   });
 </script>
-
 
 
 
@@ -3542,8 +3962,8 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   <script>
   function load_swiper() {
     if (!document.querySelectorAll(".swiper-container")[0]) return;
-    volantis.css("/libs/swiper/swiper-bundle.min.css");
-    volantis.js("/libs/swiper/swiper-bundle.min.js").then(() => {
+    volantis.css("https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/swiper/swiper-bundle.min.css");
+    volantis.js("https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/swiper/swiper-bundle.min.js").then(() => {
       pjax_swiper();
     });
   }
@@ -3581,7 +4001,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 <!-- pjax 标签必须存在于所有页面 否则 pjax error -->
 <pjax>
 
-    <script>
+        <script>
   // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
@@ -3621,7 +4041,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
     };
     (function () {
       var script = document.createElement('script');
-      script.src = "/libs/mathjax/es5/tex-mml-chtml.js";
+      script.src = "https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/mathjax/es5/tex-mml-chtml.js";
       script.defer = true;
       document.head.appendChild(script);
     })();
@@ -3814,10 +4234,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Tangninghaha的博客","url":"https://tangninghaha.github.io/","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Tangninghaha","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://tangninghaha.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Tangninghaha的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://tangninghaha.github.io/","name":"Tangninghaha的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://tangninghaha.github.io/categories/信息学/","name":"信息学"}},{"@type":"ListItem","position":3,"item":{"@id":"https://tangninghaha.github.io/2022/03/27/9d3cab0f1a97/","name":"笔记:四边形不等式优化证明"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"笔记:四边形不等式优化证明","description":"四边形不等式的证明","datePublished":"2022-03-27T14:36:25.000Z","dateModified":"2022-04-10T02:50:29.653Z","inLanguage":["zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://tangninghaha.github.io/2022/03/27/9d3cab0f1a97/"},"author":{"@type":"Person","name":"Tangninghaha","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://tangninghaha.github.io/"},"publisher":{"@type":"Organization","name":"Tangninghaha的博客","logo":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://tangninghaha.github.io/2022/03/27/9d3cab0f1a97/","wordCount":36,"articleSection":"信息学","keywords":"DP优化","image":{"@type":"ImageObject","url":"/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
-
-
-<!-- more -->
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Tangninghaha的博客","url":"https://tangninghaha.github.io/","logo":{"@type":"ImageObject","url":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Tangninghaha","image":{"@type":"ImageObject","url":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://tangninghaha.github.io/","sameAs":["https://github.com/volantis-x"],"description":"Tangninghaha的博客"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://tangninghaha.github.io/","name":"Tangninghaha的博客"}},{"@type":"ListItem","position":2,"item":{"@id":"https://tangninghaha.github.io/categories/信息学/","name":"信息学"}},{"@type":"ListItem","position":3,"item":{"@id":"https://tangninghaha.github.io/2022/03/27/9d3cab0f1a97/","name":"笔记:四边形不等式优化证明"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"笔记:四边形不等式优化证明","description":"四边形不等式的证明","datePublished":"2022-03-27T14:36:25.000Z","dateModified":"2022-04-19T04:39:07.645Z","inLanguage":["zh-CN","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://tangninghaha.github.io/2022/03/27/9d3cab0f1a97/"},"author":{"@type":"Person","name":"Tangninghaha","image":{"@type":"ImageObject","url":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://tangninghaha.github.io/"},"publisher":{"@type":"Organization","name":"Tangninghaha的博客","logo":{"@type":"ImageObject","url":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://tangninghaha.github.io/2022/03/27/9d3cab0f1a97/","wordCount":36,"articleSection":"信息学","keywords":"DP优化","image":{"@type":"ImageObject","url":"https://npm.elemecdn.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
@@ -3832,7 +4249,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-<script src="/libs/pjax/pjax.min.js"></script>
+<script src="https://npm.elemecdn.com/volantis-static@0.0.1649552113628/libs/pjax/pjax.min.js"></script>
 
 
 <script>
@@ -3841,10 +4258,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
       pjax = new Pjax({
         elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
         selectors: [
-          "head title",
-          "head meta[name='description']",
-          "head meta[name='keywords']",
-          "head meta[property^='og']",
           
           "#l_main",
           "#pjax-header-nav-list",
@@ -3897,8 +4310,10 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
       
     </div>
-  <!-- Custom Files bodyEnd begin-->
-  
-  <!-- Custom Files bodyEnd end-->
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    
+    <!-- Custom Files bodyEnd end-->
   </body>
 </html>
