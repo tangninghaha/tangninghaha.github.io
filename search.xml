@@ -641,7 +641,7 @@ max=\max(a.max,b.max,a.rmax+b.lmax)
 <p>但是K、Ca、Na不能，因为它们过于活泼，会先和水反应。</p>
 <details class="note success"><summary><p>你知道吗</p>
 </summary>
-<p>锌粒可以与硫酸铜反应产生氢气，原理如下： <span class="math display">\[
+<p>锌粒可以与硫酸铜溶液反应产生氢气，原理如下： <span class="math display">\[
 \ce{Zn + CuSO4-&gt;Cu +ZnSO4}
 \]</span></p>
 <p><span class="math display">\[
@@ -663,8 +663,8 @@ max=\max(a.max,b.max,a.rmax+b.lmax)
 <details class="note success"><summary><p>浓盐酸</p>
 </summary>
 <p>浓盐酸是 <span class="math inline">\(\ce{HCl}\)</span> 的水溶液，密度比水大，常用的浓盐酸浓度在 37% 左右。</p>
-<p>无色透明，腐蚀性较强，挥发性极强，盛有浓盐酸的容器打开后，会挥发出 <span class="math inline">\(\ce{HCl}\)</span> 气体，在空气中形成小水滴。</p>
-<p>人体内胃酸的主要成分是盐酸。</p>
+<p>无色透明，腐蚀性较强，挥发性极强，盛有浓盐酸的容器打开后，会挥发出 <span class="math inline">\(\ce{HCl}\)</span> 气体，在空气中形成水雾。</p>
+<p>人体内胃酸的主要成分是盐酸。除此之外，盐酸还可以给金属除锈。</p>
 
 </details>
 <details class="note success"><summary><p>硫酸</p>
@@ -695,10 +695,37 @@ max=\max(a.max,b.max,a.rmax+b.lmax)
 </details>
 <details class="note success"><summary><p>硝酸</p>
 </summary>
-<p>纯硝酸无色透明，浓硝酸为淡黄色液体（硝酸遇光分解放出二氧化氮 <span class="math inline">\(\ce{4HNO3-&gt;[光照]4NO2 + O2 ^ + H2O}\)</span>，二氧化氮呈淡黄色），有窒息性刺激气味。</p>
+<p>纯硝酸无色透明，浓硝酸常常为淡黄色液体（硝酸遇光分解放出二氧化氮 <span class="math inline">\(\ce{4HNO3-&gt;[光照]4NO2 + O2 ^ + H2O}\)</span>，二氧化氮呈淡黄色），有窒息性刺激气味。</p>
 <p>浓硝酸容易挥发，和盐酸一样会产生白雾。</p>
+<p>稀释时，与硫酸类似，会产生大量的热。</p>
 
 </details>
+<p>酸的化学性质：</p>
+<ol type="1">
+<li><p>与指示剂反应：能使紫色石蕊溶液变红。</p></li>
+<li><p>与金属活动性顺序排在氢前面的发生置换反应，生成盐和氢气。（除锈原理）</p>
+<p>示例： <span class="math display">\[
+\ce{Mg + 2HCl-&gt; MgCl2 + H2 ^}
+\]</span></p>
+<p><span class="math display">\[
+\ce{Zn + H2SO4-&gt; ZnSO4 + H2 ^}
+\]</span></p></li>
+<li><p>与某些碱性氧化物发生复分解反应，产生水和盐。</p>
+<p>示例： <span class="math display">\[
+\ce{Fe2O3 + HCl -&gt; 2FeCl3 + 3H2O}
+\]</span></p>
+<p><span class="math display">\[
+\ce{CuO + H2SO4-&gt; CuSO4 + H2O}
+\]</span></p></li>
+<li><p>与含碳酸根的化合物发生复分解反应产生二氧化碳。</p>
+<p>示例： <span class="math display">\[
+\ce{CaCO3 + 2HCl -&gt; CaCl2 + H2O + CO2 ^}
+\]</span></p>
+<p><span class="math display">\[
+\ce{Na2CO3 + 2HCl-&gt; 2NaCl + H2O + CO2 ^}
+\]</span></p></li>
+<li><p>和碱发生中和反应。</p></li>
+</ol>
 <h2 id="常见的碱">常见的碱</h2>
 <details class="note success"><summary><p>氢氧化钠</p>
 </summary>
@@ -718,6 +745,7 @@ max=\max(a.max,b.max,a.rmax+b.lmax)
 <li>微溶于水。澄清水溶液称为澄清石灰水，乳状悬浮液称为石灰乳。溶解度随着温度的升高而下降（主流解释：氢氧化钙的两种水合物的溶解度较大，而无水氢氧化钙的溶解度较小，随着温度升高，水合物逐渐变成无水氢氧化钙，溶解度降低）。</li>
 <li>与二氧化碳反应生成碳酸钙（俗称石灰石），表现为溶液变浑浊。</li>
 <li>可用于改良酸性土壤，配置波尔多液（石灰乳，硫酸铜）。</li>
+<li>可以在树木上涂含硫磺粉的石灰浆，保护树木，防止冻伤和害虫生卵。</li>
 </ul>
 
 </details>
