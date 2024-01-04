@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#f0a1a8"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#f0a1a8">
+  <meta name="msvalidate.01" content="7197295068F5C122E84D3763FE74EC8A">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/silver/pace-theme-fill-left.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tangninghaha.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="做过的一些杂题的总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="杂题总结">
+<meta property="og:url" content="https://tangninghaha.netlify.app/posts/%E6%9D%82%E9%A2%98%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Tangninghaha">
+<meta property="og:description" content="做过的一些杂题的总结。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/83lyj5x8.png">
+<meta property="article:published_time" content="2023-10-01T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-04T06:48:55.505Z">
+<meta property="article:author" content="Tangninghaha">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/83lyj5x8.png">
+
+
+<link rel="canonical" href="https://tangninghaha.netlify.app/posts/%E6%9D%82%E9%A2%98%E6%80%BB%E7%BB%93/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tangninghaha.netlify.app/posts/%E6%9D%82%E9%A2%98%E6%80%BB%E7%BB%93/","path":"posts/杂题总结/","title":"杂题总结"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>杂题总结 | Tangninghaha</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tangninghaha</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Number 10, Tangning Street</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#luogu-p2824-%E6%8E%92%E5%BA%8F"><span class="nav-number">1.</span> <span class="nav-text">Luogu-P2824 排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#solution"><span class="nav-number">1.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cf149d---coloring-brackets"><span class="nav-number">2.</span> <span class="nav-text">CF149D - Coloring Brackets</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E6%84%8F"><span class="nav-number">2.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.3.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cf1025d---recovering-bst"><span class="nav-number">3.</span> <span class="nav-text">CF1025D - Recovering BST</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tag"><span class="nav-number">3.1.</span> <span class="nav-text">Tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-1"><span class="nav-number">3.2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95-1"><span class="nav-number">3.3.</span> <span class="nav-text">解法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cf888f---connecting-vertices"><span class="nav-number">4.</span> <span class="nav-text">CF888F - Connecting Vertices</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tag-1"><span class="nav-number">4.1.</span> <span class="nav-text">Tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-2"><span class="nav-number">4.2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D"><span class="nav-number">4.3.</span> <span class="nav-text">题外话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95-2"><span class="nav-number">4.4.</span> <span class="nav-text">解法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cf1889c1---doremys-drying-plan"><span class="nav-number">5.</span> <span class="nav-text">CF1889C1 - Doremy&#39;s Drying Plan</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-3"><span class="nav-number">5.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95-3"><span class="nav-number">5.2.</span> <span class="nav-text">解法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E8%A7%A3%E6%B3%95"><span class="nav-number">5.2.1.</span> <span class="nav-text">我的解法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3%E5%81%9A%E6%B3%95"><span class="nav-number">5.2.2.</span> <span class="nav-text">题解做法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cf1872g---replace-with-product"><span class="nav-number">6.</span> <span class="nav-text">CF1872G - Replace With Product</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-4"><span class="nav-number">6.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9A%E6%B3%95"><span class="nav-number">6.2.</span> <span class="nav-text">做法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cf1900d---small-gcd"><span class="nav-number">7.</span> <span class="nav-text">CF1900D - Small GCD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E5%A4%96%E8%AF%9D-1"><span class="nav-number">7.1.</span> <span class="nav-text">题外话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-5"><span class="nav-number">7.2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9A%E6%B3%95-1"><span class="nav-number">7.3.</span> <span class="nav-text">做法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#j---sushi-atcoder.jp"><span class="nav-number">8.</span> <span class="nav-text">J - Sushi (atcoder.jp)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-6"><span class="nav-number">8.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9A%E6%B3%95-2"><span class="nav-number">8.2.</span> <span class="nav-text">做法</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tangninghaha"
+      src="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+  <p class="site-author-name" itemprop="name">Tangninghaha</p>
+  <div class="site-description" itemprop="description">鲜衣怒马少年时，不负韶华行且知</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RhbmduaW5naGFoYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangninghaha"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnRhbmduaW5naGFoYUBvdXRsb29rLmNvbQ==" title="E-Mail → mailto:tangninghaha@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img height="20" src="https://api.netlify.com/api/v1/badges/098df643-d737-4e3a-8b6d-024ce59dedab/deploy-status" alt="Deploy Status"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <span class="exturl" data-url="aHR0cHM6Ly9kYW5pZWxxZi5uZXRsaWZ5LmFwcC8=" title="https:&#x2F;&#x2F;danielqf.netlify.app&#x2F;">Danielqf</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tangninghaha.netlify.app/posts/%E6%9D%82%E9%A2%98%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+      <meta itemprop="name" content="Tangninghaha">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tangninghaha">
+      <meta itemprop="description" content="鲜衣怒马少年时，不负韶华行且知">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="杂题总结 | Tangninghaha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          杂题总结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-10-01 00:00:00" itemprop="dateCreated datePublished" datetime="2023-10-01T00:00:00+00:00">2023-10-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-04 06:48:55" itemprop="dateModified" datetime="2024-01-04T06:48:55+00:00">2024-01-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%80%BB%E7%BB%93/" itemprop="url" rel="index"><span itemprop="name">总结</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>10 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>做过的一些杂题的总结。</p>
+<span id="more"></span>
+<h1 id="luogu-p2824-排序"><span class="exturl" data-url="aHR0cHM6Ly92anVkZ2UubmV0L3Byb2JsZW0v5rSb6LC3LVAyODI0">Luogu-P2824 排序</span></h1>
+<h2 id="solution">Solution</h2>
+<p>观察可以发现我们最后只需要知道位置 q 上的值即可。但是如果暴力做是 n 方级别的。</p>
+<p>可以二分最后位置上 q 是多少，那么将排列中小于 q 的值设为 0 ，大于等于 q 的设为 1 。此时就将升序降序排序转换成了区间覆盖问题。</p>
+<h1 id="cf149d---coloring-brackets"><span class="exturl" data-url="aHR0cHM6Ly9jb2RlZm9yY2VzLmNvbS9wcm9ibGVtc2V0L3Byb2JsZW0vMTQ5L0Q=">CF149D - Coloring Brackets</span></h1>
+<h2 id="题意">题意</h2>
+<p>给出一个合法括号序列，要求给 <strong>其中一些</strong> 括号染上 <code>Red / Blue</code> 两种颜色之一，满足</p>
+<ol type="1">
+<li>每一对括号中恰好一个染色了。</li>
+<li>相邻的两个括号不能同色，可以都不染色。</li>
+</ol>
+<p>求染色方案数。<span class="math inline">\(\lvert S \rvert \le 700\)</span> 。</p>
+<h2 id="解法">解法</h2>
+<p>我太菜了，绿的区间DP都不会了。</p>
+<p>可以设 <span class="math inline">\(f[l][r]\)</span> 表示染色在 <span class="math inline">\([l,r]\)</span> 中的括号的方案数，要求 <span class="math inline">\(s[l,r]\)</span> 是合法括号序列。但是由于染色的限制条件，这样设计状态难以转移。</p>
+<p>我们发现当合并两个区间时，我们只需要考虑左右两端的颜色。所以可以增加两维，表示左右两端染了什么颜色。</p>
+<p>转移时考虑与 <span class="math inline">\(l\)</span> 匹配的右括号在哪。</p>
+<p>如果恰好是 <span class="math inline">\(r\)</span> ，那么就可以从 <span class="math inline">\(f[l+1][r-1]\)</span> 转移而来。</p>
+<p>否则假如在 <span class="math inline">\(k\)</span> ，那么就可以从 <span class="math inline">\(f[l][k]\times f[k+1][r]\)</span> 转移而来。</p>
+<p>使用记忆化搜索会更为方便，能够保证每次搜索的区间合法。</p>
+<h2 id="总结">总结</h2>
+<p>思考这道题时只是很板地想设 <span class="math inline">\(f[l][r]\)</span> ，于是不知道如何转移颜色。没有想到增加维度的操作。</p>
+<p>另外，设计状态时，没有考虑在一个合法的括号序中，当时想的是任意区间。</p>
+<h1 id="cf1025d---recovering-bst"><span class="exturl" data-url="aHR0cHM6Ly9jb2RlZm9yY2VzLmNvbS9wcm9ibGVtc2V0L3Byb2JsZW0vMTAyNS9E">CF1025D - Recovering BST</span></h1>
+<h2 id="tag">Tag</h2>
+<p>*2100, DP, 紫</p>
+<h2 id="题意-1">题意</h2>
+<p>给出一个升序序列，问这个序列能否建出一棵二叉搜索树，满足任意一条边的两个点的值GCD大于一。<span class="math inline">\(n\le 700\)</span> 。</p>
+<h2 id="解法-1">解法</h2>
+<p>二叉搜索树的中序遍历就是升序序列，所以我们可以将这个问题转换成序列上的问题。一个子树就是一个区间。</p>
+<p>可以设 <span class="math inline">\(f[l][r][k]\)</span> 表示区间 <span class="math inline">\([l,r]\)</span> ，根是 <span class="math inline">\(k\)</span> ，能不能建出一棵 BST 。</p>
+<p>不难发现这样做是 <span class="math inline">\(O(n^4)\)</span> 的，感觉常数小很可以过。但是没过。</p>
+<p>考虑优化。我们发现一个子树的根的父亲节点必定是这个区间 <span class="math inline">\([l,r]\)</span> 的 <span class="math inline">\(l-1\)</span> 或 <span class="math inline">\(r+1\)</span> 。</p>
+<blockquote>
+<p>为什么？考虑一个区间的一个位置，如果这个位置是根，那么区间左半部分就是左子树，右半部分就是右子树。如果 <span class="math inline">\([l,r]\)</span> 为区间的左半子树，那么父亲节点就是 <span class="math inline">\(r+1\)</span> ，否则就是 <span class="math inline">\(l-1\)</span> 。</p>
+</blockquote>
+<p>于是我们可以设 <span class="math inline">\(f[l][r][0/1]\)</span> 表示区间 <span class="math inline">\([l,r]\)</span> 能否作为父亲节点的左/右子树，也就是子树 <span class="math inline">\([l,r]\)</span> 的根的父亲节点是 <span class="math inline">\(r+1\)</span> 还是 <span class="math inline">\(l-1\)</span> 。</p>
+<p>当我们计算 <span class="math inline">\(f[l][r][0/1]\)</span> 时，枚举 <span class="math inline">\([l,r]\)</span> 的根 <span class="math inline">\(k\)</span> ，那么就有左子树 <span class="math inline">\([l,k-1]\)</span> 和右子树 <span class="math inline">\([k+1,r]\)</span> 。如果 <span class="math inline">\(f[l][k-1][0]\)</span> 为真，并且 <span class="math inline">\(f[k+1][r][1]\)</span> 为真，那么说明 <span class="math inline">\(k\)</span> 可以作为这两棵子树的根，如果同时 <span class="math inline">\(k\)</span> 能够与 <span class="math inline">\(l-1\)</span> 相连，那么说明 <span class="math inline">\(f[l][r][1]\)</span> 为真了。</p>
+<p>这样做状态数是 <span class="math inline">\(O(n^2)\)</span> ，转移是线性的。</p>
+<h1 id="cf888f---connecting-vertices"><span class="exturl" data-url="aHR0cHM6Ly9jb2RlZm9yY2VzLmNvbS9wcm9ibGVtc2V0L3Byb2JsZW0vODg4L0Y=">CF888F - Connecting Vertices</span></h1>
+<h2 id="tag-1">Tag</h2>
+<p>*2500, DP, 紫</p>
+<h2 id="题意-2">题意</h2>
+<p>给出一个整数 <span class="math inline">\(n\)</span> ，和一个由 01 构成的矩阵 <span class="math inline">\(a_{i,j}\)</span> 。表示有一个正 <span class="math inline">\(n\)</span> 边形，删去所有边，留下点。每一次需要连接两个点，总共连接 <span class="math inline">\(n-1\)</span> 条边，边不得交叉。使得这些点连通。如果 <span class="math inline">\(a_{i,j}\)</span> 为 1 的两个点不能直接相连，求方案总数。 <span class="math inline">\(n \le 700\)</span></p>
+<h2 id="题外话">题外话</h2>
+<p>想这道题的时候，把题目记错了，以为不一定要连通，寻思挺多方案，似乎难以 DP 。结果发现是要连成一棵树。</p>
+<h2 id="解法-2">解法</h2>
+<p>700 ，区间DP。</p>
+<p>发现如果点 i 与点 j 直接或间接连接了，那么点 i 到点 j 必定连成了一棵树。</p>
+<p>考虑如果没有连成一棵树，说明这或许超过了 n-1 条边，这显然会让最后没法连通。或许没有连通，那么这个点已经没法再连接起来了。</p>
+<p>考虑设 <span class="math inline">\(f[i][j]\)</span> 表示点 i 与点 j 之间直接或间接连接，那么可以想到转移：</p>
+<ol type="1">
+<li><p>如果点 i 与点 j 直接相连，此时要求满足 <span class="math inline">\(a_{i,j}=1\)</span> ，则有： <span class="math display">\[
+f[i][j]=\sum_{k=i}^{j-1}f[i][k]\times f[k+1][j]
+\]</span> 意即 i 和 j 已经直接相连了，不能在另一条路连接，所以在 k 处断开。</p></li>
+<li><p>如果 i 和 j 间接相连，则有： <span class="math display">\[
+f[i][j]=\sum_{k=i+1}^{j-1}f[i][k]\times f[k][j]
+\]</span> 意即从某一个点 k 将 i, j 连接起来。</p></li>
+</ol>
+<p>然而这样会算重。</p>
+<p>考虑这种情况：</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/83lyj5x8.png" /></p>
+<p>此时按照 2 的情况转移，在 k 处会被计算一次，在 k' 处会被计算一次，那么就会重复。</p>
+<p>如何避免这种情况？我们要求 i 必须与 k 直接相连，那么上述情况就只会在 i+1 处被计算一次，就不会算重了。</p>
+<p>所以可以设 <span class="math inline">\(f[i][j][0/1]\)</span> 表示 i 和 j 是直接相连还是间接相连，于是就有： <span class="math display">\[
+f[i][j][1]=\sum_{k=i}^{j-1}(f[i][k][0]+f[i][k][1])\times(f[k+1][j][0]+f[k+1][j][1])
+\]</span> 与 <span class="math display">\[
+f[i][j][0]=\sum_{k=i}^{j-1}f[i][k][1]\times(f[k+1][j][0] + f[k+1][j][1])
+\]</span></p>
+<h1 id="cf1889c1---doremys-drying-plan"><span class="exturl" data-url="aHR0cHM6Ly9jb2RlZm9yY2VzLmNvbS9wcm9ibGVtc2V0L3Byb2JsZW0vMTg4OS9DMQ==">CF1889C1 - Doremy's Drying Plan</span></h1>
+<h2 id="题意-3">题意</h2>
+<p>给出若干个区间，要求删去这些区间任何 k 个，使得没有任何区间被覆盖的点数最多，求最多点数。</p>
+<p>数据范围：点范围、区间数2e5，简单版下k=2</p>
+<h2 id="解法-3">解法</h2>
+<h3 id="我的解法">我的解法</h3>
+<p>考虑到只有被覆盖不超过两次的点可能对答案有贡献，不妨求出这些点被哪些区间覆盖。按覆盖次数讨论：</p>
+<p>0次，此时一定会对答案产生贡献。</p>
+<p>1次，此时在选中这一个区间时对答案产生贡献。</p>
+<p>2次，此时在两个区间都被选中时对答案产生贡献。</p>
+<p>考虑将恰好被覆盖两次的点，被哪两个区间覆盖求出（利用线段树），进行双关键字排序，那么最后两个区间都被选中的情况便会相邻，只需要统计连续的点，满足覆盖它们的两个区间都相同的个数即可。再加上这两个区间覆盖1次的点的贡献，与被覆盖0次的点的贡献，取最大值即答案。</p>
+<h3 id="题解做法">题解做法</h3>
+<p>覆盖0次的点一定会对答案产生贡献，假设是 <span class="math inline">\(A\)</span> ，选定两个区间覆盖的点如果是 <span class="math inline">\(B\)</span> 。那么我们的目标就是求 <span class="math inline">\(A+\max{B}\)</span> 。</p>
+<p>考虑两个区间的关系：</p>
+<ul>
+<li>如果两个区间相离，那么贡献就是被覆盖1次的点的个数。</li>
+<li>如果两个区间相交，那么贡献就是被覆盖1次的点的个数减去被覆盖2次的点的个数。枚举每一个被覆盖两次的点，那么就可以得到是哪两个区间相交。即可计算答案。</li>
+</ul>
+<h1 id="cf1872g---replace-with-product"><span class="exturl" data-url="aHR0cHM6Ly9jb2RlZm9yY2VzLmNvbS9jb250ZXN0LzE4NzIvcHJvYmxlbS9H">CF1872G - Replace With Product</span></h1>
+<h2 id="题意-4">题意</h2>
+<p>给出一个序列，需要将序列中的一段数字替换成它们的乘积，求操作的区间，使得能得到最后可能的最大和。</p>
+<p>序列长度是 2e5，数字范围是 [1,1e9]</p>
+<h2 id="做法">做法</h2>
+<p>典型的程怀德题。</p>
+<p>很显然是如果选择的区间，前缀为一段1，或者后缀为一段1，显然不优，所以可以按照1的位置将这些区间分出来，但是有一些区间是可以跨过中间的1合并的。直接做难以合并。</p>
+<p>考虑到数字的乘积可能非常大，写高精度不现实，没法比较两个区间的大小。所以考虑从乘积上面入手。</p>
+<p>如果乘积太大了，我们发现此时每当我们乘上假如一个非1的数字，那么最后的和会变大许多，这个情况下，我们就会将所有的数字乘起来，除了前缀1和后缀1。</p>
+<p>如何定义“太大了”？如果有所有数字的乘积超过 <span class="math inline">\(2\times n\)</span> ，那么此时如果我们不合并其中某一个非1的数字，答案会变少至少 <span class="math inline">\(n\)</span> ，这比1的贡献加起来要多，因为1的个数不可能超过 <span class="math inline">\(n\)</span> 。</p>
+<p>如果乘积没有超过 <span class="math inline">\(2\times n\)</span> ，那么就将所有非1的段弄出来，这最多只有 <span class="math inline">\(O(\log n)\)</span> 个，暴力枚举从哪个段合并到哪个段，造成的贡献谁更大，用一些前缀和，前缀积维护一下就可以了。</p>
+<h1 id="cf1900d---small-gcd"><span class="exturl" data-url="aHR0cHM6Ly9jb2RlZm9yY2VzLmNvbS9wcm9ibGVtc2V0L3Byb2JsZW0vMTkwMC9E">CF1900D - Small GCD</span></h1>
+<h2 id="题外话-1">题外话</h2>
+<p>这题只有2000？</p>
+<h2 id="题意-5">题意</h2>
+<p>定义函数 <span class="math inline">\(f(a,b,c)\)</span> 的值为 <span class="math inline">\(a,b,c\)</span> 中较小的两个数字的 <span class="math inline">\(\gcd\)</span> ，求对于给定序列，所有三元组的 <span class="math inline">\(f\)</span> 之和。</p>
+<p>值域 <span class="math inline">\(10^{5}\)</span> ，<span class="math inline">\(n \le 8\times 10^4\)</span> 。</p>
+<h2 id="做法-1">做法</h2>
+<p>既然值域这么小那么和值域当然相关了。</p>
+<p>我们发现如果我们能够计算出 <span class="math inline">\(cnt_{d}\)</span> ，表示 <span class="math inline">\(f\)</span> 函数值为 <span class="math inline">\(d\)</span> 的有多少个，那么答案就是 <span class="math inline">\(cnt_{d}\times d\)</span> 的和。</p>
+<p>但是直接求 <span class="math inline">\(cnt_{d}\)</span> 不好求，这涉及到 gcd 恰好为 <span class="math inline">\(d\)</span> 。考虑转化一下：我们从大到小枚举，求 gcd 为 d 的倍数的有多少个，那么可以将这个数减去 <span class="math inline">\(cnt_{i}\)</span> ，<span class="math inline">\(i\)</span> 是 <span class="math inline">\(d\)</span> 的一个倍数，就可以得到恰好的。这个技巧很好。并且因为调和级数，复杂度是 <span class="math inline">\(O(m \log m)\)</span> 的，其中 <span class="math inline">\(m\)</span> 是值域。</p>
+<p>如何求 gcd 为 d 的倍数有多少个？我们可以处理出，哪些 <span class="math inline">\(a_{i}\)</span> 有约数 <span class="math inline">\(d\)</span> ，那么我们只需要枚举三元组中的次大值，可以很快求出最小值能够选择的个数与最大值能够选择的方案数，满足 gcd 一定为 d 的倍数。</p>
+<p>由于值域范围内约数最多的数字只有 128 个，不会 T。</p>
+<h1 id="j---sushi-atcoder.jp"><span class="exturl" data-url="aHR0cHM6Ly9hdGNvZGVyLmpwL2NvbnRlc3RzL2RwL3Rhc2tzL2RwX2o=">J - Sushi (atcoder.jp)</span></h1>
+<h2 id="题意-6">题意</h2>
+<p>给定 <span class="math inline">\(n\)</span> 个盘子，每个盘子有 <span class="math inline">\(a_{i}\)</span> 个寿司，如果每一次等概率选择一个盘子，如果有寿司就吃掉，否则重新选择。求期望选择次数，使得所有寿司都被吃完。</p>
+<p><span class="math inline">\(n \le 300\)</span> , <span class="math inline">\(1 \le a_{i} \le 3\)</span></p>
+<h2 id="做法-2">做法</h2>
+<p>既然数据范围这么小，不难想到，可以设状态 <span class="math inline">\(f_{i,j,k}\)</span> 表示盘子中有1个寿司的有 <span class="math inline">\(i\)</span> 个，2个寿司的 <span class="math inline">\(j\)</span> 个，3个寿司的 <span class="math inline">\(k\)</span> 个。</p>
+<p>但是如何转移呢？可以从 <span class="math inline">\(f_{i-1,j,k}\)</span> 转移而来， 也可以从 <span class="math inline">\(f_{i+1,j-1,k}\)</span> 转移，还有 <span class="math inline">\(f_{i,j+1,k-1}\)</span> 。</p>
+<p>但是似乎期望的和式的项数是无限项，因为可能随到一个空盘子，就需要不停地随机。但是这个过程可以表示为： <span class="math display">\[
+f_{i,j,k}=f_{i,j,k}\times \frac{n-i-j-k}{n} +1
+\]</span> 解方程可以知道， <span class="math display">\[
+f_{i,j,k}=\frac{n}{i+j+k}
+\]</span> 其意义就是随机到一个非空盘子的期望步数。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Tangninghaha
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tangninghaha.netlify.app/posts/%E6%9D%82%E9%A2%98%E6%80%BB%E7%BB%93/" title="杂题总结">https://tangninghaha.netlify.app/posts/杂题总结/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" rel="prev" title="数学基础">
+                  <i class="fa fa-angle-left"></i> 数学基础
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/GMOJ%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/" rel="next" title="GMOJ题目总结">
+                  GMOJ题目总结 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  
+  <div class="comments giscus-container">
+  </div>
+  
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-code"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Tangninghaha</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">32k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:58</span>
+  </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div><div>站点主题色 <a target="_blank" rel="noopener" href="http://zhongguose.com/#hehuanhong">合欢红</a></div>
+
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="giscus" type="application/json">{"enable":true,"repo":"tangninghaha/Blog-Comment","repo_id":"R_kgDOK75Jug","category":"Announcements","category_id":"DIC_kwDOK75Jus4Cb4f_","mapping":"pathname","reactions_enabled":1,"emit_metadata":1,"theme":"light","lang":"en","crossorigin":"anonymous","input_position":"top","loading":"lazy"}</script>
+
+<script>
+document.addEventListener('page:loaded', () => {
+  if (!CONFIG.page.comments) return;
+
+  NexT.utils.loadComments('.giscus-container')
+    .then(() => NexT.utils.getScript('https://giscus.app/client.js', {
+      attributes: {
+        async                   : true,
+        crossOrigin             : 'anonymous',
+        'data-repo'             : CONFIG.giscus.repo,
+        'data-repo-id'          : CONFIG.giscus.repo_id,
+        'data-category'         : CONFIG.giscus.category,
+        'data-category-id'      : CONFIG.giscus.category_id,
+        'data-mapping'          : CONFIG.giscus.mapping,
+        'data-reactions-enabled': CONFIG.giscus.reactions_enabled,
+        'data-emit-metadata'    : CONFIG.giscus.emit_metadata,
+        'data-theme'            : CONFIG.giscus.theme,
+        'data-lang'             : CONFIG.giscus.lang,
+        'data-input-position'   : CONFIG.giscus.input_position,
+        'data-loading'          : CONFIG.giscus.loading
+      },
+      parentNode: document.querySelector('.giscus-container')
+    }));
+});
+</script>
+
+<!-- hexo injector body_end start --><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script><!-- hexo injector body_end end --></body>
+</html>

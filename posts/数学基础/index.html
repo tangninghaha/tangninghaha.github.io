@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#f0a1a8"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#f0a1a8">
+  <meta name="msvalidate.01" content="7197295068F5C122E84D3763FE74EC8A">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/silver/pace-theme-fill-left.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tangninghaha.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文介绍了OI中的一些数学基础知识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数学基础">
+<meta property="og:url" content="https://tangninghaha.netlify.app/posts/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Tangninghaha">
+<meta property="og:description" content="本文介绍了OI中的一些数学基础知识。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/pic/61434.png">
+<meta property="article:published_time" content="2023-09-22T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-04T06:48:55.505Z">
+<meta property="article:author" content="Tangninghaha">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/pic/61434.png">
+
+
+<link rel="canonical" href="https://tangninghaha.netlify.app/posts/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tangninghaha.netlify.app/posts/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/","path":"posts/数学基础/","title":"数学基础"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数学基础 | Tangninghaha</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tangninghaha</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Number 10, Tangning Street</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%91%E9%87%8F"><span class="nav-number">1.</span> <span class="nav-text">向量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念及定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E7%BA%BF%E6%80%A7%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">向量的线性运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E5%87%8F%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">加减法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E4%B9%98"><span class="nav-number">1.2.2.</span> <span class="nav-text">数乘</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E4%B8%A4%E5%90%91%E9%87%8F%E5%85%B1%E7%BA%BF"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">判断两向量共线</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E5%90%91%E9%87%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">平面向量的基本定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E5%90%91%E9%87%8F%E7%9A%84%E5%9D%90%E6%A0%87"><span class="nav-number">1.4.</span> <span class="nav-text">平面向量的坐标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%90%E6%A0%87%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.4.1.</span> <span class="nav-text">坐标的表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%90%E6%A0%87%E7%9A%84%E8%BF%90%E7%AE%97"><span class="nav-number">1.4.2.</span> <span class="nav-text">坐标的运算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">三角函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%8D%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">复数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%85%A5%E4%B8%8E%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">引入与定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="nav-number">3.2.</span> <span class="nav-text">性质与运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="nav-number">3.2.1.</span> <span class="nav-text">几何意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E7%AE%97"><span class="nav-number">3.2.2.</span> <span class="nav-text">运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%90%E8%A7%92%E4%B8%8E%E5%8D%95%E4%BD%8D%E5%9C%86"><span class="nav-number">3.2.3.</span> <span class="nav-text">辐角与单位圆</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%BD%8D%E6%A0%B9"><span class="nav-number">3.3.</span> <span class="nav-text">单位根</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">3.3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">3.3.2.</span> <span class="nav-text">性质</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tangninghaha"
+      src="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+  <p class="site-author-name" itemprop="name">Tangninghaha</p>
+  <div class="site-description" itemprop="description">鲜衣怒马少年时，不负韶华行且知</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RhbmduaW5naGFoYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangninghaha"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnRhbmduaW5naGFoYUBvdXRsb29rLmNvbQ==" title="E-Mail → mailto:tangninghaha@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img height="20" src="https://api.netlify.com/api/v1/badges/098df643-d737-4e3a-8b6d-024ce59dedab/deploy-status" alt="Deploy Status"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <span class="exturl" data-url="aHR0cHM6Ly9kYW5pZWxxZi5uZXRsaWZ5LmFwcC8=" title="https:&#x2F;&#x2F;danielqf.netlify.app&#x2F;">Danielqf</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tangninghaha.netlify.app/posts/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+      <meta itemprop="name" content="Tangninghaha">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tangninghaha">
+      <meta itemprop="description" content="鲜衣怒马少年时，不负韶华行且知">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数学基础 | Tangninghaha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数学基础
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-09-22 00:00:00" itemprop="dateCreated datePublished" datetime="2023-09-22T00:00:00+00:00">2023-09-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-04 06:48:55" itemprop="dateModified" datetime="2024-01-04T06:48:55+00:00">2024-01-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>本文介绍了OI中的一些数学基础知识。</p>
+<span id="more"></span>
+<h1 id="向量">向量</h1>
+<h2 id="基本概念及定义">基本概念及定义</h2>
+<p>见OI-Wiki，此处不再赘述。</p>
+<h2 id="向量的线性运算">向量的线性运算</h2>
+<h3 id="加减法">加减法</h3>
+<p><strong>三角形法则</strong>：若求和的向量首尾顺次连接，那么和就为第一个向量的起点指向第二个向量的终点。</p>
+<p><strong>平行四边形法则</strong>：若求和的两个向量共起点，那么和就为以这两个向量为邻边的平行四边形的对角线，起点为两个向量的共起点，方向沿对角线方向。</p>
+<p><strong>减法</strong>：考虑减一个向量等价于加这个向量的相反向量。</p>
+<h3 id="数乘">数乘</h3>
+<p>实数 <span class="math inline">\(\lambda\)</span> 与向量 <span class="math inline">\(\boldsymbol{a}\)</span> 的积为一个向量。记作<span class="math inline">\(\lambda\boldsymbol{a}\)</span>。结果的长度与方向为：</p>
+<p>长度：<span class="math inline">\(|\lambda \boldsymbol a|=|\lambda||\boldsymbol a|\)</span>。</p>
+<p>方向：当 $&gt; 0 $ 时，<span class="math inline">\(\lambda \boldsymbol a\)</span> 与 <span class="math inline">\(\boldsymbol a\)</span> 同向，当 <span class="math inline">\(\lambda = 0\)</span> 时，<span class="math inline">\(\lambda \boldsymbol a=0\)</span>，当 $&lt; 0 $ 时，<span class="math inline">\(\lambda \boldsymbol a\)</span> 与 <span class="math inline">\(\boldsymbol a\)</span> 方向相反。</p>
+<h4 id="判断两向量共线">判断两向量共线</h4>
+<p>两个非零向量 <span class="math inline">\(\boldsymbol{a}\)</span> 与 <span class="math inline">\(\boldsymbol{b}\)</span> 共线 <span class="math inline">\(\iff\)</span> 有唯一实数 <span class="math inline">\(\lambda\)</span>， 使得 <span class="math inline">\(b = \lambda\boldsymbol{a}\)</span>。</p>
+<h2 id="平面向量的基本定理">平面向量的基本定理</h2>
+<p>如果两个向量 <span class="math inline">\(\boldsymbol{e_1},\boldsymbol{e_2}\)</span> 不共线，那么存在唯一实数对 <span class="math inline">\((x,y)\)</span>，使得与 <span class="math inline">\(\boldsymbol{e_1},\boldsymbol{e_2}\)</span> 共面的任意向量 <span class="math inline">\(\boldsymbol{p}\)</span> 满足 <span class="math inline">\(\boldsymbol{p}=x\boldsymbol{e_1}+y\boldsymbol{e_2}\)</span>。</p>
+<p>依据这个定理，我们可以用两个<strong>不共线</strong>的向量表示所有平面向量。</p>
+<p>那么在同一个平面内的两个不共线的向量称为 <strong>基底</strong> 。</p>
+<p>如果基底相互垂直，那么分解的时候就是对向量 <strong>正交分解</strong> 。</p>
+<h2 id="平面向量的坐标">平面向量的坐标</h2>
+<h3 id="坐标的表示">坐标的表示</h3>
+<p>根据平面向量的基本定理，可以得知，平面内每个向量可以被两个不共线向量唯一表示。</p>
+<p>那么取与横轴和纵轴方向相同的两个单位向量 <span class="math inline">\(\boldsymbol{i},\boldsymbol{j}\)</span> 作为一组基底，平面上的所有向量与有序实数对 <span class="math inline">\((x,y)\)</span> 一一对应。</p>
+<p>有序数对 <span class="math inline">\((x,y)\)</span> 与平面直角坐标系上的点一一对应，那么我们作 <span class="math inline">\(\overrightarrow{OP}=\boldsymbol{p}\)</span>，那么终点 <span class="math inline">\(P(x,y)\)</span> 也唯一确定。于是乎，平面直角坐标系之内，每一个向量都可以用有序实数对唯一表示。</p>
+<h3 id="坐标的运算">坐标的运算</h3>
+<p>若有向量 <span class="math inline">\(\boldsymbol{a}=(m,n)\)</span>, <span class="math inline">\(\boldsymbol{b}=(p, q)\)</span>，则： <span class="math display">\[
+\boldsymbol{a}+\boldsymbol{b}=(m+p,n+q)
+\\ \boldsymbol{a}-\boldsymbol{b}=(m-p,n-q)
+\\ k\boldsymbol{a}=(km,kn)
+\]</span></p>
+<h1 id="三角函数">三角函数</h1>
+<h2 id="定义">定义</h2>
+<p>当平面上三点A, B, C 连成一个直角三角形时. 其中 <span class="math inline">\(∠ACB\)</span> 为直角. 对于 <span class="math inline">\(∠BAC\)</span> 而言, 邻边 AC , 斜边 AB , 对边 BC 有如下定义:</p>
+<p><strong>正弦函数(sine)(sin)</strong>: <span class="math inline">\(∠A\)</span> 的对边比斜边. 即 BC/AB</p>
+<p><strong>余弦函数(cosine)(cos)</strong>: <span class="math inline">\(∠A\)</span> 的邻边比斜边. 即 AC/AB</p>
+<p><strong>正切函数(tangent)(tan)</strong>: <span class="math inline">\(∠A\)</span> 的对边比邻边. 即 BC/AC</p>
+<p><strong>余切函数(cotangent)(cot)</strong>: <span class="math inline">\(∠A\)</span> 的邻边比对边. 即 AC/BC</p>
+<p><strong>正割函数(secant)(sec)</strong>: <span class="math inline">\(∠A\)</span> 的斜边比邻边. 即 AB/AC</p>
+<p><strong>余割函数(cosecant)(csc)</strong>: <span class="math inline">\(∠A\)</span> 的斜边比对边. 即 AB/BC</p>
+<h1 id="复数">复数</h1>
+<h2 id="引入与定义">引入与定义</h2>
+<p>方程 <span class="math inline">\(x^2=-1\)</span> 在实数域没有解，为了让它有根，我们进行了数系扩张，引入了 <strong>虚数单元</strong> <span class="math inline">\(\mathrm{i}\)</span> ，规定 <span class="math inline">\(\mathrm{i}^2=-1\)</span> 。</p>
+<p>让这个虚数单元与实数进行运算，得到一系列的数，进行归类，发现它们都可以写成 <span class="math inline">\(a+b\mathrm{i}(a,b\in \mathbf{R})\)</span> 的形式，我们称这些数为复数。</p>
+<p>其中的 <span class="math inline">\(a\)</span> 称为实部，<span class="math inline">\(b\)</span> 称为虚部。</p>
+<h2 id="性质与运算">性质与运算</h2>
+<h3 id="几何意义">几何意义</h3>
+<p>我们发现，复数一般形式中的 <span class="math inline">\(a,b\)</span> 可以对应平面直角坐标系中的两个坐标，那么一个复数就可以对应平面直角坐标系上的一个点。我们称表示 <span class="math inline">\(a\)</span> 的数轴为实轴，而 <span class="math inline">\(b\)</span> 对应的数轴为虚轴。</p>
+<p>于是复数就与平面上的点一一对应，由于向量也与平面上的点一一对应，我们认为复数 <span class="math inline">\((a,b)\)</span> 与向量 <span class="math inline">\(\overrightarrow{OZ}=(a,b)\)</span> 对应。</p>
+<p><strong>复数模长</strong>：一个复数所对应的向量的模长。</p>
+<h3 id="运算">运算</h3>
+<p><strong>复数相等</strong>：如果两个复数 <span class="math inline">\(a+b\mathrm{i}\)</span> 和 <span class="math inline">\(c+d\mathrm{i}\)</span> 相等，当且仅当 <span class="math inline">\(a=c,b=d\)</span> 。</p>
+<p><strong>复数加法</strong>：实部相加，虚部相加。</p>
+<p><strong>复数减法</strong>：减法是加法的逆运算，类似于实数的运算法则，减去一个复数等于加上这个复数的相反数。</p>
+<p><strong>复数乘法</strong>：直接展开即可。注意到 <span class="math inline">\(\mathrm{i}^2=-1\)</span> 。</p>
+<p><strong>共轭复数</strong>：<span class="math inline">\(a+b\mathrm{i}\)</span> 与 <span class="math inline">\(a-b\mathrm{i}\)</span> 互为共轭复数，它们的乘积 <span class="math inline">\((a+b\mathrm{i})(a-b\mathrm{i})=a^2+b^2\)</span> 是一个实数。复数 <span class="math inline">\(z\)</span> 的共轭复数记作 <span class="math inline">\(\overline{z}\)</span></p>
+<p><strong>复数除法</strong>：类似于多项式除法的化简，利用共轭复数实现分母实化。例如： <span class="math display">\[
+\begin{aligned}
+\frac{a+b\mathrm{i}}{c+d\mathrm{i}} &amp; = \frac{(a+b\mathrm{i})(c-d\mathrm{i})}{c^2+d^2} \\
+&amp; = \frac{ac+bd+bci-adi}{c^2+d^2} \\
+&amp; = \frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}
+\end{aligned}
+\]</span></p>
+<h3 id="辐角与单位圆">辐角与单位圆</h3>
+<p>规定实数单位 1 作为水平正方向，虚数单位 <span class="math inline">\(\mathrm{i}\)</span> 作为竖直正方向，那么一个非零复数 <span class="math inline">\(z=x+y\mathrm{i}\)</span> 的 <strong>辐角<span class="math inline">\(\theta\)</span></strong> 定义为满足 <span class="math inline">\(\tan{\theta}=\frac{y}{x}\)</span> ，记作 <span class="math inline">\(\operatorname{Arg}z\)</span> 。其中满足 <span class="math inline">\(-\pi&lt;\theta\le\pi\)</span> 的辐角称为 <strong>辐角主值</strong> ，记作 <span class="math inline">\(\operatorname{arg}z\)</span> 。</p>
+<p>称模长小于 1 的复数组成的图形为 <strong>单位圆</strong> ，称模等于 1 的复数称为 <strong>单位复数</strong> ，全体单位复数构成的图形称为 <strong>单位圆周</strong> 。</p>
+<p>在不引起混淆的情况下单位圆周有时也称为单位圆。</p>
+<p>我们可以发现，此时的复数的乘除法有了另一种计算方式。</p>
+<p>复数乘法：辐角相加，模长相乘。</p>
+<p>复数除法：辐角相减，模长相除。</p>
+<blockquote>
+<p>证明</p>
+<ul>
+<li><p>若有两个复数 <span class="math inline">\(z_1=a+b\mathrm{i}\)</span> 和 <span class="math inline">\(z_2=c+d\mathrm{i}\)</span> ，那么相乘的模长： <span class="math display">\[
+\begin{aligned}
+|z_1|\times |z_2|&amp;=\sqrt{a^2+b^2}\times \sqrt{c^2+d^2}\\
+&amp;=\sqrt{(a^2+b^2) (c^2+d^2)}
+\end{aligned}
+\]</span> 而它们乘积的模长 <span class="math display">\[
+\begin{aligned}
+|z_1z_2|&amp;=|(ac-bd)+(ad+bc)\mathrm{i}| \\
+&amp;=\sqrt{(ac-bd)^2+(ad+bc)^2} \\
+&amp;=\sqrt{a^2c^2+b^2d^2+a^2d^2+b^2c^2-2acbd+2adbc} \\
+&amp;=\sqrt{a^2c^2+b^2d^2+a^2d^2+b^2c^2} \\
+&amp;=\sqrt{(a^2+b^2)(c^2+d^2)}
+\end{aligned}
+\]</span> 至此我们证明了模长乘积相等。</p></li>
+<li><p>下面证明辐角相加相等：</p>
+<p>令图中点 (1,0) 为点 <span class="math inline">\(I\)</span>。</p>
+<p>考虑证明图中的三角形ABO和三角形CIO相似。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/pic/61434.png" /></p>
+<p>由于刚刚证明的模长关系，可以知道 <span class="math inline">\(OA=OB\times OC\)</span> ，可以得到一个等积式。如果能够再得到 <span class="math inline">\(AB:IC=OB:OI\)</span> ，即 <span class="math inline">\(IC^2 \times OB^2=AB^2\)</span> 即可。</p>
+<p>一顿展开应该可以证明。</p>
+<p>如此，那么 ∠OIC=∠BOA ，故，∠OIC+∠IOB=∠IOA</p></li>
+</ul>
+</blockquote>
+<h2 id="单位根">单位根</h2>
+<h3 id="定义-1">定义</h3>
+<p><span class="math inline">\(x^{n}=1\)</span> 的复数解。</p>
+<p>比较显然，解 <span class="math inline">\(x\)</span> 的模长必定为1.</p>
+<p>于是我们在单位圆上考虑单位根。</p>
+<p>考虑到复数乘法可以用辐角相加，<span class="math inline">\(x^{n}\)</span> 的辐角就等于 <span class="math inline">\(x\)</span> 的辐角的 <span class="math inline">\(n\)</span> 倍。很显然，只有当 <span class="math inline">\(x\)</span> 辐角为 <span class="math inline">\(\frac{1}{n}\)</span> 圆周的倍数的时候，<span class="math inline">\(x^n\)</span> 的辐角才能落在 <span class="math inline">\(x\)</span> 轴上。</p>
+<p>所以 n 次单位根落在 <span class="math inline">\(0,\frac{1}{n},\frac{2}{n},\cdots,,\frac{n-1}{n}\)</span> 圆周上，共有 <span class="math inline">\(n\)</span> 个。</p>
+<p>所以 <span class="math inline">\(n\)</span> 次单位根 <span class="math inline">\(n\)</span> 等分单位圆。</p>
+<p>按照逆时针顺序将这些单位根，记作 <span class="math inline">\(\omega_{n}^{i}\)</span> ，其中 <span class="math inline">\(i\in [0,n-1],i\in \mathbb{Z}\)</span> 。</p>
+<h3 id="性质">性质</h3>
+<ol type="1">
+<li><span class="math inline">\(\omega_{n}^{k}=(\omega_{n}^{1})^k\)</span> ，显然</li>
+<li><span class="math inline">\(\omega_{n}^{j}+\omega_{n}^{k}=\omega_{n}^{j+k}\)</span> ，显然</li>
+<li><span class="math inline">\(\omega_{2n}^{2k}=\omega_{n}^{k}\)</span> ，将一个圆等分成 <span class="math inline">\(2n\)</span> 份取第 <span class="math inline">\(2k\)</span> 份，与直接分成 <span class="math inline">\(n\)</span> 份取 <span class="math inline">\(k\)</span> 份，是一样的。</li>
+<li>若 <span class="math inline">\(n\)</span> 为偶数，那么 <span class="math inline">\(\omega_{n}^{k+n/2}=-\omega_{n}^{k}\)</span> 。从 <span class="math inline">\(\omega_{n}{k}\)</span> 出发旋转半个圆周，就是关于原点对称，那么坐标互为相反数。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Tangninghaha
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tangninghaha.netlify.app/posts/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" title="数学基础">https://tangninghaha.netlify.app/posts/数学基础/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/GDKOI2023%E6%B8%B8%E8%AE%B0/" rel="prev" title="GDKOI2023游记">
+                  <i class="fa fa-angle-left"></i> GDKOI2023游记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/%E6%9D%82%E9%A2%98%E6%80%BB%E7%BB%93/" rel="next" title="杂题总结">
+                  杂题总结 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  
+  <div class="comments giscus-container">
+  </div>
+  
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-code"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Tangninghaha</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">32k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:58</span>
+  </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div><div>站点主题色 <a target="_blank" rel="noopener" href="http://zhongguose.com/#hehuanhong">合欢红</a></div>
+
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="giscus" type="application/json">{"enable":true,"repo":"tangninghaha/Blog-Comment","repo_id":"R_kgDOK75Jug","category":"Announcements","category_id":"DIC_kwDOK75Jus4Cb4f_","mapping":"pathname","reactions_enabled":1,"emit_metadata":1,"theme":"light","lang":"en","crossorigin":"anonymous","input_position":"top","loading":"lazy"}</script>
+
+<script>
+document.addEventListener('page:loaded', () => {
+  if (!CONFIG.page.comments) return;
+
+  NexT.utils.loadComments('.giscus-container')
+    .then(() => NexT.utils.getScript('https://giscus.app/client.js', {
+      attributes: {
+        async                   : true,
+        crossOrigin             : 'anonymous',
+        'data-repo'             : CONFIG.giscus.repo,
+        'data-repo-id'          : CONFIG.giscus.repo_id,
+        'data-category'         : CONFIG.giscus.category,
+        'data-category-id'      : CONFIG.giscus.category_id,
+        'data-mapping'          : CONFIG.giscus.mapping,
+        'data-reactions-enabled': CONFIG.giscus.reactions_enabled,
+        'data-emit-metadata'    : CONFIG.giscus.emit_metadata,
+        'data-theme'            : CONFIG.giscus.theme,
+        'data-lang'             : CONFIG.giscus.lang,
+        'data-input-position'   : CONFIG.giscus.input_position,
+        'data-loading'          : CONFIG.giscus.loading
+      },
+      parentNode: document.querySelector('.giscus-container')
+    }));
+});
+</script>
+
+<!-- hexo injector body_end start --><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script><!-- hexo injector body_end end --></body>
+</html>

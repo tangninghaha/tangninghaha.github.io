@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#f0a1a8"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#f0a1a8">
+  <meta name="msvalidate.01" content="7197295068F5C122E84D3763FE74EC8A">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/silver/pace-theme-fill-left.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tangninghaha.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Kinetic Tournament Tree，简称 KTT，是一种动态维护函数最值的线段树。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kinetic Tournament Tree">
+<meta property="og:url" content="https://tangninghaha.netlify.app/posts/kinetic-tournament-tree/index.html">
+<meta property="og:site_name" content="Tangninghaha">
+<meta property="og:description" content="Kinetic Tournament Tree，简称 KTT，是一种动态维护函数最值的线段树。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-21T17:04:20.000Z">
+<meta property="article:modified_time" content="2023-12-21T17:04:20.000Z">
+<meta property="article:author" content="Tangninghaha">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tangninghaha.netlify.app/posts/kinetic-tournament-tree/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tangninghaha.netlify.app/posts/kinetic-tournament-tree/","path":"posts/kinetic-tournament-tree/","title":"Kinetic Tournament Tree"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Kinetic Tournament Tree | Tangninghaha</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tangninghaha</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Number 10, Tangning Street</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#p5693-ei-%E7%9A%84%E7%AC%AC%E5%85%AD%E5%88%86%E5%9D%97"><span class="nav-number">1.</span> <span class="nav-text">P5693 EI 的第六分块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E6%84%8F"><span class="nav-number">1.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%81%9A%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">做法</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tangninghaha"
+      src="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+  <p class="site-author-name" itemprop="name">Tangninghaha</p>
+  <div class="site-description" itemprop="description">鲜衣怒马少年时，不负韶华行且知</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RhbmduaW5naGFoYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangninghaha"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnRhbmduaW5naGFoYUBvdXRsb29rLmNvbQ==" title="E-Mail → mailto:tangninghaha@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img height="20" src="https://api.netlify.com/api/v1/badges/098df643-d737-4e3a-8b6d-024ce59dedab/deploy-status" alt="Deploy Status"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <span class="exturl" data-url="aHR0cHM6Ly9kYW5pZWxxZi5uZXRsaWZ5LmFwcC8=" title="https:&#x2F;&#x2F;danielqf.netlify.app&#x2F;">Danielqf</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tangninghaha.netlify.app/posts/kinetic-tournament-tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+      <meta itemprop="name" content="Tangninghaha">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tangninghaha">
+      <meta itemprop="description" content="鲜衣怒马少年时，不负韶华行且知">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Kinetic Tournament Tree | Tangninghaha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Kinetic Tournament Tree
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-21 17:04:20" itemprop="dateCreated datePublished" datetime="2023-12-21T17:04:20+00:00">2023-12-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Kinetic Tournament Tree，简称 KTT，是一种动态维护函数最值的线段树。</p>
+<span id="more"></span>
+<h1 id="p5693-ei-的第六分块"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDU2OTM=">P5693 EI 的第六分块</span></h1>
+<p>模板题。</p>
+<h2 id="题意">题意</h2>
+<p>区间加正数，询问区间最大子段和。</p>
+<p><span class="math inline">\(1\le n,q\le 10^{5}\)</span></p>
+<h2 id="做法">做法</h2>
+<p>由一种简单的求区间最值的方法拓展而来。</p>
+<p>考虑维护区间的信息：从最左边开始连续一段的最大值 <span class="math inline">\(lmax\)</span>，从最右边连续一段的最大值 <span class="math inline">\(rmax\)</span>，区间的和 <span class="math inline">\(sum\)</span>，区间的答案 <span class="math inline">\(max\)</span>。</p>
+<p>那么合并比较容易（假设要合并的两个区间为 <span class="math inline">\(a,b\)</span>）： <span class="math display">\[
+lmax=\max(a.lmax,a.sum+b.lmax)\\
+rmax=\max(b.rmax,a.rmax+b.sum)\\
+max=\max(a.max,b.max,a.rmax+b.lmax)
+\]</span> 接下来考虑如何动态修改。</p>
+<p>我们发现，每一个值的变化是一个一次函数的形式。具体地，当前的某一个值，例如 lmax，我们可以用这样一个函数来刻画它未来的值。 <span class="math inline">\(lmax=kx+b\)</span>，其中 <span class="math inline">\(k\)</span>是区间长度，<span class="math inline">\(b\)</span> 是当前的值，<span class="math inline">\(x\)</span> 是加的值。通过这个式子可以求出 <span class="math inline">\(lmax\)</span> 变化后的值。其它几个值是同理的。</p>
+<p>但是，我们注意到 <span class="math inline">\(lmax\)</span> 可能原本取了 <span class="math inline">\(a.lmax\)</span>，但是随着区间加法的进行，<span class="math inline">\(a.sum+b.lmax&gt;a.lmax\)</span>，那么这时它的取值就变成了 <span class="math inline">\(a.sum+b.lmax\)</span>。这时候用上面的式子求出的就是错误的。</p>
+<p>这该怎么办呢？我们维护一个 <span class="math inline">\(x\)</span>，表示这种变化是，这个区间的值再加 <span class="math inline">\(x\)</span> 次后，取值会发生上述变化。</p>
+<p>那么我们如果发现当前区间加的数超过了 <span class="math inline">\(x\)</span>，我们就暴力重构这个区间，即将满足这个条件的全部重新计算。</p>
+<p>这样做的复杂度是正确的，具体证明我也不会，可以参考 <span class="exturl" data-url="aHR0cHM6Ly9lbnRyb3B5aW5jcmVhc2VyLmJsb2cudW9qLmFjL2Jsb2cvNTIxNw==">EI的论文</span> 。</p>
+<p>计算 <span class="math inline">\(x\)</span> 只需要将两个子区间的 <span class="math inline">\(x\)</span> 取 min，再看 <span class="math inline">\(lmax\)</span>，<span class="math inline">\(rmax\)</span>，<span class="math inline">\(max\)</span> 的值何时会修改，这个只要求一求一次函数的交点即可。</p>
+<details class="note info"><summary><p>代码</p>
+</summary>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> ll INF=<span class="number">1e18</span>,N=<span class="number">4e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Line</span>&#123;</span><br><span class="line">  ll k,b;</span><br><span class="line">  <span class="built_in">Line</span>(ll x,ll y)&#123;k=x;b=y;&#125;</span><br><span class="line">  <span class="built_in">Line</span>(<span class="type">int</span> x)&#123;k=<span class="number">1</span>;b=x;&#125;</span><br><span class="line">  <span class="built_in">Line</span>()&#123;k=<span class="number">0</span>;b=<span class="number">0</span>;&#125;</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">upd</span><span class="params">(ll val)</span></span>&#123;</span><br><span class="line">    b+=k*val;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Line <span class="keyword">operator</span>+(<span class="type">const</span> Line&amp; a,<span class="type">const</span> Line&amp; b)&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;a.k+b.k,a.b+b.b&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">  Line l,r,mx,sum;</span><br><span class="line">  ll to;</span><br><span class="line">&#125;tr[N&lt;&lt;<span class="number">2</span>];</span><br><span class="line">ll tag[N&lt;&lt;<span class="number">2</span>];</span><br><span class="line"><span class="function">ll <span class="title">inter</span><span class="params">(<span class="type">const</span> Line&amp; x,<span class="type">const</span> Line&amp; y)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(x.k==y.k)<span class="keyword">return</span> INF;</span><br><span class="line">  <span class="keyword">if</span>(y.b==x.b)<span class="keyword">return</span> INF;</span><br><span class="line">  ll tmp=(y.b-x.b)/(x.k-y.k);</span><br><span class="line">  <span class="keyword">return</span> tmp&lt;<span class="number">0</span>?INF:tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> Line&amp; a,<span class="type">const</span> Line&amp; b)&#123;</span><br><span class="line">  <span class="keyword">return</span> a.b==b.b?a.k&lt;b.k:a.b&lt;b.b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Line <span class="title">max</span><span class="params">(<span class="type">const</span> Line&amp; a,<span class="type">const</span> Line&amp; b,ll&amp; v)</span></span>&#123;</span><br><span class="line">  v=<span class="built_in">min</span>(v,<span class="built_in">inter</span>(a,b));</span><br><span class="line">  <span class="keyword">return</span> a.b==b.b?(a.k&gt;b.k?a:b):(a.b&gt;b.b?a:b);</span><br><span class="line">&#125;</span><br><span class="line">node <span class="keyword">operator</span>+(<span class="type">const</span> node&amp; a,<span class="type">const</span> node&amp; b)&#123;</span><br><span class="line">  node res;</span><br><span class="line">  res.sum=a.sum+b.sum;</span><br><span class="line">  res.to=<span class="built_in">min</span>(a.to,b.to);</span><br><span class="line">  res.l=<span class="built_in">max</span>(a.l,a.sum+b.l,res.to);</span><br><span class="line">  res.r=<span class="built_in">max</span>(b.r,a.r+b.sum,res.to);</span><br><span class="line">  res.mx=<span class="built_in">max</span>(a.r+b.l,<span class="built_in">max</span>(a.mx,b.mx,res.to),res.to);</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushUp</span><span class="params">(<span class="type">int</span> x,ll val)</span></span>&#123;</span><br><span class="line">  node&amp; cur=tr[x];</span><br><span class="line">  tag[x]+=val;cur.to-=val;</span><br><span class="line">  cur.l.<span class="built_in">upd</span>(val);cur.r.<span class="built_in">upd</span>(val);cur.mx.<span class="built_in">upd</span>(val);cur.sum.<span class="built_in">upd</span>(val);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rebuild</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> k,ll val)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(val&gt;tr[k].to)&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> v=val+tag[k];</span><br><span class="line">    <span class="type">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">rebuild</span>(l,mid,k&lt;&lt;<span class="number">1</span>,v);<span class="built_in">rebuild</span>(mid+<span class="number">1</span>,r,k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,v);</span><br><span class="line">    tr[k]=tr[k&lt;&lt;<span class="number">1</span>]+tr[k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];tag[k]=<span class="number">0</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">pushUp</span>(k,val);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">downLazy</span><span class="params">(<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">  <span class="built_in">pushUp</span>(k&lt;&lt;<span class="number">1</span>,tag[k]);</span><br><span class="line">  <span class="built_in">pushUp</span>(k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,tag[k]);</span><br><span class="line">  tag[k]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(l==r)&#123;</span><br><span class="line">    tr[k]=&#123;a[l],a[l],a[l],a[l],INF&#125;;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">  <span class="built_in">build</span>(l,mid,k&lt;&lt;<span class="number">1</span>);<span class="built_in">build</span>(mid+<span class="number">1</span>,r,k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">  tr[k]=tr[k&lt;&lt;<span class="number">1</span>]+tr[k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">upd</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> s,<span class="type">int</span> t,<span class="type">int</span> val,<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(s&lt;=l&amp;&amp;r&lt;=t)&#123;</span><br><span class="line">    <span class="built_in">rebuild</span>(l,r,k,val);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(tag[k])<span class="built_in">downLazy</span>(k);</span><br><span class="line">  <span class="keyword">if</span>(s&lt;=mid)<span class="built_in">upd</span>(l,mid,s,t,val,k&lt;&lt;<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">if</span>(t&gt;mid)<span class="built_in">upd</span>(mid+<span class="number">1</span>,r,s,t,val,k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">  tr[k]=tr[k&lt;&lt;<span class="number">1</span>]+tr[k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">node <span class="title">qry</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> s,<span class="type">int</span> t,<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(s&lt;=l&amp;&amp;r&lt;=t)&#123;</span><br><span class="line">    <span class="keyword">return</span> tr[k];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(tag[k])<span class="built_in">downLazy</span>(k);</span><br><span class="line">  <span class="keyword">if</span>(t&lt;=mid)<span class="keyword">return</span> <span class="built_in">qry</span>(l,mid,s,t,k&lt;&lt;<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">if</span>(s&gt;mid)<span class="keyword">return</span> <span class="built_in">qry</span>(mid+<span class="number">1</span>,r,s,t,k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">qry</span>(l,mid,s,t,k&lt;&lt;<span class="number">1</span>)+<span class="built_in">qry</span>(mid+<span class="number">1</span>,r,s,t,k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="type">int</span> r=<span class="number">0</span>,neg=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>((c&lt;<span class="string">&#x27;0&#x27;</span>||c&gt;<span class="string">&#x27;9&#x27;</span>)&amp;&amp;(c!=<span class="string">&#x27;-&#x27;</span>))c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)neg*=<span class="number">-1</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="keyword">while</span>(c&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="string">&#x27;9&#x27;</span>)r=(r&lt;&lt;<span class="number">1</span>)+(r&lt;&lt;<span class="number">3</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="keyword">return</span> r*neg;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n,q;</span><br><span class="line">  n=<span class="built_in">read</span>();q=<span class="built_in">read</span>();</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)a[i]=<span class="built_in">read</span>();</span><br><span class="line">  <span class="built_in">build</span>(<span class="number">1</span>,n,<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=q;++i)&#123;</span><br><span class="line">    <span class="type">int</span> tp,l,r,x;</span><br><span class="line">    tp=<span class="built_in">read</span>();l=<span class="built_in">read</span>();r=<span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">if</span>(tp==<span class="number">1</span>)x=<span class="built_in">read</span>(),<span class="built_in">upd</span>(<span class="number">1</span>,n,l,r,x,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(tp==<span class="number">2</span>)&#123;</span><br><span class="line">      node res=<span class="built_in">qry</span>(<span class="number">1</span>,n,l,r,<span class="number">1</span>);</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="built_in">max</span>(<span class="number">0ll</span>,res.mx.b));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Tangninghaha
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tangninghaha.netlify.app/posts/kinetic-tournament-tree/" title="Kinetic Tournament Tree">https://tangninghaha.netlify.app/posts/kinetic-tournament-tree/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0/" rel="prev" title="数论函数">
+                  <i class="fa fa-angle-left"></i> 数论函数
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/%E6%BB%A1%E5%88%86%EF%BC%81zs%E4%B8%80%E5%AD%A6%E7%94%9F%E8%8E%B7%E5%85%A8%E5%9B%BD%E7%AC%AC%E4%B8%80%EF%BC%81/" rel="next" title="满分！ZS一学生获全国第一！">
+                  满分！ZS一学生获全国第一！ <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  
+  <div class="comments giscus-container">
+  </div>
+  
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-code"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Tangninghaha</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">32k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:58</span>
+  </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div><div>站点主题色 <a target="_blank" rel="noopener" href="http://zhongguose.com/#hehuanhong">合欢红</a></div>
+
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="giscus" type="application/json">{"enable":true,"repo":"tangninghaha/Blog-Comment","repo_id":"R_kgDOK75Jug","category":"Announcements","category_id":"DIC_kwDOK75Jus4Cb4f_","mapping":"pathname","reactions_enabled":1,"emit_metadata":1,"theme":"light","lang":"en","crossorigin":"anonymous","input_position":"top","loading":"lazy"}</script>
+
+<script>
+document.addEventListener('page:loaded', () => {
+  if (!CONFIG.page.comments) return;
+
+  NexT.utils.loadComments('.giscus-container')
+    .then(() => NexT.utils.getScript('https://giscus.app/client.js', {
+      attributes: {
+        async                   : true,
+        crossOrigin             : 'anonymous',
+        'data-repo'             : CONFIG.giscus.repo,
+        'data-repo-id'          : CONFIG.giscus.repo_id,
+        'data-category'         : CONFIG.giscus.category,
+        'data-category-id'      : CONFIG.giscus.category_id,
+        'data-mapping'          : CONFIG.giscus.mapping,
+        'data-reactions-enabled': CONFIG.giscus.reactions_enabled,
+        'data-emit-metadata'    : CONFIG.giscus.emit_metadata,
+        'data-theme'            : CONFIG.giscus.theme,
+        'data-lang'             : CONFIG.giscus.lang,
+        'data-input-position'   : CONFIG.giscus.input_position,
+        'data-loading'          : CONFIG.giscus.loading
+      },
+      parentNode: document.querySelector('.giscus-container')
+    }));
+});
+</script>
+
+<!-- hexo injector body_end start --><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script><!-- hexo injector body_end end --></body>
+</html>

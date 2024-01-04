@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#f0a1a8"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#f0a1a8">
+  <meta name="msvalidate.01" content="7197295068F5C122E84D3763FE74EC8A">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/silver/pace-theme-fill-left.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tangninghaha.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="对前缀函数的简单介绍。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前缀函数">
+<meta property="og:url" content="https://tangninghaha.netlify.app/posts/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Tangninghaha">
+<meta property="og:description" content="对前缀函数的简单介绍。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-16T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-04T06:48:55.505Z">
+<meta property="article:author" content="Tangninghaha">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tangninghaha.netlify.app/posts/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tangninghaha.netlify.app/posts/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/","path":"posts/前缀函数/","title":"前缀函数"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>前缀函数 | Tangninghaha</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tangninghaha</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Number 10, Tangning Street</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#kmp-%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">KMP 算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#border-%E7%9A%84%E7%90%86%E8%AE%BA"><span class="nav-number">2.</span> <span class="nav-text">border 的理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#border-%E4%B8%8E%E5%91%A8%E6%9C%9F"><span class="nav-number">2.1.</span> <span class="nav-text">border 与周期</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tangninghaha"
+      src="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+  <p class="site-author-name" itemprop="name">Tangninghaha</p>
+  <div class="site-description" itemprop="description">鲜衣怒马少年时，不负韶华行且知</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RhbmduaW5naGFoYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangninghaha"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnRhbmduaW5naGFoYUBvdXRsb29rLmNvbQ==" title="E-Mail → mailto:tangninghaha@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img height="20" src="https://api.netlify.com/api/v1/badges/098df643-d737-4e3a-8b6d-024ce59dedab/deploy-status" alt="Deploy Status"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <span class="exturl" data-url="aHR0cHM6Ly9kYW5pZWxxZi5uZXRsaWZ5LmFwcC8=" title="https:&#x2F;&#x2F;danielqf.netlify.app&#x2F;">Danielqf</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tangninghaha.netlify.app/posts/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+      <meta itemprop="name" content="Tangninghaha">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tangninghaha">
+      <meta itemprop="description" content="鲜衣怒马少年时，不负韶华行且知">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="前缀函数 | Tangninghaha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前缀函数
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-16 00:00:00" itemprop="dateCreated datePublished" datetime="2023-12-16T00:00:00+00:00">2023-12-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-04 06:48:55" itemprop="dateModified" datetime="2024-01-04T06:48:55+00:00">2024-01-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>860</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>对前缀函数的简单介绍。</p>
+<span id="more"></span>
+<p>约定：字符串下标从 1 开始。</p>
+<p>前缀函数是是 <span class="math inline">\(\pi\)</span> 数组，<span class="math inline">\(\pi_{i}\)</span> 表示字符串 <span class="math inline">\(s\)</span> 的前缀 <span class="math inline">\(s[1...i]\)</span> 的最长公共 <strong>真</strong> 前后缀（border）长度。</p>
+<h1 id="kmp-算法">KMP 算法</h1>
+<p>KMP 算法通过预处理前缀函数，加速字符串匹配过程。做到均摊 <span class="math inline">\(O(\lvert S\rvert+\lvert T\rvert)\)</span> 的时间复杂度。</p>
+<h1 id="border-的理论">border 的理论</h1>
+<p>border 的 border 仍然是 border，正确性显然。</p>
+<h2 id="border-与周期">border 与周期</h2>
+<p>形式化定义周期：对字符串 <span class="math inline">\(S\)</span> 和 <span class="math inline">\(0 &lt; p \le \lvert S\rvert\)</span> ，有 <span class="math inline">\(s[i]=s[i+p]\)</span> 对所有 <span class="math inline">\(i \in [1,\lvert S\rvert - p]\)</span> 成立，则称 <span class="math inline">\(p\)</span> 是 <span class="math inline">\(S\)</span> 的一个周期。</p>
+<p>感性理解：用前 <span class="math inline">\(p\)</span> 个字符向后不断复制，能得到 <span class="math inline">\(s\)</span>，最后一次可以只复制一部分。</p>
+<p>如果字符串 <span class="math inline">\(s\)</span> 有长度为 <span class="math inline">\(r\)</span> 的 border ，并且 <span class="math inline">\(r\ge \vert n \rvert /2\)</span> ，那么 <span class="math inline">\(s\)</span> 有周期长度就是 <span class="math inline">\(s-r\)</span> 。这两个条件应该是等价的。</p>
+<p>证明：记 <span class="math inline">\(n=\lvert s\rvert\)</span> ，考虑 border ，是由前缀 <span class="math inline">\(s[1...r]\)</span> 和后缀 <span class="math inline">\(s[n-r+1,n]\)</span> 组成的。对于 <span class="math inline">\(i \in [1,r]\)</span> ，都有 <span class="math inline">\(s[i]=s[i+n-r]\)</span> 。由周期的定义可以得证。</p>
+<p>最小的周期就是 <span class="math inline">\(s-\pi_{s}\)</span> 。</p>
+<hr />
+<ol type="1">
+<li><p>Periodicity Lemma 周期性引理</p>
+<ul>
+<li><p>Weak: 若 <span class="math inline">\(p,q\)</span> 为 <span class="math inline">\(s\)</span> 的一个周期，并且 <span class="math inline">\(p+q\le n\)</span> ，那么 <span class="math inline">\(\gcd(p,q)\)</span> 也是一个周期。</p>
+<details class="note info"><summary><p>证明</p>
+</summary>
+<p>证明：假设 <span class="math inline">\(p&gt;q\)</span> ，设 <span class="math inline">\(d=p-q\)</span> ，那么分类讨论：</p>
+<ul>
+<li><span class="math inline">\(i \le q\)</span> ，此时 <span class="math inline">\(s[i]=s[i+p]=s[i+p-q]=s[i+d]\)</span></li>
+<li><span class="math inline">\(i&gt;q\)</span> ，此时 <span class="math inline">\(s[i]=s[i-q]=s[i+p-q]=s[i+d]\)</span></li>
+</ul>
+<p>注意到两种情况均可以导出 <span class="math inline">\(s[i]=s[i+d]\)</span> ，即 <span class="math inline">\(d\)</span> 也是周期。 更相减损即可得到 <span class="math inline">\(\gcd(p,q)\)</span> 是周期。 <span class="math inline">\(\square\)</span></p>
+<p>回顾一下证明过程，之所以要求 <span class="math inline">\(p+q\le n\)</span> ，是在第一类中，<span class="math inline">\(s[i]=s[i+p]\)</span> 一步，如果 <span class="math inline">\(p+q&gt;n\)</span> ，就不满足周期的性质。</p>
+<p>证明的核心围绕着周期的定义 <span class="math inline">\(s[i]=s[i+r]\)</span> 进行，目标是导出 <span class="math inline">\(s[i+d]\)</span> ，最后使用更相减损完成证明，巧妙。</p>
+
+</details></li>
+<li><p>Strong: 若 <span class="math inline">\(p,q\)</span> 为 <span class="math inline">\(s\)</span> 的一个周期，并且 <span class="math inline">\(p+q\le n+\gcd(p,q)\)</span> ，那么 <span class="math inline">\(\gcd(p,q)\)</span> 也是一个周期。</p>
+<details class="note info"><summary><p>证明</p>
+</summary>
+<p>发现上面的证明此时会出现问题，因为 <span class="math inline">\(s[i+p]\)</span> 可能超过 <span class="math inline">\(n\)</span> 。</p>
+<p><del>参考</del> 照搬 <span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC84OTM4NTM2MA==">Periodicity Lemma - 知乎</span></p>
+<ol type="1">
+<li>按照上面的方法证明对于长度是 <span class="math inline">\(n-q\)</span> 的前缀/后缀均是循环节。因为注意到 <span class="math inline">\(\gcd(p,q)\le q\)</span> ，必然满足上述证明过程。</li>
+<li>可以证明 <span class="math inline">\(q\le n-q\)</span> （这是怎么证明的呢？），所以 <span class="math inline">\(s\)</span> 的前 <span class="math inline">\(q\)</span> 个字符中，<span class="math inline">\(\gcd(p,q)\)</span> 仍然是其循环节。因为 <span class="math inline">\(\gcd(p,q)\)</span> 是 <span class="math inline">\(q\)</span> 的约数，所以前缀 <span class="math inline">\(q\)</span> 是由若干个完整的循环节拼成的。</li>
+<li>因为可以将 <span class="math inline">\(s\)</span> 拆分成 <span class="math inline">\(q\)</span> 的前缀和 <span class="math inline">\(n-q\)</span> 的后缀，前缀是由若干段完整循环节构成的，而后半段也是周期。所以 <span class="math inline">\(\gcd(p,q)\)</span> 也是一个周期。</li>
+</ol>
+<p>这个证明过程的严谨推理仍然有待分析。</p>
+
+</details></li>
+</ul></li>
+<li><p>字符串 <span class="math inline">\(s\)</span> 所有长度超过 <span class="math inline">\(\lvert s\rvert / 2\)</span> 的 border 的长度是等差数列。</p>
+<details class="note info"><summary><p>证明</p>
+</summary>
+<p>假设有一个长度为 <span class="math inline">\(n-p\)</span> 的 border 和一个长度为 <span class="math inline">\(n-q\)</span> 的 border ，其中 <span class="math inline">\(p,q \le n/2\)</span> ，那么根据弱周期性引理，可以得到 <span class="math inline">\(\gcd(p,q)\)</span> 是一个周期，那么 <span class="math inline">\(n-\gcd(p,q)\)</span> 是一个 border。</p>
+
+</details></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Tangninghaha
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tangninghaha.netlify.app/posts/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/" title="前缀函数">https://tangninghaha.netlify.app/posts/前缀函数/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/Multiplicative_Functions/" rel="prev" title="Multiplicative Functions">
+                  <i class="fa fa-angle-left"></i> Multiplicative Functions
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8EDFS%E5%BA%8F%E4%B8%8ERMQ%E7%9A%84LCA%E7%AE%97%E6%B3%95/" rel="next" title="一种基于DFS序与RMQ的LCA算法">
+                  一种基于DFS序与RMQ的LCA算法 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  
+  <div class="comments giscus-container">
+  </div>
+  
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-code"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Tangninghaha</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">32k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:58</span>
+  </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div><div>站点主题色 <a target="_blank" rel="noopener" href="http://zhongguose.com/#hehuanhong">合欢红</a></div>
+
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="giscus" type="application/json">{"enable":true,"repo":"tangninghaha/Blog-Comment","repo_id":"R_kgDOK75Jug","category":"Announcements","category_id":"DIC_kwDOK75Jus4Cb4f_","mapping":"pathname","reactions_enabled":1,"emit_metadata":1,"theme":"light","lang":"en","crossorigin":"anonymous","input_position":"top","loading":"lazy"}</script>
+
+<script>
+document.addEventListener('page:loaded', () => {
+  if (!CONFIG.page.comments) return;
+
+  NexT.utils.loadComments('.giscus-container')
+    .then(() => NexT.utils.getScript('https://giscus.app/client.js', {
+      attributes: {
+        async                   : true,
+        crossOrigin             : 'anonymous',
+        'data-repo'             : CONFIG.giscus.repo,
+        'data-repo-id'          : CONFIG.giscus.repo_id,
+        'data-category'         : CONFIG.giscus.category,
+        'data-category-id'      : CONFIG.giscus.category_id,
+        'data-mapping'          : CONFIG.giscus.mapping,
+        'data-reactions-enabled': CONFIG.giscus.reactions_enabled,
+        'data-emit-metadata'    : CONFIG.giscus.emit_metadata,
+        'data-theme'            : CONFIG.giscus.theme,
+        'data-lang'             : CONFIG.giscus.lang,
+        'data-input-position'   : CONFIG.giscus.input_position,
+        'data-loading'          : CONFIG.giscus.loading
+      },
+      parentNode: document.querySelector('.giscus-container')
+    }));
+});
+</script>
+
+<!-- hexo injector body_end start --><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script><!-- hexo injector body_end end --></body>
+</html>

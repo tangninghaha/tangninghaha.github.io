@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#f0a1a8"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#f0a1a8">
+  <meta name="msvalidate.01" content="7197295068F5C122E84D3763FE74EC8A">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/silver/pace-theme-fill-left.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tangninghaha.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文简单介绍了数论函数与莫比乌斯反演。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数论函数">
+<meta property="og:url" content="https://tangninghaha.netlify.app/posts/%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Tangninghaha">
+<meta property="og:description" content="本文简单介绍了数论函数与莫比乌斯反演。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/pfv2639c.png">
+<meta property="article:published_time" content="2023-12-18T18:56:58.000Z">
+<meta property="article:modified_time" content="2024-01-04T06:48:55.505Z">
+<meta property="article:author" content="Tangninghaha">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/pfv2639c.png">
+
+
+<link rel="canonical" href="https://tangninghaha.netlify.app/posts/%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tangninghaha.netlify.app/posts/%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0/","path":"posts/数论函数/","title":"数论函数"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数论函数 | Tangninghaha</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tangninghaha</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Number 10, Tangning Street</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">数论函数与积性函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">数论函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8B%84%E5%88%A9%E5%85%8B%E9%9B%B7%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.1.</span> <span class="nav-text">狄利克雷函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%80%E6%9C%B4%E7%B4%A0%E7%9A%84%E6%9A%B4%E5%8A%9B"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">最朴素的暴力</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8D%E5%A5%BD%E7%9A%84%E6%9A%B4%E5%8A%9B"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">稍好的暴力</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E7%BE%8E%E7%9A%84%E5%81%9A%E6%B3%95"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">优美的做法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.2.</span> <span class="nav-text">其它数论函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%AF%E6%80%A7%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">积性函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text">性质</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94"><span class="nav-number">2.</span> <span class="nav-text">莫比乌斯反演</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">莫比乌斯函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%8F%8D%E6%BC%94"><span class="nav-number">2.2.</span> <span class="nav-text">莫比乌斯变换与反演</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E5%BD%A2%E5%BC%8F"><span class="nav-number">2.2.1.</span> <span class="nav-text">其它形式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%A6%E6%95%B0%E5%BC%8F"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">约数式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%80%8D%E6%95%B0%E5%BC%8F"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">倍数式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">2.3.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#p3455-poi2007-zap-queries"><span class="nav-number">2.3.1.</span> <span class="nav-text">P3455 [POI2007] ZAP-Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E6%84%8F"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">题意</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tangninghaha"
+      src="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+  <p class="site-author-name" itemprop="name">Tangninghaha</p>
+  <div class="site-description" itemprop="description">鲜衣怒马少年时，不负韶华行且知</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RhbmduaW5naGFoYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangninghaha"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnRhbmduaW5naGFoYUBvdXRsb29rLmNvbQ==" title="E-Mail → mailto:tangninghaha@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img height="20" src="https://api.netlify.com/api/v1/badges/098df643-d737-4e3a-8b6d-024ce59dedab/deploy-status" alt="Deploy Status"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <span class="exturl" data-url="aHR0cHM6Ly9kYW5pZWxxZi5uZXRsaWZ5LmFwcC8=" title="https:&#x2F;&#x2F;danielqf.netlify.app&#x2F;">Danielqf</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tangninghaha.netlify.app/posts/%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+      <meta itemprop="name" content="Tangninghaha">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tangninghaha">
+      <meta itemprop="description" content="鲜衣怒马少年时，不负韶华行且知">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数论函数 | Tangninghaha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数论函数
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-18 18:56:58" itemprop="dateCreated datePublished" datetime="2023-12-18T18:56:58+00:00">2023-12-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-04 06:48:55" itemprop="dateModified" datetime="2024-01-04T06:48:55+00:00">2024-01-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>本文简单介绍了数论函数与莫比乌斯反演。</p>
+<span id="more"></span>
+<h1 id="数论函数与积性函数">数论函数与积性函数</h1>
+<h2 id="数论函数">数论函数</h2>
+<p>定义域为整数集，陪域为复数集的函数。</p>
+<h3 id="狄利克雷函数">狄利克雷函数</h3>
+<p>定义两个函数 <span class="math inline">\(f(n)\)</span> 和 <span class="math inline">\(g(n)\)</span> 的狄利克雷函数为 <span class="math inline">\((f*g)(n)=\sum_{d\vert n}f(d)g(\frac{n}{d})\)</span> 。</p>
+<details class="note info"><summary><p>如何求狄利克雷卷积？</p>
+</summary>
+<h4 id="最朴素的暴力">最朴素的暴力</h4>
+<p>枚举 <span class="math inline">\([1,n]\)</span> 范围内的每一个数，直接判断其是否为 <span class="math inline">\(n\)</span> 的约数。复杂度 <span class="math inline">\(O(n^2)\)</span>。</p>
+<h4 id="稍好的暴力">稍好的暴力</h4>
+<p>我们知道，枚举约数不是这样枚举的。直接枚举到 <span class="math inline">\(\sqrt{n}\)</span> 即可。复杂度 <span class="math inline">\(O(n\sqrt{n})\)</span>。</p>
+<h4 id="优美的做法">优美的做法</h4>
+<p>我们考虑换一个角度，枚举 <span class="math inline">\(d\)</span> ，考虑贡献到 <span class="math inline">\(d\)</span> 的倍数。因为调和级数，所以复杂度是 <span class="math inline">\(O(n\ln{n})\)</span> 的。</p>
+
+</details>
+<h3 id="其它数论函数">其它数论函数</h3>
+<p><span class="math inline">\(I(n)\)</span> 是一个值恒等于 1 的函数，称为恒等函数。</p>
+<p><span class="math inline">\(\epsilon(n)\)</span>，也被称作 <span class="math inline">\(e(n)\)</span>，又被称为 <strong>元函数</strong> ，因为它是卷积的单位元，<span class="math inline">\(\epsilon*f=f\)</span> 。</p>
+<p><span class="math inline">\(id(n)=n\)</span>，被称作单位函数。</p>
+<h2 id="积性函数">积性函数</h2>
+<h3 id="定义">定义</h3>
+<ul>
+<li>积性函数：如果对于所有 <span class="math inline">\(\gcd(a,b)=1\)</span>，有 <span class="math inline">\(f(a)f(b)=f(ab)\)</span> ，那么 <span class="math inline">\(f\)</span> 是积性函数。</li>
+<li>完全积性函数：如果有 <span class="math inline">\(f(a)f(b)=f(ab)\)</span> ，那么 <span class="math inline">\(f\)</span> 是完全积性函数。</li>
+</ul>
+<h3 id="性质">性质</h3>
+<ol type="1">
+<li><p>对于积性函数 <span class="math inline">\(f\)</span> ，有 <span class="math inline">\(f(1)=1\)</span> 。</p>
+<p>略证：<span class="math inline">\(f(1)=f(1)f(1)\)</span> ，得到 <span class="math inline">\(f(1)=1\)</span>。</p></li>
+<li><p>若 <span class="math inline">\(x=\prod_{i=1}^{m}p_{i}^{q_{i}}\)</span>，则 <span class="math inline">\(f(x)=\prod_{i=1}^{m}f(p_{i}^{q_{i}})\)</span>。</p>
+<p>根据积性函数的定义可以得到。</p></li>
+<li><p>两积性函数 <span class="math inline">\(F_{1}(n)\)</span> 与 <span class="math inline">\(F_{2}(n)\)</span> 的狄利克雷卷积 <span class="math inline">\(G(n)=\sum_{d\vert n}F_{1}(n)\times F_{2}(\frac{n}{d})\)</span> 也为积性函数。</p>
+<details class="note info"><summary><p>证明</p>
+</summary>
+<p>假设 <span class="math inline">\(a,b\)</span> 互质， <span class="math display">\[
+\begin{aligned}
+G(a)*G(b)&amp;=\sum_{d\vert a}F_{1}(d)F_{2}(\frac{a}{d})*\sum_{t\vert b}F_{1}(t)F_{2}(\frac{b}{t}) \\
+&amp;=\sum_{d\vert a}\sum_{t\vert b}F_{1}(d)F_{1}(t)F_{2}(\frac{a}{d})F_{2}(\frac{b}{t})
+\end{aligned}
+\]</span> 由于 <span class="math inline">\(\gcd(a,b)=1\)</span> ，所以它们的约数 <span class="math inline">\(\gcd(d,t)=1\)</span> ，<span class="math inline">\(\gcd(\frac{a}{d},\frac{b}{t})=1\)</span> 。</p>
+<p>所以有 <span class="math display">\[
+\begin{aligned}
+=&amp;\sum_{d\vert a}\sum_{t\vert b}F_{1}(dt)F_{2}(\frac{ab}{dt})\\
+=&amp;\sum_{dt\vert ab}F_{1}(dt)F_{2}(\frac{ab}{dt})\\
+=&amp;G(ab)
+\end{aligned}
+\]</span></p>
+
+</details></li>
+<li><p>积性函数的逆也是积性函数</p>
+<p>还不不知道什么是逆。</p></li>
+<li><p><span class="math inline">\(\epsilon=g*f\)</span> 时，<span class="math inline">\(g\)</span> 和 <span class="math inline">\(f\)</span> 互逆。</p>
+<p>类比逆元理解。具体证明的话，参见 <span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL2Jsb2cvY29tbWFuZC1ibG9jay9tdS1iaS13dS1zaS1mYW4teWFuLWppLWppLXlpbmcteW9uZw==">Command-Block 大佬的博客</span>。</p></li>
+</ol>
+<h1 id="莫比乌斯反演">莫比乌斯反演</h1>
+<p>如果我们知道从 <span class="math inline">\(f\)</span> 到 <span class="math inline">\(g\)</span> 的关系式，这一过程称作变换；从此出发，推出了 <span class="math inline">\(g\)</span> 到 <span class="math inline">\(f\)</span> 的关系式，这一过程就叫作 <strong>反演</strong> ，也叫逆变换。</p>
+<h2 id="莫比乌斯函数">莫比乌斯函数</h2>
+<p>定义 <span class="math inline">\(\mu\)</span> 为莫比乌斯函数，定义为：</p>
+<p>唯一分解 <span class="math inline">\(n\)</span> ，<span class="math inline">\(n=\prod_{i=1}^{k}p_{i}^{q_{i}}\)</span> <span class="math display">\[
+\mu(n)=
+\begin{cases}
+1&amp;n=1\\
+(-1)^k&amp;\max(q_{i})=1\\
+0&amp;\max(q_{i})&gt;1\\
+\end{cases}
+\]</span></p>
+<details class="note info"><summary><p>起源</p>
+</summary>
+<p>莫比乌斯函数的本质是 <span class="math inline">\(\mu\)</span>。</p>
+<p>假设我们不知道任何关于这个函数的信息，我们考虑如何得到这个函数的表达式。</p>
+<blockquote>
+<p>小技巧：研究一个积性函数，<strong>先研究其在质数的幂时的表现</strong>。</p>
+</blockquote>
+<p>考虑当 <span class="math inline">\(n=1\)</span> 时，<span class="math inline">\(e(1)=I(1)\times 1\)</span>，所以 <span class="math inline">\(\mu(1)=1\)</span>。</p>
+<p>接下来呢？积性函数在 <span class="math inline">\(n\)</span> 为质数的时候比较特殊，所以我们来研究这个函数在质数时的表现。</p>
+<p>假设 <span class="math inline">\(p\)</span> 为一个质数，由于 <span class="math inline">\(e(p)=I(p)\mu(1)+I(1)\mu(p)\)</span>，由于 <span class="math inline">\(I(p)\mu(1)=1\)</span>，<span class="math inline">\(e(p)=0\)</span>，所以 <span class="math inline">\(I(1)\mu(p)\)</span> 为-1，又因为 <span class="math inline">\(I(1)=1\)</span>，所以 <span class="math inline">\(\mu(p)=-1\)</span>。</p>
+<p>接下来研究 <span class="math inline">\(n\)</span> 为质数的幂时，这个函数的表现。</p>
+<p><span class="math inline">\(e(p^{k})=I(p^{k})\mu(1)+I(p^{k-1})\mu(p)+\cdots+I(1)\mu(p^{k})\)</span>，即</p>
+<p><span class="math inline">\(e(p^{k})=\mu(1)+\mu(p)+\cdots+\mu(p^{k})\)</span>，由于刚刚推导出 <span class="math inline">\(\mu(1)=1\)</span>，<span class="math inline">\(\mu(p)=-1\)</span>，且 <span class="math inline">\(e(p^{k})=0\)</span>，所以 <span class="math inline">\(\mu(p^{2})+\mu(p^{3})+\cdots+\mu(p^{k})=0\)</span>。</p>
+<p>容易发现并证明 <span class="math inline">\(\mu(p^{k})\)</span> 在 <span class="math inline">\(k\ge 2\)</span> 时都为0。</p>
+<p>如果 <span class="math inline">\(n\)</span> 唯一分解后，<span class="math inline">\(n=\prod_{i=1}^{k}p_{i}^{q_{i}}\)</span>，那么 <span class="math inline">\(\mu(n)=\prod_{i=1}^{k}\mu(p_{i}^{q_{i}})\)</span>。</p>
+<p>最高的指数大于1，那么就会有一项为 <span class="math inline">\(0\)</span>，乘积就是0。</p>
+<p>否则，相当于每一次乘上一个 -1，得到的结果自然就是 <span class="math inline">\((-1)^{k}\)</span> 了。</p>
+
+</details>
+<h3 id="性质-1">性质</h3>
+<ol type="1">
+<li><p>这是一个积性函数。</p>
+<details class="note info"><summary><p>证明</p>
+</summary>
+<p>假设 <span class="math inline">\(\gcd(a,b)=1\)</span> 。</p>
+<p>如果 <span class="math inline">\(a,b\)</span> 中的一个为 1，那么显然成立。</p>
+<p>如果 <span class="math inline">\(a,b\)</span> 中的一个具有平方因子，那么乘积中必定具有平方因子。</p>
+<p>如果 <span class="math inline">\(a,b\)</span> 中两者都不具有平方因子且都不为 1，又因为两者 <span class="math inline">\(\gcd\)</span> 为 1，所以乘积的本质不同质因子个数，等于两者本质不同的质因子个数相加。</p>
+
+</details></li>
+<li><p><span class="math display">\[
+\sum_{d\mid n}\mu(d)=
+\begin{cases}
+1&amp;n=1\\
+0&amp;n\neq 1\\
+\end{cases}
+=\epsilon(n)
+\]</span></p>
+<p>按照刚刚逆的定义，可以发现，<span class="math inline">\(\mu\)</span> 是 <span class="math inline">\(I\)</span> 的逆。</p>
+<details class="note info"><summary><p>证明</p>
+</summary>
+<p>首先 <span class="math inline">\(n=1\)</span> 时根据定义可以得到。</p>
+<p><span class="math inline">\(n\not =1\)</span> 时，将 <span class="math inline">\(n\)</span> 进行唯一分解。一个约数 <span class="math inline">\(d\)</span> 相当于在 <span class="math inline">\(n\)</span> 的质因子中选择若干。</p>
+<ul>
+<li><p>如果选择出的存在次数大于等于2的，<span class="math inline">\(\mu(d)=0\)</span> 。</p></li>
+<li><p>否则，选出的次数均为1次。假设总共有 <span class="math inline">\(m\)</span> 个本质不同质因子，选择了 <span class="math inline">\(k\)</span> 个质因子，那么总贡献就是： <span class="math display">\[
+\sum_{i=0}^{m}(-1)^{i}\binom{m}{i}
+\]</span> 注意到这个式子和二项式定理相似。 <span class="math display">\[
+[1+(-1)]^{m}=\sum_{i=1}^{m}1^{(n-i)}(-1)^i\binom{m}{i}
+\]</span> Q.E.D.</p></li>
+</ul>
+
+</details></li>
+<li><p><span class="math display">\[
+[\gcd(a,b)=1]=\sum_{d\vert \gcd(a,b)}\mu(d)
+\]</span></p>
+<p>根据性质2可以得出。</p></li>
+</ol>
+<h2 id="莫比乌斯变换与反演">莫比乌斯变换与反演</h2>
+<p>设 <span class="math inline">\(f\)</span> 与 <span class="math inline">\(g\)</span> 为两个数论函数，如果有： <span class="math display">\[
+f(n)=\sum_{d\vert n}g(d)
+\]</span> 那么 <span class="math inline">\(g(n)=\sum_{d\vert n}f(\frac{n}{d})\mu(d)\)</span> ，这是一个狄利克雷卷积的形式。</p>
+<details class="note info"><summary><p>推理？</p>
+</summary>
+<p>下面的图片展示了如何手动反演找规律。</p>
+<figure>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/pfv2639c.png" alt="举例反演过程" /><figcaption aria-hidden="true">举例反演过程</figcaption>
+</figure>
+
+</details>
+<details class="note info"><summary><p>证明</p>
+</summary>
+<p>想要证明 <span class="math inline">\(g(n)=\sum_{d\vert n}\mu(d)f(\frac{n}{d})\)</span> 。</p>
+<p>按照证明反演的套路，我们将 <span class="math inline">\(f\)</span> 换成 <span class="math inline">\(g\)</span> ，就得到了： <span class="math display">\[
+\sum_{d\vert n}\mu(d)\sum_{t\vert \frac{n}{d}}g(t)
+\]</span> 观察这个式子，<span class="math inline">\(d\times t\)</span> 仍然是 <span class="math inline">\(n\)</span> 的约数。</p>
+<p>这个式子相当于对于每一个质因数，决定是乘入 <span class="math inline">\(d\)</span> ，还是 <span class="math inline">\(t\)</span> ，亦或是两者都不乘。</p>
+<p>而且 <span class="math inline">\(\mu\)</span> 的取值只与 <span class="math inline">\(d\)</span> 有关，<span class="math inline">\(g\)</span> 的取值只与 <span class="math inline">\(t\)</span> 有关。</p>
+<p>所以我们发现先枚举 <span class="math inline">\(d\)</span> 还是先枚举 <span class="math inline">\(t\)</span> 对枚举的结果没有影响。</p>
+<p>所以可以交换求和号。 <span class="math display">\[
+\sum_{t\vert n}g(t)\sum_{d\vert \frac{n}{t}}\mu(d)
+\]</span> 其中，<span class="math inline">\(\sum_{d\vert \frac{n}{t}}\mu(\frac{n}{d})=[\frac{n}{d}=1]\)</span> ，仅在 <span class="math inline">\(d=n\)</span> 时，该式为 1；</p>
+<p>仅当 <span class="math inline">\(t\)</span> 为 <span class="math inline">\(n\)</span> 时，<span class="math inline">\(d\)</span> 能取到 <span class="math inline">\(n\)</span> ，所以该式等于 <span class="math inline">\(g(n)\)</span> 。<span class="math inline">\(\square\)</span></p>
+
+</details>
+<p>我们发现 <span class="math inline">\(f\)</span> 函数是 <span class="math inline">\(g\)</span> 函数与 <span class="math inline">\(I\)</span> 的狄利克雷卷积形式，即 <span class="math inline">\(f=gI\)</span>，那么可以得到 <span class="math inline">\(g=fI^{-1}=f\mu\)</span>。所以有了上面的式子。</p>
+<h3 id="其它形式">其它形式</h3>
+<p>莫比乌斯反演具有几种形式：</p>
+<h4 id="约数式">约数式</h4>
+<p><span class="math display">\[
+g(n)=\sum_{d\vert n}f(d)\Rightarrow f(n)=\sum_{d\vert n}g(d)\mu(\frac{d}{n})
+\]</span></p>
+<h4 id="倍数式">倍数式</h4>
+<p><span class="math display">\[
+g(n)=\sum_{n\vert d}f(d)\Rightarrow f(n)=\sum_{n\vert d}\mu(\frac{d}{n})g(d)
+\]</span></p>
+<h2 id="例题">例题</h2>
+<h3 id="p3455-poi2007-zap-queries"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM0NTU=">P3455 [POI2007] ZAP-Queries</span></h3>
+<h4 id="题意">题意</h4>
+<p><span class="math inline">\(n(1\le n\le 5\times 10^{4})\)</span> 次询问，每次给定 <span class="math inline">\(a,b,c\)</span> 满足 <span class="math inline">\(1\le d\le a,b\le 5\times 10^{4}\)</span>。求满足 <span class="math inline">\(\gcd(x,y)=d\)</span>，其中 <span class="math inline">\(1\le x\le a,1\le y\le b\)</span> 的二元组 <span class="math inline">\((x,y)\)</span> 数量。</p>
+<details class="note info"><summary><p>解法</p>
+</summary>
+<p>首先我们可以将 <span class="math inline">\(d\)</span> 的限制去掉。</p>
+<p>具体地，这题相当于是要求 <span class="math inline">\(\gcd(x,y)=1\)</span>，其中 <span class="math inline">\(1\le x\le \frac{a}{d}\)</span> 且 <span class="math inline">\(q\le y\le \frac{b}{d}\)</span> 的个数，因为这样的二元组 <span class="math inline">\((x,y)\)</span> 同时乘上 <span class="math inline">\(d\)</span> 之后得到的二元组 <span class="math inline">\((xd,yd)\)</span> 的 gcd 为 <span class="math inline">\(d\)</span>。</p>
+<p>接下来考虑如何解决 <span class="math inline">\(\gcd(x,y)=1\)</span> 的问题。为了方便，我们记 <span class="math inline">\(\gcd(a,b)\)</span> 为 <span class="math inline">\((a,b)\)</span>，记 <span class="math inline">\(a\)</span> 为原来的 <span class="math inline">\(a\)</span> 除以 <span class="math inline">\(d\)</span> 向下取整的结果，<span class="math inline">\(b\)</span> 同理，并令 <span class="math inline">\(a\ge b\)</span>。</p>
+<p>由于 <span class="math inline">\([\gcd(x,y)=1]=\sum_{d\vert (x,y)}\mu(x,y)\)</span>，这可以根据 <a href="#性质">上面提到的性质</a> 得到。</p>
+<p><span class="math inline">\(\sum_{d\vert (x,y)}\mu(x,y)=\sum_{d\vert x,d\vert y}\mu(x,y)\)</span>，因为 <span class="math inline">\(d\)</span> 是 <span class="math inline">\((x,y)\)</span> 的约数的充要条件是 <span class="math inline">\(x\)</span> 是 <span class="math inline">\(d\)</span> 的倍数且 <span class="math inline">\(y\)</span> 是 <span class="math inline">\(d\)</span> 的倍数。 <span class="math display">\[
+\sum_{x=1}^{a}\sum_{y=1}^{b}\sum_{d\vert x,d\vert y}\mu(x,y)
+\]</span> 我们发现其实有一些 <span class="math inline">\(x,y\)</span> 的 <span class="math inline">\(\gcd\)</span> 是相同的，我们考虑将它们一起计算。</p>
+<p>于是我们交换求和号，用我们 OI 的话来说，就是先枚举 <span class="math inline">\(d\)</span>。那么有多少 <span class="math inline">\(x\)</span> 是 <span class="math inline">\(d\)</span> 的倍数呢？显然是 <span class="math inline">\(\lfloor \frac{a}{d}\rfloor\)</span> 了。那么有多少 <span class="math inline">\(y\)</span> 是 <span class="math inline">\(d\)</span> 的倍数呢？显然是 <span class="math inline">\(\lfloor \frac{b}{d}\rfloor\)</span> 了。那么有多少 <span class="math inline">\(x,y\)</span> 都是 <span class="math inline">\(d\)</span> 的倍数呢？显然是 <span class="math inline">\(\lfloor \frac{a}{d}\rfloor \lfloor \frac{b}{d}\rfloor\)</span> 个了。</p>
+<p>于是： <span class="math display">\[
+\sum_{d=1}^{b}\mu(d)\lfloor \frac{a}{d}\rfloor \lfloor \frac{b}{d}\rfloor
+\]</span> 这样子可以做到 <span class="math inline">\(O(b)\)</span> 计算。</p>
+<p>我们可以预处理 <span class="math inline">\(\mu\)</span> 并使用 <a href="..\整除分块">整除分块</a> 技巧来在 <span class="math inline">\(O(\sqrt{b})\)</span> 的复杂度内完成计算。</p>
+<details class="note success">
+<summary>
+<p>
+代码
+</p>
+</summary>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">5e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> mu[N],sMu[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="type">int</span> pri[N],priTot;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">  mu[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">5e4</span>;++i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!vis[i])&#123;pri[++priTot]=i;mu[i]=<span class="number">-1</span>;&#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=priTot;++j)&#123;</span><br><span class="line">      <span class="keyword">if</span>(i*pri[j]&gt;<span class="number">5e4</span>)<span class="keyword">break</span>;</span><br><span class="line">      vis[i*pri[j]]=<span class="literal">true</span>;</span><br><span class="line">      <span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)&#123;mu[i*pri[j]]=<span class="number">0</span>;<span class="keyword">break</span>;&#125;</span><br><span class="line">      mu[i*pri[j]]=-mu[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">5e4</span>;++i)sMu[i]=sMu[i<span class="number">-1</span>]+mu[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">solve</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> ans=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span>(x&lt;y)<span class="built_in">swap</span>(x,y);</span><br><span class="line">  <span class="type">int</span> l=<span class="number">1</span>,r;</span><br><span class="line">  <span class="keyword">while</span>(l&lt;=y)&#123;</span><br><span class="line">    r=<span class="built_in">min</span>(x/(x/l),y/(y/l));</span><br><span class="line">    ans+=<span class="number">1ll</span>*(sMu[r]-sMu[l<span class="number">-1</span>])*(x/l)*(y/l);</span><br><span class="line">    l=r+<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">init</span>();</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,a,b,d;i&lt;=n;++i)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;a,&amp;b,&amp;d);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="built_in">solve</span>(a/d,b/d));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+</details>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Tangninghaha
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tangninghaha.netlify.app/posts/%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0/" title="数论函数">https://tangninghaha.netlify.app/posts/数论函数/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8EDFS%E5%BA%8F%E4%B8%8ERMQ%E7%9A%84LCA%E7%AE%97%E6%B3%95/" rel="prev" title="一种基于DFS序与RMQ的LCA算法">
+                  <i class="fa fa-angle-left"></i> 一种基于DFS序与RMQ的LCA算法
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/kinetic-tournament-tree/" rel="next" title="Kinetic Tournament Tree">
+                  Kinetic Tournament Tree <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  
+  <div class="comments giscus-container">
+  </div>
+  
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-code"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Tangninghaha</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">32k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:58</span>
+  </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div><div>站点主题色 <a target="_blank" rel="noopener" href="http://zhongguose.com/#hehuanhong">合欢红</a></div>
+
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="giscus" type="application/json">{"enable":true,"repo":"tangninghaha/Blog-Comment","repo_id":"R_kgDOK75Jug","category":"Announcements","category_id":"DIC_kwDOK75Jus4Cb4f_","mapping":"pathname","reactions_enabled":1,"emit_metadata":1,"theme":"light","lang":"en","crossorigin":"anonymous","input_position":"top","loading":"lazy"}</script>
+
+<script>
+document.addEventListener('page:loaded', () => {
+  if (!CONFIG.page.comments) return;
+
+  NexT.utils.loadComments('.giscus-container')
+    .then(() => NexT.utils.getScript('https://giscus.app/client.js', {
+      attributes: {
+        async                   : true,
+        crossOrigin             : 'anonymous',
+        'data-repo'             : CONFIG.giscus.repo,
+        'data-repo-id'          : CONFIG.giscus.repo_id,
+        'data-category'         : CONFIG.giscus.category,
+        'data-category-id'      : CONFIG.giscus.category_id,
+        'data-mapping'          : CONFIG.giscus.mapping,
+        'data-reactions-enabled': CONFIG.giscus.reactions_enabled,
+        'data-emit-metadata'    : CONFIG.giscus.emit_metadata,
+        'data-theme'            : CONFIG.giscus.theme,
+        'data-lang'             : CONFIG.giscus.lang,
+        'data-input-position'   : CONFIG.giscus.input_position,
+        'data-loading'          : CONFIG.giscus.loading
+      },
+      parentNode: document.querySelector('.giscus-container')
+    }));
+});
+</script>
+
+<!-- hexo injector body_end start --><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script><!-- hexo injector body_end end --></body>
+</html>

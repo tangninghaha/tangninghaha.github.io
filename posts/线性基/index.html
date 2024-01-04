@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#f0a1a8"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#f0a1a8">
+  <meta name="msvalidate.01" content="7197295068F5C122E84D3763FE74EC8A">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/silver/pace-theme-fill-left.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tangninghaha.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="线性基是解决OI中异或问题的利器。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性基">
+<meta property="og:url" content="https://tangninghaha.netlify.app/posts/%E7%BA%BF%E6%80%A7%E5%9F%BA/index.html">
+<meta property="og:site_name" content="Tangninghaha">
+<meta property="og:description" content="线性基是解决OI中异或问题的利器。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/9rw2ca6s.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/e47kryh7.png">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/wpuke3ed.png">
+<meta property="article:published_time" content="2023-12-22T20:38:36.000Z">
+<meta property="article:modified_time" content="2023-12-28T17:21:09.000Z">
+<meta property="article:author" content="Tangninghaha">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/9rw2ca6s.png">
+
+
+<link rel="canonical" href="https://tangninghaha.netlify.app/posts/%E7%BA%BF%E6%80%A7%E5%9F%BA/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tangninghaha.netlify.app/posts/%E7%BA%BF%E6%80%A7%E5%9F%BA/","path":"posts/线性基/","title":"线性基"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>线性基 | Tangninghaha</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tangninghaha</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Number 10, Tangning Street</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C"><span class="nav-number">2.1.</span> <span class="nav-text">最大异或和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E6%84%8F"><span class="nav-number">2.1.1.</span> <span class="nav-text">题意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%BC%82%E6%88%96%E5%92%8C"><span class="nav-number">2.2.</span> <span class="nav-text">最小异或和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%ACk%E5%A4%A7%E5%BC%82%E6%88%96%E5%92%8C"><span class="nav-number">2.3.</span> <span class="nav-text">第k大异或和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">题意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%88%A0%E9%99%A4%E7%BA%BF%E6%80%A7%E5%9F%BA"><span class="nav-number">2.4.</span> <span class="nav-text">可删除线性基</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E5%9B%BE%E8%AE%BA%E7%BB%93%E5%90%88"><span class="nav-number">2.5.</span> <span class="nav-text">与图论结合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#p4151-wc2011-%E6%9C%80%E5%A4%A7xor%E5%92%8C%E8%B7%AF%E5%BE%84"><span class="nav-number">2.5.1.</span> <span class="nav-text">P4151 [WC2011] 最大XOR和路径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-2"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">题意</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#p3733-haoi2017-%E5%85%AB%E7%BA%B5%E5%85%AB%E6%A8%AA"><span class="nav-number">2.5.2.</span> <span class="nav-text">P3733 [HAOI2017] 八纵八横</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-3"><span class="nav-number">2.5.2.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E5%88%A0%E7%BA%BF%E6%80%A7%E5%9F%BA%E5%81%9A%E6%B3%95"><span class="nav-number">2.5.2.2.</span> <span class="nav-text">可删线性基做法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%88%86%E6%B2%BB"><span class="nav-number">2.5.2.3.</span> <span class="nav-text">
+线段树分治
+</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A8%E5%B9%BF"><span class="nav-number">3.</span> <span class="nav-text">推广</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#p3265-jloi2015-%E8%A3%85%E5%A4%87%E8%B4%AD%E4%B9%B0"><span class="nav-number">3.1.</span> <span class="nav-text">P3265 [JLOI2015] 装备购买</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E6%84%8F-4"><span class="nav-number">3.1.1.</span> <span class="nav-text">题意</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tangninghaha"
+      src="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+  <p class="site-author-name" itemprop="name">Tangninghaha</p>
+  <div class="site-description" itemprop="description">鲜衣怒马少年时，不负韶华行且知</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RhbmduaW5naGFoYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangninghaha"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnRhbmduaW5naGFoYUBvdXRsb29rLmNvbQ==" title="E-Mail → mailto:tangninghaha@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img height="20" src="https://api.netlify.com/api/v1/badges/098df643-d737-4e3a-8b6d-024ce59dedab/deploy-status" alt="Deploy Status"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <span class="exturl" data-url="aHR0cHM6Ly9kYW5pZWxxZi5uZXRsaWZ5LmFwcC8=" title="https:&#x2F;&#x2F;danielqf.netlify.app&#x2F;">Danielqf</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tangninghaha.netlify.app/posts/%E7%BA%BF%E6%80%A7%E5%9F%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+      <meta itemprop="name" content="Tangninghaha">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tangninghaha">
+      <meta itemprop="description" content="鲜衣怒马少年时，不负韶华行且知">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="线性基 | Tangninghaha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          线性基
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-12-22 20:38:36" itemprop="dateCreated datePublished" datetime="2023-12-22T20:38:36+00:00">2023-12-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-28 17:21:09" itemprop="dateModified" datetime="2023-12-28T17:21:09+00:00">2023-12-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>18 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>线性基是解决OI中异或问题的利器。</p>
+<span id="more"></span>
+<p>知识点完善程度：初步了解，做题量不足。</p>
+<h1 id="介绍">介绍</h1>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vbGpoMjAwMC1qdW1wL3AvNTg2OTk5MS5odG1s">1</span> <span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vVHJvdmVybGQvcC8xNDYyMTQzNC5odG1s">2</span> <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2FfZm9yZXZlcl9kcmVhbS9hcnRpY2xlL2RldGFpbHMvODM2NTQzOTc=">3</span></p>
+<ol type="1">
+<li><p><strong>简单理解</strong>：一个数列 <span class="math inline">\(b_{i}\)</span> 的线性基是一组数字，<span class="math inline">\(a_{1},a_{2},a_{3},\cdots,a_{k}\)</span>，其中 <span class="math inline">\(a_{x}=b_{i}\)</span> 表示 <span class="math inline">\(b_{i}\)</span> 满足 <span class="math inline">\(b_{i}\)</span> 最高位的1是第 <span class="math inline">\(x\)</span> 位。如果存在多个 <span class="math inline">\(b_{i}\)</span> 满足这个条件，任选其中一个。如果没有就为0。</p></li>
+<li><p><strong>性质</strong>：</p>
+<ol type="1">
+<li>一个数列的线性基中的数进行异或能够得到的数，与原数列中的数异或能够得到的数字相同。这个性质的证明可以由下面的构造的得出。</li>
+<li>线性基中的任意一些数字异或起来都不为0。这个也能由构造给出。</li>
+<li>线性基的大小唯一，并且是 <span class="math inline">\(b_{i}\)</span> 的子集中，能够拥有性质1的最小的。</li>
+</ol></li>
+<li><p><strong>构造</strong>：对序列 <span class="math inline">\(b_{i}\)</span> 中的数字进行插入。从高到低枚举每一个位置。</p>
+<ul>
+<li>如果这一位为0，那么跳过。[操作0]</li>
+<li>如果这一位为1（假设是第 <span class="math inline">\(x\)</span> 位），考虑两种情况：
+<ul>
+<li>如果 <span class="math inline">\(a_{x}\)</span> 不为0，那么将这个数字异或上 <span class="math inline">\(a_{x}\)</span>。[操作1]</li>
+<li>如果 <span class="math inline">\(a_{x}\)</span> 为0，那么将这个数字放到 <span class="math inline">\(a_{x}\)</span> 上。直接退出即可。[操作2]</li>
+</ul></li>
+</ul>
+<details class="note info"><summary><p>性质1的证明</p>
+</summary>
+<p>如果插入的这个数字没有进行过操作2：说明通过线性基中的数字可以构造出这个数字。</p>
+<p>如果插入的这个数字进行了操作2：进行操作2时，由于操作1的存在，这个数字高于 <span class="math inline">\(x\)</span> 位都为0了，此时插入线性基满足要求。</p>
+<p>并且此时可以通过操作1的数字异或出这个数字的高 <span class="math inline">\(x\)</span> 位，再异或上 <span class="math inline">\(a_{x}\)</span> 就可以得到这个数字啦。</p>
+<p>既然我们能够用线性基中的数字构造出原来的数列，那么也可以构造出原来数列能够异或出的集合啦。</p>
+<p>如果一个数字是原来的序列不能够构造出的，那么线性基必然不能构造出。反证：如果线性基能够构造出，原数列也能构造出。</p>
+
+</details>
+<details class="note info"><summary><p>性质2的证明</p>
+</summary>
+<p>如果有 <span class="math inline">\(a_{p_{1}},a_{p_{2}},a_{p_{3}},\cdots,a_{p_{k}}\)</span> 异或和为0，那么有 <span class="math inline">\(a_{p_{1}},a_{p_{2}},a_{p_{3}},\cdots,a_{p_{k-1}}\)</span> 的异或和为 <span class="math inline">\(a_{p_{k}}\)</span> （由 <span class="math inline">\(a\oplus b=0 \Rightarrow a=b\)</span> 得到）</p>
+<p>所以我们可以直接把 <span class="math inline">\(p_{k}\)</span> 从线性基中删掉，这样才能满足性质3。</p>
+
+</details>
+<details class="note info"><summary><p>性质3的证明</p>
+</summary>
+<ul>
+<li><p>如果序列 <span class="math inline">\(b\)</span> 中的每一个数字都能插入到线性基中，那么这样一定是最小的。</p></li>
+<li><p>如果有一个数字 <span class="math inline">\(b_{i}\)</span> 没能插入线性基，那么必然满足 <span class="math inline">\(c\oplus a_{j}=b_{i}\)</span> ，其中 <span class="math inline">\(c\)</span> 是 <span class="math inline">\(a\)</span> 中某些元素的异或和。</p>
+<p>那么可以得到 <span class="math inline">\(c\oplus b_{i}=a_{j}\)</span>，也就是说，如果我们先插入了 <span class="math inline">\(b_{i}\)</span>，再插入 <span class="math inline">\(a_{j}\)</span>，那么 <span class="math inline">\(a_{j}\)</span> 不能被插入，线性基中元素个数不变。</p>
+<p>并且如果我们删除线性基中的某一个元素，那么 <span class="math inline">\(b\)</span> 中必然有一些数字无法被表示，于是线性基的大小也是符合条件中最小的。</p></li>
+</ul>
+
+</details></li>
+<li><p>判断一个数字是否在原数列通过异或，能够构造出的集合中。</p>
+<p>我们从高位到低位判断，如果某一位为1，那么就异或上 <span class="math inline">\(a_{x}\)</span> 。如果最后是0，那么不能被构造出，否则能够被构造出。</p></li>
+</ol>
+<h1 id="应用">应用</h1>
+<p>是例题，也是用法。</p>
+<h2 id="最大异或和"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM4MTI=">最大异或和</span></h2>
+<h3 id="题意">题意</h3>
+<p>给定 <span class="math inline">\(n\)</span> 个整数（数字可能重复），求在这些数中选取任意个，使得他们的异或和最大。</p>
+<p><span class="math inline">\(1\le n\le 50\)</span>， <span class="math inline">\(0\le S_{i}\lt 2^{50}\)</span></p>
+<details class="note info"><summary><p>做法</p>
+</summary>
+<p>直接做是 <span class="math inline">\(2^{n}\)</span> 的，线性基就可以了。</p>
+<p>具体地，我们类似01-trie的贪心思想，每一次都异或上 <span class="math inline">\(a_{i}\)</span> 即可。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">55</span>;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line">ll a[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">50</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>((x&gt;&gt;i)&amp;<span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(a[i])x^=a[i];</span><br><span class="line">      <span class="keyword">else</span>&#123;a[i]=x;<span class="keyword">return</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;ll x;<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;x),<span class="built_in">insert</span>(x);&#125;</span><br><span class="line">  ll res=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">50</span>;i&gt;=<span class="number">0</span>;--i)<span class="keyword">if</span>((res^a[i])&gt;res)res^=a[i];</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,res);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+<h2 id="最小异或和">最小异或和</h2>
+<p>似乎没有这道题，那我胡一个。</p>
+<p>题面类似求最大异或和。</p>
+<p>但是做法不同。考虑如果有一个数字插入失败，那么异或和显然为0.</p>
+<p>否则最小的 <span class="math inline">\(d_{i}\)</span> 就是答案。</p>
+<h2 id="第k大异或和"><span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcC8xMTQ=">第k大异或和</span></h2>
+<h3 id="题意-1">题意</h3>
+<p>给出一个 <span class="math inline">\(n\)</span> 个数的序列，可以从中任意选出一些，求它们的异或和。</p>
+<p>询问 <span class="math inline">\(m\)</span> 次，每次要在得到的不同异或和中，找到第 <span class="math inline">\(k\)</span> <strong>小</strong>（题目名字具有误导性，是要找第 k 小）</p>
+<p><span class="math inline">\(1\le n,m \lt 10^{5}\)</span>，<span class="math inline">\(0\le S_{i}\lt 2^{50}\)</span></p>
+<details class="note info"><summary><p>做法</p>
+</summary>
+<p>这次我们要寻找性质更强的线性基。</p>
+<p>具体地，一个序列的线性基其实不止一种。当我们将 <span class="math inline">\(a_{i}\)</span> 异或上某一个 <span class="math inline">\(a_{j}\)</span> 后，这个序列仍然是原数列的一组线性基，证明是比较显然的。</p>
+<p>那么我们要找出一组最小的线性基。</p>
+<p>具体地，我们从小到大枚举每一个 <span class="math inline">\(i\)</span>，对于 <span class="math inline">\(a_{i}\)</span>，从大到小再枚举一个 <span class="math inline">\(j\)</span>。如果 <span class="math inline">\(a_{i}\)</span> 的第 <span class="math inline">\(j\)</span> 位是1，那么 <span class="math inline">\(a_{i}\leftarrow a_{i}\oplus a_{j}\)</span> 。这样我们就能够把 <span class="math inline">\(a_{i}\)</span> 的第 <span class="math inline">\(j\)</span> 位上的1给消去。</p>
+<p>并且由于我们是从大到小的枚举的 <span class="math inline">\(j\)</span>，之前消去过的1不会再出现。</p>
+<p>这样处理过得一组线性基的有非常好的性质。那就是，当用 <span class="math inline">\(a_{i}\oplus a_{j}\)</span> 时，得到的结果必然比 <span class="math inline">\(a_{i}\)</span> 和 <span class="math inline">\(a_{j}\)</span> 都大，因为得到的结果的第 <span class="math inline">\(i\)</span> 位和第 <span class="math inline">\(j\)</span> 位都变成了1，而原来它们只有其中一个为1。</p>
+<p>推广一下，如果我们已经选了若干个 <span class="math inline">\(a_{i}\)</span> ，得到了一个异或和。当我们再加入一个没加入过得 <span class="math inline">\(a_{j}\)</span> 时，结果只会变大。</p>
+<p>如果我们用一个二进制数，第 <span class="math inline">\(i\)</span> 位表示 <span class="math inline">\(a_{i}\)</span> 是否被选入参与异或；那么如果有两个二进制数 <span class="math inline">\(S&lt;T\)</span>，那么 <span class="math inline">\(S\)</span> 对应的异或和必然小于 <span class="math inline">\(T\)</span> 对应的异或和。只需要考虑它们选择了 <span class="math inline">\(a_{i}\)</span> ，那么第 <span class="math inline">\(i\)</span> 位异或后为1。</p>
+<p>于是我们可以将 <span class="math inline">\(k\)</span> 表示成二进制，如果第 <span class="math inline">\(i\)</span> 位为1，那么异或上第 <span class="math inline">\(i\)</span> 个 <strong>非0</strong> 的 <span class="math inline">\(a\)</span>（而不是 <span class="math inline">\(a_{i}\)</span>）。</p>
+<p>还要注意，如果最小异或和为0，我们就要将 <span class="math inline">\(k\)</span> 减去1，因为我们刚刚没有考虑0。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> K=<span class="number">55</span>;</span><br><span class="line">ll a[K],b[K];</span><br><span class="line"><span class="type">int</span> tot;</span><br><span class="line"><span class="type">bool</span> flag;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">50</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>((x&gt;&gt;i)&amp;<span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(a[i])x^=a[i];</span><br><span class="line">      <span class="keyword">else</span>&#123;a[i]=x;<span class="keyword">return</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  flag=<span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">preProcess</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">50</span>;++i)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=i<span class="number">-1</span>;j&gt;=<span class="number">0</span>;--j)</span><br><span class="line">      <span class="keyword">if</span>((a[i]&gt;&gt;j)&amp;<span class="number">1</span>)a[i]^=a[j];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">50</span>;++i)</span><br><span class="line">    <span class="keyword">if</span>(a[i])b[tot++]=a[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">qry</span><span class="params">(ll k)</span></span>&#123;</span><br><span class="line">  k-=flag;</span><br><span class="line">  <span class="keyword">if</span>(k&gt;=(<span class="number">1ll</span>&lt;&lt;tot))<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  ll res=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=tot;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>((k&gt;&gt;i)&amp;<span class="number">1</span>)res^=b[i];</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;ll x;<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;x);<span class="built_in">insert</span>(x);&#125;</span><br><span class="line">  <span class="built_in">preProcess</span>();</span><br><span class="line">  <span class="type">int</span> m;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)&#123;ll k;<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;k);<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="built_in">qry</span>(k));&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+<h2 id="可删除线性基">可删除线性基</h2>
+<p>现在要求支持一些操作：插入，删除，求最大异或和。</p>
+<p>在线做法比较复杂，离线做法相对简单。</p>
+<p>没有找到完全的模版题，自己造了一道，但是还没出好数据。</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vVTM5MzUwOA==">模版链接</span></p>
+<details class="note info"><summary><p>在线做法</p>
+</summary>
+<p>这些都是理论分析，还没写代码，可能存在错误。</p>
+<p>插入就直接插。</p>
+<p>删除的时候，如果删掉的数字在线性基外，直接删了就好，对答案没有影响。</p>
+<p>如果删掉的数字在线性基内，这样不好直接删除。</p>
+<ul>
+<li><p>我们就考虑：当我们插入的时候，有一些没有插入成功的 <span class="math inline">\(x\)</span> ，它能够由线性基中的某些数的异或和表示 <span class="math inline">\(c\oplus a_{i}=x\)</span>，其中 <span class="math inline">\(c\)</span> 是线性基中某些数的异或和。我们变一下形，发现 <span class="math inline">\(c\oplus x=a_{i}\)</span>。</p>
+<p>当我们用 <span class="math inline">\(a_{i}\)</span> 表示另一个数时，也可以用 <span class="math inline">\(x\)</span> 表示，<span class="math inline">\(c\oplus a_{i}\oplus y=x\oplus y\)</span>，我们发现 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(a_{i}\)</span> 是等价的。</p>
+<p>也就是说，这些没有插入成功的数字可以“代替”在线性基中的一些数。</p>
+<p>如果我们删除一个数，我们就把它替换成那个，能够代替的数。</p>
+<p>这样不方便，我们不妨把那个代替的数给删掉，让李代桃僵，这样是等效的。</p>
+<p>实现时直接维护 <span class="math inline">\(a_{i}\)</span> 有哪些可替代的数即可。</p></li>
+<li><p>但是如果 <span class="math inline">\(a_{i}\)</span> 没有能够替代的数呢？</p>
+<p>我们就必须要在线性基中消除 <span class="math inline">\(a_{i}\)</span> 的影响。我们考虑在插入的时候维护每一个数异或过哪些数字。</p>
+<p>对于那些插入的时候异或过 <span class="math inline">\(a_{i}\)</span> 的数，我们回忆一下，插入的时候，我们将所有第 <span class="math inline">\(i\)</span> 位为1的数都异或上了 <span class="math inline">\(a_{i}\)</span>。删除的时候，我们就将它们全部异或上<span class="math inline">\(a_{i}\)</span>，但是这时候，它们的第 <span class="math inline">\(i\)</span> 位都为1，这在插入过程中显然是不可能出现的。</p>
+<p>所以我们寻找一个最小的，异或过 <span class="math inline">\(a_{i}\)</span> 的数字。将它替换成 <span class="math inline">\(a_{i}\)</span>，那么其它数字在插入的时候，就会异或上新的 <span class="math inline">\(a_{i}\)</span>。</p>
+<p>于是我们将其它异或过 <span class="math inline">\(a_{i}\)</span> 的数字都异或上新的 <span class="math inline">\(a_{i}\)</span> 即可。</p></li>
+</ul>
+
+</details>
+<details class="note info"><summary><p>离线做法</p>
+</summary>
+<p>我们考虑贪心地进行插入的过程。</p>
+<p>我们每次插入时，更高的位上，让线性基的删除时间更晚。因为如果时间到了，大的不能选，小的可以选，这不优。</p>
+<p>所以我们让高位上的线性基的删除时间尽可能晚。</p>
+<details class="note ">
+<summary>
+<p>
+代码
+</p>
+</summary>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> tim,ll x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=LEN;i&gt;=<span class="number">0</span>;--i)&#123;</span><br><span class="line">    <span class="keyword">if</span>((x&gt;&gt;i)&amp;<span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(tim&gt;dTime[i])<span class="built_in">swap</span>(dTime[i],tim),<span class="built_in">swap</span>(bas[i],x);</span><br><span class="line">      <span class="keyword">if</span>(!tim)<span class="keyword">return</span>;</span><br><span class="line">      x^=bas[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">qry</span><span class="params">(<span class="type">int</span> tim)</span></span>&#123;</span><br><span class="line">  ll res=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=LEN;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>(tim&lt;dTime[i]&amp;&amp;((res&gt;&gt;i)&amp;<span class="number">1</span>)==<span class="number">0</span>)res=<span class="built_in">max</span>(res,res^bas[i]);</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+</details>
+<h2 id="与图论结合">与图论结合</h2>
+<h3 id="p4151-wc2011-最大xor和路径"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDQxNTE=">P4151 [WC2011] 最大XOR和路径</span></h3>
+<h4 id="题意-2">题意</h4>
+<p>给出一个 <span class="math inline">\(n(1\le n\le 5\times 10^{4})\)</span> 个点，<span class="math inline">\(m(1\le m\le 10^{5})\)</span>无向图，边有权值，权值范围在 <span class="math inline">\([0,10^{18}]\)</span> 之间。</p>
+<p>要求找出一条从1号点到n号点的路径，满足路径的异或和最大。</p>
+<details class="note info"><summary><p>做法</p>
+</summary>
+<p>首先我们考虑从1到n，假设只有一条路径，大概是这样：</p>
+<figure>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/9rw2ca6s.png" alt="graph1" /><figcaption aria-hidden="true">graph1</figcaption>
+</figure>
+<p>但是我们发现实际上这个路径上可能有环。</p>
+<figure>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/e47kryh7.png" alt="graph2" /><figcaption aria-hidden="true">graph2</figcaption>
+</figure>
+<p>我们考虑加入环之后路径答案的变化。如果原来的异或和为 <span class="math inline">\(dis\)</span> ，那么加入环之后就变为 <span class="math inline">\(dis\oplus k1\oplus c1\oplus k1=dis\oplus c1\)</span>。</p>
+<p>如果加入多个环，同理可得，答案变为 <span class="math inline">\(dis\oplus c1\oplus c2\)</span>。</p>
+<p>也就是说，我们只需要找到这条路径，并异或上某些环的异或和即可。</p>
+<p>但是如果1到n有多条路径呢？</p>
+<figure>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/wpuke3ed.png" alt="graph3" /><figcaption aria-hidden="true">graph3</figcaption>
+</figure>
+<p>假设左边路径的异或和为 <span class="math inline">\(dis_{1}\)</span>，右边路径的异或和为 <span class="math inline">\(dis_{2}\)</span>，两条路径构成的环异或和为 <span class="math inline">\(dis_{3}\)</span>，那么我们有： <span class="math display">\[
+dis_{2}=dis_{1}\oplus dis_{3}
+\]</span> 也就是说，右边的路径可以通过左边的路径异或上一个环得到。</p>
+<p>综上所述，我们只需要解决两个任务：</p>
+<ol type="1">
+<li><p>找到任意一条1到n的路径，并找到图中的所有环。</p></li>
+<li><p>答案这条路径异或上若干个环得到。</p></li>
+</ol>
+<p>找环的部分可以通过一个有趣的结论来解决：所有环可以通过基本环（由一条非树边及其端点在书上路径组成的环）异或得到。所以我们只需要在DFS生成树上找基本环即可。（P.S.当时笔者写这道题的时候是暴力找的环，直接T0了。）</p>
+<p>求答案的最大值可以使用线性基多快好省地解决。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">5e4</span>+<span class="number">5</span>,M=<span class="number">2e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span>&#123;</span><br><span class="line">  <span class="type">int</span> head[N],nxt[M],to[M],tot;</span><br><span class="line">  ll dis[M];</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> v,ll w)</span></span>&#123;</span><br><span class="line">    nxt[++tot]=head[u];</span><br><span class="line">    dis[tot]=w;</span><br><span class="line">    to[tot]=v;</span><br><span class="line">    head[u]=tot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;G;</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line">ll sum[N];</span><br><span class="line">set&lt;ll&gt; cyc;</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  vis[x]=<span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=G.head[x];i;i=G.nxt[i])</span><br><span class="line">    <span class="keyword">if</span>(!vis[G.to[i]])sum[G.to[i]]=sum[x]^G.dis[i],<span class="built_in">dfs</span>(G.to[i]);</span><br><span class="line">    <span class="keyword">else</span> cyc.<span class="built_in">insert</span>(sum[x]^sum[G.to[i]]^G.dis[i]);</span><br><span class="line">&#125;</span><br><span class="line">ll bas[<span class="number">64</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">63</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>((x&gt;&gt;i)&amp;<span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(bas[i])x^=bas[i];</span><br><span class="line">      <span class="keyword">else</span>&#123;bas[i]=x;<span class="keyword">return</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">qry</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">63</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>((x^bas[i])&gt;x)x^=bas[i];</span><br><span class="line">  <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)&#123;</span><br><span class="line">    <span class="type">int</span> u,v;ll w;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%lld&quot;</span>,&amp;u,&amp;v,&amp;w);</span><br><span class="line">    G.<span class="built_in">add</span>(u,v,w);G.<span class="built_in">add</span>(v,u,w);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span>(ll x:cyc)<span class="built_in">insert</span>(x);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="built_in">qry</span>(sum[n]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+<h3 id="p3733-haoi2017-八纵八横"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM3MzM=">P3733 [HAOI2017] 八纵八横</span></h3>
+<h4 id="题意-3">题意</h4>
+<p>给出 <span class="math inline">\(n(1\le n\le 500)\)</span> 个点 <span class="math inline">\(m(1\le 500\le m)\)</span> 条边的无向图。</p>
+<p>进行 <span class="math inline">\(Q(1\le Q\le 1000)\)</span> 次操作，操作分为三种：</p>
+<ol type="1">
+<li><code>Add x y z</code> 表示加入一条连接 <span class="math inline">\(x,y\)</span> 边权为 <span class="math inline">\(z\)</span> 的边。</li>
+<li><code>Cancel k</code> 删除第 <span class="math inline">\(k\)</span> 次加入的边。</li>
+<li><code>Change k z</code> 将第 <span class="math inline">\(k\)</span> 次加入的边的边权修改为 <span class="math inline">\(z\)</span>。</li>
+</ol>
+<p>其中所有边权 <span class="math inline">\(z\)</span> 均为非负整数，在二进制下长度不超过 <span class="math inline">\(1000\)</span> 位。</p>
+<p>输入的 <span class="math inline">\(z\)</span> 和输出的答案均要在二进制下给出。</p>
+<p>定义一条路径的权值为路径上的边的异或和。求经过1的环中的最大权值。</p>
+<details class="note info"><summary><p>做法</p>
+</summary>
+<p>由于异或的性质，我们可以发现，任何环都是可以取到的。</p>
+<p>如果一个环不包括1号点，那么我们可以从1号点出发，经过一些路径到这个环，遍历这个环后再原路返回。由于中间的路径被经过两次，贡献为0，只保留了环的共线。</p>
+<p>所以我们现在只要维护环的最大答案即可，我们仍然考虑线性基来维护环的信息。</p>
+<p>对于修改边的操作可以拆分成一次插入一次删除。</p>
+<p>如果记 <span class="math inline">\(dis_{i}\)</span> 为从1到点 <span class="math inline">\(i\)</span> 的任意一条路径的长度，那么我们加入一条连接 <span class="math inline">\(u\)</span> 和 <span class="math inline">\(v\)</span> ，权值为 <span class="math inline">\(z\)</span> 的边时，我们只需要加入 <span class="math inline">\(dis_{u}\oplus z\oplus dis_{v}\)</span> 的一个数字即可，相当于是经过了这条边的一个环。</p>
+<p>那么如何处理删除操作呢？</p>
+<h4 id="可删线性基做法">可删线性基做法</h4>
+<p>按照上方可删线性基的离线/在线做法来做即可。</p>
+<details class="note info">
+<summary>
+<p>
+代码
+</p>
+</summary>
+<p>
+代码丑得要命，不忍直视。后面想方设法离线，搞得挺混乱，不要学我。
+</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1005</span>,Q=<span class="number">2005</span>,LEN=<span class="number">2005</span>,M=<span class="number">2005</span>;</span><br><span class="line"><span class="keyword">using</span> bs=bitset&lt;LEN&gt;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">read</span><span class="params">(bs&amp; x)</span></span>&#123;</span><br><span class="line">  <span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="keyword">while</span>(c!=<span class="string">&#x27;0&#x27;</span>&amp;&amp;c!=<span class="string">&#x27;1&#x27;</span>)c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="type">int</span> cnt=<span class="number">0</span>;x.<span class="built_in">reset</span>();</span><br><span class="line">  <span class="keyword">while</span>(c==<span class="string">&#x27;0&#x27;</span>||c==<span class="string">&#x27;1&#x27;</span>)x[cnt++]=c^<span class="number">48</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;cnt/<span class="number">2</span>;++i)&#123;<span class="type">bool</span> tmp=x[i];x[i]=x[cnt-i<span class="number">-1</span>];x[cnt-i<span class="number">-1</span>]=tmp;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">const</span> bs&amp; x)</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> i=<span class="number">1000</span>;</span><br><span class="line">  <span class="keyword">while</span>(x[i]==<span class="number">0</span>&amp;&amp;i&gt;<span class="number">0</span>)--i;</span><br><span class="line">  <span class="keyword">do</span>&#123;</span><br><span class="line">    <span class="built_in">putchar</span>(x[i]^<span class="number">48</span>);</span><br><span class="line">    --i;</span><br><span class="line">  &#125;<span class="keyword">while</span>(i&gt;=<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span>&#123;</span><br><span class="line">  <span class="type">int</span> head[N],nxt[M],to[M],tot;</span><br><span class="line">  bs dis[M];</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> v,bs w)</span></span>&#123;</span><br><span class="line">    nxt[++tot]=head[u];</span><br><span class="line">    to[tot]=v;</span><br><span class="line">    dis[tot]=w;</span><br><span class="line">    head[u]=tot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;G;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m,q;</span><br><span class="line"><span class="type">int</span> dTime[N];</span><br><span class="line">bs bas[LEN];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> tim,bs x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1000</span>;i&gt;=<span class="number">0</span>;--i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(x[i])&#123;</span><br><span class="line">      <span class="keyword">if</span>(tim&gt;dTime[i])<span class="built_in">swap</span>(tim,dTime[i]),<span class="built_in">swap</span>(x,bas[i]);</span><br><span class="line">      <span class="keyword">if</span>(!tim)<span class="keyword">return</span>;</span><br><span class="line">      x^=bas[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">bs <span class="title">qry</span><span class="params">(<span class="type">int</span> tim)</span></span>&#123;</span><br><span class="line">  bs res;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1000</span>;i&gt;=<span class="number">0</span>;--i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!res[i])</span><br><span class="line">      <span class="keyword">if</span>(dTime[i]&gt;tim)res^=bas[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bs dis[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  vis[x]=<span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=G.head[x];i;i=G.nxt[i])</span><br><span class="line">    <span class="keyword">if</span>(vis[G.to[i]])<span class="built_in">insert</span>(q+<span class="number">1</span>,dis[x]^dis[G.to[i]]^G.dis[i]);</span><br><span class="line">    <span class="keyword">else</span> dis[G.to[i]]=dis[x]^G.dis[i],<span class="built_in">dfs</span>(G.to[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">char</span> str[<span class="number">10</span>];</span><br><span class="line">bs ins[Q],chgVal[Q];</span><br><span class="line"><span class="type">int</span> tp[Q],cur[Q],del[Q],num[Q],v1[Q],v2[Q];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; chg[Q];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt;::iterator iter[Q];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;q);</span><br><span class="line">  <span class="type">int</span> u,v;bs w;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;u,&amp;v);</span><br><span class="line">    <span class="built_in">read</span>(w);</span><br><span class="line">    G.<span class="built_in">add</span>(u,v,w);G.<span class="built_in">add</span>(v,u,w);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="built_in">print</span>(<span class="built_in">qry</span>(<span class="number">0</span>));</span><br><span class="line">  <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">  <span class="type">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=q;++i)del[i]=q+<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=q;++i)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,str);</span><br><span class="line">    <span class="keyword">if</span>(str[<span class="number">0</span>]==<span class="string">&#x27;A&#x27;</span>)&#123;</span><br><span class="line">      tp[i]=<span class="number">1</span>;++cnt;<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;v1[cnt],&amp;v2[cnt]);<span class="built_in">read</span>(ins[cnt]);ins[cnt]=ins[cnt]^dis[v1[cnt]]^dis[v2[cnt]];cur[cnt]=cnt;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(str[<span class="number">1</span>]==<span class="string">&#x27;a&#x27;</span>)&#123;</span><br><span class="line">      tp[i]=<span class="number">2</span>;<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num[i]);del[num[i]]=i;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      tp[i]=<span class="number">3</span>;<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num[i]);<span class="built_in">read</span>(chgVal[i]);chg[num[i]].<span class="built_in">push_back</span>(i);chgVal[i]^=dis[v1[num[i]]]^dis[v2[num[i]]];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=cnt;++i)iter[i]=chg[i].<span class="built_in">begin</span>();</span><br><span class="line">  cnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=q;++i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(tp[i]==<span class="number">1</span>)&#123;</span><br><span class="line">      ++cnt;</span><br><span class="line">      <span class="built_in">insert</span>(iter[cnt]==chg[cnt].<span class="built_in">end</span>()?del[cnt]:*iter[cnt],ins[cnt]);</span><br><span class="line">      <span class="keyword">if</span>(iter[cnt]!=chg[cnt].<span class="built_in">end</span>())++iter[cnt];</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(tp[i]==<span class="number">3</span>)&#123;</span><br><span class="line">      <span class="type">int</span> k=num[i];</span><br><span class="line">      <span class="built_in">insert</span>(iter[k]==chg[k].<span class="built_in">end</span>()?del[k]:*iter[k],chgVal[i]);</span><br><span class="line">      <span class="keyword">if</span>(iter[k]!=chg[k].<span class="built_in">end</span>())++iter[k];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">qry</span>(i));</span><br><span class="line">    <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+<h4 id="线段树分治">
+线段树分治
+</h4>
+<p>
+我们可以将信息离线下来之后线段树分治。
+</p>
+<p>
+不是很会做。可以去洛谷看看题解。
+</p>
+
+</details>
+<h1 id="推广">推广</h1>
+<p>其实我们在介绍部分提到的线性基是一种特殊的线性基：异或线性基，是 OI 中较为常用的线性基。</p>
+<p>我们先定义线性无关：对于一个集合 <span class="math inline">\(A\)</span>（实际上是线性空间），包含 <span class="math inline">\(m\)</span> 维向量，如果这个集合中的任何元素都不能通过其他元素进行线性运算（例如：数乘，加法等）得到，我们称这个集合线性无关。否则称为线性有关。</p>
+<p>在异或线性基中，集合 <span class="math inline">\(A\)</span> 中的元素不能通过其它元素异或得到，就叫做线性无关。</p>
+<p>线性基实质上是一个极大的线性无关组。这个基，通过线性运算能够得到的向量称为其张成。我们发现线性基和线性空间的张成是相同的。</p>
+<p>推广之后，我们就可以做实数线性基了：</p>
+<h2 id="p3265-jloi2015-装备购买"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDMyNjU=">P3265 [JLOI2015] 装备购买</span></h2>
+<h3 id="题意-4">题意</h3>
+<p>给定 <span class="math inline">\(n(1\le n\le 500)\)</span> 个装备，每个装备有 <span class="math inline">\(m(1\le m\le 500)\)</span> 个属性值 <span class="math inline">\(a_{i}(0\le a_{i}\le 1000)\)</span>，每一个装备有一个代价 <span class="math inline">\(c_{i}\)</span>。</p>
+<p>每一个装备的属性值组成了一个 <span class="math inline">\(m\)</span> 维向量 <span class="math inline">\(\mathbf{z}_{i}=(a_{1},\cdots,a_{j},\cdots,a_{m})\)</span>。现在要求找出这些向量的最小代价线性基。</p>
+<details class="note info"><summary><p>解法</p>
+</summary>
+<p>版题，排序之后插入，跟异或线性基差不多。</p>
+<p>只不过这里的插入不使用异或来操作，使用类似高斯消元的办法消去第 <span class="math inline">\(i\)</span> 位上的属性值。</p>
+<p>注意高斯消元的精度一直很玄学，所以EPS不要开太小，否则会挂分。</p>
+<details class="note info">
+<summary>
+<p>
+代码
+</p>
+</summary>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">505</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">double</span> EPS=<span class="number">1e-5</span>;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">Abs</span><span class="params">(<span class="type">double</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x&lt;<span class="number">0</span>?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">cmp</span><span class="params">(<span class="type">double</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">Abs</span>(x)&lt;=EPS)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> x&lt;<span class="number">0</span>?<span class="number">-1</span>:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> a[N][N],val[N],id[N];</span><br><span class="line"><span class="type">double</span> bas[N][N],tmp[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> ans;</span><br><span class="line"><span class="type">int</span> cnt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)tmp[i]=a[x][i];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=m;i&gt;=<span class="number">1</span>;--i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">cmp</span>(tmp[i]))&#123;</span><br><span class="line">      <span class="keyword">if</span>(!vis[i])&#123;vis[i]=<span class="literal">true</span>;<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=m;++j)bas[i][j]=tmp[j];ans+=val[x];++cnt;<span class="keyword">return</span>;&#125;</span><br><span class="line">      <span class="type">double</span> t=tmp[i]/bas[i][i];</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=m;++j)tmp[j]-=bas[i][j]*t;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=m;++j)</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i][j]);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;val[i]),id[i]=i;</span><br><span class="line">  <span class="built_in">sort</span>(id+<span class="number">1</span>,id+<span class="number">1</span>+n,[](<span class="type">int</span> x,<span class="type">int</span> y)&#123;<span class="keyword">return</span> val[x]&lt;val[y];&#125;);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)<span class="built_in">insert</span>(id[i]);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d %lld\n&quot;</span>,cnt,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+</details>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Tangninghaha
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tangninghaha.netlify.app/posts/%E7%BA%BF%E6%80%A7%E5%9F%BA/" title="线性基">https://tangninghaha.netlify.app/posts/线性基/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/%E6%BB%A1%E5%88%86%EF%BC%81zs%E4%B8%80%E5%AD%A6%E7%94%9F%E8%8E%B7%E5%85%A8%E5%9B%BD%E7%AC%AC%E4%B8%80%EF%BC%81/" rel="prev" title="满分！ZS一学生获全国第一！">
+                  <i class="fa fa-angle-left"></i> 满分！ZS一学生获全国第一！
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/%E9%B2%9C%E8%8A%B1-%E5%BA%8F/" rel="next" title="鲜花 / 序">
+                  鲜花 / 序 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  
+  <div class="comments giscus-container">
+  </div>
+  
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-code"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Tangninghaha</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">32k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:58</span>
+  </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div><div>站点主题色 <a target="_blank" rel="noopener" href="http://zhongguose.com/#hehuanhong">合欢红</a></div>
+
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="giscus" type="application/json">{"enable":true,"repo":"tangninghaha/Blog-Comment","repo_id":"R_kgDOK75Jug","category":"Announcements","category_id":"DIC_kwDOK75Jus4Cb4f_","mapping":"pathname","reactions_enabled":1,"emit_metadata":1,"theme":"light","lang":"en","crossorigin":"anonymous","input_position":"top","loading":"lazy"}</script>
+
+<script>
+document.addEventListener('page:loaded', () => {
+  if (!CONFIG.page.comments) return;
+
+  NexT.utils.loadComments('.giscus-container')
+    .then(() => NexT.utils.getScript('https://giscus.app/client.js', {
+      attributes: {
+        async                   : true,
+        crossOrigin             : 'anonymous',
+        'data-repo'             : CONFIG.giscus.repo,
+        'data-repo-id'          : CONFIG.giscus.repo_id,
+        'data-category'         : CONFIG.giscus.category,
+        'data-category-id'      : CONFIG.giscus.category_id,
+        'data-mapping'          : CONFIG.giscus.mapping,
+        'data-reactions-enabled': CONFIG.giscus.reactions_enabled,
+        'data-emit-metadata'    : CONFIG.giscus.emit_metadata,
+        'data-theme'            : CONFIG.giscus.theme,
+        'data-lang'             : CONFIG.giscus.lang,
+        'data-input-position'   : CONFIG.giscus.input_position,
+        'data-loading'          : CONFIG.giscus.loading
+      },
+      parentNode: document.querySelector('.giscus-container')
+    }));
+});
+</script>
+
+<!-- hexo injector body_end start --><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"><script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script><!-- hexo injector body_end end --></body>
+</html>
