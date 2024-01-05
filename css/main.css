@@ -2674,12 +2674,6 @@ header.header {
 .site-subtitle {
   color: #fff;
 }
-body {
-  background: url("/images/background.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 100% 100%;
-}
 :root {
   --content-bg-color: rgba(255,255,255,0.902);
 }
