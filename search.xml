@@ -331,9 +331,11 @@ m+1&amp;m+1&amp;m+3&amp;\cdots&amp;m+r&amp;\cdots&amp;2m\\
 <p>由一种简单的求区间最值的方法拓展而来。</p>
 <p>考虑维护区间的信息：从最左边开始连续一段的最大值 <span class="math inline">\(lmax\)</span>，从最右边连续一段的最大值 <span class="math inline">\(rmax\)</span>，区间的和 <span class="math inline">\(sum\)</span>，区间的答案 <span class="math inline">\(max\)</span>。</p>
 <p>那么合并比较容易（假设要合并的两个区间为 <span class="math inline">\(a,b\)</span>）： <span class="math display">\[
-lmax=\max(a.lmax,a.sum+b.lmax)\\
-rmax=\max(b.rmax,a.rmax+b.sum)\\
-max=\max(a.max,b.max,a.rmax+b.lmax)
+\begin{aligned}
+lmax&amp;=\max(a.lmax,a.sum+b.lmax)\\
+rmax&amp;=\max(b.rmax,a.rmax+b.sum)\\
+max&amp;=\max(a.max,b.max,a.rmax+b.lmax)
+\end{aligned}
 \]</span> 接下来考虑如何动态修改。</p>
 <p>我们发现，每一个值的变化是一个一次函数的形式。具体地，当前的某一个值，例如 lmax，我们可以用这样一个函数来刻画它未来的值。 <span class="math inline">\(lmax=kx+b\)</span>，其中 <span class="math inline">\(k\)</span>是区间长度，<span class="math inline">\(b\)</span> 是当前的值，<span class="math inline">\(x\)</span> 是加的值。通过这个式子可以求出 <span class="math inline">\(lmax\)</span> 变化后的值。其它几个值是同理的。</p>
 <p>但是，我们注意到 <span class="math inline">\(lmax\)</span> 可能原本取了 <span class="math inline">\(a.lmax\)</span>，但是随着区间加法的进行，<span class="math inline">\(a.sum+b.lmax&gt;a.lmax\)</span>，那么这时它的取值就变成了 <span class="math inline">\(a.sum+b.lmax\)</span>。这时候用上面的式子求出的就是错误的。</p>
