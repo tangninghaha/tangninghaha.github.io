@@ -39,23 +39,16 @@ collections:
         dateFormat: YYYY-MM-DD
         timeFormat: HH:mm:ss
       - label: Tags
-        name: tags
+        name: tag
         widget: list
         required: false
-      - label: Categories
-        name: categories
-        widget: list
+      - label: Hidden
+        name: hide
+        widget: boolean
+        default: false
         required: false
       - label: Password
         name: password
-        widget: list
-        required: false
-      - label: Encrypted abstract
-        name: abstract
-        widget: list
-        required: false
-      - label: Encrypted message
-        name: message
         widget: list
         required: false
       - label: Body
@@ -125,9 +118,9 @@ collections:
         editor:
           preview: true
         fields: *ref_0
-      - name: categories-index.md
-        label: Categories
-        file: source/categories/index.md
+      - name: tags-index.md
+        label: Tag
+        file: source/tags/index.md
         editor:
           preview: true
         fields: *ref_0

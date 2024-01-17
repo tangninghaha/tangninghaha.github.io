@@ -20,15 +20,6 @@
   </url>
   
   <url>
-    <loc>https://tangninghaha.netlify.app/posts/GMOJ%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93/</loc>
-    
-    <lastmod>2024-01-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tangninghaha.netlify.app/posts/Multiplicative_Functions/</loc>
     
     <lastmod>2024-01-17</lastmod>
@@ -39,15 +30,6 @@
   
   <url>
     <loc>https://tangninghaha.netlify.app/posts/NOIP2016%20%E5%A4%A9%E5%A4%A9%E7%88%B1%E8%B7%91%E6%AD%A5%E9%A2%98%E8%A7%A3/</loc>
-    
-    <lastmod>2024-01-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tangninghaha.netlify.app/posts/OIFC%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2024-01-17</lastmod>
     
@@ -101,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://tangninghaha.netlify.app/posts/%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0/</loc>
+    <loc>https://tangninghaha.netlify.app/posts/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2024-01-17</lastmod>
     
@@ -110,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://tangninghaha.netlify.app/posts/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://tangninghaha.netlify.app/posts/%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0/</loc>
     
     <lastmod>2024-01-17</lastmod>
     
@@ -164,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://tangninghaha.netlify.app/categories/index.html</loc>
+    <loc>https://tangninghaha.netlify.app/tags/index.html</loc>
     
     <lastmod>2024-01-17</lastmod>
     
@@ -217,69 +199,76 @@
   </url>
 
   
+  <url>
+    <loc>https://tangninghaha.netlify.app/tags/hide/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tangninghaha.netlify.app/tags/%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tangninghaha.netlify.app/tags/%E9%A2%98%E8%A7%A3/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tangninghaha.netlify.app/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tangninghaha.netlify.app/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tangninghaha.netlify.app/tags/%E5%9B%BE%E8%AE%BA/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tangninghaha.netlify.app/tags/%E5%8C%96%E5%AD%A6/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tangninghaha.netlify.app/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tangninghaha.netlify.app/tags/%E8%86%9C%E6%8B%9C/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://tangninghaha.netlify.app/tags/%E9%B2%9C%E8%8A%B1/</loc>
+    <lastmod>2024-01-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
-  
-  <url>
-    <loc>https://tangninghaha.netlify.app/categories/%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tangninghaha.netlify.app/categories/%E9%A2%98%E8%A7%A3/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tangninghaha.netlify.app/categories/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tangninghaha.netlify.app/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tangninghaha.netlify.app/categories/%E5%9B%BE%E8%AE%BA/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tangninghaha.netlify.app/categories/%E5%8C%96%E5%AD%A6/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tangninghaha.netlify.app/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tangninghaha.netlify.app/categories/%E8%86%9C%E6%8B%9C/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://tangninghaha.netlify.app/categories/%E9%B2%9C%E8%8A%B1/</loc>
-    <lastmod>2024-01-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
 </urlset>
