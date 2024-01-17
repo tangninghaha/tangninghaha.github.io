@@ -22,27 +22,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"tangninghaha.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="对前缀函数的简单介绍。">
+    <meta name="description" content="看不清公式可以放大。 题意简单转化 首先有 \(\gcd(x^{a}-1,x^{b}-1)+1&#x3D;\gcd(x^{\gcd(a,b)})\)。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前缀函数">
-<meta property="og:url" content="https://tangninghaha.netlify.app/posts/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:title" content="GDKOI Day2 T2 计算题解">
+<meta property="og:url" content="https://tangninghaha.netlify.app/posts/GDKOIDay2T2%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Tangninghaha">
-<meta property="og:description" content="对前缀函数的简单介绍。">
+<meta property="og:description" content="看不清公式可以放大。 题意简单转化 首先有 \(\gcd(x^{a}-1,x^{b}-1)+1&#x3D;\gcd(x^{\gcd(a,b)})\)。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-16T00:00:00.000Z">
+<meta property="article:published_time" content="2024-01-15T00:00:00.000Z">
 <meta property="article:modified_time" content="2024-01-17T11:37:02.755Z">
 <meta property="article:author" content="Tangninghaha">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://tangninghaha.netlify.app/posts/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/">
+<link rel="canonical" href="https://tangninghaha.netlify.app/posts/GDKOIDay2T2%E9%A2%98%E8%A7%A3/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tangninghaha.netlify.app/posts/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/","path":"posts/前缀函数/","title":"前缀函数"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tangninghaha.netlify.app/posts/GDKOIDay2T2%E9%A2%98%E8%A7%A3/","path":"posts/GDKOIDay2T2题解/","title":"GDKOI Day2 T2 计算题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>前缀函数 | Tangninghaha</title>
+<title>GDKOI Day2 T2 计算题解 | Tangninghaha</title>
   
 
 
@@ -136,7 +136,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -149,7 +149,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#kmp-%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">KMP 算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#border-%E7%9A%84%E7%90%86%E8%AE%BA"><span class="nav-number">2.</span> <span class="nav-text">border 的理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#border-%E4%B8%8E%E5%91%A8%E6%9C%9F"><span class="nav-number">2.1.</span> <span class="nav-text">border 与周期</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,7 +222,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://tangninghaha.netlify.app/posts/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="https://tangninghaha.netlify.app/posts/GDKOIDay2T2%E9%A2%98%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
@@ -236,12 +235,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="前缀函数 | Tangninghaha">
+      <meta itemprop="name" content="GDKOI Day2 T2 计算题解 | Tangninghaha">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          前缀函数
+          GDKOI Day2 T2 计算题解
         </h1>
 
         <div class="post-meta-container">
@@ -252,7 +251,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-12-16 00:00:00" itemprop="dateCreated datePublished" datetime="2023-12-16T00:00:00+00:00">2023-12-16</time>
+      <time title="创建时间：2024-01-15 00:00:00" itemprop="dateCreated datePublished" datetime="2024-01-15T00:00:00+00:00">2024-01-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -267,7 +266,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="index"><span itemprop="name">字符串</span></a>
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
         </span>
     </span>
 
@@ -278,14 +277,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>860</span>
+      <span>1.4k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -295,58 +294,68 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>对前缀函数的简单介绍。</p>
+    <div class="post-body" itemprop="articleBody"><p>看不清公式可以放大。</p>
+<p>题意简单转化</p>
+<p>首先有 <span class="math inline">\(\gcd(x^{a}-1,x^{b}-1)+1=\gcd(x^{\gcd(a,b)})\)</span>。</p>
 <span id="more"></span>
-<p>约定：字符串下标从 1 开始。</p>
-<p>前缀函数是是 <span class="math inline">\(\pi\)</span> 数组，<span class="math inline">\(\pi_{i}\)</span> 表示字符串 <span class="math inline">\(s\)</span> 的前缀 <span class="math inline">\(s[1...i]\)</span> 的最长公共 <strong>真</strong> 前后缀（border）长度。</p>
-<h1 id="kmp-算法">KMP 算法</h1>
-<p>KMP 算法通过预处理前缀函数，加速字符串匹配过程。做到均摊 <span class="math inline">\(O(\lvert S\rvert+\lvert T\rvert)\)</span> 的时间复杂度。</p>
-<h1 id="border-的理论">border 的理论</h1>
-<p>border 的 border 仍然是 border，正确性显然。</p>
-<h2 id="border-与周期">border 与周期</h2>
-<p>形式化定义周期：对字符串 <span class="math inline">\(S\)</span> 和 <span class="math inline">\(0 &lt; p \le \lvert S\rvert\)</span> ，有 <span class="math inline">\(s[i]=s[i+p]\)</span> 对所有 <span class="math inline">\(i \in [1,\lvert S\rvert - p]\)</span> 成立，则称 <span class="math inline">\(p\)</span> 是 <span class="math inline">\(S\)</span> 的一个周期。</p>
-<p>感性理解：用前 <span class="math inline">\(p\)</span> 个字符向后不断复制，能得到 <span class="math inline">\(s\)</span>，最后一次可以只复制一部分。</p>
-<p>如果字符串 <span class="math inline">\(s\)</span> 有长度为 <span class="math inline">\(r\)</span> 的 border ，并且 <span class="math inline">\(r\ge \vert n \rvert /2\)</span> ，那么 <span class="math inline">\(s\)</span> 有周期长度就是 <span class="math inline">\(s-r\)</span> 。这两个条件应该是等价的。</p>
-<p>证明：记 <span class="math inline">\(n=\lvert s\rvert\)</span> ，考虑 border ，是由前缀 <span class="math inline">\(s[1...r]\)</span> 和后缀 <span class="math inline">\(s[n-r+1,n]\)</span> 组成的。对于 <span class="math inline">\(i \in [1,r]\)</span> ，都有 <span class="math inline">\(s[i]=s[i+n-r]\)</span> 。由周期的定义可以得证。</p>
-<p>最小的周期就是 <span class="math inline">\(s-\pi_{s}\)</span> 。</p>
+<blockquote>
+<p>证明：</p>
+<p>因为当 <span class="math inline">\(a\ge b\)</span> 时， <span class="math inline">\(\gcd(a,b)=\gcd(a-b,b)\)</span>。</p>
+<p>让我们钦定 <span class="math inline">\(a\ge b\)</span>，那么</p>
+<p>考虑 <span class="math inline">\(\gcd(x^{a}-1,x^{b}-1)=\gcd(x^{a}-x^{b},x^{b}-1)=\gcd(x^{b}(x^{a-b}-1),x^{b}-1)\)</span></p>
+<p>由于 <span class="math inline">\(\gcd(x^{b},x^{b}-1)=1\)</span>，所以</p>
+<p><span class="math inline">\(\gcd(x^{b}(x^{a-b}-1),x^{b}-1)=\gcd(x^{a-b}-1,x^{b}-1)\)</span></p>
+<p>我们发现指数在更相减损！</p>
+<p>直到更相减损结束的时候，即 <span class="math inline">\(\gcd(x^{\gcd(a,b)}-1,x^{0}-1)\)</span> 时，我们得到原式为 <span class="math inline">\(x^{\gcd(a,b)}-1\)</span>。</p>
+</blockquote>
 <hr />
-<ol type="1">
-<li><p>Periodicity Lemma 周期性引理</p>
+<p>发现 <span class="math inline">\(m\vert L-1\)</span> 且 <span class="math inline">\(m\vert R\)</span>，将 <span class="math inline">\(L,R\)</span> 都减去 <span class="math inline">\(L\)</span>，原问题相当于 <span class="math inline">\([1,N]\)</span> 的问题。</p>
+<p>这题中有多项式 <span class="math inline">\(f(x)=(1+x)(1+x^{2})(1+x^{3})\cdots (1+x^{k})=c_{0}+c_{1}x+c_{2}x^{2}+\cdots+c_{t}x^{t}\)</span>。</p>
+<p>我们知道展开这个多项式，就相当于在每一个括号内选取一项相乘。</p>
+<p><span class="math inline">\((1+x^{i})\)</span>，如果选择1，乘积的指数不变，表示子集中没有 <span class="math inline">\(i\)</span>。如果选择 <span class="math inline">\(x^{i}\)</span>，乘积的指数增加了 <span class="math inline">\(i\)</span>，表示子集中有 <span class="math inline">\(i\)</span>。那么如果展开后有一项 <span class="math inline">\(c_{i}x^{i}\)</span>，其中 <span class="math inline">\(c_{i}\)</span> 是系数，那么 <span class="math inline">\(c_{i}\)</span> 就表示子集和为 <span class="math inline">\(i\)</span> 的方案数。</p>
+<p>因为 <span class="math inline">\(x\)</span> 是任意代入的，所以我们希望代入一些具有优秀性质的 <span class="math inline">\(x\)</span> 来简化我们的运算。</p>
+<hr />
+<p>引理 <span class="math display">\[
+[m\vert i]=\frac{1}{m}\sum_{k=0}^{m-1}\omega_{m}^{ik}
+\]</span> 证明：</p>
+<p>考虑等比数列求和：<span class="math inline">\(S=\frac{\omega_{m}^{im}-1}{\omega_{m}^{i}-1}\)</span>，分类讨论：</p>
 <ul>
-<li><p>Weak: 若 <span class="math inline">\(p,q\)</span> 为 <span class="math inline">\(s\)</span> 的一个周期，并且 <span class="math inline">\(p+q\le n\)</span> ，那么 <span class="math inline">\(\gcd(p,q)\)</span> 也是一个周期。</p>
-<details class="note info"><summary><p>证明</p>
-</summary>
-<p>证明：假设 <span class="math inline">\(p&gt;q\)</span> ，设 <span class="math inline">\(d=p-q\)</span> ，那么分类讨论：</p>
-<ul>
-<li><span class="math inline">\(i \le q\)</span> ，此时 <span class="math inline">\(s[i]=s[i+p]=s[i+p-q]=s[i+d]\)</span></li>
-<li><span class="math inline">\(i&gt;q\)</span> ，此时 <span class="math inline">\(s[i]=s[i-q]=s[i+p-q]=s[i+d]\)</span></li>
+<li>当 <span class="math inline">\(\omega_{m}^{i}\not=1\)</span> 时，可以知道 <span class="math inline">\(i\)</span> 不是 <span class="math inline">\(m\)</span> 的倍数，并且 <span class="math inline">\(\omega_{m}^{im}-1\)</span> 为0。</li>
+<li>当 <span class="math inline">\(\omega_{m}^{i}=1\)</span> 时，可以知道 <span class="math inline">\(i\)</span> 是 <span class="math inline">\(m\)</span> 的倍数，并且由于分母为0，此时不能使用等比数列求和公式，所以特判。此时 <span class="math inline">\(\omega_{m}^{ik}=1\)</span>，因为 <span class="math inline">\(i\)</span> 是 <span class="math inline">\(m\)</span> 的倍数。得到 <span class="math inline">\(\sum_{k=0}^{m-1}\omega_{m}^{ik}=m\)</span>，所以除以 <span class="math inline">\(m\)</span> 得到1。</li>
 </ul>
-<p>注意到两种情况均可以导出 <span class="math inline">\(s[i]=s[i+d]\)</span> ，即 <span class="math inline">\(d\)</span> 也是周期。 更相减损即可得到 <span class="math inline">\(\gcd(p,q)\)</span> 是周期。 <span class="math inline">\(\square\)</span></p>
-<p>回顾一下证明过程，之所以要求 <span class="math inline">\(p+q\le n\)</span> ，是在第一类中，<span class="math inline">\(s[i]=s[i+p]\)</span> 一步，如果 <span class="math inline">\(p+q&gt;n\)</span> ，就不满足周期的性质。</p>
-<p>证明的核心围绕着周期的定义 <span class="math inline">\(s[i]=s[i+r]\)</span> 进行，目标是导出 <span class="math inline">\(s[i+d]\)</span> ，最后使用更相减损完成证明，巧妙。</p>
-
-</details></li>
-<li><p>Strong: 若 <span class="math inline">\(p,q\)</span> 为 <span class="math inline">\(s\)</span> 的一个周期，并且 <span class="math inline">\(p+q\le n+\gcd(p,q)\)</span> ，那么 <span class="math inline">\(\gcd(p,q)\)</span> 也是一个周期。</p>
-<details class="note info"><summary><p>证明</p>
-</summary>
-<p>发现上面的证明此时会出现问题，因为 <span class="math inline">\(s[i+p]\)</span> 可能超过 <span class="math inline">\(n\)</span> 。</p>
-<p><del>参考</del> 照搬 <span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC84OTM4NTM2MA==">Periodicity Lemma - 知乎</span></p>
-<ol type="1">
-<li>按照上面的方法证明对于长度是 <span class="math inline">\(n-q\)</span> 的前缀/后缀均是循环节。因为注意到 <span class="math inline">\(\gcd(p,q)\le q\)</span> ，必然满足上述证明过程。</li>
-<li>可以证明 <span class="math inline">\(q\le n-q\)</span> （这是怎么证明的呢？），所以 <span class="math inline">\(s\)</span> 的前 <span class="math inline">\(q\)</span> 个字符中，<span class="math inline">\(\gcd(p,q)\)</span> 仍然是其循环节。因为 <span class="math inline">\(\gcd(p,q)\)</span> 是 <span class="math inline">\(q\)</span> 的约数，所以前缀 <span class="math inline">\(q\)</span> 是由若干个完整的循环节拼成的。</li>
-<li>因为可以将 <span class="math inline">\(s\)</span> 拆分成 <span class="math inline">\(q\)</span> 的前缀和 <span class="math inline">\(n-q\)</span> 的后缀，前缀是由若干段完整循环节构成的，而后半段也是周期。所以 <span class="math inline">\(\gcd(p,q)\)</span> 也是一个周期。</li>
-</ol>
-<p>这个证明过程的严谨推理仍然有待分析。</p>
-
-</details></li>
-</ul></li>
-<li><p>字符串 <span class="math inline">\(s\)</span> 所有长度超过 <span class="math inline">\(\lvert s\rvert / 2\)</span> 的 border 的长度是等差数列。</p>
-<details class="note info"><summary><p>证明</p>
-</summary>
-<p>假设有一个长度为 <span class="math inline">\(n-p\)</span> 的 border 和一个长度为 <span class="math inline">\(n-q\)</span> 的 border ，其中 <span class="math inline">\(p,q \le n/2\)</span> ，那么根据弱周期性引理，可以得到 <span class="math inline">\(\gcd(p,q)\)</span> 是一个周期，那么 <span class="math inline">\(n-\gcd(p,q)\)</span> 是一个 border。</p>
-
-</details></li>
-</ol>
+<hr />
+<p>将 <span class="math inline">\(m\)</span> 次单位根代入得到 <span class="math inline">\(\sum f(\omega_{m}^{i})\)</span>，展开，由引理得到只有 <span class="math inline">\(m\vert i\)</span> 时，系数为 <span class="math inline">\(c_{i}\)</span> 的项的和不为0。而下标为 <span class="math inline">\(m\)</span> 的倍数的数相加得到 <span class="math inline">\(m\times c_{k}\)</span>。故答案为 <span class="math display">\[
+\frac{1}{m}\sum f(\omega_{m}^{i})
+\]</span> 问题转化为快速计算该式子。</p>
+<hr />
+<p>当 <span class="math inline">\(m\)</span> 为奇素数的时候：</p>
+<p>考虑：根据单位根的定义，我们可以对 <span class="math inline">\(z^{m}-1\)</span> 在复数域内进行因式分解。得到 <span class="math inline">\(z^{m}-1=(z-\omega_{m}^{0})(z-\omega_{m}^{1})\cdots(z-\omega_{m}^{m-1})\)</span>，代入 <span class="math inline">\(z=-1\)</span>，进一步得到 <span class="math inline">\(2=(1+\omega_{m}^{1})(1+\omega_{m}^{2})\cdots(1+\omega_{m}^{m})\)</span>。又因为 <span class="math inline">\(m\)</span> 是素数，所以 <span class="math inline">\((1+\omega_{m}^{i})(1+\omega_{m}^{2i})\cdots(1+\omega_{m}^{mi})\)</span> 的指数模 <span class="math inline">\(m\)</span> 组成了一个完全剩余系，其值仍然等于2。</p>
+<blockquote>
+<p>当然，如果 <span class="math inline">\(m\)</span> 为偶数的时候，可以得到 <span class="math inline">\(z^{m}=(-1)^{m}=1\)</span>，所以该式子等于0。</p>
+</blockquote>
+<p>进一步对其拓展，我们知道 <span class="math inline">\(n\)</span> 是 <span class="math inline">\(m\)</span> 的倍数，那么当 <span class="math inline">\(i&gt;0\)</span> 时， <span class="math inline">\(f(\omega_{m}^{i})=(1+\omega_{m}^{i})(1+\omega_{m}^{2i})\cdots(1+\omega_{m}^{ni})=2^{\frac{n}{m}}\)</span>。当 <span class="math inline">\(i=0\)</span> 时，该式等于 <span class="math inline">\(2^{n}\)</span>。</p>
+<p>所以答案等于 <span class="math inline">\(\frac{1}{m}(2^{n}+(m-1)2^{\frac{n}{m}})\)</span>。</p>
+<hr />
+<p>拓展到 <span class="math inline">\(m\)</span> 一般的情况，考虑假设<span class="math inline">\((i,m)=p\)</span>，1~m分别乘 i 模 m 得到的剩余系，包含 <span class="math inline">\(\frac{m}{p}\)</span> 个数，是由 <span class="math inline">\(p\)</span> 个 模 <span class="math inline">\(\frac{m}{p}\)</span> 的完全剩余系中的数字乘 <span class="math inline">\(p\)</span> 得到的。</p>
+<p>那么可以将 <span class="math inline">\((1+\omega_{m}^{i})(1+\omega_{m}^{2i})\cdots(1+\omega_{m}^{mi})\)</span> 按照模 <span class="math inline">\(m\)</span> 得到的值可以表示为 <span class="math inline">\([(1+\omega_{m}^{p})(1+\omega_{m}^{2p})\cdots(1+\omega_{m}^{m})]^{p}\)</span>。</p>
+<p>所以 <span class="math inline">\(f(\omega_{m}^{i})=[(1+\omega_{m}^{p})(1+\omega_{m}^{2p})\cdots(1+\omega_{m}^{m})]^{p\times \frac{n}{m}}\)</span>。</p>
+<p>注意到单位根的性质 <span class="math inline">\(\omega_{m}^{p}=\omega_{\frac{m}{p}}^{1}\)</span>，所以其实上式中括号内的部分就是 <span class="math inline">\((1+\omega_{\frac{m}{p}}^{1})(1+\omega_{\frac{m}{p}}^{2})\cdots(1+\omega_{\frac{m}{p}}^{\frac{m}{p}})\)</span>。</p>
+<p>当 <span class="math inline">\(\frac{m}{p}\)</span> 为偶数的时候，上面的式子为0。当 <span class="math inline">\(\frac{m}{p}\)</span> 为奇数的时候，上面的式子为2。所以 <span class="math inline">\(f(\omega_{m}^{i})=2^{p\times\frac{n}{m}}[2\nmid \frac{m}{p}]\)</span>。</p>
+<p>所以答案等于 <span class="math inline">\(\frac{1}{m}(2^{n}+\sum_{i=1}^{m-1}2^{\frac{n}{m}\times p}[2\nmid \frac{m}{p}])\)</span>。</p>
+<p>我们之前特判了 <span class="math inline">\(i=0\)</span> 的情况，其实 <span class="math inline">\(i=0\)</span> 和 <span class="math inline">\(i=m\)</span> 是一样的，当 <span class="math inline">\(i=m\)</span> 时，<span class="math inline">\(p=m\)</span>，<span class="math inline">\(2^{\frac{n}{m}\times p}[2\nmid \frac{m}{p}])=2^{n}\)</span>，所以式子可以简化为： <span class="math display">\[
+\frac{1}{m}(\sum_{i=0}^{m-1}2^{\frac{n}{m}\times p}[2\nmid \frac{m}{p}])
+\]</span> 直接计算可以获得 85 分。</p>
+<hr />
+<p>进一步优化，观察到如果 <span class="math inline">\(2\vert \frac{m}{(i,m)}\)</span> 时，<span class="math inline">\(i\)</span> 对答案没有贡献。所以假设 <span class="math inline">\(m=2^{k}\times p\)</span>，其中 <span class="math inline">\(p\)</span> 是一个奇数，那么 <span class="math inline">\(i\)</span> 要求满足 <span class="math inline">\(i=2^{k}\times x\)</span>。</p>
+<p>所以有： <span class="math display">\[
+\begin{aligned}
+\frac{1}{m}(\sum_{i=0}^{m-1}2^{\frac{n}{m}\times p}[2\nmid \frac{m}{p}])&amp;=\frac{1}{m}(\sum_{i=1}^{u}2^{\frac{n}{2^{k}\times u}\times \gcd(2^{k}\times u,2^{k}\times i)})\\
+&amp;=\frac{1}{m}(\sum_{i=1}^{u}2^{\frac{n}{u}\times \gcd(u,i)})
+\end{aligned}
+\]</span> 考虑到 <span class="math inline">\(\gcd(u,i)\)</span> 为 <span class="math inline">\(u\)</span> 的约数，我们直接枚举 <span class="math inline">\(\gcd(u,i)\)</span>，也就是： <span class="math display">\[
+\frac{1}{m}(\sum_{d\vert u}2^{\frac{n}{u}\times d}\times \varphi(\frac{u}{d}))
+\]</span> 因为 <span class="math inline">\(\gcd(u,i)=d\)</span> 要求 <span class="math inline">\(\gcd(\frac{u}{d},\frac{i}{d})=1\)</span>，所以有多少个 <span class="math inline">\(\frac{i}{d}\)</span> 满足 <span class="math inline">\(\gcd(\frac{u}{d},\frac{i}{d})=1\)</span> 就是与 <span class="math inline">\(\frac{u}{d}\)</span> 互质的数字的个数。（此处题解写错了）</p>
+<p>由于 <span class="math inline">\(u\)</span> 的特殊性（没有质因子2），所以其约数个数不会太多，1e7 之内大约只有 200 个（题解提供的数据），可以通过本题。</p>
 
     </div>
 
@@ -364,7 +373,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://tangninghaha.netlify.app/posts/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/" title="前缀函数">https://tangninghaha.netlify.app/posts/前缀函数/</a>
+      <a href="https://tangninghaha.netlify.app/posts/GDKOIDay2T2%E9%A2%98%E8%A7%A3/" title="GDKOI Day2 T2 计算题解">https://tangninghaha.netlify.app/posts/GDKOIDay2T2题解/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -377,14 +386,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/Multiplicative_Functions/" rel="prev" title="Multiplicative Functions">
-                  <i class="fa fa-angle-left"></i> Multiplicative Functions
+                <a href="/posts/NOIP2016%20%E5%A4%A9%E5%A4%A9%E7%88%B1%E8%B7%91%E6%AD%A5%E9%A2%98%E8%A7%A3/" rel="prev" title="NOIP2016 天天爱跑步 题解">
+                  <i class="fa fa-angle-left"></i> NOIP2016 天天爱跑步 题解
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8EDFS%E5%BA%8F%E4%B8%8ERMQ%E7%9A%84LCA%E7%AE%97%E6%B3%95/" rel="next" title="一种基于DFS序与RMQ的LCA算法">
-                  一种基于DFS序与RMQ的LCA算法 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>

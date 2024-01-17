@@ -119,15 +119,15 @@ collections:
         editor:
           preview: true
         fields: *ref_0
-      - name: categories-index.md
-        label: Categories
-        file: source/categories/index.md
-        editor:
-          preview: true
-        fields: *ref_0
       - name: about-index.md
         label: About ME
         file: source/about/index.md
+        editor:
+          preview: true
+        fields: *ref_0
+      - name: categories-index.md
+        label: Categories
+        file: source/categories/index.md
         editor:
           preview: true
         fields: *ref_0
