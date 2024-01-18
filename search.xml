@@ -220,7 +220,7 @@ C_{i,j}=A_{i,k}\times B_{k,j}
 \frac{1}{m}(\sum_{i=0}^{m-1}2^{\frac{n}{m}\times p}[2\nmid \frac{m}{p}])
 \]</span> 直接计算可以获得 85 分。</p>
 <hr />
-<p>进一步优化，观察到如果 <span class="math inline">\(2\vert \frac{m}{(i,m)}\)</span> 时，<span class="math inline">\(i\)</span> 对答案没有贡献。所以假设 <span class="math inline">\(m=2^{k}\times p\)</span>，其中 <span class="math inline">\(p\)</span> 是一个奇数，那么 <span class="math inline">\(i\)</span> 要求满足 <span class="math inline">\(i=2^{k}\times x\)</span>。</p>
+<p>进一步优化，观察到如果 <span class="math inline">\(2\vert \frac{m}{(i,m)}\)</span> 时，<span class="math inline">\(i\)</span> 对答案没有贡献。所以假设 <span class="math inline">\(m=2^{k}\times u\)</span>，其中 <span class="math inline">\(u\)</span> 是一个奇数，那么 <span class="math inline">\(i\)</span> 要求满足 <span class="math inline">\(i=2^{k}\times x\)</span>。</p>
 <p>所以有： <span class="math display">\[
 \begin{aligned}
 \frac{1}{m}(\sum_{i=0}^{m-1}2^{\frac{n}{m}\times p}[2\nmid \frac{m}{p}])&amp;=\frac{1}{m}(\sum_{i=1}^{u}2^{\frac{n}{2^{k}\times u}\times \gcd(2^{k}\times u,2^{k}\times i)})\\
@@ -291,7 +291,7 @@ m+1&amp;m+1&amp;m+3&amp;\cdots&amp;m+r&amp;\cdots&amp;2m\\
   </entry>
   <entry>
     <title>NOIP2016 天天爱跑步 题解</title>
-    <url>/posts/NOIP2016%20%E5%A4%A9%E5%A4%A9%E7%88%B1%E8%B7%91%E6%AD%A5%E9%A2%98%E8%A7%A3/</url>
+    <url>/posts/NOIP2016-%E5%A4%A9%E5%A4%A9%E7%88%B1%E8%B7%91%E6%AD%A5%E9%A2%98%E8%A7%A3/</url>
     <content><![CDATA[<h2 id="题目大意">题目大意</h2>
 <p>给定一棵 <span class="math inline">\(n(991\le n\le 299998)\)</span> 个点的树，每个节点上有一个观察者，观察者在时刻 <span class="math inline">\(w_{i}\)</span> 进行观察。</p>
 <p>现在有 <span class="math inline">\(m(991\le m\le 299998)\)</span> 条路径 <span class="math inline">\(s \rightarrow t\)</span>，每个路径上会有一个人，时刻0时从 <span class="math inline">\(s\)</span> 出发，沿着树上路径，向 <span class="math inline">\(t\)</span> 行走，每一个时刻走一条边，走到 <span class="math inline">\(t\)</span> 之后一个时刻消失。</p>
