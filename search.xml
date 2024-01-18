@@ -364,6 +364,64 @@ dep_{s}-2\times dep_{lca}=w_{i}-dep_{i}
       </tags>
   </entry>
   <entry>
+    <title>NOIP2020 移球游戏题解</title>
+    <url>/posts/NOIP2020-%E7%A7%BB%E7%90%83%E6%B8%B8%E6%88%8F%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[<p>题目链接：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDcxMTU=">Luogu</span> or <span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcC8zMzg4">LOJ</span></p>
+<p>这是一道巧妙的构造题，其中蕴含了将规模较大的问题划归到规模小的问题的思想。</p>
+<p>如果想要在比赛的时候做出这道题，那么观察样例绝对是不二法门，因为样例提供了丰富的信息。<del>虽然说笔者做题的时候没有观察过。</del></p>
+<span id="more"></span>
+<h2 id="从简单的问题出发">从简单的问题出发</h2>
+<p>让我们试着解决 <span class="math inline">\(n=2\)</span> 的特殊部分，尽管这只有 10 分的部分分，但是对简单的情形分析，能为拓展到复杂情况提供好的引导。</p>
+<p>现在我们有 <span class="math inline">\(x\)</span>，<span class="math inline">\(y\)</span>，<span class="math inline">\(z\)</span>，三根柱子，<span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 上有两种颜色的球，让我们称其中一种颜色的球为 <strong>关键球</strong>。</p>
+<p>我们希望将所有关键球移动到同一根柱子上。我们先考虑位于 <span class="math inline">\(x\)</span> 柱上的关键球，假设 <span class="math inline">\(x\)</span> 柱上有 <span class="math inline">\(c\)</span> 个关键球。</p>
+<ol type="1">
+<li>将 <span class="math inline">\(y\)</span> 柱上的前 <span class="math inline">\(c\)</span> 个球移动到 <span class="math inline">\(z\)</span> 柱上。</li>
+<li>逐个考虑 <span class="math inline">\(x\)</span> 柱上的球：</li>
+</ol>
+<ul>
+<li>如果这个球是关键球，那么移动其到 <span class="math inline">\(y\)</span> 柱上。</li>
+<li>否则，移动其到 <span class="math inline">\(z\)</span> 柱上。</li>
+</ul>
+<p>注意到第一步，我们实际上是创造了两个空间，一个能容纳 <span class="math inline">\(c\)</span> 个球，另一个能容纳 <span class="math inline">\(m-c\)</span> 个球。</p>
+<p>我们将 <span class="math inline">\(x\)</span> 柱上的球，按照其是否为关键球，分别放入这两个空间中，就能够分离 <span class="math inline">\(x\)</span> 上的关键球与非关键球了。</p>
+<p>下面我们需要考虑原来 <span class="math inline">\(y\)</span> 柱上的关键球，我们仍然需要为关键球的放置创造空间。</p>
+<ol start="3" type="1">
+<li>将 <span class="math inline">\(z\)</span> 柱上的前 <span class="math inline">\(m-c\)</span> 个球移回 <span class="math inline">\(x\)</span> 柱。</li>
+<li>将 <span class="math inline">\(y\)</span> 柱上的前 <span class="math inline">\(c\)</span> 个球移回 <span class="math inline">\(x\)</span> 柱。</li>
+<li>将 <span class="math inline">\(z\)</span> 柱上剩余的 <span class="math inline">\(c\)</span> 个球移回 <span class="math inline">\(y\)</span> 柱。（这些球事实上来源于第一步中，从 <span class="math inline">\(y\)</span> 柱移来）</li>
+<li>将 <span class="math inline">\(x\)</span> 柱上前 <span class="math inline">\(c\)</span> 个球移动到 <span class="math inline">\(z\)</span> 柱。</li>
+</ol>
+<p>我们发现，此时 <span class="math inline">\(x\)</span> 柱上剩下的是非关键球，<span class="math inline">\(z\)</span> 柱上都是关键球，而 <span class="math inline">\(y\)</span> 柱上的球正是它原来的那些球。</p>
+<p>下面我们将 <span class="math inline">\(y\)</span> 柱上的球移动：</p>
+<p>逐个考虑 <span class="math inline">\(y\)</span> 柱上的球：</p>
+<ol start="7" type="1">
+<li>如果这个球是关键球，那么移动其到 <span class="math inline">\(z\)</span> 柱上。</li>
+<li>否则，移动其到 <span class="math inline">\(x\)</span> 柱上。</li>
+</ol>
+<p>这样我们就移动完成了，此时 <span class="math inline">\(x\)</span> 柱上都是非关键球，<span class="math inline">\(z\)</span> 柱上都是关键球。</p>
+<p>这样子只需要操作 <span class="math inline">\(O(m)\)</span> 步，更具体地，考虑每一步的步数，可以得到： <span class="math display">\[
+c+m+(m-c)+c+c+c+m=3m+3c
+\]</span></p>
+<h2 id="拓展到原问题">拓展到原问题</h2>
+<p>如果有 <span class="math inline">\(n\)</span> 个柱子该怎么办呢？一个好的想法是分治。</p>
+<p>具体地，我们用 <code>solve(l,r)</code> 解决所有球的颜色都在 <span class="math inline">\([l,r]\)</span> 之间的问题。</p>
+<p>我们试图让每一个柱子上都只有 <span class="math inline">\(\le mid\)</span> 的，或是只有 <span class="math inline">\(&gt;mid\)</span> 的颜色。</p>
+<p>这样我们就可以在解决完成当前问题后递归解决啦！</p>
+<p>我们设 <span class="math inline">\(mid=\lfloor\frac{l+r}{2}\rfloor\)</span>，我们枚举其中的两个柱子 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span>，那么：</p>
+<ul>
+<li>如果 <span class="math inline">\(x\)</span> 与 <span class="math inline">\(y\)</span> 中 <span class="math inline">\(\le mid\)</span> 的个数超过了 <span class="math inline">\(m\)</span> 个，那么我们钦定颜色 <span class="math inline">\(\le mid\)</span> 的为关键球，按照规模为 2 的算法计算即可。</li>
+<li>否则，我们钦定颜色 <span class="math inline">\(&gt;mid\)</span> 的为关键球，仍然按照规模为 <span class="math inline">\(2\)</span> 的算法计算。</li>
+</ul>
+<p>接下来 <code>solve(l,mid)</code> 和 <code>solve(mid+1,r)</code> 即可。</p>
+<p>注意到每一次都会让其中一个柱子中的球都为关键球，也就是说，我们最多进行 <span class="math inline">\(O(r-l+1)\)</span> 次这样的操作。</p>
+<p>每次操作进行 <span class="math inline">\(O(m)\)</span> 次移动，会递归 <span class="math inline">\(\log n\)</span> 层，也就是 <span class="math inline">\(O(nm\log n)\)</span>，是能够通过的。</p>
+]]></content>
+      <tags>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GDKOI 2024 游记</title>
     <url>/posts/gdkoi-2024-%E6%B8%B8%E8%AE%B0/</url>
     <content><![CDATA[<p>一转眼间 KOI2024 已经开始了，但是 KOI2023 仍然历历在目。</p>
