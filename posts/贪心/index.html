@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#f0a1a8"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#f0a1a8">
+  <meta name="msvalidate.01" content="7197295068F5C122E84D3763FE74EC8A">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://lib.baomitu.com/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://lib.baomitu.com/pace/1.2.4/themes/silver/pace-theme-fill-left.css">
+  <script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tangninghaha.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="贪心是常见的一种算法，通常能够在较低的复杂度内，通过正确的决策得到答案。 常见的贪心方法有邻项交换法、反悔贪心等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="贪心">
+<meta property="og:url" content="https://tangninghaha.netlify.app/posts/%E8%B4%AA%E5%BF%83/index.html">
+<meta property="og:site_name" content="Tangninghaha">
+<meta property="og:description" content="贪心是常见的一种算法，通常能够在较低的复杂度内，通过正确的决策得到答案。 常见的贪心方法有邻项交换法、反悔贪心等。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-20T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-23T14:20:47.649Z">
+<meta property="article:author" content="Tangninghaha">
+<meta property="article:tag" content="算法基础">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://tangninghaha.netlify.app/posts/%E8%B4%AA%E5%BF%83/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://tangninghaha.netlify.app/posts/%E8%B4%AA%E5%BF%83/","path":"posts/贪心/","title":"贪心"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>贪心 | Tangninghaha</title>
+  
+
+
+
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "knozjnw3d2");
+</script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Tangninghaha</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Number 10, Tangning Street</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%82%BB%E9%A1%B9%E4%BA%A4%E6%8D%A2%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">邻项交换法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#noip2012-%E6%8F%90%E9%AB%98%E7%BB%84-%E5%9B%BD%E7%8E%8B%E6%B8%B8%E6%88%8F"><span class="nav-number">1.1.</span> <span class="nav-text">NOIP2012 提高组 国王游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">题目大意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#atcoder-dp-x"><span class="nav-number">1.2.</span> <span class="nav-text">AtCoder DP X</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">题目大意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yloi2019-%E6%A2%85%E6%B7%B1%E4%B8%8D%E8%A7%81%E5%86%AC"><span class="nav-number">1.3.</span> <span class="nav-text">yLOI2019 梅深不见冬</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">题目大意</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8D%E6%82%94%E8%B4%AA%E5%BF%83"><span class="nav-number">2.</span> <span class="nav-text">反悔贪心</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BD%E5%AE%B6%E9%9B%86%E8%AE%AD%E9%98%9F-%E7%A7%8D%E6%A0%91"><span class="nav-number">2.1.</span> <span class="nav-text">2011国家集训队 种树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F-3"><span class="nav-number">2.1.1.</span> <span class="nav-text">题目大意</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tangninghaha"
+      src="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+  <p class="site-author-name" itemprop="name">Tangninghaha</p>
+  <div class="site-description" itemprop="description">鲜衣怒马少年时，不负韶华行且知</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RhbmduaW5naGFoYQ==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangninghaha"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOnRhbmduaW5naGFoYUBvdXRsb29rLmNvbQ==" title="E-Mail → mailto:tangninghaha@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="https://lib.baomitu.com/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+<div class="cc-license animated" itemprop="sponsor">
+  <a href="https://www.netlify.com" class="cc-opacity" title="Deploy with Netlify → https://www.netlify.com" target="_blank"><img height="20" src="https://api.netlify.com/api/v1/badges/098df643-d737-4e3a-8b6d-024ce59dedab/deploy-status" alt="Deploy Status"></a>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <span class="exturl" data-url="aHR0cHM6Ly9kYW5pZWxxZi5uZXRsaWZ5LmFwcC8=" title="https:&#x2F;&#x2F;danielqf.netlify.app&#x2F;">Danielqf</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tangninghaha.netlify.app/posts/%E8%B4%AA%E5%BF%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="http://cravatar.cn/avatar/d9eec067bd5d56059d20b709bd0ef72b?f=mp&s=256">
+      <meta itemprop="name" content="Tangninghaha">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tangninghaha">
+      <meta itemprop="description" content="鲜衣怒马少年时，不负韶华行且知">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="贪心 | Tangninghaha">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          贪心
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-01-20 00:00:00" itemprop="dateCreated datePublished" datetime="2024-01-20T00:00:00+00:00">2024-01-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-23 14:20:47" itemprop="dateModified" datetime="2024-01-23T14:20:47+00:00">2024-01-23</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>8 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>贪心是常见的一种算法，通常能够在较低的复杂度内，通过正确的决策得到答案。</p>
+<p>常见的贪心方法有邻项交换法、反悔贪心等。</p>
+<span id="more"></span>
+<h1 id="邻项交换法">邻项交换法</h1>
+<h2 id="noip2012-提高组-国王游戏"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDEwODA=">NOIP2012 提高组 国王游戏</span></h2>
+<h3 id="题目大意">题目大意</h3>
+<p>有 <span class="math inline">\(n+1\)</span> 个二元组 <span class="math inline">\((a_{i},b_{i})\)</span>，编号为 0 到 n。可以任意重新排列第 1 到 n 个二元组。</p>
+<p>定义每个二元组的权值 <span class="math inline">\(c_{i}\)</span> 为： <span class="math display">\[
+c_{i}=\frac{\prod_{j=0}^{i-1}a_{j}}{b_{i}}
+\]</span> 要求最小化： <span class="math display">\[
+\max_{i=1}^{n}(c_{i})
+\]</span> <details class="note info"><summary><p>解法</p>
+</summary>
+<p>考虑邻项交换法，即什么时候，交换相邻的两项能够使得答案更优。</p>
+<p>假设第 <span class="math inline">\(i\)</span> 项前 <span class="math inline">\(a\)</span> 的乘积为 <span class="math inline">\(s\)</span>，那么更优的条件是： <span class="math display">\[
+\max(\frac{s}{b_{i}},\frac{s\times a_{i}}{b_{i+1}})&lt;\max(\frac{s}{b_{i+1}},\frac{s\times a_{i+1}}{b_{i}})
+\]</span> 做一下变换： <span class="math display">\[
+\begin{aligned}
+\max(\frac{1}{b_{i}},\frac{a_{i}}{b_{i+1}})&amp;&lt;\max(\frac{1}{b_{i+1}},\frac{a_{i+1}}{b_{i}})\\
+\max(b_{i+1},a_{i}\times b_{i})&amp;&lt;\max(b_{i},a_{i+1}\times b_{i+1})
+\end{aligned}
+\]</span> 我们按照这个式子进行排序，接着依照题意模拟即可得出答案。</p>
+<hr />
+<p>事实上，我们只需要比较 <span class="math inline">\(a_{i}\times b_{i}&lt;a_{i+1}\times b_{i+1}\)</span> 即可。</p>
+<p>由于 <span class="math inline">\(a_{i}&gt;0\)</span>，所以有 <span class="math inline">\(b_{i+1}\le a_{i+1}\times b_{i+1}\)</span>，<span class="math inline">\(b_{i}\le a_{i}\times b_{i}\)</span>。</p>
+<p>证明只需要分类考虑：</p>
+<ul>
+<li>左边的最大值取到 <span class="math inline">\(b_{i+1}\)</span> 时，因为 <span class="math inline">\(b_{i+1}\le a_{i+1}\times b_{i+1}\)</span>，此时左边小于右边，如果将左边换成更小的 <span class="math inline">\(a_{i}\times b_{i}\)</span>，左边小于右边仍然成立。</li>
+<li>右边的最大值取到 <span class="math inline">\(b_{i}\)</span> 时，因为 <span class="math inline">\(b_{i}\le a_{i}\times b_{i}\)</span>，此时左边一定小于右边，如果将右边换成更小的 <span class="math inline">\(a_{i+1}\times b_{i+1}\)</span>，仍然满足左边小于右边。</li>
+</ul>
+<p>所以我们发现，如果最大值取到了 <span class="math inline">\(b_{i+1}\)</span> 或是 <span class="math inline">\(b_{i}\)</span> 时，使用另一项是等效的，我们只需要使用另一项比较即可！</p>
+<p>为什么我们要拆开这个 <span class="math inline">\(\max\)</span> 呢？因为我们要证明其传递性，也就是如果 <span class="math inline">\(a_{i}\times b_{i}\le a_{j}\times b_{j}\)</span>，<span class="math inline">\(a_{j}\times b_{j}\le a_{k}\times b_{k}\)</span>，那么 <span class="math inline">\(a_{i}\times b_{i}\le a_{k}\times b_{k}\)</span>。如果不拆开 <span class="math inline">\(\max\)</span> 我们就难以证明这一点。如果不能满足传递性，我们排序之后模拟就是错误的。</p>
+<details class="note success">
+<summary>
+<p>
+代码
+</p>
+</summary>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">ans=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    ans.append([<span class="built_in">int</span>(ii) <span class="keyword">for</span> ii <span class="keyword">in</span> <span class="built_in">input</span>().split()])</span><br><span class="line">ans.sort(key=<span class="keyword">lambda</span> x:(x[<span class="number">0</span>]*x[<span class="number">1</span>]))</span><br><span class="line">s=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    s=<span class="built_in">max</span>(s,a//ans[i][<span class="number">1</span>])</span><br><span class="line">    a*=ans[i][<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(s)</span><br></pre></td></tr></table></figure>
+</details>
+</p>
+
+</details>
+<h2 id="atcoder-dp-x"><span class="exturl" data-url="aHR0cHM6Ly9hdGNvZGVyLmpwL2NvbnRlc3RzL2RwL3Rhc2tzL2RwX3g=">AtCoder DP X</span></h2>
+<p>虽然这道题是 DP，但是其中使用了邻项交换法。</p>
+<h3 id="题目大意-1">题目大意</h3>
+<p>有 <span class="math inline">\(N(1\le N\le 10^{3})\)</span> 个块，每一个块有质量 <span class="math inline">\(w_{i}\)</span>，坚固度 <span class="math inline">\(s_{i}\)</span>，价值 <span class="math inline">\(v_{i}\)</span>（<span class="math inline">\(1\le w_{i},s_{i}\le 10^{4},1\le v_{i}\le 10^{9}\)</span>）。想要选出若干个块堆叠成一个塔，要求满足某一个块上方的块的 <span class="math inline">\(w\)</span> 之和不超过这一个块的 <span class="math inline">\(s\)</span>。求最大代价和。</p>
+<details class="note info"><summary><p>解法</p>
+</summary>
+<p>看到这到题，容易想到设 <span class="math inline">\(f_{i,j}\)</span> 表示前 <span class="math inline">\(i\)</span> 个块，选择后质量和为 <span class="math inline">\(j\)</span> 的最大价值。转移并不难，是一个 01 背包。</p>
+<p>但是转移的顺序该如何确定？也就是说，我们应该按照什么顺序来考虑这些块？</p>
+<p>我们考虑如果我们把块 <span class="math inline">\(i\)</span> 放在块 <span class="math inline">\(j\)</span> 的上方，那么还可以放 <span class="math inline">\(s_{j}-w_{i}\)</span>。</p>
+<p>反之，如果把 <span class="math inline">\(j\)</span> 放在 <span class="math inline">\(i\)</span> 的上方，那么还可以方 <span class="math inline">\(s_{i}-w_{j}\)</span>。</p>
+<p>我们当然是先转移上方的，才能转移下方的，所以 <span class="math inline">\(i\)</span> 在 <span class="math inline">\(j\)</span> 上方就要满足： <span class="math display">\[
+s_{j}-w_{i}\ge s_{i}-w_{j}
+\]</span> 也就是 <span class="math display">\[
+s_{j}+w_{j}\ge s_{i}+w_{i}
+\]</span> 所以我们按照 <span class="math inline">\(s\)</span> 和 <span class="math inline">\(w\)</span> 之和从小到大排序，进行转移即可。</p>
+<details class="note ">
+<summary>
+<p>
+success代码
+</p>
+</summary>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e3</span>+<span class="number">5</span>,M=<span class="number">2e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span>&#123;</span><br><span class="line">  <span class="type">int</span> w,s,v;</span><br><span class="line">&#125;a[N];</span><br><span class="line">ll f[M];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;a[i].w,&amp;a[i].s,&amp;a[i].v);</span><br><span class="line">  <span class="built_in">sort</span>(a+<span class="number">1</span>,a+<span class="number">1</span>+n,[](Node x,Node y)&#123;<span class="keyword">return</span> x.s+x.w&lt;y.s+y.w;&#125;);</span><br><span class="line">  ll ans=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=a[i].s+a[i].w;j&gt;=<span class="number">0</span>;--j)&#123;</span><br><span class="line">      <span class="keyword">if</span>(j&lt;a[i].w)<span class="keyword">break</span>;</span><br><span class="line">      f[j]=<span class="built_in">max</span>(f[j],f[j-a[i].w]+a[i].v);</span><br><span class="line">      ans=<span class="built_in">max</span>(ans,f[j]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+</details>
+<h2 id="yloi2019-梅深不见冬"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDU1MjE=">yLOI2019 梅深不见冬</span></h2>
+<h3 id="题目大意-2">题目大意</h3>
+<p>按照欧拉序遍历一棵 <span class="math inline">\(n(1\le n\le 10^{5}+4)\)</span> 的树，每一个节点有一个需要放置的梅花数量 <span class="math inline">\(w_{i}(1\le w_{i}\le 1000)\)</span>。</p>
+<p>规定每一个节点放置梅花的时候必须满足其所有 <strong>儿子</strong> 节点 <span class="math inline">\(v\)</span> 必须放置了恰好 <span class="math inline">\(w_{v}\)</span> 个梅花。</p>
+<p>你可以在任何时候任何地点收回梅花，你可以以任意欧拉序遍历这一棵树。</p>
+<p>求对于所有 <span class="math inline">\(i\)</span>，要在 <span class="math inline">\(i\)</span> 号点上放置 <span class="math inline">\(w_{i}\)</span> 个棉花至少需要多少个梅花。</p>
+<details class="note info"><summary><p>解法</p>
+</summary>
+<p>考虑求对于某一个 <span class="math inline">\(i\)</span> 的答案，以欧拉序遍历，那么我们只需要考虑 <span class="math inline">\(i\)</span> 的子树即可。</p>
+<p>假设点 <span class="math inline">\(i\)</span> 的答案为 <span class="math inline">\(ans_{i}\)</span>，<span class="math inline">\(i\)</span> 遍历儿子的顺序确定了，那么计算答案：</p>
+<ul>
+<li>遍历一个儿子 <span class="math inline">\(j\)</span> 以前，要将 1 到 j-1 这些儿子全部遍历，也就是说现在 1 到 j-1 这些儿子上都有梅花了，并且遍历节点 <span class="math inline">\(j\)</span> 也需要 <span class="math inline">\(ans_{j}\)</span> 个梅花，总共需要 <span class="math inline">\(ans_{j}+\sum_{k=1}^{j-1}w_{k}\)</span>。</li>
+<li>以及遍历完所有儿子，那么 <span class="math inline">\(i\)</span> 也需要放置 <span class="math inline">\(w_{i}\)</span> 个梅花，需要 <span class="math inline">\(w_{i}+\sum_{j\in son_{x}}w_{j}\)</span> 的梅花。</li>
+</ul>
+<p>上面两个式子中的最大值就是 <span class="math inline">\(ans_{i}\)</span>。</p>
+<hr />
+<p>那么如何确定遍历儿子的顺序呢？我们发现如果有相邻的 <span class="math inline">\(i,j\)</span> 两个儿子，它们先后顺序对答案的贡献与其它儿子无关，所以可以考虑邻项交换。</p>
+<p>如果儿子 <span class="math inline">\(i\)</span> 在儿子 <span class="math inline">\(j\)</span> 以前，就需要满足： <span class="math display">\[
+\max(ans_{i},ans_{j}+w_{i})\le \max(ans_{j},ans_{i}+w_{j})
+\]</span> 按照国王游戏类似的方法拆开这个 <span class="math inline">\(\max\)</span>，可以得到，上面的式子等价于： <span class="math display">\[
+ans_{j}+w_{i}\le ans_{i}+w_{j}
+\]</span> 也就是： <span class="math display">\[
+w_{i}-ans_{i}\le w_{j}-ans_{j}
+\]</span> 所以按照 <span class="math inline">\(ans_{i}-w_{i}\)</span> 从小到大排序后选择就是最优的。</p>
+<details class="note success">
+<summary>
+<p>
+代码
+</p>
+</summary>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Created: 2024.01.20 02:51:34 PM +0800</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> fa[N];</span><br><span class="line">ll ans[N];</span><br><span class="line"><span class="type">int</span> w[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span>&#123;</span><br><span class="line">  <span class="type">int</span> head[N],nxt[N],to[N],tot;</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> v)</span></span>&#123;</span><br><span class="line">    nxt[++tot]=head[u];</span><br><span class="line">    to[tot]=v;</span><br><span class="line">    head[u]=tot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;G;</span><br><span class="line"><span class="type">int</span> sonId[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=G.head[x];i;i=G.nxt[i])<span class="built_in">dfs</span>(G.to[i]);</span><br><span class="line">  <span class="type">int</span> sonCnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=G.head[x];i;i=G.nxt[i])sonId[++sonCnt]=G.to[i];</span><br><span class="line">  <span class="built_in">sort</span>(sonId+<span class="number">1</span>,sonId+sonCnt+<span class="number">1</span>,[](<span class="type">int</span> _,<span class="type">int</span> __)&#123;<span class="keyword">return</span> w[_]-ans[_]&lt;w[__]-ans[__];&#125;);</span><br><span class="line">  ll sum=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=sonCnt;++i)&#123;</span><br><span class="line">    ans[x]=<span class="built_in">max</span>(ans[x],sum+ans[sonId[i]]);</span><br><span class="line">    sum+=w[sonId[i]];</span><br><span class="line">  &#125;</span><br><span class="line">  ans[x]=<span class="built_in">max</span>(ans[x],sum+w[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;fa[i]),G.<span class="built_in">add</span>(fa[i],i);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;w[i]);</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld &quot;</span>,ans[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+</details>
+<h1 id="反悔贪心">反悔贪心</h1>
+<h2 id="国家集训队-种树"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDE3OTI=">2011国家集训队 种树</span></h2>
+<h3 id="题目大意-3">题目大意</h3>
+<p>有 <span class="math inline">\(n(1\le n\le 2\times 10^{5})\)</span> 个数字 <span class="math inline">\(a_{i}\)</span> 围成一圈，选择一个数字之后，其相邻的两个数字就不能选择，求能够选择出的最大数字之和。</p>
+<details class="note info"><summary><p>解法</p>
+</summary>
+<p>很容易可以得到一个 <span class="math inline">\(O(n^2)\)</span> 的 DP，但是时间难以承受。</p>
+<p>我们考虑贪心。直接贪心，考虑每一次尽可能选择大的，然后标记左右两边的数字不能选择。</p>
+<p>但是这样显然是错误的。例如 <code>10 9 1 9</code>，我们会选择 10，然后选 1。但是显然 9 和 9 会更优秀。</p>
+<p>这该怎么办呢？我们反悔，不选择 10 了，改为选择 9 和 9。</p>
+<p>具体而言，我们仍然从大向小选择，但是选择之后，我们留一条后路。</p>
+<p>加入选择了 <span class="math inline">\(a_{i}\)</span>，那么我们将 <span class="math inline">\(a_{i}\)</span> 替换为 <span class="math inline">\(a_{l_{i}}+a_{r_{i}}-a_{i}\)</span>。这样，当再次选择 <span class="math inline">\(i\)</span> 的时候，就相当于原来没有选择 <span class="math inline">\(a_{i}\)</span>，而是选择了其左右两边的。</p>
+<p>使用双向链表维护左右两边的是那些数字即可。</p>
+<details class="note success">
+<summary>
+<p>
+题解
+</p>
+</summary>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Created: 2024.01.20 03:39:41 PM +0800</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> pi=pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">2e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> a[N],l[N],r[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  l[r[x]]=l[x];</span><br><span class="line">  r[l[x]]=r[x];</span><br><span class="line">  l[x]=r[x]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">priority_queue&lt;pi&gt; q;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n,m;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="keyword">if</span>(m&gt;n/<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Error!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]),q.<span class="built_in">push</span>(&#123;a[i],i&#125;);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)l[i]=i<span class="number">-1</span>,r[i]=i+<span class="number">1</span>;</span><br><span class="line">  l[<span class="number">1</span>]=n;r[n]=<span class="number">1</span>;</span><br><span class="line">  <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">  <span class="type">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(cnt&lt;m)&#123;</span><br><span class="line">    pi tmp=q.<span class="built_in">top</span>();</span><br><span class="line">    <span class="type">int</span> cur=tmp.second;</span><br><span class="line">    q.<span class="built_in">pop</span>();</span><br><span class="line">    <span class="keyword">if</span>(vis[cur])<span class="keyword">continue</span>;</span><br><span class="line">    ans+=tmp.first;</span><br><span class="line">    q.<span class="built_in">push</span>(&#123;a[l[cur]]+a[r[cur]]-a[cur],cur&#125;);</span><br><span class="line">    a[cur]=a[l[cur]]+a[r[cur]]-a[cur];</span><br><span class="line">    vis[l[cur]]=<span class="literal">true</span>;vis[r[cur]]=<span class="literal">true</span>;</span><br><span class="line">    <span class="built_in">remove</span>(l[cur]);<span class="built_in">remove</span>(r[cur]);</span><br><span class="line">    ++cnt;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+</details>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Tangninghaha
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://tangninghaha.netlify.app/posts/%E8%B4%AA%E5%BF%83/" title="贪心">https://tangninghaha.netlify.app/posts/贪心/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" rel="tag"># 算法基础</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/GDKOIDay2T2%E9%A2%98%E8%A7%A3/" rel="prev" title="GDKOI Day2 T2 计算题解">
+                  <i class="fa fa-angle-left"></i> GDKOI Day2 T2 计算题解
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/NOIP2020-%E7%A7%BB%E7%90%83%E6%B8%B8%E6%88%8F%E9%A2%98%E8%A7%A3/" rel="next" title="NOIP2020 移球游戏题解">
+                  NOIP2020 移球游戏题解 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  
+  <div class="comments giscus-container">
+  </div>
+  
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-code"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Tangninghaha</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">35k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:09</span>
+  </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div><div>站点主题色 <a target="_blank" rel="noopener" href="http://zhongguose.com/#hehuanhong">合欢红</a></div>
+<a href="https://icp.gov.moe/?keyword=20245550" target="_blank">萌ICP备20245550号</a>
+
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://lib.baomitu.com/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://lib.baomitu.com/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://lib.baomitu.com/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="giscus" type="application/json">{"enable":true,"repo":"tangninghaha/Blog-Comment","repo_id":"R_kgDOK75Jug","category":"Announcements","category_id":"DIC_kwDOK75Jus4Cb4f_","mapping":"pathname","reactions_enabled":1,"emit_metadata":1,"theme":"light","lang":"en","crossorigin":"anonymous","input_position":"top","loading":"lazy"}</script>
+
+<script>
+document.addEventListener('page:loaded', () => {
+  if (!CONFIG.page.comments) return;
+
+  NexT.utils.loadComments('.giscus-container')
+    .then(() => NexT.utils.getScript('https://giscus.app/client.js', {
+      attributes: {
+        async                   : true,
+        crossOrigin             : 'anonymous',
+        'data-repo'             : CONFIG.giscus.repo,
+        'data-repo-id'          : CONFIG.giscus.repo_id,
+        'data-category'         : CONFIG.giscus.category,
+        'data-category-id'      : CONFIG.giscus.category_id,
+        'data-mapping'          : CONFIG.giscus.mapping,
+        'data-reactions-enabled': CONFIG.giscus.reactions_enabled,
+        'data-emit-metadata'    : CONFIG.giscus.emit_metadata,
+        'data-theme'            : CONFIG.giscus.theme,
+        'data-lang'             : CONFIG.giscus.lang,
+        'data-input-position'   : CONFIG.giscus.input_position,
+        'data-loading'          : CONFIG.giscus.loading
+      },
+      parentNode: document.querySelector('.giscus-container')
+    }));
+});
+</script>
+
+<!-- hexo injector body_end start --><link rel="stylesheet" href="//lib.baomitu.com/highlight.js/9.6.0/styles/github.min.css"><script src="//lib.baomitu.com/highlight.js/9.6.0/highlight.min.js"></script><!-- hexo injector body_end end --></body>
+</html>

@@ -170,7 +170,7 @@ C_{i,j}=A_{i,k}\times B_{k,j}
     <url>/posts/GDKOIDay2T2%E9%A2%98%E8%A7%A3/</url>
     <content><![CDATA[<p>看不清公式可以放大。</p>
 <p>题意简单转化</p>
-<p>首先有 <span class="math inline">\(\gcd(x^{a}-1,x^{b}-1)+1=\gcd(x^{\gcd(a,b)})\)</span>。</p>
+<p>首先有 <span class="math inline">\(\gcd(x^{a}-1,x^{b}-1)+1=x^{\gcd(a,b)}\)</span>。</p>
 <span id="more"></span>
 <blockquote>
 <p>证明：</p>
@@ -195,7 +195,7 @@ C_{i,j}=A_{i,k}\times B_{k,j}
 <p>考虑等比数列求和：<span class="math inline">\(S=\frac{\omega_{m}^{im}-1}{\omega_{m}^{i}-1}\)</span>，分类讨论：</p>
 <ul>
 <li>当 <span class="math inline">\(\omega_{m}^{i}\not=1\)</span> 时，可以知道 <span class="math inline">\(i\)</span> 不是 <span class="math inline">\(m\)</span> 的倍数，并且 <span class="math inline">\(\omega_{m}^{im}-1\)</span> 为0。</li>
-<li>当 <span class="math inline">\(\omega_{m}^{i}=1\)</span> 时，可以知道 <span class="math inline">\(i\)</span> 是 <span class="math inline">\(m\)</span> 的倍数，并且由于分母为0，此时不能使用等比数列求和公式，所以特判。此时 <span class="math inline">\(\omega_{m}^{ik}=1\)</span>，因为 <span class="math inline">\(i\)</span> 是 <span class="math inline">\(m\)</span> 的倍数。得到 <span class="math inline">\(\sum_{k=0}^{m-1}\omega_{m}^{ik}=m\)</span>，所以除以 <span class="math inline">\(m\)</span> 得到1。</li>
+<li>当 <span class="math inline">\(\omega_{m}^{i}=1\)</span> 时，可以知道 <span class="math inline">\(i\)</span> 是 <span class="math inline">\(m\)</span> 的倍数，并且由于分母为0，此时不能使用等比数列求和公式，所以特判。此时 <span class="math inline">\(\omega_{m}^{ik}=1\)</span>，因为 <span class="math inline">\(i\)</span> 是 <span class="math inline">\(m\)</span> 的倍数。得到 <span class="math inline">\(\sum_{k=0}^{m-1}\omega_{m}^{ik}=m\)</span>，所以除以 <span class="math inline">\(m\)</span> 得到 1。</li>
 </ul>
 <hr />
 <p>将 <span class="math inline">\(m\)</span> 次单位根代入得到 <span class="math inline">\(\sum f(\omega_{m}^{i})\)</span>，展开，由引理得到只有 <span class="math inline">\(m\vert i\)</span> 时，系数为 <span class="math inline">\(c_{i}\)</span> 的项的和不为0。而下标为 <span class="math inline">\(m\)</span> 的倍数的数相加得到 <span class="math inline">\(m\times c_{k}\)</span>。故答案为 <span class="math display">\[
@@ -2094,6 +2094,139 @@ dis_{2}=dis_{1}\oplus dis_{3}
 ]]></content>
       <tags>
         <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>贪心</title>
+    <url>/posts/%E8%B4%AA%E5%BF%83/</url>
+    <content><![CDATA[<p>贪心是常见的一种算法，通常能够在较低的复杂度内，通过正确的决策得到答案。</p>
+<p>常见的贪心方法有邻项交换法、反悔贪心等。</p>
+<span id="more"></span>
+<h1 id="邻项交换法">邻项交换法</h1>
+<h2 id="noip2012-提高组-国王游戏"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDEwODA=">NOIP2012 提高组 国王游戏</span></h2>
+<h3 id="题目大意">题目大意</h3>
+<p>有 <span class="math inline">\(n+1\)</span> 个二元组 <span class="math inline">\((a_{i},b_{i})\)</span>，编号为 0 到 n。可以任意重新排列第 1 到 n 个二元组。</p>
+<p>定义每个二元组的权值 <span class="math inline">\(c_{i}\)</span> 为： <span class="math display">\[
+c_{i}=\frac{\prod_{j=0}^{i-1}a_{j}}{b_{i}}
+\]</span> 要求最小化： <span class="math display">\[
+\max_{i=1}^{n}(c_{i})
+\]</span> <details class="note info"><summary><p>解法</p>
+</summary>
+<p>考虑邻项交换法，即什么时候，交换相邻的两项能够使得答案更优。</p>
+<p>假设第 <span class="math inline">\(i\)</span> 项前 <span class="math inline">\(a\)</span> 的乘积为 <span class="math inline">\(s\)</span>，那么更优的条件是： <span class="math display">\[
+\max(\frac{s}{b_{i}},\frac{s\times a_{i}}{b_{i+1}})&lt;\max(\frac{s}{b_{i+1}},\frac{s\times a_{i+1}}{b_{i}})
+\]</span> 做一下变换： <span class="math display">\[
+\begin{aligned}
+\max(\frac{1}{b_{i}},\frac{a_{i}}{b_{i+1}})&amp;&lt;\max(\frac{1}{b_{i+1}},\frac{a_{i+1}}{b_{i}})\\
+\max(b_{i+1},a_{i}\times b_{i})&amp;&lt;\max(b_{i},a_{i+1}\times b_{i+1})
+\end{aligned}
+\]</span> 我们按照这个式子进行排序，接着依照题意模拟即可得出答案。</p>
+<hr />
+<p>事实上，我们只需要比较 <span class="math inline">\(a_{i}\times b_{i}&lt;a_{i+1}\times b_{i+1}\)</span> 即可。</p>
+<p>由于 <span class="math inline">\(a_{i}&gt;0\)</span>，所以有 <span class="math inline">\(b_{i+1}\le a_{i+1}\times b_{i+1}\)</span>，<span class="math inline">\(b_{i}\le a_{i}\times b_{i}\)</span>。</p>
+<p>证明只需要分类考虑：</p>
+<ul>
+<li>左边的最大值取到 <span class="math inline">\(b_{i+1}\)</span> 时，因为 <span class="math inline">\(b_{i+1}\le a_{i+1}\times b_{i+1}\)</span>，此时左边小于右边，如果将左边换成更小的 <span class="math inline">\(a_{i}\times b_{i}\)</span>，左边小于右边仍然成立。</li>
+<li>右边的最大值取到 <span class="math inline">\(b_{i}\)</span> 时，因为 <span class="math inline">\(b_{i}\le a_{i}\times b_{i}\)</span>，此时左边一定小于右边，如果将右边换成更小的 <span class="math inline">\(a_{i+1}\times b_{i+1}\)</span>，仍然满足左边小于右边。</li>
+</ul>
+<p>所以我们发现，如果最大值取到了 <span class="math inline">\(b_{i+1}\)</span> 或是 <span class="math inline">\(b_{i}\)</span> 时，使用另一项是等效的，我们只需要使用另一项比较即可！</p>
+<p>为什么我们要拆开这个 <span class="math inline">\(\max\)</span> 呢？因为我们要证明其传递性，也就是如果 <span class="math inline">\(a_{i}\times b_{i}\le a_{j}\times b_{j}\)</span>，<span class="math inline">\(a_{j}\times b_{j}\le a_{k}\times b_{k}\)</span>，那么 <span class="math inline">\(a_{i}\times b_{i}\le a_{k}\times b_{k}\)</span>。如果不拆开 <span class="math inline">\(\max\)</span> 我们就难以证明这一点。如果不能满足传递性，我们排序之后模拟就是错误的。</p>
+<details class="note success">
+<summary>
+<p>
+代码
+</p>
+</summary>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">ans=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    ans.append([<span class="built_in">int</span>(ii) <span class="keyword">for</span> ii <span class="keyword">in</span> <span class="built_in">input</span>().split()])</span><br><span class="line">ans.sort(key=<span class="keyword">lambda</span> x:(x[<span class="number">0</span>]*x[<span class="number">1</span>]))</span><br><span class="line">s=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    s=<span class="built_in">max</span>(s,a//ans[i][<span class="number">1</span>])</span><br><span class="line">    a*=ans[i][<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(s)</span><br></pre></td></tr></table></figure>
+</details>
+</p>
+
+</details>
+<h2 id="atcoder-dp-x"><span class="exturl" data-url="aHR0cHM6Ly9hdGNvZGVyLmpwL2NvbnRlc3RzL2RwL3Rhc2tzL2RwX3g=">AtCoder DP X</span></h2>
+<p>虽然这道题是 DP，但是其中使用了邻项交换法。</p>
+<h3 id="题目大意-1">题目大意</h3>
+<p>有 <span class="math inline">\(N(1\le N\le 10^{3})\)</span> 个块，每一个块有质量 <span class="math inline">\(w_{i}\)</span>，坚固度 <span class="math inline">\(s_{i}\)</span>，价值 <span class="math inline">\(v_{i}\)</span>（<span class="math inline">\(1\le w_{i},s_{i}\le 10^{4},1\le v_{i}\le 10^{9}\)</span>）。想要选出若干个块堆叠成一个塔，要求满足某一个块上方的块的 <span class="math inline">\(w\)</span> 之和不超过这一个块的 <span class="math inline">\(s\)</span>。求最大代价和。</p>
+<details class="note info"><summary><p>解法</p>
+</summary>
+<p>看到这到题，容易想到设 <span class="math inline">\(f_{i,j}\)</span> 表示前 <span class="math inline">\(i\)</span> 个块，选择后质量和为 <span class="math inline">\(j\)</span> 的最大价值。转移并不难，是一个 01 背包。</p>
+<p>但是转移的顺序该如何确定？也就是说，我们应该按照什么顺序来考虑这些块？</p>
+<p>我们考虑如果我们把块 <span class="math inline">\(i\)</span> 放在块 <span class="math inline">\(j\)</span> 的上方，那么还可以放 <span class="math inline">\(s_{j}-w_{i}\)</span>。</p>
+<p>反之，如果把 <span class="math inline">\(j\)</span> 放在 <span class="math inline">\(i\)</span> 的上方，那么还可以方 <span class="math inline">\(s_{i}-w_{j}\)</span>。</p>
+<p>我们当然是先转移上方的，才能转移下方的，所以 <span class="math inline">\(i\)</span> 在 <span class="math inline">\(j\)</span> 上方就要满足： <span class="math display">\[
+s_{j}-w_{i}\ge s_{i}-w_{j}
+\]</span> 也就是 <span class="math display">\[
+s_{j}+w_{j}\ge s_{i}+w_{i}
+\]</span> 所以我们按照 <span class="math inline">\(s\)</span> 和 <span class="math inline">\(w\)</span> 之和从小到大排序，进行转移即可。</p>
+<details class="note ">
+<summary>
+<p>
+success代码
+</p>
+</summary>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e3</span>+<span class="number">5</span>,M=<span class="number">2e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span>&#123;</span><br><span class="line">  <span class="type">int</span> w,s,v;</span><br><span class="line">&#125;a[N];</span><br><span class="line">ll f[M];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;a[i].w,&amp;a[i].s,&amp;a[i].v);</span><br><span class="line">  <span class="built_in">sort</span>(a+<span class="number">1</span>,a+<span class="number">1</span>+n,[](Node x,Node y)&#123;<span class="keyword">return</span> x.s+x.w&lt;y.s+y.w;&#125;);</span><br><span class="line">  ll ans=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=a[i].s+a[i].w;j&gt;=<span class="number">0</span>;--j)&#123;</span><br><span class="line">      <span class="keyword">if</span>(j&lt;a[i].w)<span class="keyword">break</span>;</span><br><span class="line">      f[j]=<span class="built_in">max</span>(f[j],f[j-a[i].w]+a[i].v);</span><br><span class="line">      ans=<span class="built_in">max</span>(ans,f[j]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+</details>
+<h2 id="yloi2019-梅深不见冬"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDU1MjE=">yLOI2019 梅深不见冬</span></h2>
+<h3 id="题目大意-2">题目大意</h3>
+<p>按照欧拉序遍历一棵 <span class="math inline">\(n(1\le n\le 10^{5}+4)\)</span> 的树，每一个节点有一个需要放置的梅花数量 <span class="math inline">\(w_{i}(1\le w_{i}\le 1000)\)</span>。</p>
+<p>规定每一个节点放置梅花的时候必须满足其所有 <strong>儿子</strong> 节点 <span class="math inline">\(v\)</span> 必须放置了恰好 <span class="math inline">\(w_{v}\)</span> 个梅花。</p>
+<p>你可以在任何时候任何地点收回梅花，你可以以任意欧拉序遍历这一棵树。</p>
+<p>求对于所有 <span class="math inline">\(i\)</span>，要在 <span class="math inline">\(i\)</span> 号点上放置 <span class="math inline">\(w_{i}\)</span> 个棉花至少需要多少个梅花。</p>
+<details class="note info"><summary><p>解法</p>
+</summary>
+<p>考虑求对于某一个 <span class="math inline">\(i\)</span> 的答案，以欧拉序遍历，那么我们只需要考虑 <span class="math inline">\(i\)</span> 的子树即可。</p>
+<p>假设点 <span class="math inline">\(i\)</span> 的答案为 <span class="math inline">\(ans_{i}\)</span>，<span class="math inline">\(i\)</span> 遍历儿子的顺序确定了，那么计算答案：</p>
+<ul>
+<li>遍历一个儿子 <span class="math inline">\(j\)</span> 以前，要将 1 到 j-1 这些儿子全部遍历，也就是说现在 1 到 j-1 这些儿子上都有梅花了，并且遍历节点 <span class="math inline">\(j\)</span> 也需要 <span class="math inline">\(ans_{j}\)</span> 个梅花，总共需要 <span class="math inline">\(ans_{j}+\sum_{k=1}^{j-1}w_{k}\)</span>。</li>
+<li>以及遍历完所有儿子，那么 <span class="math inline">\(i\)</span> 也需要放置 <span class="math inline">\(w_{i}\)</span> 个梅花，需要 <span class="math inline">\(w_{i}+\sum_{j\in son_{x}}w_{j}\)</span> 的梅花。</li>
+</ul>
+<p>上面两个式子中的最大值就是 <span class="math inline">\(ans_{i}\)</span>。</p>
+<hr />
+<p>那么如何确定遍历儿子的顺序呢？我们发现如果有相邻的 <span class="math inline">\(i,j\)</span> 两个儿子，它们先后顺序对答案的贡献与其它儿子无关，所以可以考虑邻项交换。</p>
+<p>如果儿子 <span class="math inline">\(i\)</span> 在儿子 <span class="math inline">\(j\)</span> 以前，就需要满足： <span class="math display">\[
+\max(ans_{i},ans_{j}+w_{i})\le \max(ans_{j},ans_{i}+w_{j})
+\]</span> 按照国王游戏类似的方法拆开这个 <span class="math inline">\(\max\)</span>，可以得到，上面的式子等价于： <span class="math display">\[
+ans_{j}+w_{i}\le ans_{i}+w_{j}
+\]</span> 也就是： <span class="math display">\[
+w_{i}-ans_{i}\le w_{j}-ans_{j}
+\]</span> 所以按照 <span class="math inline">\(ans_{i}-w_{i}\)</span> 从小到大排序后选择就是最优的。</p>
+<details class="note success">
+<summary>
+<p>
+代码
+</p>
+</summary>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Created: 2024.01.20 02:51:34 PM +0800</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> fa[N];</span><br><span class="line">ll ans[N];</span><br><span class="line"><span class="type">int</span> w[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span>&#123;</span><br><span class="line">  <span class="type">int</span> head[N],nxt[N],to[N],tot;</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> v)</span></span>&#123;</span><br><span class="line">    nxt[++tot]=head[u];</span><br><span class="line">    to[tot]=v;</span><br><span class="line">    head[u]=tot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;G;</span><br><span class="line"><span class="type">int</span> sonId[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=G.head[x];i;i=G.nxt[i])<span class="built_in">dfs</span>(G.to[i]);</span><br><span class="line">  <span class="type">int</span> sonCnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=G.head[x];i;i=G.nxt[i])sonId[++sonCnt]=G.to[i];</span><br><span class="line">  <span class="built_in">sort</span>(sonId+<span class="number">1</span>,sonId+sonCnt+<span class="number">1</span>,[](<span class="type">int</span> _,<span class="type">int</span> __)&#123;<span class="keyword">return</span> w[_]-ans[_]&lt;w[__]-ans[__];&#125;);</span><br><span class="line">  ll sum=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=sonCnt;++i)&#123;</span><br><span class="line">    ans[x]=<span class="built_in">max</span>(ans[x],sum+ans[sonId[i]]);</span><br><span class="line">    sum+=w[sonId[i]];</span><br><span class="line">  &#125;</span><br><span class="line">  ans[x]=<span class="built_in">max</span>(ans[x],sum+w[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;fa[i]),G.<span class="built_in">add</span>(fa[i],i);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;w[i]);</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld &quot;</span>,ans[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+</details>
+<h1 id="反悔贪心">反悔贪心</h1>
+<h2 id="国家集训队-种树"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDE3OTI=">2011国家集训队 种树</span></h2>
+<h3 id="题目大意-3">题目大意</h3>
+<p>有 <span class="math inline">\(n(1\le n\le 2\times 10^{5})\)</span> 个数字 <span class="math inline">\(a_{i}\)</span> 围成一圈，选择一个数字之后，其相邻的两个数字就不能选择，求能够选择出的最大数字之和。</p>
+<details class="note info"><summary><p>解法</p>
+</summary>
+<p>很容易可以得到一个 <span class="math inline">\(O(n^2)\)</span> 的 DP，但是时间难以承受。</p>
+<p>我们考虑贪心。直接贪心，考虑每一次尽可能选择大的，然后标记左右两边的数字不能选择。</p>
+<p>但是这样显然是错误的。例如 <code>10 9 1 9</code>，我们会选择 10，然后选 1。但是显然 9 和 9 会更优秀。</p>
+<p>这该怎么办呢？我们反悔，不选择 10 了，改为选择 9 和 9。</p>
+<p>具体而言，我们仍然从大向小选择，但是选择之后，我们留一条后路。</p>
+<p>加入选择了 <span class="math inline">\(a_{i}\)</span>，那么我们将 <span class="math inline">\(a_{i}\)</span> 替换为 <span class="math inline">\(a_{l_{i}}+a_{r_{i}}-a_{i}\)</span>。这样，当再次选择 <span class="math inline">\(i\)</span> 的时候，就相当于原来没有选择 <span class="math inline">\(a_{i}\)</span>，而是选择了其左右两边的。</p>
+<p>使用双向链表维护左右两边的是那些数字即可。</p>
+<details class="note success">
+<summary>
+<p>
+题解
+</p>
+</summary>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Created: 2024.01.20 03:39:41 PM +0800</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> pi=pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">2e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> a[N],l[N],r[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  l[r[x]]=l[x];</span><br><span class="line">  r[l[x]]=r[x];</span><br><span class="line">  l[x]=r[x]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">priority_queue&lt;pi&gt; q;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n,m;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="keyword">if</span>(m&gt;n/<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Error!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]),q.<span class="built_in">push</span>(&#123;a[i],i&#125;);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)l[i]=i<span class="number">-1</span>,r[i]=i+<span class="number">1</span>;</span><br><span class="line">  l[<span class="number">1</span>]=n;r[n]=<span class="number">1</span>;</span><br><span class="line">  <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">  <span class="type">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(cnt&lt;m)&#123;</span><br><span class="line">    pi tmp=q.<span class="built_in">top</span>();</span><br><span class="line">    <span class="type">int</span> cur=tmp.second;</span><br><span class="line">    q.<span class="built_in">pop</span>();</span><br><span class="line">    <span class="keyword">if</span>(vis[cur])<span class="keyword">continue</span>;</span><br><span class="line">    ans+=tmp.first;</span><br><span class="line">    q.<span class="built_in">push</span>(&#123;a[l[cur]]+a[r[cur]]-a[cur],cur&#125;);</span><br><span class="line">    a[cur]=a[l[cur]]+a[r[cur]]-a[cur];</span><br><span class="line">    vis[l[cur]]=<span class="literal">true</span>;vis[r[cur]]=<span class="literal">true</span>;</span><br><span class="line">    <span class="built_in">remove</span>(l[cur]);<span class="built_in">remove</span>(r[cur]);</span><br><span class="line">    ++cnt;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+</details>
+]]></content>
+      <tags>
+        <tag>算法基础</tag>
       </tags>
   </entry>
   <entry>
