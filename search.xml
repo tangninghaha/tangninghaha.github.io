@@ -1240,7 +1240,7 @@ C[k]=\sum_{i\oplus j=k}{A[i]B[j]}
 <h3 id="总结">总结</h3>
 <p>如果我们能够知道如何将点值表示快速转换成系数表示，就可以快速完成多项式乘法了。</p>
 <h2 id="复数前置知识">复数前置知识</h2>
-<p><a href="https://tangninghaha.netlify.app/posts/数学">见数学中复数部分</a></p>
+<p><a href="..%20/数学基础#复数">见数学中复数部分</a></p>
 <h2 id="dft">DFT</h2>
 <p>将系数表达转换成点值表达。</p>
 <p>由于我们可以任意代入 x 的值，为了使得性质更强，我们代入 <span class="math inline">\(\omega_{n}^{k}\)</span> 。</p>
