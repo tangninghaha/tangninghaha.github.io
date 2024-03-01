@@ -517,6 +517,206 @@ max&amp;=\max(a.max,b.max,a.rmax+b.lmax)
       </tags>
   </entry>
   <entry>
+    <title>P定理</title>
+    <url>/posts/p%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL2Jsb2cvU291bGlzdC9zb2x1dGlvbi1wNDk4MA==">主要参考</span></p>
+<h1 id="群">群</h1>
+<h2 id="定义">定义</h2>
+<p>定义集合 <span class="math inline">\(G\)</span> 及一个二元运算 <span class="math inline">\(\cdot\)</span>，如果满足 4 个性质就是一个群，记作 <span class="math inline">\((G,\cdot)\)</span>。</p>
+<ol type="1">
+<li>封闭性。就是集合中两个元素进行 <span class="math inline">\(\cdot\)</span> 运算之后的结果仍然是在集合中。</li>
+<li>结合律。这个小学数学讲过。</li>
+<li>单位元 <span class="math inline">\(e\)</span>。单位元只有一个（这我乱证一下，假如有 <span class="math inline">\(e_{1}\)</span> 和 <span class="math inline">\(e_{2}\)</span> 都是单位元，那么 <span class="math inline">\(e_{1}\cdot e_{2}\)</span> 该等于什么呢？）</li>
+<li>逆元。也就是对于所有 <span class="math inline">\(a\in G\)</span>，都有 <span class="math inline">\(a&#39;\in G\)</span> 满足 <span class="math inline">\(a\cdot a&#39;=a&#39;\cdot a=e\)</span>。据说逆元是唯一的，但是我太菜，不会证。</li>
+</ol>
+<p>可以感受一下这些性质。<del>反正我不学数学，不证明</del>。</p>
+<h2 id="子群">子群</h2>
+<p>可以类比子集理解，群有一个集合 <span class="math inline">\(G\)</span>，子群有集合 <span class="math inline">\(H\)</span>，若 <span class="math inline">\(H\)</span> 是 <span class="math inline">\(G\)</span> 的一个子集，且群 <span class="math inline">\((H,\cdot)\)</span> 也是群，那么 <span class="math inline">\((H,\cdot)\)</span> 是群 <span class="math inline">\((G,\cdot)\)</span> 的一个子群。</p>
+<h2 id="陪集">陪集</h2>
+<p>对于某一个元素 <span class="math inline">\(g\in G\)</span>，如果有</p>
+<ul>
+<li><span class="math inline">\(gH=\{g\cdot h\vert h\in H\}\)</span>，那么称 <span class="math inline">\(gH\)</span> 为 <span class="math inline">\(H\)</span> 包含 <span class="math inline">\(g\)</span> 的左陪集。</li>
+<li><span class="math inline">\(Hg=\{h\cdot g\vert h\in H\}\)</span>，那么称 <span class="math inline">\(Hg\)</span> 为 <span class="math inline">\(H\)</span> 包含 <span class="math inline">\(g\)</span> 的右陪集。</li>
+</ul>
+<p>陪集具有若干性质。</p>
+<blockquote>
+<p>注意，举反例要考虑群的封闭性。</p>
+<p>曾经我发现性质是“错误”的，我举出了整数集合的一个子集和整数加法运算构成的“群”，发现其子群的陪集不满足下述性质。我感到很疑惑。最后当我将这个“反例”列出的时候，才发现，这个所谓的“群”不满足封闭性。</p>
+</blockquote>
+<h3 id="阶">阶</h3>
+<p>群 <span class="math inline">\(G\)</span>的阶等于其元素个数，记作 <span class="math inline">\(\vert G\vert\)</span>。</p>
+<h3 id="陪集的性质">陪集的性质</h3>
+<p>分析时采用右陪集，证明均为非严格证明，因为 <del>反正我不学数学</del> 不是很会证明，如果谁会可以分享一下。</p>
+<ol type="1">
+<li><p>某一子群的阶等于陪集的阶。</p>
+<p>符号表达就是 <span class="math inline">\(\forall g\in G,\vert Hg\vert=\vert H\vert\)</span>。</p>
+<p>证明：由定义得到，如果右陪集是一个可重集，那么这个可重集中元素个数恰好为 <span class="math inline">\(\vert H\vert\)</span> 个。只需要证明这个可重集中的元素互不相同。如果有 <span class="math inline">\(h_1,h_2\in H,h_1\not=h_2\)</span>，且 <span class="math inline">\(h_1\cdot g=h_2\cdot g\)</span>，由于 <span class="math inline">\(g\)</span> 的逆元唯一，所以 <span class="math inline">\(h_1\cdot g\cdot g^{-1}=h_2\cdot g\cdot g^{-1}\)</span>，推出 <span class="math inline">\(h_1=h_2\)</span>，导出矛盾。</p></li>
+<li><p><span class="math inline">\(\forall g\in G,g\in Hg\)</span>。</p>
+<p>注意到 <span class="math inline">\(H\)</span> 是一个群，所以 <span class="math inline">\(H\)</span> 一定具有单位元。</p></li>
+<li><p><span class="math inline">\(Hg=H\Longleftrightarrow g\in H\)</span>。</p>
+<p>从右向左是简单的，因为群具有封闭性。从左往右我不会证 QAQ。</p></li>
+<li><p><span class="math inline">\(Ha=Hb\Longleftrightarrow a\cdot b^{-1}\in H\)</span>。</p>
+<p>从左向右：对于 <span class="math inline">\(h_1,h_2\in H\)</span>，有 <span class="math inline">\(h_1\cdot a=h_2\cdot b\)</span>，那么 <span class="math inline">\(h_{2}=h_{1}\cdot a\cdot b^{-1}\)</span>，所以 <span class="math inline">\(H=H(a\cdot b^{-1})\)</span>，根据性质 3，可以得到 <span class="math inline">\(a\cdot b^{-1}\in H\)</span>。</p>
+<p>从右向左：我们类似上面的过程，反过来。如果 <span class="math inline">\(a\cdot b^{-1}\in H\)</span>，根据群的封闭性，若 <span class="math inline">\(h_{1}\in H\)</span>，有 $h_2=h_1ab^{-1}$，其中 <span class="math inline">\(h_{2}\in H\)</span>，所以可以得到 <span class="math inline">\(h_{2}\cdot b=h_{1}\cdot a\)</span>，也就是两者的陪集相同。</p></li>
+<li><p>如果两个陪集交集非空，那么这两个陪集相等。</p>
+<p><span class="math inline">\(Ha\cap Hb\not=\varnothing\Longleftrightarrow Ha=Hb\)</span>。</p>
+<p>假如 <span class="math inline">\(c\in Ha \and c\in Hb\)</span>，那么 <span class="math inline">\(c=h_1\cdot a,h_1\in H\)</span> 并且 <span class="math inline">\(c=h_2\cdot a,h_2\in H\)</span>，也就是说 <span class="math inline">\(h_1\cdot a=h_2\cdot b\)</span>，所以 <span class="math inline">\(h_{2}=h_{1}\cdot a\cdot b^{-1}\)</span>。根据性质 4，可以得到 <span class="math inline">\(Ha=Hb\)</span>。</p></li>
+<li><p><span class="math inline">\(H\)</span> 的全体右陪集的并为 <span class="math inline">\(G\)</span>。</p>
+<p>因为 <span class="math inline">\(H\)</span> 中存在单位元，右陪集中能够取便所有元素。</p></li>
+</ol>
+<p>其实这些证明大多都是不严谨或者有问题的，大家看一乐呵就好。</p>
+<h3 id="符号规定">符号规定</h3>
+<p><span class="math inline">\([G:H]\)</span> 表示 <span class="math inline">\(G\)</span> 中 <span class="math inline">\(H\)</span> 的不同的左或右陪集的数量。</p>
+<h2 id="拉格朗日定理">拉格朗日定理</h2>
+<p><span class="math inline">\(\vert H\vert \times [G:H]=\vert G\vert\)</span>。</p>
+<p>也就是说 <span class="math inline">\(H\)</span> 的阶乘上 <span class="math inline">\(G\)</span> 中 <span class="math inline">\(H\)</span> 的左陪集数量等于 <span class="math inline">\(G\)</span> 的阶。</p>
+<p>考虑到 <span class="math inline">\(H\)</span> 的所有不同陪集的交为空集，并且每一个陪集的大小都为 <span class="math inline">\(\vert H\vert\)</span>（性质 1）。由性质 6 得到全体陪集的并为 <span class="math inline">\(G\)</span>，得证。</p>
+<h1 id="置换">置换</h1>
+<p>群的介绍告一段落，下面来说说置换。</p>
+<p>参考：</p>
+<ol type="1">
+<li><span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9tYXRoL3Blcm11dGF0aW9uLw==">OI-Wiki - 置换和排列</span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL2Jsb2cvU291bGlzdC9zb2x1dGlvbi1wNDk4MA==">主要参考</span></li>
+</ol>
+<h2 id="定义-1">定义</h2>
+<p>置换定义为有限集合 <span class="math inline">\(S\)</span> 到自身的一个双射。</p>
+<p>集合 <span class="math inline">\(S={a_1,a_2,\cdots,a_n}\)</span> 的一个置换可以表示为： <span class="math display">\[
+f=\begin{pmatrix}a_1,a_2,\dots,a_n\\
+a_{p_1},a_{p_2},\dots,a_{p_n}
+\end{pmatrix}
+\]</span> 其中 <span class="math inline">\(p\)</span> 是一个 <span class="math inline">\(1\)</span> 到 <span class="math inline">\(n\)</span> 的一个排列。我们可以认为置换就是将一个序列按照某一个排列的顺序重新排序。</p>
+<h2 id="运算">运算</h2>
+<p>置换的运算用符号 <span class="math inline">\(\sigma\)</span> 表示，<span class="math inline">\(\sigma(a)=({a_{\sigma_{1}},a_{\sigma_{2}},\cdots,a_{\sigma_{n}}})\)</span>。</p>
+<p>这个运算通过接受一个序列，返回这个序列置换后的结果。</p>
+<p>我们称其为置换的“合成”（这里引用的是 <span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL2Jsb2cvU291bGlzdC9zb2x1dGlvbi1wNDk4MA==">参考资料</span> 中的说法，严格的叫法我也不知道）。</p>
+<h2 id="置换群">置换群</h2>
+<p>如果一个元素为若干个排列，运算是置换的“合成”的“二元组”满足群的定义，我们称其为一个置换群。</p>
+<p>容易发现如果元素为 <span class="math inline">\(1\)</span> 到 <span class="math inline">\(n\)</span> 的全排列，那么这个“二元组”满足群的定义，下面简单验证一下：</p>
+<ol type="1">
+<li>封闭性，显然，因为“合成”之后仍然是 <span class="math inline">\(1\)</span> 到 <span class="math inline">\(n\)</span> 的一个排列。</li>
+<li>单位元 <span class="math inline">\(e=(1,2,\cdots,n)\)</span>。</li>
+<li>结合律 / 逆元：容易验证存在。</li>
+</ol>
+<h1 id="轨道-稳定子定理">轨道-稳定子定理</h1>
+<h2 id="群作用">群作用</h2>
+<p>对于一个群 <span class="math inline">\(G\)</span> 和集合 <span class="math inline">\(M\)</span>，若有一个二元函数 <span class="math inline">\(\varphi(g,m),g\in G,m\in M\)</span> 满足下列要求，则称群 <span class="math inline">\(G\)</span> 作用于集合 <span class="math inline">\(M\)</span>。 <span class="math display">\[
+\varphi(e,m)=m
+\]</span></p>
+<p><span class="math display">\[
+\varphi(g_1\cdot g_2,m)=\varphi(g1,\varphi(g_2,m))
+\]</span></p>
+<h2 id="轨道">轨道</h2>
+<p>假如群 <span class="math inline">\(G\)</span> 作用与集合 <span class="math inline">\(X\)</span>，那么称元素 <span class="math inline">\(x\in X\)</span> 通过 <span class="math inline">\(G\)</span> 中的元素能够转移到的元素集合为 <span class="math inline">\(x\)</span> 的轨道，记作 <span class="math inline">\(G(x)\)</span>。很形象吧。</p>
+<h2 id="稳定子">稳定子</h2>
+<p>使得 <span class="math inline">\(\varphi(g,x)=x\)</span> 的 <span class="math inline">\(g\)</span> 的集合称为 <span class="math inline">\(x\)</span> 的稳定子，记作 <span class="math inline">\(G^{x}\)</span>。</p>
+<h2 id="举个离子">举个离子</h2>
+<p>想必上述内容过于抽象了，那就举一个 <del>离子</del> 例子来说明一下吧。</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/r3qchaw6.png" /></p>
+<p>来源：<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL2Jsb2cvU291bGlzdC9zb2x1dGlvbi1wNDk4MA==">参考资料</span>，侵权删除。</p>
+<h2 id="定理内容">定理内容</h2>
+<p>铺垫了这么多，就是想说：</p>
+<p>轨道大小和稳定子的大小的乘积恰好为的群 <span class="math inline">\(G\)</span> 的大小。</p>
+<p>用符号表示就是 <span class="math inline">\(\vert G(x)\vert\times \vert G^x\vert=\vert G\vert\)</span>。</p>
+<h2 id="证明">证明</h2>
+<p>首先可以发现 <span class="math inline">\(G^x\)</span> 是 <span class="math inline">\(G\)</span> 的一个子群。</p>
+<p>接着发现 <span class="math inline">\([G:G^x]=\vert G(x)\vert\)</span>。</p>
+<p>由拉格朗日定理得证！</p>
+<p>首先证明 <span class="math inline">\(G^x\)</span> 是 <span class="math inline">\(G\)</span> 的一个子群。</p>
+<ol type="1">
+<li>由稳定子的定义可以得到 <span class="math inline">\(G^x\)</span> 的元素组成的集合是 <span class="math inline">\(G\)</span> 中元素集合的子集。</li>
+<li><span class="math inline">\(G^x\)</span> 满足封闭性，如果有 <span class="math inline">\(f\in G^x,g\in G^x\)</span>，那么 <span class="math inline">\(\varphi(f\cdot g)=\varphi(f,\varphi(g,x))=x\)</span>。</li>
+<li><span class="math inline">\(G^x\)</span> 满足结合律，这由 <span class="math inline">\(G\)</span> 满足结合律得到。</li>
+<li><span class="math inline">\(G^x\)</span> 具有单位元 <span class="math inline">\(e\)</span>，这是因为 <span class="math inline">\(e\)</span> 必定是 <span class="math inline">\(x\)</span> 的一个稳定子。</li>
+<li><span class="math inline">\(G^x\)</span> 中的每一个元素 <span class="math inline">\(g\)</span> 都具有逆元，因为 <span class="math inline">\(\varphi(g^{-1},x)=\varphi(g^{-1},\varphi(g,x))=\varphi(g\cdot g^{-1},x)=\varphi(e,x)=x\)</span>。</li>
+</ol>
+<p>接下来证明 <span class="math inline">\([G:G^x]=\vert G(x)\vert\)</span>，也就是 <span class="math inline">\(G\)</span> 中 <span class="math inline">\(G^x\)</span> 的陪集数量恰好等于 <span class="math inline">\(x\)</span> 在 <span class="math inline">\(G\)</span> 作用下的轨道大小。</p>
+<p>利用构造双射来证明，也就是陪集和轨道一一对应。</p>
+<p>先证明相同轨道对应相同陪集。对于 <span class="math inline">\(f,g\in G\)</span>，<span class="math inline">\(x\)</span> 在 <span class="math inline">\(f,g\)</span> 的作用下转移到了 <span class="math inline">\(\varphi(f,x)\)</span> 和 <span class="math inline">\(\varphi(g,x)\)</span>。如果 <span class="math inline">\(\varphi(f,x)=\varphi(g,x)\)</span>，那么 <span class="math inline">\(\varphi(f\cdot g^{-1},x)=\varphi(g^{-1},\varphi(f,x))=\varphi(g^{-1},\varphi(g,x))=\varphi(e,x)=x\)</span>，也就是说 <span class="math inline">\(f\cdot g^{-1}\in G^x\)</span>，由陪集的性质可以得到，<span class="math inline">\(fG=gG\)</span>。</p>
+<p>反过来便可以推出相同陪集对应相同轨道。</p>
+<p>由此得证！</p>
+<h1 id="burnside-引理">Burnside 引理</h1>
+<p>推了这么多只是为了引出今天的主角：Burnside 引理和 Pólya 定理。</p>
+<h2 id="等价类">等价类</h2>
+<p>等价类是对于一个置换群 <span class="math inline">\(G\)</span> 作用于一个集合 <span class="math inline">\(X\)</span> 的情况下定义的。如果 <span class="math inline">\(\varphi(g,x)=y\)</span>，那么我们认为 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 在同一等价类中。</p>
+<p>每一个等价类是一个集合，集合中的元素之间能够通过进行若干次这个二元函数后相等。</p>
+<p>记 <span class="math inline">\(X/G\)</span> 表示 <span class="math inline">\(G\)</span> 作用在 <span class="math inline">\(X\)</span> 后产生的所有等价类的集合。</p>
+<h2 id="内容">内容</h2>
+<p><span class="math display">\[
+\vert X/G\vert=\vert G\vert\sum_{g\in G}\vert X^g\vert
+\]</span></p>
+<p>这里 <span class="math inline">\(\vert X^g\vert\)</span> 表示 <span class="math inline">\(X\)</span> 集合中有多少个元素的稳定子包含 <span class="math inline">\(g\)</span>。</p>
+<p>用文字描述就是：<span class="math inline">\(G\)</span> 作用于 <span class="math inline">\(X\)</span> 产生的等价类数量等于 <span class="math inline">\(x\)</span> 稳定子包含 <span class="math inline">\(g\)</span> 的数量的算术平均值。</p>
+<h2 id="证明-1">证明</h2>
+<p>我们用另一种形式表示 <span class="math inline">\(\sum_{g\in G}\vert X^g\vert\)</span>，像这样 <span class="math inline">\(\sum_{x\in X}\vert G^x\vert\)</span>，我们对这个形式进行变换： <span class="math display">\[
+\begin{aligned}
+\sum_{x\in X}\vert G^x\vert&amp;=\sum_{x\in X}\frac{\vert G\vert}{\vert G(x)\vert}&amp;\text{轨道-稳定子定理}\\
+&amp;=\vert G\vert\sum_{x\in X}\frac{1}{\vert G(x)\vert}\\
+&amp;=\vert G\vert\sum_{Y\in X/G}\sum_{x\in Y}\frac{1}{\vert G(x)\vert}\\
+&amp;=\vert G\vert\sum_{Y\in X/G}\sum_{x\in Y}\frac{1}{\vert Y\vert}\\
+&amp;=\vert G\vert\sum_{Y\in X/G}1\\
+&amp;=\vert G\vert\vert X/G\vert
+\end{aligned}
+\]</span> 也就是说我们证明了 <span class="math inline">\(\sum_{g\in G}\vert X^g\vert=\vert G\vert\vert X/G\vert\)</span>。</p>
+<p>将 <span class="math inline">\(\vert G\vert\)</span> 除过去得到 Burnside 引理。</p>
+<h1 id="模板polya-定理"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDQ5ODA=">【模板】Polya 定理</span></h1>
+<h2 id="题目大意">题目大意</h2>
+<p><span class="math inline">\(n\)</span> 种颜色给 <span class="math inline">\(n\)</span> 个点染色，问多少种本质不同的染色方案。本质不同定义为循环不同构。</p>
+<p><span class="math inline">\(n\le 10^{9}\)</span>，多测，<span class="math inline">\(t\le 10^{3}\)</span>。</p>
+<h2 id="解法">解法</h2>
+<p>设群 <span class="math inline">\(G\)</span> 为旋转 1 次，旋转 2 次，……，旋转 <span class="math inline">\(n\)</span> 次组成置换群。</p>
+<p>集合 <span class="math inline">\(X\)</span> 为染色的方案的集合。</p>
+<p>群 <span class="math inline">\(G\)</span> 作用于集合 <span class="math inline">\(X\)</span> 上，得到的一个等价类是同一种染色方案。所以我们只需要求等价类的数量即可。</p>
+<p>利用 Burnside 引理，我们可以预见到，设 <span class="math inline">\(X^p\)</span> 表示 <span class="math inline">\(X\)</span> 集合中有多少个染色方案在旋转 <span class="math inline">\(p\)</span> 次之后，仍然相同，那么根据 Burnside 引理，我们知道 <span class="math inline">\(\vert X/G\vert=\frac{1}{\vert G\vert}\sum_{p\in G}X^p\)</span>，在这道题中，相当于： <span class="math display">\[
+ans=\frac{1}{n}\sum_{i=1}^{n}X^{i}
+\]</span> 如果旋转 <span class="math inline">\(i\)</span> 次之后和原来相同，其充要条件就是有长度为 <span class="math inline">\(j\)</span> 的循环节，且 <span class="math inline">\(j\vert i\)</span>。</p>
+<p>另外我们知道 <span class="math inline">\(j\)</span> 还得满足 <span class="math inline">\(j\vert n\)</span>，也就是说循环节长度最长为 <span class="math inline">\(\gcd(i,n)\)</span>。所以 <span class="math inline">\(X^i\)</span> 可以转写为 <span class="math inline">\(n^{\gcd(i,n)}\)</span>，因为循环节内部可以任意染色。</p>
+<p>也就是 <span class="math display">\[
+ans=\frac{1}{n}\sum_{i=1}^{n}n^{\gcd(i,n)}
+\]</span> 进行常见的变换 <span class="math display">\[
+ans=\frac{1}{n}\sum_{d\vert n}n^{d}\sum_{i=1}^{\frac{n}{d}}[\gcd(i,\frac{n}{d})=1]
+\]</span> 第二个 <span class="math inline">\(\Sigma\)</span> 就是欧拉函数，所以： <span class="math display">\[
+ans=\frac{1}{n}\sum_{d\vert n}n^{d}\varphi(\frac{n}{d})
+\]</span> 在本题中暴力计算欧拉函数是可以通过的，时间复杂度约为 <span class="math inline">\(O(n^{\frac{1}{2}+\epsilon})\)</span>，其中 <span class="math inline">\(\epsilon\)</span> 是一个任意大于 0 的实数（CHD说的）。</p>
+<h1 id="pólya-定理">Pólya 定理</h1>
+<p>我们发现置换群中，如果是 <span class="math inline">\(i\)</span> 置换到 <span class="math inline">\(p_i\)</span>，那么我们从 <span class="math inline">\(i\)</span> 向 <span class="math inline">\(p_i\)</span> 连一条边，那么一定会形成若干个置换环。将这些环染色，不难发现，如果要满足上面所说的，旋转之后是等价类，那么每一个环的颜色都应当是相同的。所以如果一种置换 <span class="math inline">\(g\in G\)</span> 有 <span class="math inline">\(c_g\)</span> 个环，那么 <span class="math display">\[
+\vert X/G\vert=\frac{1}{\vert G\vert}\sum_{g\in G}m^{c_{g}}
+\]</span> 其中 <span class="math inline">\(m\)</span> 是不同的颜色个数。</p>
+<p>注意到这个定理和 Burnside 定理的不同之处在于 <span class="math inline">\(\Sigma\)</span> 后面的内容。<span class="math inline">\(m^{c_{g}}\)</span> 和 <span class="math inline">\(n^g\)</span>，按照上面的推理，可以发现两者是等价的。</p>
+<h1 id="p1446-hnoi2008-cards"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDE0NDY=">P1446 [HNOI2008] Cards</span></h1>
+<h2 id="题目大意-1">题目大意</h2>
+<p>将 <span class="math inline">\(n=r+b+g\)</span> 张牌染色，需要染出 <span class="math inline">\(r\)</span> 张红牌，<span class="math inline">\(b\)</span> 张蓝牌，<span class="math inline">\(g\)</span> 张绿牌。并给定 <span class="math inline">\(m\)</span> 种置换方案，这些置换满足封闭性，具有逆元。</p>
+<p>如果两种染色方案通过洗牌能够相同，就认为这两种方案不是同一种方案。求方案数对给定的质数 <span class="math inline">\(p\)</span> 取模的结果。</p>
+<p><span class="math inline">\(r,b,g\le 20,m\le60\)</span>。</p>
+<h2 id="解法-1">解法</h2>
+<p>因为这是例题，第一感觉是题目给出了一个置换群，那么我能不能使用 Polya 定理？那么求出每一种置换的数目之后，利用 Polya 定理就可以快速算出了。我发现这样的时间复杂度是 <span class="math inline">\(O(nm)\)</span> 的。数据范围这么小，不合理。</p>
+<p>Polya 定理中，隐含了要求，其对于集合 <span class="math inline">\(X\)</span> 必须是所有可能的集合。也就是说，不能对颜色进行限制。但是这道题限制了每一种颜色的数目。</p>
+<p>我继续分析道，仍然按照其思想，形成了若干个环，要想满足置换后相同，每一个环仍然要求具有相同的颜色。能否将 Polya 定理中的 <span class="math inline">\(m^{c_g}\)</span> 修改为将这些环染色，满足染成红色的环的个数和为 <span class="math inline">\(r\)</span> 以此类推。得到的方案数，累加起来，除以 <span class="math inline">\(\vert G\vert\)</span> 是否就可行了呢？</p>
+<p>其实到这里就已经不再是 Polya 定理了，而是 Burnside 定理的形式了。我们其实是考虑了每一种置换，与有多少中染色方案满足，这就是 Burnside 定理。</p>
+<p>所以使用背包计数即可。</p>
+<h1 id="p3307-sdoi2013-项链"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDMzMDc=">P3307 [SDOI2013] 项链</span></h1>
+<p>黑题果然不简单。</p>
+<h2 id="题目大意-2">题目大意</h2>
+<p><span class="math inline">\(n\)</span> 个点的一个环中，每一个点需要染 <span class="math inline">\([1,m]\)</span> 之中的三种颜色（同个一个点可以染多种相同的颜色）。</p>
+<p>要求：</p>
+<ol type="1">
+<li>每一个点染的颜色的编号 <span class="math inline">\(\gcd\)</span> 为 1。</li>
+<li>相邻两个点的颜色互不相同，这里定义不同是两个点染的颜色形成的可重集不同。</li>
+</ol>
+<p>现在要求有多少种本质不同的染色方案。两种染色方案相同，当且仅当将这个环旋转若干次之后相同。</p>
+<p>多测，<span class="math inline">\(t\le 10,n\le 10^{14},m\le 10^{7}\)</span>。</p>
+<h2 id="解法-2">解法</h2>
+<p>首先解决这个 <span class="math inline">\(\gcd\)</span>，一眼莫反，直接上 <span class="math inline">\(O(m+tm)\)</span> 的暴力莫反。</p>
+<p>然后要解决相邻不能相同的问题。我问 CHD，他说：每一个点不能和它左边的点颜色相同，所以每一个点都有 <span class="math inline">\(m-1\)</span> 种染色方案，总共就是 <span class="math inline">\((m-1)^{n}\)</span>。过不了样例。</p>
+<p>我问 wtc，他说：设 <code>f[i][0/1]</code> 表示第 <span class="math inline">\(i\)</span> 个和第 1 个是否相同，然后矩阵优化。</p>
+<p>最后解决本质不同，直接上 po 定理即可。时间复杂度我也不知道，因为 phi 函数是暴力求的。</p>
+<p>最后 WA 一个点。原来是因为 <span class="math inline">\(n\ge mod\)</span>，所以可能存在 <span class="math inline">\(n\)</span> 是模数的倍数的情况。这时候，就对 <span class="math inline">\(mod^{2}\)</span> 取模。最后，如果 <span class="math inline">\(n\)</span> 是 <span class="math inline">\(mod\)</span> 的倍数，那么 <span class="math inline">\(ans\)</span> 先直接除以 <span class="math inline">\(mod\)</span>，然后求 <span class="math inline">\(\frac{n}{mod}\)</span> 在模 <span class="math inline">\(mod\)</span> 意义下的逆元，相乘即可（我也不知道为什么）。</p>
+<p>然后 TLE 了，原来是因为最开始那个 gcd 我不用整除分块来算。</p>
+]]></content>
+      <tags>
+        <tag>Math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一种基于DFS序与RMQ的LCA算法</title>
     <url>/posts/%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8EDFS%E5%BA%8F%E4%B8%8ERMQ%E7%9A%84LCA%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<p>[非原创] 本文将介绍一种基于预处理DFS序，做到在线 <span class="math inline">\(O(1)\)</span> 回答询问的 LCA 算法。</p>

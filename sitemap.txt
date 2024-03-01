@@ -1,3 +1,4 @@
+https://tangninghaha.netlify.app/posts/p%E5%AE%9A%E7%90%86/
 https://tangninghaha.netlify.app/posts/GDKOI2023%E6%B8%B8%E8%AE%B0/
 https://tangninghaha.netlify.app/posts/GDKOIDay2T2%E9%A2%98%E8%A7%A3/
 https://tangninghaha.netlify.app/posts/Multiplicative_Functions/
@@ -27,6 +28,7 @@ https://tangninghaha.netlify.app/tags/%E6%80%BB%E7%BB%93/
 https://tangninghaha.netlify.app/tags/%E9%A2%98%E8%A7%A3/
 https://tangninghaha.netlify.app/tags/%E6%95%B0%E5%AD%A6/
 https://tangninghaha.netlify.app/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/
+https://tangninghaha.netlify.app/tags/Math/
 https://tangninghaha.netlify.app/tags/%E5%9B%BE%E8%AE%BA/
 https://tangninghaha.netlify.app/tags/%E5%8C%96%E5%AD%A6/
 https://tangninghaha.netlify.app/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/
