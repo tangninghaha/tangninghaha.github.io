@@ -7,7 +7,6 @@
 <p>去广州比赛，非常开心。看一看省行政中心是什么样子。</p>
 <p>车上被 LYY 拍了一个照。快下高速的时候看到一个大铜钱样子的建筑，第一次见这么“钱”的建筑。</p>
 <p>本来以为广州全都是高楼大厦，没想到很多地方其实看起来很旧，甚至看起来还比不上中山。</p>
-<span id="more"></span>
 <p>酒店居然叫 吉桔酒店 ，名字很独特啊。</p>
 <p>到了酒店，开房的时候，同学们发现墙壁哪里有一个机器人，就都围着机器人转，让机器人送草稿纸，还给它拍照。</p>
 <p>进了酒店，有电视，马上看电视，不知道看什么，本来想看人大的，但是太无聊了。</p>
@@ -171,7 +170,6 @@ C_{i,j}=A_{i,k}\times B_{k,j}
     <content><![CDATA[<p>看不清公式可以放大。</p>
 <p>题意简单转化</p>
 <p>首先有 <span class="math inline">\(\gcd(x^{a}-1,x^{b}-1)+1=x^{\gcd(a,b)}\)</span>。</p>
-<span id="more"></span>
 <blockquote>
 <p>证明：</p>
 <p>因为当 <span class="math inline">\(a\ge b\)</span> 时， <span class="math inline">\(\gcd(a,b)=\gcd(a-b,b)\)</span>。</p>
@@ -239,7 +237,6 @@ C_{i,j}=A_{i,k}\times B_{k,j}
     <title>Multiplicative Functions</title>
     <url>/posts/Multiplicative_Functions/</url>
     <content><![CDATA[<p>Introduction about multiplicative functions.</p>
-<span id="more"></span>
 <h1 id="multiplicative-functions">Multiplicative Functions</h1>
 <p>Function <span class="math inline">\(f(x)\)</span> satisfied <span class="math inline">\(f(xy)=f(x)\cdot f(y), \gcd(x,y)=1\)</span> , then we call <span class="math inline">\(f(x)\)</span> a multiplicative function.</p>
 <ol type="1">
@@ -296,7 +293,6 @@ m+1&amp;m+1&amp;m+3&amp;\cdots&amp;m+r&amp;\cdots&amp;2m\\
 <p>给定一棵 <span class="math inline">\(n(991\le n\le 299998)\)</span> 个点的树，每个节点上有一个观察者，观察者在时刻 <span class="math inline">\(w_{i}\)</span> 进行观察。</p>
 <p>现在有 <span class="math inline">\(m(991\le m\le 299998)\)</span> 条路径 <span class="math inline">\(s \rightarrow t\)</span>，每个路径上会有一个人，时刻0时从 <span class="math inline">\(s\)</span> 出发，沿着树上路径，向 <span class="math inline">\(t\)</span> 行走，每一个时刻走一条边，走到 <span class="math inline">\(t\)</span> 之后一个时刻消失。</p>
 <p>问每一个观察者能够看到多少个人？</p>
-<span id="more"></span>
 <h2 id="转化">转化</h2>
 <p>我们记 <span class="math inline">\(dep_{i}\)</span> 表示点 <span class="math inline">\(i\)</span> 的深度。</p>
 <p>我们将一条路径 <span class="math inline">\(s\rightarrow t\)</span> 按照其 LCA 拆分为 <span class="math inline">\(s\rightarrow \text{LCA}\)</span> 和 <span class="math inline">\(\text{LCA}\rightarrow t\)</span> 两部分。</p>
@@ -370,7 +366,6 @@ dep_{s}-2\times dep_{lca}=w_{i}-dep_{i}
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDcxMTU=">Luogu</span> or <span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcC8zMzg4">LOJ</span></p>
 <p>这是一道巧妙的构造题，其中蕴含了将规模较大的问题划归到规模小的问题的思想。</p>
 <p>如果想要在比赛的时候做出这道题，那么观察样例绝对是不二法门，因为样例提供了丰富的信息。<del>虽然说笔者做题的时候没有观察过。</del></p>
-<span id="more"></span>
 <h2 id="从简单的问题出发">从简单的问题出发</h2>
 <p>让我们试着解决 <span class="math inline">\(n=2\)</span> 的特殊部分，尽管这只有 10 分的部分分，但是对简单的情形分析，能为拓展到复杂情况提供好的引导。</p>
 <p>现在我们有 <span class="math inline">\(x\)</span>，<span class="math inline">\(y\)</span>，<span class="math inline">\(z\)</span>，三根柱子，<span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 上有两种颜色的球，让我们称其中一种颜色的球为 <strong>关键球</strong>。</p>
@@ -427,7 +422,6 @@ c+m+(m-c)+c+c+c+m=3m+3c
     <content><![CDATA[<p>一转眼间 KOI2024 已经开始了，但是 KOI2023 仍然历历在目。</p>
 <h2 id="省流">省流</h2>
 <p>这次比赛发挥比较稳健，没有挂分。</p>
-<span id="more"></span>
 <h2 id="逆天-textday-x">逆天 / <span class="math inline">\(\text{Day}^{-x}\)</span></h2>
 <p>比赛前这几天都在 <del>复习WHK</del> 腐败。</p>
 <h2 id="第零天-textday-o">第零天 / <span class="math inline">\(\text{Day o}\)</span></h2>
@@ -484,7 +478,6 @@ c+m+(m-c)+c+c+c+m=3m+3c
     <title>Kinetic Tournament Tree</title>
     <url>/posts/kinetic-tournament-tree/</url>
     <content><![CDATA[<p>Kinetic Tournament Tree，简称 KTT，是一种动态维护函数最值的线段树。</p>
-<span id="more"></span>
 <h1 id="p5693-ei-的第六分块"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDU2OTM=">P5693 EI 的第六分块</span></h1>
 <p>模板题。</p>
 <h2 id="题意">题意</h2>
@@ -506,19 +499,15 @@ max&amp;=\max(a.max,b.max,a.rmax+b.lmax)
 <p>那么我们如果发现当前区间加的数超过了 <span class="math inline">\(x\)</span>，我们就暴力重构这个区间，即将满足这个条件的全部重新计算。</p>
 <p>这样做的复杂度是正确的，具体证明我也不会，可以参考 <span class="exturl" data-url="aHR0cHM6Ly9lbnRyb3B5aW5jcmVhc2VyLmJsb2cudW9qLmFjL2Jsb2cvNTIxNw==">EI的论文</span> 。</p>
 <p>计算 <span class="math inline">\(x\)</span> 只需要将两个子区间的 <span class="math inline">\(x\)</span> 取 min，再看 <span class="math inline">\(lmax\)</span>，<span class="math inline">\(rmax\)</span>，<span class="math inline">\(max\)</span> 的值何时会修改，这个只要求一求一次函数的交点即可。</p>
-<details class="note info"><summary><p>代码</p>
-</summary>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> ll INF=<span class="number">1e18</span>,N=<span class="number">4e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Line</span>&#123;</span><br><span class="line">  ll k,b;</span><br><span class="line">  <span class="built_in">Line</span>(ll x,ll y)&#123;k=x;b=y;&#125;</span><br><span class="line">  <span class="built_in">Line</span>(<span class="type">int</span> x)&#123;k=<span class="number">1</span>;b=x;&#125;</span><br><span class="line">  <span class="built_in">Line</span>()&#123;k=<span class="number">0</span>;b=<span class="number">0</span>;&#125;</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">upd</span><span class="params">(ll val)</span></span>&#123;</span><br><span class="line">    b+=k*val;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Line <span class="keyword">operator</span>+(<span class="type">const</span> Line&amp; a,<span class="type">const</span> Line&amp; b)&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;a.k+b.k,a.b+b.b&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">  Line l,r,mx,sum;</span><br><span class="line">  ll to;</span><br><span class="line">&#125;tr[N&lt;&lt;<span class="number">2</span>];</span><br><span class="line">ll tag[N&lt;&lt;<span class="number">2</span>];</span><br><span class="line"><span class="function">ll <span class="title">inter</span><span class="params">(<span class="type">const</span> Line&amp; x,<span class="type">const</span> Line&amp; y)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(x.k==y.k)<span class="keyword">return</span> INF;</span><br><span class="line">  <span class="keyword">if</span>(y.b==x.b)<span class="keyword">return</span> INF;</span><br><span class="line">  ll tmp=(y.b-x.b)/(x.k-y.k);</span><br><span class="line">  <span class="keyword">return</span> tmp&lt;<span class="number">0</span>?INF:tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">bool</span> <span class="keyword">operator</span>&lt;(<span class="type">const</span> Line&amp; a,<span class="type">const</span> Line&amp; b)&#123;</span><br><span class="line">  <span class="keyword">return</span> a.b==b.b?a.k&lt;b.k:a.b&lt;b.b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Line <span class="title">max</span><span class="params">(<span class="type">const</span> Line&amp; a,<span class="type">const</span> Line&amp; b,ll&amp; v)</span></span>&#123;</span><br><span class="line">  v=<span class="built_in">min</span>(v,<span class="built_in">inter</span>(a,b));</span><br><span class="line">  <span class="keyword">return</span> a.b==b.b?(a.k&gt;b.k?a:b):(a.b&gt;b.b?a:b);</span><br><span class="line">&#125;</span><br><span class="line">node <span class="keyword">operator</span>+(<span class="type">const</span> node&amp; a,<span class="type">const</span> node&amp; b)&#123;</span><br><span class="line">  node res;</span><br><span class="line">  res.sum=a.sum+b.sum;</span><br><span class="line">  res.to=<span class="built_in">min</span>(a.to,b.to);</span><br><span class="line">  res.l=<span class="built_in">max</span>(a.l,a.sum+b.l,res.to);</span><br><span class="line">  res.r=<span class="built_in">max</span>(b.r,a.r+b.sum,res.to);</span><br><span class="line">  res.mx=<span class="built_in">max</span>(a.r+b.l,<span class="built_in">max</span>(a.mx,b.mx,res.to),res.to);</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushUp</span><span class="params">(<span class="type">int</span> x,ll val)</span></span>&#123;</span><br><span class="line">  node&amp; cur=tr[x];</span><br><span class="line">  tag[x]+=val;cur.to-=val;</span><br><span class="line">  cur.l.<span class="built_in">upd</span>(val);cur.r.<span class="built_in">upd</span>(val);cur.mx.<span class="built_in">upd</span>(val);cur.sum.<span class="built_in">upd</span>(val);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rebuild</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> k,ll val)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(val&gt;tr[k].to)&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> v=val+tag[k];</span><br><span class="line">    <span class="type">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">rebuild</span>(l,mid,k&lt;&lt;<span class="number">1</span>,v);<span class="built_in">rebuild</span>(mid+<span class="number">1</span>,r,k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,v);</span><br><span class="line">    tr[k]=tr[k&lt;&lt;<span class="number">1</span>]+tr[k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];tag[k]=<span class="number">0</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">pushUp</span>(k,val);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">downLazy</span><span class="params">(<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">  <span class="built_in">pushUp</span>(k&lt;&lt;<span class="number">1</span>,tag[k]);</span><br><span class="line">  <span class="built_in">pushUp</span>(k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,tag[k]);</span><br><span class="line">  tag[k]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(l==r)&#123;</span><br><span class="line">    tr[k]=&#123;a[l],a[l],a[l],a[l],INF&#125;;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">  <span class="built_in">build</span>(l,mid,k&lt;&lt;<span class="number">1</span>);<span class="built_in">build</span>(mid+<span class="number">1</span>,r,k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">  tr[k]=tr[k&lt;&lt;<span class="number">1</span>]+tr[k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">upd</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> s,<span class="type">int</span> t,<span class="type">int</span> val,<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(s&lt;=l&amp;&amp;r&lt;=t)&#123;</span><br><span class="line">    <span class="built_in">rebuild</span>(l,r,k,val);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(tag[k])<span class="built_in">downLazy</span>(k);</span><br><span class="line">  <span class="keyword">if</span>(s&lt;=mid)<span class="built_in">upd</span>(l,mid,s,t,val,k&lt;&lt;<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">if</span>(t&gt;mid)<span class="built_in">upd</span>(mid+<span class="number">1</span>,r,s,t,val,k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">  tr[k]=tr[k&lt;&lt;<span class="number">1</span>]+tr[k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">node <span class="title">qry</span><span class="params">(<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> s,<span class="type">int</span> t,<span class="type">int</span> k)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(s&lt;=l&amp;&amp;r&lt;=t)&#123;</span><br><span class="line">    <span class="keyword">return</span> tr[k];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="type">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(tag[k])<span class="built_in">downLazy</span>(k);</span><br><span class="line">  <span class="keyword">if</span>(t&lt;=mid)<span class="keyword">return</span> <span class="built_in">qry</span>(l,mid,s,t,k&lt;&lt;<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">if</span>(s&gt;mid)<span class="keyword">return</span> <span class="built_in">qry</span>(mid+<span class="number">1</span>,r,s,t,k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">qry</span>(l,mid,s,t,k&lt;&lt;<span class="number">1</span>)+<span class="built_in">qry</span>(mid+<span class="number">1</span>,r,s,t,k&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="type">int</span> r=<span class="number">0</span>,neg=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>((c&lt;<span class="string">&#x27;0&#x27;</span>||c&gt;<span class="string">&#x27;9&#x27;</span>)&amp;&amp;(c!=<span class="string">&#x27;-&#x27;</span>))c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="keyword">if</span>(c==<span class="string">&#x27;-&#x27;</span>)neg*=<span class="number">-1</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="keyword">while</span>(c&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="string">&#x27;9&#x27;</span>)r=(r&lt;&lt;<span class="number">1</span>)+(r&lt;&lt;<span class="number">3</span>)+(c^<span class="number">48</span>),c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="keyword">return</span> r*neg;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n,q;</span><br><span class="line">  n=<span class="built_in">read</span>();q=<span class="built_in">read</span>();</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)a[i]=<span class="built_in">read</span>();</span><br><span class="line">  <span class="built_in">build</span>(<span class="number">1</span>,n,<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=q;++i)&#123;</span><br><span class="line">    <span class="type">int</span> tp,l,r,x;</span><br><span class="line">    tp=<span class="built_in">read</span>();l=<span class="built_in">read</span>();r=<span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">if</span>(tp==<span class="number">1</span>)x=<span class="built_in">read</span>(),<span class="built_in">upd</span>(<span class="number">1</span>,n,l,r,x,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(tp==<span class="number">2</span>)&#123;</span><br><span class="line">      node res=<span class="built_in">qry</span>(<span class="number">1</span>,n,l,r,<span class="number">1</span>);</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="built_in">max</span>(<span class="number">0ll</span>,res.mx.b));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</details>
 ]]></content>
       <tags>
         <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
-    <title>P定理</title>
-    <url>/posts/p%E5%AE%9A%E7%90%86/</url>
+    <title>polya 定理</title>
+    <url>/posts/polya%E5%AE%9A%E7%90%86/</url>
     <content><![CDATA[<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL2Jsb2cvU291bGlzdC9zb2x1dGlvbi1wNDk4MA==">主要参考</span></p>
 <h1 id="群">群</h1>
 <h2 id="定义">定义</h2>
@@ -560,7 +549,7 @@ max&amp;=\max(a.max,b.max,a.rmax+b.lmax)
 <p>从右向左：我们类似上面的过程，反过来。如果 <span class="math inline">\(a\cdot b^{-1}\in H\)</span>，根据群的封闭性，若 <span class="math inline">\(h_{1}\in H\)</span>，有 $h_2=h_1ab^{-1}$，其中 <span class="math inline">\(h_{2}\in H\)</span>，所以可以得到 <span class="math inline">\(h_{2}\cdot b=h_{1}\cdot a\)</span>，也就是两者的陪集相同。</p></li>
 <li><p>如果两个陪集交集非空，那么这两个陪集相等。</p>
 <p><span class="math inline">\(Ha\cap Hb\not=\varnothing\Longleftrightarrow Ha=Hb\)</span>。</p>
-<p>假如 <span class="math inline">\(c\in Ha \and c\in Hb\)</span>，那么 <span class="math inline">\(c=h_1\cdot a,h_1\in H\)</span> 并且 <span class="math inline">\(c=h_2\cdot a,h_2\in H\)</span>，也就是说 <span class="math inline">\(h_1\cdot a=h_2\cdot b\)</span>，所以 <span class="math inline">\(h_{2}=h_{1}\cdot a\cdot b^{-1}\)</span>。根据性质 4，可以得到 <span class="math inline">\(Ha=Hb\)</span>。</p></li>
+<p>假如 <span class="math inline">\(c\in Ha \wedge c\in Hb\)</span>，那么 <span class="math inline">\(c=h_1\cdot a,h_1\in H\)</span> 并且 <span class="math inline">\(c=h_2\cdot a,h_2\in H\)</span>，也就是说 <span class="math inline">\(h_1\cdot a=h_2\cdot b\)</span>，所以 <span class="math inline">\(h_{2}=h_{1}\cdot a\cdot b^{-1}\)</span>。根据性质 4，可以得到 <span class="math inline">\(Ha=Hb\)</span>。</p></li>
 <li><p><span class="math inline">\(H\)</span> 的全体右陪集的并为 <span class="math inline">\(G\)</span>。</p>
 <p>因为 <span class="math inline">\(H\)</span> 中存在单位元，右陪集中能够取便所有元素。</p></li>
 </ol>
@@ -720,7 +709,6 @@ ans=\frac{1}{n}\sum_{d\vert n}n^{d}\varphi(\frac{n}{d})
     <title>一种基于DFS序与RMQ的LCA算法</title>
     <url>/posts/%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8EDFS%E5%BA%8F%E4%B8%8ERMQ%E7%9A%84LCA%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<p>[非原创] 本文将介绍一种基于预处理DFS序，做到在线 <span class="math inline">\(O(1)\)</span> 回答询问的 LCA 算法。</p>
-<span id="more"></span>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL2Jsb2cvQWxleFdlaS9sZW5nLW1lbi1rZS1qaS1kZnMteHUtcWl1LWxjYQ==">参考</span></p>
 <p>该算法实现简洁，常数小，速度快；但是维护的信息较少，例如：求到 LCA 路径上除 LCA 外深度最小的节点。</p>
 <p>算法流程：首先处理出节点的 dfn 序。假设 <span class="math inline">\(dfn[u]&lt;dfn[v]\)</span>，下面分类讨论：</p>
@@ -739,621 +727,9 @@ ans=\frac{1}{n}\sum_{d\vert n}n^{d}\varphi(\frac{n}{d})
       </tags>
   </entry>
   <entry>
-    <title>初中化学-上</title>
-    <url>/posts/%E5%88%9D%E4%B8%AD%E5%8C%96%E5%AD%A6-%E4%B8%8A/</url>
-    <content><![CDATA[<p>大多数内容都是抄书的，没有什么好看的。</p>
-<span id="more"></span>
-<h1 id="走进化学世界">走进化学世界</h1>
-<h2 id="物质的变化与性质">物质的变化与性质</h2>
-<ol type="1">
-<li>化学，是一门研究物质的结构，组成，性质，变化规律的科学。</li>
-<li>物理变化与化学变化：物理变化过程中没有新物质生成，化学变化中有新物质生成。化学变化常常伴随物理变化。</li>
-<li>在化学变化中表现出来的是化学性质，物质不需要化学变化就表示出的是物理性质。</li>
-</ol>
-<h2 id="走进化学实验室">走进化学实验室</h2>
-<h3 id="取用药品">取用药品</h3>
-<p>总原则：</p>
-<ol type="1">
-<li>按量取用。如果没有特别说明，固体铺满试管底部，液体1至2毫升即可。取多了不能放回去，不能乱扔，不能带走，要放在指定位置。</li>
-<li>“三不”：不能手拿，舌尝，直接鼻闻（应当扇闻）。</li>
-</ol>
-<h4 id="固体药品">固体药品</h4>
-<ol type="1">
-<li>固体药品保存在 <strong>广口瓶</strong> 中。</li>
-<li>取用固体药品使用 <strong>药匙</strong> 或 <strong>镊子</strong>。用完之后用干净的纸擦拭干净。</li>
-<li>放入玻璃容器时：
-<ol type="1">
-<li>把容器横放。</li>
-<li>密度较大的块状药品或金属颗粒：放到 <strong>容器口</strong> ，再慢慢竖起容器。（防止打破容器）</li>
-<li>固体粉末：用药匙或纸槽将药品送至 <strong>试管底部</strong>，再竖起试管。（避免药品粘在管口或管壁）</li>
-</ol></li>
-</ol>
-<h4 id="液体药品">液体药品</h4>
-<ol type="1">
-<li>液体药品存放在 <strong>细口瓶</strong> 中。</li>
-<li>用 <strong>倾倒法</strong> 取用。瓶盖要倒放在桌子上（以免药品被污染）；标签朝向手心（以免残留液腐蚀标签）；瓶口要紧靠试管口边缘。</li>
-<li>定量取用时使用 <strong>量筒</strong>，注意视线与凹液面最低处水平。</li>
-<li>少量取用使用 <strong>滴管</strong>。
-<ul>
-<li>要先在液体外挤压出滴管内空气（防止污染药品），然后吸取药品。</li>
-<li>滴入试剂时，滴管要垂直悬浮于容器上方，不能将滴管伸入容器或接触容器壁（否则容易造成滴管头破裂）。</li>
-<li>不能倒放，平放（防止胶头被腐蚀）。</li>
-<li>如果不是和细口瓶配套的胶头滴管，用完后，要清洗。否则不能清洗（否则会稀释药品）</li>
-</ul></li>
-</ol>
-<h3 id="加热物质">加热物质</h3>
-<p>使用酒精灯加热物质。</p>
-<p>酒精灯使用注意事项：</p>
-<ol type="1">
-<li>不要在点燃的酒精灯里加酒精，不要用酒精灯引燃酒精灯。</li>
-<li>酒精灯内酒精不能少于 <strong>四分之一</strong>，不能多于 <strong>三分之二</strong>。（太少时酒精与空气混合物容易爆炸，太多时酒精容易溢出）</li>
-<li>用完酒精灯要用灯帽盖灭，然后提起灯帽，再盖灭一次。（第一次目的是熄灭酒精灯的火焰。 第二次目的是使盖子内外气压平衡）</li>
-<li>如果酒精灯洒出的酒精不慎燃烧，用湿抹布盖灭。（看同学试过，确实能盖灭）</li>
-</ol>
-<p>物质加热注意事项：</p>
-<ol type="1">
-<li>试管内液体不能超过 <strong>三分之一</strong>。（否则沸腾的时候会洒出）</li>
-<li>使用试管夹时，应从底部进，底部出。</li>
-<li>加热时，先预热，再用外焰固定加热。（防止炸裂）</li>
-<li>试管不要对着人。</li>
-<li>用完之后，不能立即清洗，要等待冷却。（防止炸裂）</li>
-</ol>
-<details class="note success"><summary><p>实验1-6</p>
-</summary>
-<p><span class="math display">\[
-\ce{2NaOH + CuSO4-&gt;Na2SO4 + Cu(OH)2 v }
-\]</span> 这个反应属于复分解反应，由于硫酸铜溶液是蓝色的，而硫酸钠溶液是无色的，氢氧化铜是所以实验现象描述为：</p>
-<p>溶液变为无色，有蓝色沉淀生成。</p>
-<p>持续加热时，氢氧化铜是弱碱，受热分解成黑色氧化铜和水，除此外，受温度控制，反应物浓度影响，还可能生成部分砖红色的氧化亚铜。</p>
-
-</details>
-<h1 id="空气">空气</h1>
-<ol type="1">
-<li>空气成分：78% 的氮气，21% 的氧气，0.94% 的稀有气体，0.03% 的二氧化碳，0.03% 的杂质。</li>
-<li>氮气用于保护气，液氮低温，稀有气体用于保护气，作电光源。</li>
-<li>大气污染物：二氧化硫，一氧化碳，二氧化氮，<span class="math inline">\(\text{PM}_{10}\)</span>，<span class="math inline">\(\text{PM}_{2.5}\)</span>，臭氧。空气质量越小越好。</li>
-</ol>
-<h2 id="氧气">氧气</h2>
-<ol type="1">
-<li>无色无味，密度比空气略大，不易溶于水，液体呈淡蓝色，固体呈淡蓝色雪花状。</li>
-<li>工业上储存氧气于蓝色钢瓶。</li>
-<li>氧气支持燃烧。</li>
-<li>硫在空气中燃烧，产生 <strong>淡蓝色</strong> 火焰；在氧气中燃烧，产生 <strong>蓝紫色</strong> 火焰。都产生有刺激性气味的气体，放热。</li>
-<li>木炭在空气中燃烧，发出 <strong>红光</strong>，在氧气中燃烧，发出 <strong>白光</strong>。都产生一种能让澄清石灰水变浑浊的气体，放热。</li>
-<li>铁在空气中不燃烧，在氧气中剧烈燃烧，火星四射，生成一种黑色固体。</li>
-<li>上述三个实验说明：氧气的化学性质比较活泼，物质在空气燃烧实际上是在于其中的氧气发生反应。由于空气中的氧气含量较少，反应没有氧气中那么剧烈。</li>
-<li>剧烈氧化：燃烧。缓慢氧化：动植物呼吸，食物腐烂等。</li>
-</ol>
-<h2 id="制取氧气">制取氧气</h2>
-<ol type="1">
-<li><p><span class="math display">\[
-\ce{2KMnO4-&gt;[\Delta]K2MnO4 + MnO2 + O2 ^}
-\]</span></p></li>
-<li><p><span class="math display">\[
-\ce{2H2O2-&gt;[MnO2]2H2O + O2 ^}
-\]</span></p></li>
-<li><p><span class="math display">\[
-\ce{2KClO3 -&gt;[MnO2][\Delta]2KCl + 3O2 ^}
-\]</span></p></li>
-</ol>
-<h1 id="水">水</h1>
-<ol type="1">
-<li>淡水占 2.53%，可利用的淡水占其中的 30.4%</li>
-<li>爱护水资源：节约用水和防治水体污染。</li>
-<li>水体污染来源：工业污染，农业污染，生活污水。</li>
-</ol>
-<h2 id="水的净化">水的净化</h2>
-<details class="note success"><summary><p>实验4-2 过滤水的实验</p>
-</summary>
-<p><strong>仪器</strong>：玻璃棒（引流，防止液体溅出），滤纸，漏斗，烧杯，带铁圈的铁架台。</p>
-<p>操作要点：</p>
-<ol type="1">
-<li><strong>一贴</strong>：滤纸要紧贴漏斗壁。（防止产生气泡，气泡会减慢液体流速）</li>
-<li><strong>二低</strong>：
-<ol type="1">
-<li>滤纸要低于漏斗边缘。（防止液体从漏斗外流下）</li>
-<li>液面低于滤纸边缘。（防止液体从滤纸与漏斗之间流下）</li>
-</ol></li>
-<li><strong>三靠</strong>：
-<ol type="1">
-<li>烧杯尖紧靠玻璃棒中部。（防止液体流到漏斗外）</li>
-<li>玻璃棒紧靠在三层滤纸的一侧。（滤纸折叠时，会有一块区域有三层。防止戳破滤纸）</li>
-<li>漏斗下端紧靠烧杯内壁。（防止滤液漏出）</li>
-</ol></li>
-</ol>
-
-</details>
-<p>上面的操作可以去除水中大部分不溶性杂质。里面可能含有可溶性杂质，例如钙和镁。</p>
-<p>不含或少含钙和镁的水叫作软水，含钙和镁较多的水叫作硬水。</p>
-<details class="note success"><summary><p>实验4-4 蒸馏水的实验</p>
-</summary>
-<figure>
-<img src="https://bkimg.cdn.bcebos.com/pic/4610b912c8fcc3ce5767c9759345d688d53f20d4?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto" alt="装置图片" /><figcaption aria-hidden="true">装置图片</figcaption>
-</figure>
-<p>利用水蒸气冷凝来净化水的方式称为蒸馏。</p>
-<p>在水沸腾之后，在冷凝管中，有冷水，将沸腾的水蒸气冷却。</p>
-
-</details>
-<h2 id="水的组成">水的组成</h2>
-<p>水是由氢元素和氧元素组成的，水的化学式是 <span class="math inline">\(\ce{H2O}\)</span>。</p>
-<p>点燃氢气要验纯，不纯的氢气会爆炸。</p>
-<h1 id="化学方程式">化学方程式</h1>
-<h2 id="质量守恒定律">质量守恒定律</h2>
-<p>天平的使用方法与化学相同，但是要注意：</p>
-<ol type="1">
-<li>称量干燥的固体药品要放在干净的纸上称量。</li>
-<li>容易潮解（即从空气中吸收水分）的物质要放在玻璃器皿中称量。</li>
-</ol>
-<details class="note success"><summary><p>实验-方案一 红磷燃烧</p>
-</summary>
-<ol type="1">
-<li>气球的作用：缓冲压强，防止瓶内压强太大，把橡胶塞冲出。</li>
-<li>细沙的作用：防止瓶底受热不均炸裂。</li>
-<li>玻璃管下端与红磷接触：引燃红磷。</li>
-<li>红磷燃烧结束后，应等待锥形瓶冷却至室温再称量，防止浮力影响实验结果。</li>
-</ol>
-
-</details>
-<details class="note success"><summary><p>实验-方案二 铁与硫酸铜反应</p>
-</summary>
-<p>现象：铁逐渐溶解，溶液蓝色褪去，有红色固体析出，生成绿色溶液。</p>
-
-</details>
-<h1 id="碳">碳</h1>
-<h2 id="碳的单质">碳的单质</h2>
-<ol type="1">
-<li><p>金刚石：无色固体，天然存在最硬的物质。</p></li>
-<li><p>石墨：灰黑色细鳞片状固体，有金属光泽，软而滑腻。具有优良的导电性能。</p>
-<p>木炭，活性炭：结构与石墨类似，疏松多孔而具有吸附性。</p>
-<p>焦炭：结构与石墨类似，用于炼铁。</p></li>
-<li><p><span class="math inline">\(\ce{C60}\)</span>，很有潜力的单质。</p></li>
-</ol>
-<h2 id="碳的反应">碳的反应</h2>
-<ol type="1">
-<li><p>与氧气反应：</p>
-<p>在氧气充分的情况下燃烧： <span class="math display">\[
-\ce{C + O2-&gt;[点燃]CO2}
-\]</span> 在氧气不充分的情况下燃烧： <span class="math display">\[
-\ce{2C + O2-&gt;[点燃]2CO}
-\]</span> 都放出热量。</p></li>
-<li><p>还原金属氧化物反应</p>
-<p>还原氧化铜： <span class="math display">\[
-\ce{2CuO + C-&gt;[高温] 2Cu + CO2 ^}
-\]</span> 还原氧化铁： <span class="math display">\[
-\ce{3C + 2Fe2O3-&gt;[高温] 4Fe + 3CO2}
-\]</span> 还原二氧化碳： <span class="math display">\[
-\ce{CO2 + C-&gt;[高温]2CO}
-\]</span></p></li>
-</ol>
-<h2 id="二氧化碳">二氧化碳</h2>
-<h3 id="制取">制取</h3>
-<p>用稀盐酸和大理石制取： <span class="math display">\[
-\ce{CaCO3 + 2HCl-&gt;CaCl2 + CO2 ^ + H2O}
-\]</span> <details class="note info"><summary><p>关于材料选取</p>
-</summary>
-<p>不选用浓盐酸，因为浓盐酸会挥发出 <span class="math inline">\(\ce{HCl}\)</span> 气体，使得制得的气体不纯。</p>
-<p>不选用稀硫酸，因为反应生成的 <span class="math inline">\(\ce{CaSO4}\)</span> 微溶于水，会附着在大理石上，阻碍反应进行。</p>
-<p>不选用粉末，反应速率太快，不利于收集。</p>
-
-</details></p>
-<p>工业制取：高温煅烧石灰石 <span class="math display">\[
-\ce{CaCO3-&gt;[高温]CaO + CO2 ^}
-\]</span> 关于反应装置，有多种，注意启普发生器</p>
-<h3 id="性质">性质</h3>
-<p>无色无味，极易溶于水，密度比空气大，与水反应生成碳酸。碳酸不稳定，容易分解成二氧化碳和水。</p>
-<p>能使澄清石灰水变浑浊。（用于检验二氧化碳）</p>
-<p>可以用于灭火，作气体肥料，化工原料，干冰等。</p>
-<p>温室气体：二氧化碳，甲烷，氟利代烷等。</p>
-<h2 id="一氧化碳">一氧化碳</h2>
-<p>无色无味，密度比空气略小，难溶于水。可以燃烧，火焰呈蓝色，生成二氧化碳。</p>
-<p>有毒性，可造成人缺氧死亡。</p>
-<p>还原性，可以用来还原氧化铜。 <span class="math display">\[
-\ce{CuO + CO-&gt;[\Delta] Cu + CO2}
-\]</span></p>
-<details class="note success"><summary><p>还原氧化铜的实验</p>
-</summary>
-<ol type="1">
-<li>先通入一氧化碳，排出空气，防止加热时爆炸。</li>
-<li>结束后先熄灭酒精灯，防止氧气重新氧化 <span class="math inline">\(\ce{Cu}\)</span>，防止石灰水倒吸，炸裂试管。</li>
-<li>CO有毒，要处理尾气，可以点燃或者收集。</li>
-</ol>
-
-</details>
-<h1 id="燃烧">燃烧</h1>
-<ol type="1">
-<li>条件：可燃物，着火点，氧气。</li>
-<li>灭火：破坏条件。</li>
-<li>爆炸：可燃物有限空间剧烈燃烧，气体体积迅速膨胀引起。粉尘也能爆炸。</li>
-<li>爆炸极限：可燃性气体在空气中达到爆炸极限，遇到明火就会爆炸。</li>
-</ol>
-<h2 id="化石燃料">化石燃料</h2>
-<ol type="1">
-<li>煤：主要是碳元素，含有氢元素。</li>
-<li>煤气：由煤分解来，主要成分为氢气，甲烷，一氧化碳。</li>
-<li>石油：主要含有碳和氢元素。</li>
-<li>天然气：主要成分是甲烷。</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>化学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初中化学-下</title>
-    <url>/posts/%E5%88%9D%E4%B8%AD%E5%8C%96%E5%AD%A6-%E4%B8%8B/</url>
-    <content><![CDATA[<p>都是抄书上的，没有意思。</p>
-<span id="more"></span>
-<details class="note info"><summary><p>彩蛋</p>
-</summary>
-<p>来源：<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlOEMlOTYlRTUlQUQlQTYlRTclODklODglRTMlODAlOEElRTklOUQlOTIlRTglOEElQjElRTclOTMlQjclRTMlODAlOEIvMjcxNTIzNSM1">百度百科</span></p>
-<p>广东台山市一化学老师的《化学版青花瓷》歌词</p>
-<p>（<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/ph5HlsZ7nprvlrZAvNjgxNjMzOD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">金属离子</span>相关）</p>
-<p>蓝色絮状的沉淀跃然试管底</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/pk5znprvlrZAvMD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">铜离子</span>遇<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/msKLmsKfmoLkvMD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">氢氧根</span> 再也不分离[Cu2++2OH-=Cu(OH)2↓]</p>
-<p>当溶液呈金黄色 因为铁三价</p>
-<p>浅绿色二价亚铁把人迷</p>
-<p>（<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/kuZnngpQvMD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">乙炔</span>相关）</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nlLXnn7MvMzA2MjAzND9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">电石</span>偷偷去游泳 生成<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/kuZnngpQvMTE3NjkyMD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">乙炔</span>气[CaC2+2H2O=Ca(OH)2+C2H2↑]</p>
-<p>点燃后变乙炔焰 高温几千几</p>
-<p>逸散那<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/kuozmsKfljJbnorMvMzQ5MTQzP2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">二氧化碳</span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nn7PngbDmsLQvNzcyMzA3OD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">石灰水</span>点缀白色沉底[CO2+Ca(OH)2=CaCO3↓ + H2O]</p>
-<p>（苯相关）</p>
-<p>苯遇<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/pq5jplLDphbjpkr4vOTk2NDc/ZnJvbU1vZHVsZT1sZW1tYV9pbmxpbms=">高锰酸钾</span> 变色不容易</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nlLLoi68vMD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">甲苯</span>上加<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/noZ3ln7ovMD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">硝基</span> 小心<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9UTlQvNjczNjMyP2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">TNT</span></p>
-<p>在苯中的碘分子紫色多美丽</p>
-<p>就为萃取埋下了伏笔</p>
-<p>（<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nlLXljJblraYvMTUxODA0P2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">电化学</span>相关）</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nlLXop6PmsaAvMD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">电解池</span><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nlLXop6PotKgvMD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">电解质</span> 通电阴阳极</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/ljJblkIjku7cvMTQ1NTc2Nz9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">化合价</span>有高低 电子来转移</p>
-<p>精炼了铜铁锌锰镍铬铝银锡</p>
-<p>留下<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/pmLPmnoHms6UvOTMyMzg1OT9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">阳极泥</span></p>
-<p>（酸碱有关）</p>
-<p>无色<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/phZrphZ4vMTU5NjkyND9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">酚酞</span>面对碱 羞涩脸绯红</p>
-<p>紫色<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nn7PolYovMTk4MTUwNzU/ZnJvbU1vZHVsZT1sZW1tYV9pbmxpbms=">石蕊</span>遇到碱 青蓝慢淡出</p>
-<p>酸碱和盐溶入水 离子解离开</p>
-<p>酸和氢氧根金属三角恋</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/msKLmsKfljJbpkqAvMTE0NTU2P2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">氢氧化钠</span> 易腐蚀 潮解味道涩</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/ngavnorEvMjc1MTYzOD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">火碱</span><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/ng6fnorEvMTQwMDUzOD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">烧碱</span><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/oi5vmgKfpkqAvMzkyNjgxOT9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">苛性钠</span>（<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9OYU9ILzYyOTc1MjI/ZnJvbU1vZHVsZT1sZW1tYV9pbmxpbms=">NaOH</span>）俗名遍地找</p>
-<p>你用途十分广泛</p>
-<p>精炼石油制作<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/lubLnh6XliYIvODI5Nzg5P2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">干燥剂</span></p>
-<p>（<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/mtZPnoavphbgvMTEwMTg5Nz9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">浓硫酸</span>稀释）</p>
-<p>稀释那浓硫酸 注酸入水里</p>
-<p>沿器壁慢慢倒 搅拌手不离</p>
-<p>浓酸沾皮肤立即大量水冲洗</p>
-<p>涂抹上<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/norPphbjmsKLpkqAvMjczNTc3Mz9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">碳酸氢钠</span>救急</p>
-<p>（生产实际）</p>
-<p>甘油滋润皮肤 光滑细又腻</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nhp/nn7PngbAvNjQ2NDg2Mj9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">熟石灰</span>入土地 <span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/phbjnorHluqYvNjMzMTkwP2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">酸碱度</span>适宜</p>
-<p>看酸红碱紫的试纸多么美丽</p>
-<p>你眼带笑意</p>
-<p>以下内容有些版本内没有</p>
-<p>（<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/mtZPnm5DphbgvMTAzNDE0OTk/ZnJvbU1vZHVsZT1sZW1tYV9pbmxpbms=">浓盐酸</span>有关）</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nm5DphbgvMTE0NTE2P2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">盐酸</span>似水透明 刺激有酸味</p>
-<p>白雾袅袅升起 挥发小液滴</p>
-<p>活泼金属及盐和<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/ph5HlsZ7msKfljJbniakvMTg3ODE3OD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">金属氧化物</span></p>
-<p>就当我为验证你伏笔</p>
-<p>（<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/mtZPnoavphbgvMD9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">浓硫酸</span>有关）</p>
-<p>硫酸不愿挥发 粘稠把水吸</p>
-<p>木棒被打捞起 脱水使碳化</p>
-<p>如传世的化尸水腐蚀千万物</p>
-<p>你眼带笑意</p>
-
-</details>
-<h1 id="金属">金属</h1>
-<ol type="1">
-<li><p>共性：有金属光泽，有导电性，有延展性。</p></li>
-<li><p>特性：</p>
-<ol type="1">
-<li>大多数金属呈银白色，铜呈红紫色，金呈黄色，铁粉呈黑色。</li>
-<li>常温下大多数金属是固体，但是汞是液体。</li>
-</ol></li>
-<li><p>金属之最：</p>
-<ol type="1">
-<li>最硬：铬</li>
-<li>密度最大：饿</li>
-<li>密度最小：锂</li>
-<li>导电导热性最好：银</li>
-<li>熔点最高：钨</li>
-<li>熔点最低：汞</li>
-<li>地壳中含量最高：铝</li>
-<li>人体中含量最高：钙</li>
-<li>年产量最高：铁，铝，铜</li>
-</ol></li>
-<li><p>金属的活泼性：</p>
-<p>K-&gt;Ca-&gt;Na-&gt;Mg-&gt;Al-&gt;Zn-&gt;Fe-&gt;Sn-&gt;Pb-&gt;(H)-&gt;Cu-&gt;Hg-&gt;Ag-&gt;Pt-&gt;Au</p>
-<p>前面的能把后面的金属从它们的化合物溶液中置换出来。</p>
-<p>但是K、Ca、Na不能，因为它们过于活泼，会先和水反应。</p>
-<details class="note success"><summary><p>你知道吗</p>
-</summary>
-<p>锌粒可以与硫酸铜溶液反应产生氢气，原理如下： <span class="math display">\[
-\ce{Zn + CuSO4-&gt;Cu +ZnSO4}
-\]</span></p>
-<p><span class="math display">\[
-\ce{Zn + 2H+ -&gt; Zn^{2-} + H2 ^}
-\]</span></p>
-<p>这是因为硫酸铜溶液在水中解离呈酸性，锌会与酸发生反应生成氢气。</p>
-
-</details></li>
-<li><p>常见金属的矿石：赤铁矿(<span class="math inline">\(\ce{Fe2O3}\)</span>)，磁铁矿(<span class="math inline">\(\ce{Fe3O4}\)</span>)，菱铁矿(<span class="math inline">\(\ce{FeCO3}\)</span>)，铝土矿(<span class="math inline">\(\ce{Al2O3}\)</span>)，黄铜矿(<span class="math inline">\(\ce{CuFeS2}\)</span>)，辉铜矿(<span class="math inline">\(\ce{Cu2S}\)</span>)，孔雀石(<span class="math inline">\(\ce{Cu2(OH)2CO3}\)</span>)</p></li>
-</ol>
-<h1 id="酸和碱">酸和碱</h1>
-<h2 id="酸碱指示剂">酸碱指示剂</h2>
-<ol type="1">
-<li>石蕊溶液：遇到酸变红，遇到碱变蓝。</li>
-<li>无色酚酞溶液：遇到酸不变色，遇碱变红。</li>
-</ol>
-<h2 id="常见的酸">常见的酸</h2>
-<p>将介绍盐酸、硫酸、硝酸。是六大无机强酸中的三个。</p>
-<details class="note success"><summary><p>浓盐酸</p>
-</summary>
-<p>浓盐酸是 <span class="math inline">\(\ce{HCl}\)</span> 的水溶液，密度比水大，常用的浓盐酸浓度在 37% 左右。</p>
-<p>无色透明，腐蚀性较强，挥发性极强，盛有浓盐酸的容器打开后，会挥发出 <span class="math inline">\(\ce{HCl}\)</span> 气体，在空气中形成水雾。</p>
-<p>人体内胃酸的主要成分是盐酸。除此之外，盐酸还可以给金属除锈。</p>
-
-</details>
-<details class="note success"><summary><p>硫酸</p>
-</summary>
-<p>浓硫酸：</p>
-<ul>
-<li><p>浓硫酸是 <span class="math inline">\(\ce{H2SO4}\)</span> 的水溶液，密度比水大，常用的浓硫酸浓度在 98% 左右。</p>
-<p>无色粘稠，油状液体，腐蚀性强，能够腐蚀大部分金属（常压沸腾情况，能够腐蚀除了铱和钌以外的所有金属）。</p>
-<ul>
-<li><p>吸水性（物理变化）：浓硫酸能吸收周围空气中的水蒸气，可以作干燥剂。</p></li>
-<li><p>脱水性（即腐蚀性，是化学变化）：浓硫酸中含有大量未被电离的硫酸分子，会将有机物中的氢元素和氧元素按照水的形式脱去（即 1:2）。</p>
-<p>例如蔗糖(<span class="math inline">\(\ce{C12H22O11}\)</span>)，在浓硫酸的催化作用下脱水，生成碳和水： <span class="math display">\[
-\ce{C12H22O11-&gt;[浓H2SO4]C12 + 11H2O}
-\]</span> 过程中放出的大量的热让浓硫酸和 <span class="math inline">\(\ce{C}\)</span> 反应： <span class="math display">\[
-\ce{C + 2H2SO4-&gt;[\Delta]CO2 ^ + 2SO2 ^ 2H2O}
-\]</span></p></li>
-</ul></li>
-<li><p>如果不慎接触浓硫酸需要立即用大量的水清洗（能够带走反应放出的热），并涂上浓度3%到5%的碳酸氢钠溶液（酸碱中和）。</p></li>
-<li><p>硫酸溶解于水的时候会放出大量的热。所以稀释的时候不能将水倒入浓硫酸中，否则因为水的密度小，浮在浓硫酸上面，溶解时放热，使得水沸腾，硫酸液滴就会飞溅，危险！</p></li>
-<li><p>正确的溶解应该将浓硫酸缓慢倒入水中，并不断用玻璃棒搅拌（加快热量散失）。</p></li>
-<li><p>浓硫酸滴入紫色石蕊溶液先变红（因为呈酸性），一会后变无色（因为浓硫酸有强氧化性）</p></li>
-</ul>
-<p>稀硫酸：</p>
-<ul>
-<li>稀硫酸中的 <span class="math inline">\(\ce{H2SO4}\)</span> 被全部电离，所以不具有强氧化性，吸水性，脱水性等性质。</li>
-</ul>
-
-</details>
-<details class="note success"><summary><p>硝酸</p>
-</summary>
-<p>纯硝酸无色透明，浓硝酸常常为淡黄色液体（硝酸遇光分解放出二氧化氮 <span class="math inline">\(\ce{4HNO3-&gt;[光照]4NO2 + O2 ^ + H2O}\)</span>，二氧化氮呈淡黄色），有窒息性刺激气味。</p>
-<p>浓硝酸容易挥发，和盐酸一样会产生白雾。</p>
-<p>稀释时，与硫酸类似，会产生大量的热。</p>
-
-</details>
-<p>酸的化学性质：</p>
-<ol type="1">
-<li><p>与指示剂反应：能使紫色石蕊溶液变红。</p></li>
-<li><p>与金属活动性顺序排在氢前面的发生置换反应，生成盐和氢气。（除锈原理）</p>
-<p>示例： <span class="math display">\[
-\ce{Mg + 2HCl-&gt; MgCl2 + H2 ^}
-\]</span></p>
-<p><span class="math display">\[
-\ce{Zn + H2SO4-&gt; ZnSO4 + H2 ^}
-\]</span></p></li>
-<li><p>与某些碱性氧化物发生复分解反应，产生水和盐。</p>
-<p>示例： <span class="math display">\[
-\ce{Fe2O3 + HCl -&gt; 2FeCl3 + 3H2O}
-\]</span></p>
-<p><span class="math display">\[
-\ce{CuO + H2SO4-&gt; CuSO4 + H2O}
-\]</span></p></li>
-<li><p>与含碳酸根的化合物发生复分解反应产生二氧化碳。</p>
-<p>示例： <span class="math display">\[
-\ce{CaCO3 + 2HCl -&gt; CaCl2 + H2O + CO2 ^}
-\]</span></p>
-<p><span class="math display">\[
-\ce{Na2CO3 + 2HCl-&gt; 2NaCl + H2O + CO2 ^}
-\]</span></p></li>
-<li><p>和碱发生中和反应。</p></li>
-</ol>
-<h2 id="常见的碱">常见的碱</h2>
-<details class="note success"><summary><p>氢氧化钠</p>
-</summary>
-<p>氢氧化钠俗称苛性钠，烧碱，火碱。呈白色结晶粉末状。易溶于水。</p>
-<ul>
-<li>强烈腐蚀性，如果不慎沾到，也是要用大量的水冲洗，并涂上硼酸溶液（酸碱中和，硼酸是一种一元极弱酸）。</li>
-<li>类似于浓硫酸，溶解时会放热。和无机酸中和也会放热。</li>
-<li>潮解性：氢氧化钠在空气中会吸收水蒸气，可以用于作气体的干燥剂（不能干燥酸性气体）。</li>
-<li>能与油脂反应，生活中用于炉具清洁剂等。</li>
-</ul>
-
-</details>
-<details class="note success"><summary><p>氢氧化钙</p>
-</summary>
-<p>氢氧化钙，俗称熟石灰或消石灰。</p>
-<ul>
-<li>微溶于水。澄清水溶液称为澄清石灰水，乳状悬浮液称为石灰乳。溶解度随着温度的升高而下降（主流解释：氢氧化钙的两种水合物的溶解度较大，而无水氢氧化钙的溶解度较小，随着温度升高，水合物逐渐变成无水氢氧化钙，溶解度降低）。</li>
-<li>与二氧化碳反应生成碳酸钙（俗称石灰石），表现为溶液变浑浊。</li>
-<li>可用于改良酸性土壤，配置波尔多液（石灰乳，硫酸铜）。</li>
-<li>可以在树木上涂含硫磺粉的石灰浆，保护树木，防止冻伤和害虫生卵。</li>
-</ul>
-
-</details>
-<h2 id="酸碱的本质">酸碱的本质</h2>
-<p>酸是在电离出的阳离子都是 <strong>氢离子</strong> 的物质。</p>
-<p>碱是在电离出的阴离子都是 <strong>氢氧根离子</strong> 的物质。</p>
-<h2 id="杂项">杂项</h2>
-<p>中和反应：酸和碱反应生成水和盐，盐是金属离子（或铵根离子）与酸根离子组成的化合物。</p>
-<p>pH值：使用pH试纸测定溶液酸碱度，一般是0~14，中性为7，偏蓝为碱，偏红为酸（和紫色石蕊溶液一样）</p>
-<p>土壤最好接近中性，pH&lt;4或者pH&gt;8不适于种植农作物。酸雨是pH&lt;5.6的雨。</p>
-<h1 id="盐">盐</h1>
-<p>盐是一类在水中电离成金属离子和酸根离子的化合物。</p>
-<h2 id="常见的盐">常见的盐</h2>
-<p>氯化钠：食盐的主要成分。不过多介绍啦。</p>
-<p>碳酸钠：又叫纯碱，但是属于盐。也称苏打。用于做玻璃、造纸等。</p>
-<p>碳酸氢钠：又叫小苏打，重碳酸钠，酸式碳酸钠。用于做面包。</p>
-<p>碳酸钙：即石灰石、大理石的主要成分。用于建筑，还可以治疗胃酸过多（胃酸主要成分是盐酸，可以与碳酸钙反应）</p>
-<h2 id="复分解反应">复分解反应</h2>
-<p>石灰石与盐酸反应： <span class="math display">\[
-\ce{CaCO3 + 2HCl-&gt; CaCl2 + H2CO3}
-\]</span> 小苏打和盐酸反应： <span class="math display">\[
-\ce{NaHCO3 + HCl-&gt;NaCl + H2CO3}
-\]</span> 碳酸钠溶液和澄清石灰水反应： <span class="math display">\[
-\ce{NaCO3 + Ca(OH)2-&gt; CaCO3 v + 2NaOH}
-\]</span> 这些反应都：</p>
-<ol type="1">
-<li>发生在一个反应体系中（大部分情况为水溶液）。</li>
-<li>两种化合物交换离子。</li>
-<li>生成了难电离的沉淀，气体或弱电解质（最常见为水）。</li>
-</ol>
-<p>老师说：内内外外价不变，很形象地表现了这种反应形式： <span class="math display">\[
-\ce{AB + CD -&gt; CB + AD}
-\]</span> 这就相当于方程式中，处于”内部“的两个离子结合，”外部“的两个离子结合，生成物中各原子的化合价不变。</p>
-<p>中和反应是复分解反应中的一种。</p>
-<p>判断复分解反应能否发生要看能否产生沉淀，气体，水。气体和水是好判断的，问题是如何判断沉淀？</p>
-<details class="note info"><summary><p>溶解性表</p>
-</summary>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">阳离子</th>
-<th style="text-align: center;"><span class="math inline">\(\ce{OH-}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\ce{NO3-}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\ce{Cl-}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\ce{SO4^{2-}}\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\ce{CO3^{2-}}\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\ce{H+}\)</span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">溶、挥</td>
-<td style="text-align: center;">溶、挥</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶、挥</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\ce{NH4+}\)</span></td>
-<td style="text-align: center;">溶、挥</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\ce{K+}\)</span></td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\ce{Na+}\)</span></td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\ce{Ba2+}\)</span></td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">不</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\ce{Ca2+}\)</span></td>
-<td style="text-align: center;">微</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">微</td>
-<td style="text-align: center;">不</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\ce{Mg2+}\)</span></td>
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">微</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\ce{Al3+}\)</span></td>
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\ce{Mn2+}\)</span></td>
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">不</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\ce{Zn2+}\)</span></td>
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">不</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\ce{Fe2+}\)</span></td>
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">不</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\ce{Fe3+}\)</span></td>
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\ce{Cu2+}\)</span></td>
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">-</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\ce{Ag+}\)</span></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">溶</td>
-<td style="text-align: center;">不</td>
-<td style="text-align: center;">微</td>
-<td style="text-align: center;">不</td>
-</tr>
-</tbody>
-</table>
-<p>（注：此为20℃的情况。“溶”表示那种物质可溶于水，“不”表示不溶于水，“微”表示微溶于水，“挥”表示挥发性，“-”表示那种物质不存在或遇到水就分解了）</p>
-<p>资料来源：<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTUlQTQlOEQlRTUlODglODYlRTglQTclQTMlRTUlOEYlOEQlRTUlQkElOTQvMTEzMjg2NA==">百度百科</span></p>
-<p>常考不溶性物质：</p>
-<p>四种碱：<span class="math inline">\(\ce{Mg(OH)2}\)</span>，<span class="math inline">\(\ce{Al(OH)3}\)</span>，<span class="math inline">\(\ce{Cu(OH)2}\)</span>，<span class="math inline">\(\ce{Fe(OH)3}\)</span>。</p>
-<p>四种盐：<span class="math inline">\(\ce{CaCO3}\)</span>，<span class="math inline">\(\ce{BaCO3}\)</span>，<span class="math inline">\(\ce{BaSO4}\)</span>，<span class="math inline">\(\ce{AgCl}\)</span>。</p>
-
-</details>
-<h2 id="化肥">化肥</h2>
-<p>氮磷钾……快用 <span class="math inline">\(\ce{金坷垃 ^}\)</span></p>
-<h1 id="化学与生活">化学与生活</h1>
-<p>这一章全是知识点，不想再抄书了，看课本吧。</p>
-]]></content>
-      <tags>
-        <tag>化学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>前缀函数</title>
     <url>/posts/%E5%89%8D%E7%BC%80%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<p>对前缀函数的简单介绍。</p>
-<span id="more"></span>
 <p>约定：字符串下标从 1 开始。</p>
 <p>前缀函数是是 <span class="math inline">\(\pi\)</span> 数组，<span class="math inline">\(\pi_{i}\)</span> 表示字符串 <span class="math inline">\(s\)</span> 的前缀 <span class="math inline">\(s[1...i]\)</span> 的最长公共 <strong>真</strong> 前后缀（border）长度。</p>
 <h1 id="kmp-算法">KMP 算法</h1>
@@ -1371,21 +747,15 @@ ans=\frac{1}{n}\sum_{d\vert n}n^{d}\varphi(\frac{n}{d})
 <li><p>Periodicity Lemma 周期性引理</p>
 <ul>
 <li><p>Weak: 若 <span class="math inline">\(p,q\)</span> 为 <span class="math inline">\(s\)</span> 的一个周期，并且 <span class="math inline">\(p+q\le n\)</span> ，那么 <span class="math inline">\(\gcd(p,q)\)</span> 也是一个周期。</p>
-<details class="note info"><summary><p>证明</p>
-</summary>
 <p>证明：假设 <span class="math inline">\(p&gt;q\)</span> ，设 <span class="math inline">\(d=p-q\)</span> ，那么分类讨论：</p>
 <ul>
 <li><span class="math inline">\(i \le q\)</span> ，此时 <span class="math inline">\(s[i]=s[i+p]=s[i+p-q]=s[i+d]\)</span></li>
-<li><span class="math inline">\(i&gt;q\)</span> ，此时 <span class="math inline">\(s[i]=s[i-q]=s[i+p-q]=s[i+d]\)</span></li>
-</ul>
+</ul></li>
+<li><p><span class="math inline">\(i&gt;q\)</span> ，此时 <span class="math inline">\(s[i]=s[i-q]=s[i+p-q]=s[i+d]\)</span></p>
 <p>注意到两种情况均可以导出 <span class="math inline">\(s[i]=s[i+d]\)</span> ，即 <span class="math inline">\(d\)</span> 也是周期。 更相减损即可得到 <span class="math inline">\(\gcd(p,q)\)</span> 是周期。 <span class="math inline">\(\square\)</span></p>
 <p>回顾一下证明过程，之所以要求 <span class="math inline">\(p+q\le n\)</span> ，是在第一类中，<span class="math inline">\(s[i]=s[i+p]\)</span> 一步，如果 <span class="math inline">\(p+q&gt;n\)</span> ，就不满足周期的性质。</p>
-<p>证明的核心围绕着周期的定义 <span class="math inline">\(s[i]=s[i+r]\)</span> 进行，目标是导出 <span class="math inline">\(s[i+d]\)</span> ，最后使用更相减损完成证明，巧妙。</p>
-
-</details></li>
+<p>证明的核心围绕着周期的定义 <span class="math inline">\(s[i]=s[i+r]\)</span> 进行，目标是导出 <span class="math inline">\(s[i+d]\)</span> ，最后使用更相减损完成证明，巧妙。</p></li>
 <li><p>Strong: 若 <span class="math inline">\(p,q\)</span> 为 <span class="math inline">\(s\)</span> 的一个周期，并且 <span class="math inline">\(p+q\le n+\gcd(p,q)\)</span> ，那么 <span class="math inline">\(\gcd(p,q)\)</span> 也是一个周期。</p>
-<details class="note info"><summary><p>证明</p>
-</summary>
 <p>发现上面的证明此时会出现问题，因为 <span class="math inline">\(s[i+p]\)</span> 可能超过 <span class="math inline">\(n\)</span> 。</p>
 <p><del>参考</del> 照搬 <span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC84OTM4NTM2MA==">Periodicity Lemma - 知乎</span></p>
 <ol type="1">
@@ -1393,16 +763,10 @@ ans=\frac{1}{n}\sum_{d\vert n}n^{d}\varphi(\frac{n}{d})
 <li>可以证明 <span class="math inline">\(q\le n-q\)</span> （这是怎么证明的呢？），所以 <span class="math inline">\(s\)</span> 的前 <span class="math inline">\(q\)</span> 个字符中，<span class="math inline">\(\gcd(p,q)\)</span> 仍然是其循环节。因为 <span class="math inline">\(\gcd(p,q)\)</span> 是 <span class="math inline">\(q\)</span> 的约数，所以前缀 <span class="math inline">\(q\)</span> 是由若干个完整的循环节拼成的。</li>
 <li>因为可以将 <span class="math inline">\(s\)</span> 拆分成 <span class="math inline">\(q\)</span> 的前缀和 <span class="math inline">\(n-q\)</span> 的后缀，前缀是由若干段完整循环节构成的，而后半段也是周期。所以 <span class="math inline">\(\gcd(p,q)\)</span> 也是一个周期。</li>
 </ol>
-<p>这个证明过程的严谨推理仍然有待分析。</p>
-
-</details></li>
+<p>这个证明过程的严谨推理仍然有待分析。</p></li>
 </ul></li>
 <li><p>字符串 <span class="math inline">\(s\)</span> 所有长度超过 <span class="math inline">\(\lvert s\rvert / 2\)</span> 的 border 的长度是等差数列。</p>
-<details class="note info"><summary><p>证明</p>
-</summary>
-<p>假设有一个长度为 <span class="math inline">\(n-p\)</span> 的 border 和一个长度为 <span class="math inline">\(n-q\)</span> 的 border ，其中 <span class="math inline">\(p,q \le n/2\)</span> ，那么根据弱周期性引理，可以得到 <span class="math inline">\(\gcd(p,q)\)</span> 是一个周期，那么 <span class="math inline">\(n-\gcd(p,q)\)</span> 是一个 border。</p>
-
-</details></li>
+<p>假设有一个长度为 <span class="math inline">\(n-p\)</span> 的 border 和一个长度为 <span class="math inline">\(n-q\)</span> 的 border ，其中 <span class="math inline">\(p,q \le n/2\)</span> ，那么根据弱周期性引理，可以得到 <span class="math inline">\(\gcd(p,q)\)</span> 是一个周期，那么 <span class="math inline">\(n-\gcd(p,q)\)</span> 是一个 border。</p></li>
 </ol>
 ]]></content>
       <tags>
@@ -1413,7 +777,6 @@ ans=\frac{1}{n}\sum_{d\vert n}n^{d}\varphi(\frac{n}{d})
     <title>多项式科技</title>
     <url>/posts/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%A7%91%E6%8A%80/</url>
     <content><![CDATA[<p>本文介绍了一些多项式算法。</p>
-<span id="more"></span>
 <h1 id="快速傅里叶变换">快速傅里叶变换</h1>
 <h2 id="简单理解">简单理解</h2>
 <p>快速解决多项式乘法的算法。</p>
@@ -1491,12 +854,8 @@ n\times F(k)=\sum_{i=0}^{n-1}(\omega_{n}^{-i})^{k}G(i)
 <p>当 <span class="math inline">\(j \not =k\)</span> 时，有 <span class="math inline">\(ts-s=t^{n}-t^{0}\)</span> （错位相减）。即 <span class="math inline">\(s=\frac{t^{n}-t^{0}}{t-1}\)</span> ，由于 <span class="math inline">\(t^{n}=t^{0}=1\)</span> ，所以 <span class="math inline">\(s=0\)</span> 。</p>
 <p>综上所述，整个式子的总和为 <span class="math inline">\(n\times F(k)\)</span> 。</p>
 <p>于是，我们完成了证明，类似 DFT 的做法，我们只需要将单位根换一换，就可以完成。</p>
-<details class="note info"><summary><p>Code</p>
-</summary>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> doub=<span class="type">double</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">3e6</span>;</span><br><span class="line"><span class="type">const</span> doub PI=<span class="built_in">acos</span>(<span class="number">-1</span>);</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Cpl</span>&#123;</span><br><span class="line">  doub x,y;</span><br><span class="line">  <span class="built_in">Cpl</span>(doub _x=<span class="number">0</span>,doub _y=<span class="number">0</span>)&#123;x=_x;y=_y;&#125;</span><br><span class="line">  Cpl <span class="keyword">operator</span>+(Cpl a)&#123;Cpl res;res.x=x+a.x;res.y=y+a.y;<span class="keyword">return</span> res;&#125;</span><br><span class="line">  Cpl <span class="keyword">operator</span>-(Cpl a)&#123;Cpl res;res.x=x-a.x;res.y=y-a.y;<span class="keyword">return</span> res;&#125;</span><br><span class="line">  Cpl <span class="keyword">operator</span>*(Cpl a)&#123;<span class="keyword">return</span> &#123;x*a.x-y*a.y,x*a.y+y*a.x&#125;;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">int</span> id_all[N],tmp[N]; <span class="comment">//记录编号对应原来的第几位</span></span><br><span class="line">Cpl newg[N]; <span class="comment">//临时数组，记录合并后当前的点值表示</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">FFT</span><span class="params">(<span class="type">int</span>* id,Cpl* f,Cpl* g,<span class="type">int</span> len,<span class="type">bool</span> op)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(len==<span class="number">1</span>)&#123;g[<span class="number">0</span>]=f[id[<span class="number">0</span>]];<span class="keyword">return</span>;&#125;</span><br><span class="line">  <span class="type">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i+=<span class="number">2</span>)tmp[cnt++]=id[i];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;len;i+=<span class="number">2</span>)tmp[cnt++]=id[i];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;++i)id[i]=tmp[i];</span><br><span class="line">  <span class="type">int</span> half=len/<span class="number">2</span>;<span class="built_in">FFT</span>(id,f,g,half,op);<span class="built_in">FFT</span>(id+half,f,g+half,half,op);</span><br><span class="line">  Cpl w_mul=&#123;<span class="built_in">cos</span>(<span class="number">2</span>*PI/len),<span class="built_in">sin</span>(<span class="number">2</span>*PI/len)*(op?<span class="number">-1</span>:<span class="number">1</span>)&#125;,w=&#123;<span class="number">1</span>,<span class="number">0</span>&#125;;</span><br><span class="line">  Cpl* gl=g;Cpl* gr=g+half;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;half;++i)&#123;</span><br><span class="line">    newg[i]=gl[i]+gr[i]*w;</span><br><span class="line">    newg[i+half]=gl[i]-gr[i]*w;</span><br><span class="line">    w=w*w_mul;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;++i)g[i]=newg[i];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;i+=<span class="number">2</span>)tmp[i]=id[i/<span class="number">2</span>];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;len;i+=<span class="number">2</span>)tmp[i]=id[i/<span class="number">2</span>+half];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;len;++i)id[i]=tmp[i];</span><br><span class="line">&#125;</span><br><span class="line">Cpl G[N]; <span class="comment">//乘积多项式的系数表示</span></span><br><span class="line">Cpl Gs[<span class="number">2</span>][N]; <span class="comment">//两个原多项式的系数表示</span></span><br><span class="line">Cpl f[<span class="number">2</span>][N]; <span class="comment">//多项式的系数</span></span><br><span class="line">Cpl g[N]; <span class="comment">//得到的系数表示 </span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n,m,orin,orim,z;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">  ++n;++m;</span><br><span class="line">  orin=n;orim=m;</span><br><span class="line">  <span class="type">int</span> t;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;++i)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t),f[<span class="number">0</span>][i].x=t;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;m;++i)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t),f[<span class="number">1</span>][i].x=t;</span><br><span class="line">  z=<span class="number">1</span>&lt;&lt;(<span class="type">int</span>)(<span class="built_in">log2</span>(n+m<span class="number">-1</span>)+<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;z;++i)id_all[i]=i;</span><br><span class="line">  <span class="built_in">FFT</span>(id_all,f[<span class="number">0</span>],g,z,<span class="number">0</span>);<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;z;++i)Gs[<span class="number">0</span>][i]=g[i];</span><br><span class="line">  <span class="built_in">FFT</span>(id_all,f[<span class="number">1</span>],g,z,<span class="number">0</span>);<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;z;++i)Gs[<span class="number">1</span>][i]=g[i];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;z;++i)G[i]=Gs[<span class="number">0</span>][i]*Gs[<span class="number">1</span>][i];</span><br><span class="line">  <span class="built_in">FFT</span>(id_all,G,g,z,<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>,y=orin+orim<span class="number">-1</span>;i&lt;y;++i)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,(<span class="type">int</span>)(g[i].x/z+<span class="number">0.5</span>));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这是一种简单的实现方式。</p>
-
-</details>
 <h2 id="优化">优化</h2>
 ]]></content>
       <tags>
@@ -1507,7 +866,6 @@ n\times F(k)=\sum_{i=0}^{n-1}(\omega_{n}^{-i})^{k}G(i)
     <title>数学基础</title>
     <url>/posts/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<p>本文介绍了OI中的一些数学基础知识。</p>
-<span id="more"></span>
 <h1 id="向量">向量</h1>
 <h2 id="基本概念及定义">基本概念及定义</h2>
 <p>见OI-Wiki，此处不再赘述。</p>
@@ -1628,22 +986,20 @@ n\times F(k)=\sum_{i=0}^{n-1}(\omega_{n}^{-i})^{k}G(i)
     <title>数论函数</title>
     <url>/posts/%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0/</url>
     <content><![CDATA[<p>本文简单介绍了数论函数与莫比乌斯反演。</p>
-<span id="more"></span>
 <h1 id="数论函数与积性函数">数论函数与积性函数</h1>
 <h2 id="数论函数">数论函数</h2>
 <p>定义域为整数集，陪域为复数集的函数。</p>
 <h3 id="狄利克雷函数">狄利克雷函数</h3>
 <p>定义两个函数 <span class="math inline">\(f(n)\)</span> 和 <span class="math inline">\(g(n)\)</span> 的狄利克雷函数为 <span class="math inline">\((f*g)(n)=\sum_{d\vert n}f(d)g(\frac{n}{d})\)</span> 。</p>
-<details class="note info"><summary><p>如何求狄利克雷卷积？</p>
-</summary>
+<blockquote>
+<p>如何求狄利克雷函数</p>
 <h4 id="最朴素的暴力">最朴素的暴力</h4>
 <p>枚举 <span class="math inline">\([1,n]\)</span> 范围内的每一个数，直接判断其是否为 <span class="math inline">\(n\)</span> 的约数。复杂度 <span class="math inline">\(O(n^2)\)</span>。</p>
 <h4 id="稍好的暴力">稍好的暴力</h4>
 <p>我们知道，枚举约数不是这样枚举的。直接枚举到 <span class="math inline">\(\sqrt{n}\)</span> 即可。复杂度 <span class="math inline">\(O(n\sqrt{n})\)</span>。</p>
 <h4 id="优美的做法">优美的做法</h4>
 <p>我们考虑换一个角度，枚举 <span class="math inline">\(d\)</span> ，考虑贡献到 <span class="math inline">\(d\)</span> 的倍数。因为调和级数，所以复杂度是 <span class="math inline">\(O(n\ln{n})\)</span> 的。</p>
-
-</details>
+</blockquote>
 <h3 id="其它数论函数">其它数论函数</h3>
 <p><span class="math inline">\(I(n)\)</span> 是一个值恒等于 1 的函数，称为恒等函数。</p>
 <p><span class="math inline">\(\epsilon(n)\)</span>，也被称作 <span class="math inline">\(e(n)\)</span>，又被称为 <strong>元函数</strong> ，因为它是卷积的单位元，<span class="math inline">\(\epsilon*f=f\)</span> 。</p>
@@ -1661,8 +1017,6 @@ n\times F(k)=\sum_{i=0}^{n-1}(\omega_{n}^{-i})^{k}G(i)
 <li><p>若 <span class="math inline">\(x=\prod_{i=1}^{m}p_{i}^{q_{i}}\)</span>，则 <span class="math inline">\(f(x)=\prod_{i=1}^{m}f(p_{i}^{q_{i}})\)</span>。</p>
 <p>根据积性函数的定义可以得到。</p></li>
 <li><p>两积性函数 <span class="math inline">\(F_{1}(n)\)</span> 与 <span class="math inline">\(F_{2}(n)\)</span> 的狄利克雷卷积 <span class="math inline">\(G(n)=\sum_{d\vert n}F_{1}(n)\times F_{2}(\frac{n}{d})\)</span> 也为积性函数。</p>
-<details class="note info"><summary><p>证明</p>
-</summary>
 <p>假设 <span class="math inline">\(a,b\)</span> 互质， <span class="math display">\[
 \begin{aligned}
 G(a)*G(b)&amp;=\sum_{d\vert a}F_{1}(d)F_{2}(\frac{a}{d})*\sum_{t\vert b}F_{1}(t)F_{2}(\frac{b}{t}) \\
@@ -1675,9 +1029,7 @@ G(a)*G(b)&amp;=\sum_{d\vert a}F_{1}(d)F_{2}(\frac{a}{d})*\sum_{t\vert b}F_{1}(t)
 =&amp;\sum_{dt\vert ab}F_{1}(dt)F_{2}(\frac{ab}{dt})\\
 =&amp;G(ab)
 \end{aligned}
-\]</span></p>
-
-</details></li>
+\]</span></p></li>
 <li><p>积性函数的逆也是积性函数</p>
 <p>还不不知道什么是逆。</p></li>
 <li><p><span class="math inline">\(\epsilon=g*f\)</span> 时，<span class="math inline">\(g\)</span> 和 <span class="math inline">\(f\)</span> 互逆。</p>
@@ -1695,8 +1047,7 @@ G(a)*G(b)&amp;=\sum_{d\vert a}F_{1}(d)F_{2}(\frac{a}{d})*\sum_{t\vert b}F_{1}(t)
 0&amp;\max(q_{i})&gt;1\\
 \end{cases}
 \]</span></p>
-<details class="note info"><summary><p>起源</p>
-</summary>
+<h3 id="起源">起源</h3>
 <p>莫比乌斯函数的本质是 <span class="math inline">\(\mu\)</span>。</p>
 <p>假设我们不知道任何关于这个函数的信息，我们考虑如何得到这个函数的表达式。</p>
 <blockquote>
@@ -1712,19 +1063,13 @@ G(a)*G(b)&amp;=\sum_{d\vert a}F_{1}(d)F_{2}(\frac{a}{d})*\sum_{t\vert b}F_{1}(t)
 <p>如果 <span class="math inline">\(n\)</span> 唯一分解后，<span class="math inline">\(n=\prod_{i=1}^{k}p_{i}^{q_{i}}\)</span>，那么 <span class="math inline">\(\mu(n)=\prod_{i=1}^{k}\mu(p_{i}^{q_{i}})\)</span>。</p>
 <p>最高的指数大于1，那么就会有一项为 <span class="math inline">\(0\)</span>，乘积就是0。</p>
 <p>否则，相当于每一次乘上一个 -1，得到的结果自然就是 <span class="math inline">\((-1)^{k}\)</span> 了。</p>
-
-</details>
 <h3 id="性质-1">性质</h3>
 <ol type="1">
 <li><p>这是一个积性函数。</p>
-<details class="note info"><summary><p>证明</p>
-</summary>
 <p>假设 <span class="math inline">\(\gcd(a,b)=1\)</span> 。</p>
 <p>如果 <span class="math inline">\(a,b\)</span> 中的一个为 1，那么显然成立。</p>
 <p>如果 <span class="math inline">\(a,b\)</span> 中的一个具有平方因子，那么乘积中必定具有平方因子。</p>
-<p>如果 <span class="math inline">\(a,b\)</span> 中两者都不具有平方因子且都不为 1，又因为两者 <span class="math inline">\(\gcd\)</span> 为 1，所以乘积的本质不同质因子个数，等于两者本质不同的质因子个数相加。</p>
-
-</details></li>
+<p>如果 <span class="math inline">\(a,b\)</span> 中两者都不具有平方因子且都不为 1，又因为两者 <span class="math inline">\(\gcd\)</span> 为 1，所以乘积的本质不同质因子个数，等于两者本质不同的质因子个数相加。</p></li>
 <li><p><span class="math display">\[
 \sum_{d\mid n}\mu(d)=
 \begin{cases}
@@ -1734,8 +1079,6 @@ G(a)*G(b)&amp;=\sum_{d\vert a}F_{1}(d)F_{2}(\frac{a}{d})*\sum_{t\vert b}F_{1}(t)
 =\epsilon(n)
 \]</span></p>
 <p>按照刚刚逆的定义，可以发现，<span class="math inline">\(\mu\)</span> 是 <span class="math inline">\(I\)</span> 的逆。</p>
-<details class="note info"><summary><p>证明</p>
-</summary>
 <p>首先 <span class="math inline">\(n=1\)</span> 时根据定义可以得到。</p>
 <p><span class="math inline">\(n\not =1\)</span> 时，将 <span class="math inline">\(n\)</span> 进行唯一分解。一个约数 <span class="math inline">\(d\)</span> 相当于在 <span class="math inline">\(n\)</span> 的质因子中选择若干。</p>
 <ul>
@@ -1745,9 +1088,7 @@ G(a)*G(b)&amp;=\sum_{d\vert a}F_{1}(d)F_{2}(\frac{a}{d})*\sum_{t\vert b}F_{1}(t)
 \]</span> 注意到这个式子和二项式定理相似。 <span class="math display">\[
 [1+(-1)]^{m}=\sum_{i=1}^{m}1^{(n-i)}(-1)^i\binom{m}{i}
 \]</span> Q.E.D.</p></li>
-</ul>
-
-</details></li>
+</ul></li>
 <li><p><span class="math display">\[
 [\gcd(a,b)=1]=\sum_{d\vert \gcd(a,b)}\mu(d)
 \]</span></p>
@@ -1757,16 +1098,10 @@ G(a)*G(b)&amp;=\sum_{d\vert a}F_{1}(d)F_{2}(\frac{a}{d})*\sum_{t\vert b}F_{1}(t)
 <p>设 <span class="math inline">\(f\)</span> 与 <span class="math inline">\(g\)</span> 为两个数论函数，如果有： <span class="math display">\[
 f(n)=\sum_{d\vert n}g(d)
 \]</span> 那么 <span class="math inline">\(g(n)=\sum_{d\vert n}f(\frac{n}{d})\mu(d)\)</span> ，这是一个狄利克雷卷积的形式。</p>
-<details class="note info"><summary><p>推理？</p>
-</summary>
 <p>下面的图片展示了如何手动反演找规律。</p>
 <figure>
 <img src="https://cdn.luogu.com.cn/upload/image_hosting/pfv2639c.png" alt="举例反演过程" /><figcaption aria-hidden="true">举例反演过程</figcaption>
 </figure>
-
-</details>
-<details class="note info"><summary><p>证明</p>
-</summary>
 <p>想要证明 <span class="math inline">\(g(n)=\sum_{d\vert n}\mu(d)f(\frac{n}{d})\)</span> 。</p>
 <p>按照证明反演的套路，我们将 <span class="math inline">\(f\)</span> 换成 <span class="math inline">\(g\)</span> ，就得到了： <span class="math display">\[
 \sum_{d\vert n}\mu(d)\sum_{t\vert \frac{n}{d}}g(t)
@@ -1778,8 +1113,6 @@ f(n)=\sum_{d\vert n}g(d)
 \sum_{t\vert n}g(t)\sum_{d\vert \frac{n}{t}}\mu(d)
 \]</span> 其中，<span class="math inline">\(\sum_{d\vert \frac{n}{t}}\mu(\frac{n}{d})=[\frac{n}{d}=1]\)</span> ，仅在 <span class="math inline">\(d=n\)</span> 时，该式为 1；</p>
 <p>仅当 <span class="math inline">\(t\)</span> 为 <span class="math inline">\(n\)</span> 时，<span class="math inline">\(d\)</span> 能取到 <span class="math inline">\(n\)</span> ，所以该式等于 <span class="math inline">\(g(n)\)</span> 。<span class="math inline">\(\square\)</span></p>
-
-</details>
 <p>我们发现 <span class="math inline">\(f\)</span> 函数是 <span class="math inline">\(g\)</span> 函数与 <span class="math inline">\(I\)</span> 的狄利克雷卷积形式，即 <span class="math inline">\(f=gI\)</span>，那么可以得到 <span class="math inline">\(g=fI^{-1}=f\mu\)</span>。所以有了上面的式子。</p>
 <h3 id="其它形式">其它形式</h3>
 <p>莫比乌斯反演具有几种形式：</p>
@@ -1795,8 +1128,7 @@ g(n)=\sum_{n\vert d}f(d)\Rightarrow f(n)=\sum_{n\vert d}\mu(\frac{d}{n})g(d)
 <h3 id="p3455-poi2007-zap-queries"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM0NTU=">P3455 [POI2007] ZAP-Queries</span></h3>
 <h4 id="题意">题意</h4>
 <p><span class="math inline">\(n(1\le n\le 5\times 10^{4})\)</span> 次询问，每次给定 <span class="math inline">\(a,b,c\)</span> 满足 <span class="math inline">\(1\le d\le a,b\le 5\times 10^{4}\)</span>。求满足 <span class="math inline">\(\gcd(x,y)=d\)</span>，其中 <span class="math inline">\(1\le x\le a,1\le y\le b\)</span> 的二元组 <span class="math inline">\((x,y)\)</span> 数量。</p>
-<details class="note info"><summary><p>解法</p>
-</summary>
+<h4 id="解法">解法</h4>
 <p>首先我们可以将 <span class="math inline">\(d\)</span> 的限制去掉。</p>
 <p>具体地，这题相当于是要求 <span class="math inline">\(\gcd(x,y)=1\)</span>，其中 <span class="math inline">\(1\le x\le \frac{a}{d}\)</span> 且 <span class="math inline">\(q\le y\le \frac{b}{d}\)</span> 的个数，因为这样的二元组 <span class="math inline">\((x,y)\)</span> 同时乘上 <span class="math inline">\(d\)</span> 之后得到的二元组 <span class="math inline">\((xd,yd)\)</span> 的 gcd 为 <span class="math inline">\(d\)</span>。</p>
 <p>接下来考虑如何解决 <span class="math inline">\(\gcd(x,y)=1\)</span> 的问题。为了方便，我们记 <span class="math inline">\(\gcd(a,b)\)</span> 为 <span class="math inline">\((a,b)\)</span>，记 <span class="math inline">\(a\)</span> 为原来的 <span class="math inline">\(a\)</span> 除以 <span class="math inline">\(d\)</span> 向下取整的结果，<span class="math inline">\(b\)</span> 同理，并令 <span class="math inline">\(a\ge b\)</span>。</p>
@@ -1809,16 +1141,7 @@ g(n)=\sum_{n\vert d}f(d)\Rightarrow f(n)=\sum_{n\vert d}\mu(\frac{d}{n})g(d)
 \sum_{d=1}^{b}\mu(d)\lfloor \frac{a}{d}\rfloor \lfloor \frac{b}{d}\rfloor
 \]</span> 这样子可以做到 <span class="math inline">\(O(b)\)</span> 计算。</p>
 <p>我们可以预处理 <span class="math inline">\(\mu\)</span> 并使用 <a href="..\整除分块">整除分块</a> 技巧来在 <span class="math inline">\(O(\sqrt{b})\)</span> 的复杂度内完成计算。</p>
-<details class="note success">
-<summary>
-<p>
-代码
-</p>
-</summary>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">5e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> mu[N],sMu[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="type">int</span> pri[N],priTot;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">  mu[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">5e4</span>;++i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!vis[i])&#123;pri[++priTot]=i;mu[i]=<span class="number">-1</span>;&#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=priTot;++j)&#123;</span><br><span class="line">      <span class="keyword">if</span>(i*pri[j]&gt;<span class="number">5e4</span>)<span class="keyword">break</span>;</span><br><span class="line">      vis[i*pri[j]]=<span class="literal">true</span>;</span><br><span class="line">      <span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)&#123;mu[i*pri[j]]=<span class="number">0</span>;<span class="keyword">break</span>;&#125;</span><br><span class="line">      mu[i*pri[j]]=-mu[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">5e4</span>;++i)sMu[i]=sMu[i<span class="number">-1</span>]+mu[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">solve</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> y)</span></span>&#123;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> ans=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span>(x&lt;y)<span class="built_in">swap</span>(x,y);</span><br><span class="line">  <span class="type">int</span> l=<span class="number">1</span>,r;</span><br><span class="line">  <span class="keyword">while</span>(l&lt;=y)&#123;</span><br><span class="line">    r=<span class="built_in">min</span>(x/(x/l),y/(y/l));</span><br><span class="line">    ans+=<span class="number">1ll</span>*(sMu[r]-sMu[l<span class="number">-1</span>])*(x/l)*(y/l);</span><br><span class="line">    l=r+<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">init</span>();</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>,a,b,d;i&lt;=n;++i)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;a,&amp;b,&amp;d);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="built_in">solve</span>(a/d,b/d));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-</details>
 ]]></content>
       <tags>
         <tag>数学</tag>
@@ -1828,31 +1151,27 @@ g(n)=\sum_{n\vert d}f(d)\Rightarrow f(n)=\sum_{n\vert d}\mu(\frac{d}{n})g(d)
     <title>整除分块</title>
     <url>/posts/%E6%95%B4%E9%99%A4%E5%88%86%E5%9D%97/</url>
     <content><![CDATA[<p>整除分块用于解决一类与 <span class="math inline">\(\lfloor \frac{k}{i}\rfloor\)</span> 相关的问题。</p>
-<span id="more"></span>
 <p>这里面的 <span class="math inline">\(k\)</span> 是常量。往往这一类问题，因为事实上 <span class="math inline">\(\lfloor \frac{k}{i}\rfloor\)</span> 的取值少于 <span class="math inline">\(k\)</span> 个，具体地，取值仅有 <span class="math inline">\(O(\sqrt{k})\)</span> 个！所以我们可以大大缩短我们计算的时间。</p>
 <h1 id="一维整除分块">一维整除分块</h1>
 <h2 id="简单介绍">简单介绍</h2>
 <p>一维整除分块解决这样的问题：<span class="math inline">\(\sum_{i=1}^{n}\lfloor\frac{n}{i}\rfloor\)</span> 的值。</p>
 <p>我们可以想到：<span class="math inline">\(\lfloor \frac{n}{i}\rfloor\)</span> 的取值并不会太多，事实上，取值数量不会超过 <span class="math inline">\(O(\sqrt{n})\)</span> 个。</p>
-<details class="note info"><summary><p>证明</p>
-</summary>
+<blockquote>
+<p>证明：</p>
 <ol type="1">
 <li>当 <span class="math inline">\(i\le \sqrt{n}\)</span> 的时候，显然 <span class="math inline">\(\lfloor \frac{n}{i}\rfloor\)</span> 的取值不会超过 <span class="math inline">\(\sqrt{n}\)</span> 个。</li>
 <li>当 <span class="math inline">\(i&gt;\sqrt{n}\)</span> 的时候，有 <span class="math inline">\(\frac{n}{i}\le \sqrt{n}\)</span>，所以 <span class="math inline">\(\lfloor \frac{n}{i}\rfloor\)</span> 的取值也不会超过 <span class="math inline">\(\sqrt{n}\)</span> 个。</li>
 </ol>
-
-</details>
+</blockquote>
 <p>所以我们只需要考虑找到这 <span class="math inline">\(O(\sqrt{n})\)</span> 种取值，并确定每一种取值有多少个即可。</p>
 <p>如何求每一种取值有多少呢？我们容易发现：取同一个值的 <span class="math inline">\(i\)</span> 必然是连续的。并且取的值必然是递减的。</p>
 <p>所以它们事实上形成了一个类似于块状的结构，所以我们考虑求出每一个块的左右端点，就可以知道它们的长度了。</p>
 <p>假设左端点为 <span class="math inline">\(i\)</span>，有结论：右端点为 <span class="math inline">\(\lfloor\frac{n}{\lfloor\frac{n}{i}\rfloor}\rfloor\)</span>。</p>
-<details class="note info"><summary><p>证明</p>
-</summary>
-<p>设 <span class="math inline">\(k=\lfloor \frac{n}{i}\rfloor\)</span>，那么显然有 <span class="math inline">\(k\le \frac{n}{i}\)</span>。</p>
+<blockquote>
+<p>证明：设 <span class="math inline">\(k=\lfloor \frac{n}{i}\rfloor\)</span>，那么显然有 <span class="math inline">\(k\le \frac{n}{i}\)</span>。</p>
 <p>于是有 <span class="math inline">\(\lfloor\frac{n}{k}\rfloor\ge \lfloor\frac{n}{\frac{n}{i}}\rfloor=\lfloor i\rfloor=i\)</span>。</p>
+</blockquote>
 <p>当取等号的时候，即 <span class="math inline">\(i\)</span> 等于 <span class="math inline">\(\lfloor \frac{n}{k}\rfloor\)</span> 的时候，<span class="math inline">\(i\)</span> 是可能的最大的 <span class="math inline">\(i\)</span>。</p>
-
-</details>
 <p>于是我们就可以按照当前的左端点找到右端点，右端点加一得到下一段的左端点，便可以在 <span class="math inline">\(O(\sqrt{n})\)</span> 的时间内完成这项任务。</p>
 <p><span class="exturl" data-url="aHR0cHM6Ly92anVkZ2UubmV0L3Byb2JsZW0vVVZBLTExNTI2">板题</span></p>
 <h2 id="数论分块">数论分块</h2>
@@ -1877,7 +1196,6 @@ g(n)=\sum_{n\vert d}f(d)\Rightarrow f(n)=\sum_{n\vert d}\mu(\frac{d}{n})g(d)
     <title>杂题总结</title>
     <url>/posts/%E6%9D%82%E9%A2%98%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p>做过的一些杂题的总结。</p>
-<span id="more"></span>
 <h1 id="luogu-p2824-排序"><span class="exturl" data-url="aHR0cHM6Ly92anVkZ2UubmV0L3Byb2JsZW0v5rSb6LC3LVAyODI0">Luogu-P2824 排序</span></h1>
 <h2 id="solution">Solution</h2>
 <p>观察可以发现我们最后只需要知道位置 q 上的值即可。但是如果暴力做是 n 方级别的。</p>
@@ -2011,7 +1329,6 @@ f_{i,j,k}=\frac{n}{i+j+k}
     <content><![CDATA[<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vQ0RPSS0yNDM3NC9wLzE3MDExMjUyLmh0bWw=">原文出处</span>：原文作者：<span class="exturl" data-url="aHR0cHM6Ly9ob21lLmNuYmxvZ3MuY29tL3UvQ0RPSS0yNDM3NC8=">Jijidawang</span>。</p>
 <p>原文遵循「署名-非商业性使用-相同方式共享 4.0 国际」许可协议（CC BY-NC-SA 4.0）进行许可。本博客博文遵循此协议。</p>
 <p>满分！中山一学生这项赛事获全国第一！班里有牛娃咋办？没事别跟牛娃比！</p>
-<span id="more"></span>
 <p>他，是中国计算机学会主办的CSP软件能力认证的全国第一。年仅初二的他，成为全场最夺目的选手之一。</p>
 <p>虽然只是初二的选手，但他取得优异成绩后，不少网友并不感到奇异，纷纷留言：</p>
 <blockquote>
@@ -2059,7 +1376,6 @@ f_{i,j,k}=\frac{n}{i+j+k}
     <title>线性基</title>
     <url>/posts/%E7%BA%BF%E6%80%A7%E5%9F%BA/</url>
     <content><![CDATA[<p>线性基是解决OI中异或问题的利器。</p>
-<span id="more"></span>
 <p>知识点完善程度：初步了解，做题量不足。</p>
 <h1 id="介绍">介绍</h1>
 <p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vbGpoMjAwMC1qdW1wL3AvNTg2OTk5MS5odG1s">1</span> <span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vVHJvdmVybGQvcC8xNDYyMTQzNC5odG1s">2</span> <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2FfZm9yZXZlcl9kcmVhbS9hcnRpY2xlL2RldGFpbHMvODM2NTQzOTc=">3</span></p>
@@ -2079,48 +1395,36 @@ f_{i,j,k}=\frac{n}{i+j+k}
 <li>如果 <span class="math inline">\(a_{x}\)</span> 不为0，那么将这个数字异或上 <span class="math inline">\(a_{x}\)</span>。[操作1]</li>
 <li>如果 <span class="math inline">\(a_{x}\)</span> 为0，那么将这个数字放到 <span class="math inline">\(a_{x}\)</span> 上。直接退出即可。[操作2]</li>
 </ul></li>
-</ul>
-<details class="note info"><summary><p>性质1的证明</p>
-</summary>
+</ul></li>
+<li><p>性质 1 的证明</p>
 <p>如果插入的这个数字没有进行过操作2：说明通过线性基中的数字可以构造出这个数字。</p>
 <p>如果插入的这个数字进行了操作2：进行操作2时，由于操作1的存在，这个数字高于 <span class="math inline">\(x\)</span> 位都为0了，此时插入线性基满足要求。</p>
 <p>并且此时可以通过操作1的数字异或出这个数字的高 <span class="math inline">\(x\)</span> 位，再异或上 <span class="math inline">\(a_{x}\)</span> 就可以得到这个数字啦。</p>
 <p>既然我们能够用线性基中的数字构造出原来的数列，那么也可以构造出原来数列能够异或出的集合啦。</p>
-<p>如果一个数字是原来的序列不能够构造出的，那么线性基必然不能构造出。反证：如果线性基能够构造出，原数列也能构造出。</p>
-
-</details>
-<details class="note info"><summary><p>性质2的证明</p>
-</summary>
+<p>如果一个数字是原来的序列不能够构造出的，那么线性基必然不能构造出。反证：如果线性基能够构造出，原数列也能构造出。</p></li>
+<li><p>性质 2 的证明</p>
 <p>如果有 <span class="math inline">\(a_{p_{1}},a_{p_{2}},a_{p_{3}},\cdots,a_{p_{k}}\)</span> 异或和为0，那么有 <span class="math inline">\(a_{p_{1}},a_{p_{2}},a_{p_{3}},\cdots,a_{p_{k-1}}\)</span> 的异或和为 <span class="math inline">\(a_{p_{k}}\)</span> （由 <span class="math inline">\(a\oplus b=0 \Rightarrow a=b\)</span> 得到）</p>
-<p>所以我们可以直接把 <span class="math inline">\(p_{k}\)</span> 从线性基中删掉，这样才能满足性质3。</p>
-
-</details>
-<details class="note info"><summary><p>性质3的证明</p>
-</summary>
+<p>所以我们可以直接把 <span class="math inline">\(p_{k}\)</span> 从线性基中删掉，这样才能满足性质3。</p></li>
+<li><p>性质 3 的证明</p>
 <ul>
 <li><p>如果序列 <span class="math inline">\(b\)</span> 中的每一个数字都能插入到线性基中，那么这样一定是最小的。</p></li>
 <li><p>如果有一个数字 <span class="math inline">\(b_{i}\)</span> 没能插入线性基，那么必然满足 <span class="math inline">\(c\oplus a_{j}=b_{i}\)</span> ，其中 <span class="math inline">\(c\)</span> 是 <span class="math inline">\(a\)</span> 中某些元素的异或和。</p>
 <p>那么可以得到 <span class="math inline">\(c\oplus b_{i}=a_{j}\)</span>，也就是说，如果我们先插入了 <span class="math inline">\(b_{i}\)</span>，再插入 <span class="math inline">\(a_{j}\)</span>，那么 <span class="math inline">\(a_{j}\)</span> 不能被插入，线性基中元素个数不变。</p>
 <p>并且如果我们删除线性基中的某一个元素，那么 <span class="math inline">\(b\)</span> 中必然有一些数字无法被表示，于是线性基的大小也是符合条件中最小的。</p></li>
-</ul>
-
-</details></li>
-<li><p>判断一个数字是否在原数列通过异或，能够构造出的集合中。</p>
-<p>我们从高位到低位判断，如果某一位为1，那么就异或上 <span class="math inline">\(a_{x}\)</span> 。如果最后是0，那么不能被构造出，否则能够被构造出。</p></li>
+</ul></li>
 </ol>
+<p>判断一个数字是否在原数列通过异或，能够构造出的集合中。</p>
+<p>我们从高位到低位判断，如果某一位为1，那么就异或上 <span class="math inline">\(a_{x}\)</span> 。如果最后是0，那么不能被构造出，否则能够被构造出。</p>
 <h1 id="应用">应用</h1>
 <p>是例题，也是用法。</p>
 <h2 id="最大异或和"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM4MTI=">最大异或和</span></h2>
 <h3 id="题意">题意</h3>
 <p>给定 <span class="math inline">\(n\)</span> 个整数（数字可能重复），求在这些数中选取任意个，使得他们的异或和最大。</p>
 <p><span class="math inline">\(1\le n\le 50\)</span>， <span class="math inline">\(0\le S_{i}\lt 2^{50}\)</span></p>
-<details class="note info"><summary><p>做法</p>
-</summary>
+<h3 id="做法">做法</h3>
 <p>直接做是 <span class="math inline">\(2^{n}\)</span> 的，线性基就可以了。</p>
 <p>具体地，我们类似01-trie的贪心思想，每一次都异或上 <span class="math inline">\(a_{i}\)</span> 即可。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">55</span>;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line">ll a[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">50</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>((x&gt;&gt;i)&amp;<span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(a[i])x^=a[i];</span><br><span class="line">      <span class="keyword">else</span>&#123;a[i]=x;<span class="keyword">return</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;ll x;<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;x),<span class="built_in">insert</span>(x);&#125;</span><br><span class="line">  ll res=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">50</span>;i&gt;=<span class="number">0</span>;--i)<span class="keyword">if</span>((res^a[i])&gt;res)res^=a[i];</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,res);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</details>
 <h2 id="最小异或和">最小异或和</h2>
 <p>似乎没有这道题，那我胡一个。</p>
 <p>题面类似求最大异或和。</p>
@@ -2131,8 +1435,7 @@ f_{i,j,k}=\frac{n}{i+j+k}
 <p>给出一个 <span class="math inline">\(n\)</span> 个数的序列，可以从中任意选出一些，求它们的异或和。</p>
 <p>询问 <span class="math inline">\(m\)</span> 次，每次要在得到的不同异或和中，找到第 <span class="math inline">\(k\)</span> <strong>小</strong>（题目名字具有误导性，是要找第 k 小）</p>
 <p><span class="math inline">\(1\le n,m \lt 10^{5}\)</span>，<span class="math inline">\(0\le S_{i}\lt 2^{50}\)</span></p>
-<details class="note info"><summary><p>做法</p>
-</summary>
+<h3 id="做法-1">做法</h3>
 <p>这次我们要寻找性质更强的线性基。</p>
 <p>具体地，一个序列的线性基其实不止一种。当我们将 <span class="math inline">\(a_{i}\)</span> 异或上某一个 <span class="math inline">\(a_{j}\)</span> 后，这个序列仍然是原数列的一组线性基，证明是比较显然的。</p>
 <p>那么我们要找出一组最小的线性基。</p>
@@ -2144,15 +1447,12 @@ f_{i,j,k}=\frac{n}{i+j+k}
 <p>于是我们可以将 <span class="math inline">\(k\)</span> 表示成二进制，如果第 <span class="math inline">\(i\)</span> 位为1，那么异或上第 <span class="math inline">\(i\)</span> 个 <strong>非0</strong> 的 <span class="math inline">\(a\)</span>（而不是 <span class="math inline">\(a_{i}\)</span>）。</p>
 <p>还要注意，如果最小异或和为0，我们就要将 <span class="math inline">\(k\)</span> 减去1，因为我们刚刚没有考虑0。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> K=<span class="number">55</span>;</span><br><span class="line">ll a[K],b[K];</span><br><span class="line"><span class="type">int</span> tot;</span><br><span class="line"><span class="type">bool</span> flag;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">50</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>((x&gt;&gt;i)&amp;<span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(a[i])x^=a[i];</span><br><span class="line">      <span class="keyword">else</span>&#123;a[i]=x;<span class="keyword">return</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  flag=<span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">preProcess</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">50</span>;++i)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=i<span class="number">-1</span>;j&gt;=<span class="number">0</span>;--j)</span><br><span class="line">      <span class="keyword">if</span>((a[i]&gt;&gt;j)&amp;<span class="number">1</span>)a[i]^=a[j];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">50</span>;++i)</span><br><span class="line">    <span class="keyword">if</span>(a[i])b[tot++]=a[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">qry</span><span class="params">(ll k)</span></span>&#123;</span><br><span class="line">  k-=flag;</span><br><span class="line">  <span class="keyword">if</span>(k&gt;=(<span class="number">1ll</span>&lt;&lt;tot))<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  ll res=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=tot;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>((k&gt;&gt;i)&amp;<span class="number">1</span>)res^=b[i];</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;ll x;<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;x);<span class="built_in">insert</span>(x);&#125;</span><br><span class="line">  <span class="built_in">preProcess</span>();</span><br><span class="line">  <span class="type">int</span> m;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)&#123;ll k;<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>,&amp;k);<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="built_in">qry</span>(k));&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</details>
 <h2 id="可删除线性基">可删除线性基</h2>
 <p>现在要求支持一些操作：插入，删除，求最大异或和。</p>
 <p>在线做法比较复杂，离线做法相对简单。</p>
 <p>没有找到完全的模版题，自己造了一道，但是还没出好数据。</p>
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vVTM5MzUwOA==">模版链接</span></p>
-<details class="note info"><summary><p>在线做法</p>
-</summary>
+<h3 id="在线做法">在线做法</h3>
 <p>这些都是理论分析，还没写代码，可能存在错误。</p>
 <p>插入就直接插。</p>
 <p>删除的时候，如果删掉的数字在线性基外，直接删了就好，对答案没有影响。</p>
@@ -2170,30 +1470,18 @@ f_{i,j,k}=\frac{n}{i+j+k}
 <p>所以我们寻找一个最小的，异或过 <span class="math inline">\(a_{i}\)</span> 的数字。将它替换成 <span class="math inline">\(a_{i}\)</span>，那么其它数字在插入的时候，就会异或上新的 <span class="math inline">\(a_{i}\)</span>。</p>
 <p>于是我们将其它异或过 <span class="math inline">\(a_{i}\)</span> 的数字都异或上新的 <span class="math inline">\(a_{i}\)</span> 即可。</p></li>
 </ul>
-
-</details>
-<details class="note info"><summary><p>离线做法</p>
-</summary>
+<h3 id="离线做法">离线做法</h3>
 <p>我们考虑贪心地进行插入的过程。</p>
 <p>我们每次插入时，更高的位上，让线性基的删除时间更晚。因为如果时间到了，大的不能选，小的可以选，这不优。</p>
 <p>所以我们让高位上的线性基的删除时间尽可能晚。</p>
-<details class="note ">
-<summary>
-<p>
-代码
-</p>
-</summary>
+<h4 id="代码">代码</h4>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> tim,ll x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=LEN;i&gt;=<span class="number">0</span>;--i)&#123;</span><br><span class="line">    <span class="keyword">if</span>((x&gt;&gt;i)&amp;<span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(tim&gt;dTime[i])<span class="built_in">swap</span>(dTime[i],tim),<span class="built_in">swap</span>(bas[i],x);</span><br><span class="line">      <span class="keyword">if</span>(!tim)<span class="keyword">return</span>;</span><br><span class="line">      x^=bas[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">qry</span><span class="params">(<span class="type">int</span> tim)</span></span>&#123;</span><br><span class="line">  ll res=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=LEN;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>(tim&lt;dTime[i]&amp;&amp;((res&gt;&gt;i)&amp;<span class="number">1</span>)==<span class="number">0</span>)res=<span class="built_in">max</span>(res,res^bas[i]);</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-</details>
 <h2 id="与图论结合">与图论结合</h2>
 <h3 id="p4151-wc2011-最大xor和路径"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDQxNTE=">P4151 [WC2011] 最大XOR和路径</span></h3>
 <h4 id="题意-2">题意</h4>
 <p>给出一个 <span class="math inline">\(n(1\le n\le 5\times 10^{4})\)</span> 个点，<span class="math inline">\(m(1\le m\le 10^{5})\)</span>无向图，边有权值，权值范围在 <span class="math inline">\([0,10^{18}]\)</span> 之间。</p>
 <p>要求找出一条从1号点到n号点的路径，满足路径的异或和最大。</p>
-<details class="note info"><summary><p>做法</p>
-</summary>
+<h4 id="做法-2">做法</h4>
 <p>首先我们考虑从1到n，假设只有一条路径，大概是这样：</p>
 <figure>
 <img src="https://cdn.luogu.com.cn/upload/image_hosting/9rw2ca6s.png" alt="graph1" /><figcaption aria-hidden="true">graph1</figcaption>
@@ -2220,8 +1508,6 @@ dis_{2}=dis_{1}\oplus dis_{3}
 <p>找环的部分可以通过一个有趣的结论来解决：所有环可以通过基本环（由一条非树边及其端点在书上路径组成的环）异或得到。所以我们只需要在DFS生成树上找基本环即可。（P.S.当时笔者写这道题的时候是暴力找的环，直接T0了。）</p>
 <p>求答案的最大值可以使用线性基多快好省地解决。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">5e4</span>+<span class="number">5</span>,M=<span class="number">2e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span>&#123;</span><br><span class="line">  <span class="type">int</span> head[N],nxt[M],to[M],tot;</span><br><span class="line">  ll dis[M];</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> v,ll w)</span></span>&#123;</span><br><span class="line">    nxt[++tot]=head[u];</span><br><span class="line">    dis[tot]=w;</span><br><span class="line">    to[tot]=v;</span><br><span class="line">    head[u]=tot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;G;</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line">ll sum[N];</span><br><span class="line">set&lt;ll&gt; cyc;</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  vis[x]=<span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=G.head[x];i;i=G.nxt[i])</span><br><span class="line">    <span class="keyword">if</span>(!vis[G.to[i]])sum[G.to[i]]=sum[x]^G.dis[i],<span class="built_in">dfs</span>(G.to[i]);</span><br><span class="line">    <span class="keyword">else</span> cyc.<span class="built_in">insert</span>(sum[x]^sum[G.to[i]]^G.dis[i]);</span><br><span class="line">&#125;</span><br><span class="line">ll bas[<span class="number">64</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">63</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>((x&gt;&gt;i)&amp;<span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">if</span>(bas[i])x^=bas[i];</span><br><span class="line">      <span class="keyword">else</span>&#123;bas[i]=x;<span class="keyword">return</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">qry</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">63</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">    <span class="keyword">if</span>((x^bas[i])&gt;x)x^=bas[i];</span><br><span class="line">  <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)&#123;</span><br><span class="line">    <span class="type">int</span> u,v;ll w;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%lld&quot;</span>,&amp;u,&amp;v,&amp;w);</span><br><span class="line">    G.<span class="built_in">add</span>(u,v,w);G.<span class="built_in">add</span>(v,u,w);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span>(ll x:cyc)<span class="built_in">insert</span>(x);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,<span class="built_in">qry</span>(sum[n]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</details>
 <h3 id="p3733-haoi2017-八纵八横"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM3MzM=">P3733 [HAOI2017] 八纵八横</span></h3>
 <h4 id="题意-3">题意</h4>
 <p>给出 <span class="math inline">\(n(1\le n\le 500)\)</span> 个点 <span class="math inline">\(m(1\le 500\le m)\)</span> 条边的无向图。</p>
@@ -2234,8 +1520,7 @@ dis_{2}=dis_{1}\oplus dis_{3}
 <p>其中所有边权 <span class="math inline">\(z\)</span> 均为非负整数，在二进制下长度不超过 <span class="math inline">\(1000\)</span> 位。</p>
 <p>输入的 <span class="math inline">\(z\)</span> 和输出的答案均要在二进制下给出。</p>
 <p>定义一条路径的权值为路径上的边的异或和。求经过1的环中的最大权值。</p>
-<details class="note info"><summary><p>做法</p>
-</summary>
+<h3 id="做法-3">做法</h3>
 <p>由于异或的性质，我们可以发现，任何环都是可以取到的。</p>
 <p>如果一个环不包括1号点，那么我们可以从1号点出发，经过一些路径到这个环，遍历这个环后再原路返回。由于中间的路径被经过两次，贡献为0，只保留了环的共线。</p>
 <p>所以我们现在只要维护环的最大答案即可，我们仍然考虑线性基来维护环的信息。</p>
@@ -2244,28 +1529,11 @@ dis_{2}=dis_{1}\oplus dis_{3}
 <p>那么如何处理删除操作呢？</p>
 <h4 id="可删线性基做法">可删线性基做法</h4>
 <p>按照上方可删线性基的离线/在线做法来做即可。</p>
-<details class="note info">
-<summary>
-<p>
-代码
-</p>
-</summary>
-<p>
-代码丑得要命，不忍直视。后面想方设法离线，搞得挺混乱，不要学我。
-</p>
+<p>代码丑得要命，不忍直视。后面想方设法离线，搞得挺混乱，不要学我。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1005</span>,Q=<span class="number">2005</span>,LEN=<span class="number">2005</span>,M=<span class="number">2005</span>;</span><br><span class="line"><span class="keyword">using</span> bs=bitset&lt;LEN&gt;;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">read</span><span class="params">(bs&amp; x)</span></span>&#123;</span><br><span class="line">  <span class="type">char</span> c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="keyword">while</span>(c!=<span class="string">&#x27;0&#x27;</span>&amp;&amp;c!=<span class="string">&#x27;1&#x27;</span>)c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="type">int</span> cnt=<span class="number">0</span>;x.<span class="built_in">reset</span>();</span><br><span class="line">  <span class="keyword">while</span>(c==<span class="string">&#x27;0&#x27;</span>||c==<span class="string">&#x27;1&#x27;</span>)x[cnt++]=c^<span class="number">48</span>,c=<span class="built_in">getchar</span>();</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;cnt/<span class="number">2</span>;++i)&#123;<span class="type">bool</span> tmp=x[i];x[i]=x[cnt-i<span class="number">-1</span>];x[cnt-i<span class="number">-1</span>]=tmp;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">const</span> bs&amp; x)</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> i=<span class="number">1000</span>;</span><br><span class="line">  <span class="keyword">while</span>(x[i]==<span class="number">0</span>&amp;&amp;i&gt;<span class="number">0</span>)--i;</span><br><span class="line">  <span class="keyword">do</span>&#123;</span><br><span class="line">    <span class="built_in">putchar</span>(x[i]^<span class="number">48</span>);</span><br><span class="line">    --i;</span><br><span class="line">  &#125;<span class="keyword">while</span>(i&gt;=<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span>&#123;</span><br><span class="line">  <span class="type">int</span> head[N],nxt[M],to[M],tot;</span><br><span class="line">  bs dis[M];</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> v,bs w)</span></span>&#123;</span><br><span class="line">    nxt[++tot]=head[u];</span><br><span class="line">    to[tot]=v;</span><br><span class="line">    dis[tot]=w;</span><br><span class="line">    head[u]=tot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;G;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m,q;</span><br><span class="line"><span class="type">int</span> dTime[N];</span><br><span class="line">bs bas[LEN];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> tim,bs x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1000</span>;i&gt;=<span class="number">0</span>;--i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(x[i])&#123;</span><br><span class="line">      <span class="keyword">if</span>(tim&gt;dTime[i])<span class="built_in">swap</span>(tim,dTime[i]),<span class="built_in">swap</span>(x,bas[i]);</span><br><span class="line">      <span class="keyword">if</span>(!tim)<span class="keyword">return</span>;</span><br><span class="line">      x^=bas[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">bs <span class="title">qry</span><span class="params">(<span class="type">int</span> tim)</span></span>&#123;</span><br><span class="line">  bs res;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1000</span>;i&gt;=<span class="number">0</span>;--i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!res[i])</span><br><span class="line">      <span class="keyword">if</span>(dTime[i]&gt;tim)res^=bas[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bs dis[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  vis[x]=<span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=G.head[x];i;i=G.nxt[i])</span><br><span class="line">    <span class="keyword">if</span>(vis[G.to[i]])<span class="built_in">insert</span>(q+<span class="number">1</span>,dis[x]^dis[G.to[i]]^G.dis[i]);</span><br><span class="line">    <span class="keyword">else</span> dis[G.to[i]]=dis[x]^G.dis[i],<span class="built_in">dfs</span>(G.to[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">char</span> str[<span class="number">10</span>];</span><br><span class="line">bs ins[Q],chgVal[Q];</span><br><span class="line"><span class="type">int</span> tp[Q],cur[Q],del[Q],num[Q],v1[Q],v2[Q];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; chg[Q];</span><br><span class="line">vector&lt;<span class="type">int</span>&gt;::iterator iter[Q];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;q);</span><br><span class="line">  <span class="type">int</span> u,v;bs w;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;u,&amp;v);</span><br><span class="line">    <span class="built_in">read</span>(w);</span><br><span class="line">    G.<span class="built_in">add</span>(u,v,w);G.<span class="built_in">add</span>(v,u,w);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="built_in">print</span>(<span class="built_in">qry</span>(<span class="number">0</span>));</span><br><span class="line">  <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">  <span class="type">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=q;++i)del[i]=q+<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=q;++i)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,str);</span><br><span class="line">    <span class="keyword">if</span>(str[<span class="number">0</span>]==<span class="string">&#x27;A&#x27;</span>)&#123;</span><br><span class="line">      tp[i]=<span class="number">1</span>;++cnt;<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;v1[cnt],&amp;v2[cnt]);<span class="built_in">read</span>(ins[cnt]);ins[cnt]=ins[cnt]^dis[v1[cnt]]^dis[v2[cnt]];cur[cnt]=cnt;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(str[<span class="number">1</span>]==<span class="string">&#x27;a&#x27;</span>)&#123;</span><br><span class="line">      tp[i]=<span class="number">2</span>;<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num[i]);del[num[i]]=i;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      tp[i]=<span class="number">3</span>;<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num[i]);<span class="built_in">read</span>(chgVal[i]);chg[num[i]].<span class="built_in">push_back</span>(i);chgVal[i]^=dis[v1[num[i]]]^dis[v2[num[i]]];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=cnt;++i)iter[i]=chg[i].<span class="built_in">begin</span>();</span><br><span class="line">  cnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=q;++i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(tp[i]==<span class="number">1</span>)&#123;</span><br><span class="line">      ++cnt;</span><br><span class="line">      <span class="built_in">insert</span>(iter[cnt]==chg[cnt].<span class="built_in">end</span>()?del[cnt]:*iter[cnt],ins[cnt]);</span><br><span class="line">      <span class="keyword">if</span>(iter[cnt]!=chg[cnt].<span class="built_in">end</span>())++iter[cnt];</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(tp[i]==<span class="number">3</span>)&#123;</span><br><span class="line">      <span class="type">int</span> k=num[i];</span><br><span class="line">      <span class="built_in">insert</span>(iter[k]==chg[k].<span class="built_in">end</span>()?del[k]:*iter[k],chgVal[i]);</span><br><span class="line">      <span class="keyword">if</span>(iter[k]!=chg[k].<span class="built_in">end</span>())++iter[k];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">qry</span>(i));</span><br><span class="line">    <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-<h4 id="线段树分治">
-线段树分治
-</h4>
-<p>
-我们可以将信息离线下来之后线段树分治。
-</p>
-<p>
-不是很会做。可以去洛谷看看题解。
-</p>
-
-</details>
+<h4 id="线段树分治">线段树分治</h4>
+<p>我们可以将信息离线下来之后线段树分治。</p>
+<p>不是很会做。可以去洛谷看看题解。</p>
 <h1 id="推广">推广</h1>
 <p>其实我们在介绍部分提到的线性基是一种特殊的线性基：异或线性基，是 OI 中较为常用的线性基。</p>
 <p>我们先定义线性无关：对于一个集合 <span class="math inline">\(A\)</span>（实际上是线性空间），包含 <span class="math inline">\(m\)</span> 维向量，如果这个集合中的任何元素都不能通过其他元素进行线性运算（例如：数乘，加法等）得到，我们称这个集合线性无关。否则称为线性有关。</p>
@@ -2275,22 +1543,12 @@ dis_{2}=dis_{1}\oplus dis_{3}
 <h2 id="p3265-jloi2015-装备购买"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDMyNjU=">P3265 [JLOI2015] 装备购买</span></h2>
 <h3 id="题意-4">题意</h3>
 <p>给定 <span class="math inline">\(n(1\le n\le 500)\)</span> 个装备，每个装备有 <span class="math inline">\(m(1\le m\le 500)\)</span> 个属性值 <span class="math inline">\(a_{i}(0\le a_{i}\le 1000)\)</span>，每一个装备有一个代价 <span class="math inline">\(c_{i}\)</span>。</p>
-<p>每一个装备的属性值组成了一个 <span class="math inline">\(m\)</span> 维向量 <span class="math inline">\(\mathbf{z}_{i}=(a_{1},\cdots,a_{j},\cdots,a_{m})\)</span>。现在要求找出这些向量的最小代价线性基。</p>
-<details class="note info"><summary><p>解法</p>
-</summary>
+<p>每一个装备的属性值组成了一个 <span class="math inline">\(m\)</span> 维向量 <span class="math inline">\(\mathbf{z}_{i}=(a_{1},\cdots,a_{j},\cdots,a_{m})\)</span>​。现在要求找出这些向量的最小代价线性基。</p>
+<h3 id="做法-4">做法</h3>
 <p>版题，排序之后插入，跟异或线性基差不多。</p>
 <p>只不过这里的插入不使用异或来操作，使用类似高斯消元的办法消去第 <span class="math inline">\(i\)</span> 位上的属性值。</p>
 <p>注意高斯消元的精度一直很玄学，所以EPS不要开太小，否则会挂分。</p>
-<details class="note info">
-<summary>
-<p>
-代码
-</p>
-</summary>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">505</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">double</span> EPS=<span class="number">1e-5</span>;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">Abs</span><span class="params">(<span class="type">double</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x&lt;<span class="number">0</span>?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">cmp</span><span class="params">(<span class="type">double</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">Abs</span>(x)&lt;=EPS)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> x&lt;<span class="number">0</span>?<span class="number">-1</span>:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> a[N][N],val[N],id[N];</span><br><span class="line"><span class="type">double</span> bas[N][N],tmp[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="type">int</span> n,m;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> ans;</span><br><span class="line"><span class="type">int</span> cnt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)tmp[i]=a[x][i];</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=m;i&gt;=<span class="number">1</span>;--i)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">cmp</span>(tmp[i]))&#123;</span><br><span class="line">      <span class="keyword">if</span>(!vis[i])&#123;vis[i]=<span class="literal">true</span>;<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=m;++j)bas[i][j]=tmp[j];ans+=val[x];++cnt;<span class="keyword">return</span>;&#125;</span><br><span class="line">      <span class="type">double</span> t=tmp[i]/bas[i][i];</span><br><span class="line">      <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=m;++j)tmp[j]-=bas[i][j]*t;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=m;++j)</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i][j]);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;val[i]),id[i]=i;</span><br><span class="line">  <span class="built_in">sort</span>(id+<span class="number">1</span>,id+<span class="number">1</span>+n,[](<span class="type">int</span> x,<span class="type">int</span> y)&#123;<span class="keyword">return</span> val[x]&lt;val[y];&#125;);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)<span class="built_in">insert</span>(id[i]);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d %lld\n&quot;</span>,cnt,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-</details>
 ]]></content>
       <tags>
         <tag>数学</tag>
@@ -2301,7 +1559,6 @@ dis_{2}=dis_{1}\oplus dis_{3}
     <url>/posts/%E8%B4%AA%E5%BF%83/</url>
     <content><![CDATA[<p>贪心是常见的一种算法，通常能够在较低的复杂度内，通过正确的决策得到答案。</p>
 <p>常见的贪心方法有邻项交换法、反悔贪心等。</p>
-<span id="more"></span>
 <h1 id="邻项交换法">邻项交换法</h1>
 <h2 id="noip2012-提高组-国王游戏"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDEwODA=">NOIP2012 提高组 国王游戏</span></h2>
 <h3 id="题目大意">题目大意</h3>
@@ -2310,8 +1567,7 @@ dis_{2}=dis_{1}\oplus dis_{3}
 c_{i}=\frac{\prod_{j=0}^{i-1}a_{j}}{b_{i}}
 \]</span> 要求最小化： <span class="math display">\[
 \max_{i=1}^{n}(c_{i})
-\]</span> <details class="note info"><summary><p>解法</p>
-</summary>
+\]</span> ### 解法</p>
 <p>考虑邻项交换法，即什么时候，交换相邻的两项能够使得答案更优。</p>
 <p>假设第 <span class="math inline">\(i\)</span> 项前 <span class="math inline">\(a\)</span> 的乘积为 <span class="math inline">\(s\)</span>，那么更优的条件是： <span class="math display">\[
 \max(\frac{s}{b_{i}},\frac{s\times a_{i}}{b_{i+1}})&lt;\max(\frac{s}{b_{i+1}},\frac{s\times a_{i+1}}{b_{i}})
@@ -2331,23 +1587,12 @@ c_{i}=\frac{\prod_{j=0}^{i-1}a_{j}}{b_{i}}
 </ul>
 <p>所以我们发现，如果最大值取到了 <span class="math inline">\(b_{i+1}\)</span> 或是 <span class="math inline">\(b_{i}\)</span> 时，使用另一项是等效的，我们只需要使用另一项比较即可！</p>
 <p>为什么我们要拆开这个 <span class="math inline">\(\max\)</span> 呢？因为我们要证明其传递性，也就是如果 <span class="math inline">\(a_{i}\times b_{i}\le a_{j}\times b_{j}\)</span>，<span class="math inline">\(a_{j}\times b_{j}\le a_{k}\times b_{k}\)</span>，那么 <span class="math inline">\(a_{i}\times b_{i}\le a_{k}\times b_{k}\)</span>。如果不拆开 <span class="math inline">\(\max\)</span> 我们就难以证明这一点。如果不能满足传递性，我们排序之后模拟就是错误的。</p>
-<details class="note success">
-<summary>
-<p>
-代码
-</p>
-</summary>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">ans=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    ans.append([<span class="built_in">int</span>(ii) <span class="keyword">for</span> ii <span class="keyword">in</span> <span class="built_in">input</span>().split()])</span><br><span class="line">ans.sort(key=<span class="keyword">lambda</span> x:(x[<span class="number">0</span>]*x[<span class="number">1</span>]))</span><br><span class="line">s=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    s=<span class="built_in">max</span>(s,a//ans[i][<span class="number">1</span>])</span><br><span class="line">    a*=ans[i][<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(s)</span><br></pre></td></tr></table></figure>
-</details>
-</p>
-
-</details>
 <h2 id="atcoder-dp-x"><span class="exturl" data-url="aHR0cHM6Ly9hdGNvZGVyLmpwL2NvbnRlc3RzL2RwL3Rhc2tzL2RwX3g=">AtCoder DP X</span></h2>
 <p>虽然这道题是 DP，但是其中使用了邻项交换法。</p>
 <h3 id="题目大意-1">题目大意</h3>
 <p>有 <span class="math inline">\(N(1\le N\le 10^{3})\)</span> 个块，每一个块有质量 <span class="math inline">\(w_{i}\)</span>，坚固度 <span class="math inline">\(s_{i}\)</span>，价值 <span class="math inline">\(v_{i}\)</span>（<span class="math inline">\(1\le w_{i},s_{i}\le 10^{4},1\le v_{i}\le 10^{9}\)</span>）。想要选出若干个块堆叠成一个塔，要求满足某一个块上方的块的 <span class="math inline">\(w\)</span> 之和不超过这一个块的 <span class="math inline">\(s\)</span>。求最大代价和。</p>
-<details class="note info"><summary><p>解法</p>
-</summary>
+<h3 id="解法">解法</h3>
 <p>看到这到题，容易想到设 <span class="math inline">\(f_{i,j}\)</span> 表示前 <span class="math inline">\(i\)</span> 个块，选择后质量和为 <span class="math inline">\(j\)</span> 的最大价值。转移并不难，是一个 01 背包。</p>
 <p>但是转移的顺序该如何确定？也就是说，我们应该按照什么顺序来考虑这些块？</p>
 <p>我们考虑如果我们把块 <span class="math inline">\(i\)</span> 放在块 <span class="math inline">\(j\)</span> 的上方，那么还可以放 <span class="math inline">\(s_{j}-w_{i}\)</span>。</p>
@@ -2357,24 +1602,14 @@ s_{j}-w_{i}\ge s_{i}-w_{j}
 \]</span> 也就是 <span class="math display">\[
 s_{j}+w_{j}\ge s_{i}+w_{i}
 \]</span> 所以我们按照 <span class="math inline">\(s\)</span> 和 <span class="math inline">\(w\)</span> 之和从小到大排序，进行转移即可。</p>
-<details class="note ">
-<summary>
-<p>
-success代码
-</p>
-</summary>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e3</span>+<span class="number">5</span>,M=<span class="number">2e4</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span>&#123;</span><br><span class="line">  <span class="type">int</span> w,s,v;</span><br><span class="line">&#125;a[N];</span><br><span class="line">ll f[M];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;a[i].w,&amp;a[i].s,&amp;a[i].v);</span><br><span class="line">  <span class="built_in">sort</span>(a+<span class="number">1</span>,a+<span class="number">1</span>+n,[](Node x,Node y)&#123;<span class="keyword">return</span> x.s+x.w&lt;y.s+y.w;&#125;);</span><br><span class="line">  ll ans=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=a[i].s+a[i].w;j&gt;=<span class="number">0</span>;--j)&#123;</span><br><span class="line">      <span class="keyword">if</span>(j&lt;a[i].w)<span class="keyword">break</span>;</span><br><span class="line">      f[j]=<span class="built_in">max</span>(f[j],f[j-a[i].w]+a[i].v);</span><br><span class="line">      ans=<span class="built_in">max</span>(ans,f[j]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-</details>
 <h2 id="yloi2019-梅深不见冬"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDU1MjE=">yLOI2019 梅深不见冬</span></h2>
 <h3 id="题目大意-2">题目大意</h3>
 <p>按照欧拉序遍历一棵 <span class="math inline">\(n(1\le n\le 10^{5}+4)\)</span> 的树，每一个节点有一个需要放置的梅花数量 <span class="math inline">\(w_{i}(1\le w_{i}\le 1000)\)</span>。</p>
 <p>规定每一个节点放置梅花的时候必须满足其所有 <strong>儿子</strong> 节点 <span class="math inline">\(v\)</span> 必须放置了恰好 <span class="math inline">\(w_{v}\)</span> 个梅花。</p>
 <p>你可以在任何时候任何地点收回梅花，你可以以任意欧拉序遍历这一棵树。</p>
 <p>求对于所有 <span class="math inline">\(i\)</span>，要在 <span class="math inline">\(i\)</span> 号点上放置 <span class="math inline">\(w_{i}\)</span> 个棉花至少需要多少个梅花。</p>
-<details class="note info"><summary><p>解法</p>
-</summary>
+<h3 id="解法-1">解法</h3>
 <p>考虑求对于某一个 <span class="math inline">\(i\)</span> 的答案，以欧拉序遍历，那么我们只需要考虑 <span class="math inline">\(i\)</span> 的子树即可。</p>
 <p>假设点 <span class="math inline">\(i\)</span> 的答案为 <span class="math inline">\(ans_{i}\)</span>，<span class="math inline">\(i\)</span> 遍历儿子的顺序确定了，那么计算答案：</p>
 <ul>
@@ -2391,22 +1626,12 @@ ans_{j}+w_{i}\le ans_{i}+w_{j}
 \]</span> 也就是： <span class="math display">\[
 w_{i}-ans_{i}\le w_{j}-ans_{j}
 \]</span> 所以按照 <span class="math inline">\(ans_{i}-w_{i}\)</span> 从小到大排序后选择就是最优的。</p>
-<details class="note success">
-<summary>
-<p>
-代码
-</p>
-</summary>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Created: 2024.01.20 02:51:34 PM +0800</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> ll=<span class="type">long</span> <span class="type">long</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> fa[N];</span><br><span class="line">ll ans[N];</span><br><span class="line"><span class="type">int</span> w[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Graph</span>&#123;</span><br><span class="line">  <span class="type">int</span> head[N],nxt[N],to[N],tot;</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> v)</span></span>&#123;</span><br><span class="line">    nxt[++tot]=head[u];</span><br><span class="line">    to[tot]=v;</span><br><span class="line">    head[u]=tot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;G;</span><br><span class="line"><span class="type">int</span> sonId[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=G.head[x];i;i=G.nxt[i])<span class="built_in">dfs</span>(G.to[i]);</span><br><span class="line">  <span class="type">int</span> sonCnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=G.head[x];i;i=G.nxt[i])sonId[++sonCnt]=G.to[i];</span><br><span class="line">  <span class="built_in">sort</span>(sonId+<span class="number">1</span>,sonId+sonCnt+<span class="number">1</span>,[](<span class="type">int</span> _,<span class="type">int</span> __)&#123;<span class="keyword">return</span> w[_]-ans[_]&lt;w[__]-ans[__];&#125;);</span><br><span class="line">  ll sum=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=sonCnt;++i)&#123;</span><br><span class="line">    ans[x]=<span class="built_in">max</span>(ans[x],sum+ans[sonId[i]]);</span><br><span class="line">    sum+=w[sonId[i]];</span><br><span class="line">  &#125;</span><br><span class="line">  ans[x]=<span class="built_in">max</span>(ans[x],sum+w[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;fa[i]),G.<span class="built_in">add</span>(fa[i],i);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;w[i]);</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld &quot;</span>,ans[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-</details>
 <h1 id="反悔贪心">反悔贪心</h1>
 <h2 id="国家集训队-种树"><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDE3OTI=">2011国家集训队 种树</span></h2>
 <h3 id="题目大意-3">题目大意</h3>
 <p>有 <span class="math inline">\(n(1\le n\le 2\times 10^{5})\)</span> 个数字 <span class="math inline">\(a_{i}\)</span> 围成一圈，选择一个数字之后，其相邻的两个数字就不能选择，求能够选择出的最大数字之和。</p>
-<details class="note info"><summary><p>解法</p>
-</summary>
+<h3 id="解法-2">解法</h3>
 <p>很容易可以得到一个 <span class="math inline">\(O(n^2)\)</span> 的 DP，但是时间难以承受。</p>
 <p>我们考虑贪心。直接贪心，考虑每一次尽可能选择大的，然后标记左右两边的数字不能选择。</p>
 <p>但是这样显然是错误的。例如 <code>10 9 1 9</code>，我们会选择 10，然后选 1。但是显然 9 和 9 会更优秀。</p>
@@ -2414,16 +1639,7 @@ w_{i}-ans_{i}\le w_{j}-ans_{j}
 <p>具体而言，我们仍然从大向小选择，但是选择之后，我们留一条后路。</p>
 <p>加入选择了 <span class="math inline">\(a_{i}\)</span>，那么我们将 <span class="math inline">\(a_{i}\)</span> 替换为 <span class="math inline">\(a_{l_{i}}+a_{r_{i}}-a_{i}\)</span>。这样，当再次选择 <span class="math inline">\(i\)</span> 的时候，就相当于原来没有选择 <span class="math inline">\(a_{i}\)</span>，而是选择了其左右两边的。</p>
 <p>使用双向链表维护左右两边的是那些数字即可。</p>
-<details class="note success">
-<summary>
-<p>
-题解
-</p>
-</summary>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Created: 2024.01.20 03:39:41 PM +0800</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">using</span> pi=pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">2e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> a[N],l[N],r[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">  l[r[x]]=l[x];</span><br><span class="line">  r[l[x]]=r[x];</span><br><span class="line">  l[x]=r[x]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">priority_queue&lt;pi&gt; q;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">int</span> n,m;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="keyword">if</span>(m&gt;n/<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Error!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]),q.<span class="built_in">push</span>(&#123;a[i],i&#125;);</span><br><span class="line">  <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)l[i]=i<span class="number">-1</span>,r[i]=i+<span class="number">1</span>;</span><br><span class="line">  l[<span class="number">1</span>]=n;r[n]=<span class="number">1</span>;</span><br><span class="line">  <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">  <span class="type">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(cnt&lt;m)&#123;</span><br><span class="line">    pi tmp=q.<span class="built_in">top</span>();</span><br><span class="line">    <span class="type">int</span> cur=tmp.second;</span><br><span class="line">    q.<span class="built_in">pop</span>();</span><br><span class="line">    <span class="keyword">if</span>(vis[cur])<span class="keyword">continue</span>;</span><br><span class="line">    ans+=tmp.first;</span><br><span class="line">    q.<span class="built_in">push</span>(&#123;a[l[cur]]+a[r[cur]]-a[cur],cur&#125;);</span><br><span class="line">    a[cur]=a[l[cur]]+a[r[cur]]-a[cur];</span><br><span class="line">    vis[l[cur]]=<span class="literal">true</span>;vis[r[cur]]=<span class="literal">true</span>;</span><br><span class="line">    <span class="built_in">remove</span>(l[cur]);<span class="built_in">remove</span>(r[cur]);</span><br><span class="line">    ++cnt;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</details>
-
-</details>
 ]]></content>
       <tags>
         <tag>算法基础</tag>
@@ -2433,7 +1649,6 @@ w_{i}-ans_{i}\le w_{j}-ans_{j}
     <title>鲜花 / 序</title>
     <url>/posts/%E9%B2%9C%E8%8A%B1-%E5%BA%8F/</url>
     <content><![CDATA[<p>总是想写些什么，拿起笔，写下三两个字，又停下。</p>
-<span id="more"></span>
 <p>喜欢一个人发呆，望着落霞的齐飞，望着秋叶的愁容，望着远方的山，从清晰渐渐朦胧，从记忆里渐渐淡去。</p>
 <p>在斟满回忆的烟雨中，看，一朵鲜花，她在淅沥中绽放。回眸间，雨凝结了时间，那抹芳香，向晚风中，丝丝缕缕，不知萦绕谁的心间。淡雨装点着她的美，朦胧中，将染山的霞光绚烂，隐约间，把落日的余晖点洒。</p>
 <p>记不得你的模样，只剩下想象，无际的想象海洋，该用什么找回印象？彷徨，忧伤，如丁香般的惆怅。</p>

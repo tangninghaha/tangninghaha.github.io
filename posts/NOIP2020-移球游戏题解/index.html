@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#f0a1a8"><meta name="generator" content="Hexo 7.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#f0a1a8">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
   <meta name="msvalidate.01" content="7197295068F5C122E84D3763FE74EC8A">
 
 <link rel="stylesheet" href="/css/main.css">
@@ -20,17 +20,17 @@
   <link rel="stylesheet" href="https://lib.baomitu.com/pace/1.2.4/themes/silver/pace-theme-fill-left.css">
   <script src="https://lib.baomitu.com/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"tangninghaha.netlify.app","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"tangninghaha.netlify.app","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.19.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="题目链接： Luogu or LOJ 这是一道巧妙的构造题，其中蕴含了将规模较大的问题划归到规模小的问题的思想。 如果想要在比赛的时候做出这道题，那么观察样例绝对是不二法门，因为样例提供了丰富的信息。虽然说笔者做题的时候没有观察过。">
+    <meta name="description" content="题目链接： Luogu or LOJ 这是一道巧妙的构造题，其中蕴含了将规模较大的问题划归到规模小的问题的思想。 如果想要在比赛的时候做出这道题，那么观察样例绝对是不二法门，因为样例提供了丰富的信息。虽然说笔者做题的时候没有观察过。 从简单的问题出发 让我们试着解决 \(n&#x3D;2\) 的特殊部分，尽管这只有 10 分的部分分，但是对简单的情形分析，能为拓展到复杂情况提供好的引导。 现在我们有 \(x">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NOIP2020 移球游戏题解">
 <meta property="og:url" content="https://tangninghaha.netlify.app/posts/NOIP2020-%E7%A7%BB%E7%90%83%E6%B8%B8%E6%88%8F%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Tangninghaha">
-<meta property="og:description" content="题目链接： Luogu or LOJ 这是一道巧妙的构造题，其中蕴含了将规模较大的问题划归到规模小的问题的思想。 如果想要在比赛的时候做出这道题，那么观察样例绝对是不二法门，因为样例提供了丰富的信息。虽然说笔者做题的时候没有观察过。">
+<meta property="og:description" content="题目链接： Luogu or LOJ 这是一道巧妙的构造题，其中蕴含了将规模较大的问题划归到规模小的问题的思想。 如果想要在比赛的时候做出这道题，那么观察样例绝对是不二法门，因为样例提供了丰富的信息。虽然说笔者做题的时候没有观察过。 从简单的问题出发 让我们试着解决 \(n&#x3D;2\) 的特殊部分，尽管这只有 10 分的部分分，但是对简单的情形分析，能为拓展到复杂情况提供好的引导。 现在我们有 \(x">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-28T00:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-01T02:29:51.224Z">
+<meta property="article:modified_time" content="2024-03-23T10:58:52.870Z">
 <meta property="article:author" content="Tangninghaha">
 <meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
@@ -165,13 +165,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -260,7 +260,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-01 02:29:51" itemprop="dateModified" datetime="2024-03-01T02:29:51+00:00">2024-03-01</time>
+      <time title="修改时间：2024-03-23 10:58:52" itemprop="dateModified" datetime="2024-03-23T10:58:52+00:00">2024-03-23</time>
     </span>
 
   
@@ -270,7 +270,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>922</span>
+      <span>921</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -291,7 +291,6 @@
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDcxMTU=">Luogu</span> or <span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcC8zMzg4">LOJ</span></p>
 <p>这是一道巧妙的构造题，其中蕴含了将规模较大的问题划归到规模小的问题的思想。</p>
 <p>如果想要在比赛的时候做出这道题，那么观察样例绝对是不二法门，因为样例提供了丰富的信息。<del>虽然说笔者做题的时候没有观察过。</del></p>
-<span id="more"></span>
 <h2 id="从简单的问题出发">从简单的问题出发</h2>
 <p>让我们试着解决 <span class="math inline">\(n=2\)</span> 的特殊部分，尽管这只有 10 分的部分分，但是对简单的情形分析，能为拓展到复杂情况提供好的引导。</p>
 <p>现在我们有 <span class="math inline">\(x\)</span>，<span class="math inline">\(y\)</span>，<span class="math inline">\(z\)</span>，三根柱子，<span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 上有两种颜色的球，让我们称其中一种颜色的球为 <strong>关键球</strong>。</p>
@@ -375,8 +374,8 @@ c+m+(m-c)+c+c+c+m=3m+3c
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/p%E5%AE%9A%E7%90%86/" rel="next" title="P定理">
-                  P定理 <i class="fa fa-angle-right"></i>
+                <a href="/posts/polya%E5%AE%9A%E7%90%86/" rel="next" title="polya 定理">
+                  polya 定理 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -415,19 +414,18 @@ c+m+(m-c)+c+c+c+m=3m+3c
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">39k</span>
+    <span title="站点总字数">34k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">2:23</span>
+    <span title="站点阅读时长">2:02</span>
   </span>
 </div>
-  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
-  </div><div>站点主题色 <a target="_blank" rel="noopener" href="http://zhongguose.com/#hehuanhong">合欢红</a></div>
-<a href="https://icp.gov.moe/?keyword=20245550" target="_blank">萌ICP备20245550号</a>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9waXNjZXMv">NexT.Pisces</span> 强力驱动
+  </div><a href="https://icp.gov.moe/?keyword=20245550" target="_blank">萌ICP备20245550号</a>
 
 
     </div>

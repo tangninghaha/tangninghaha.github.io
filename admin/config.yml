@@ -1,69 +1,9 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: master
 media_folder: source/images
 public_folder: /images
-publish_mode: editorial_workflow
-pages:
-  enabled: true
-  config:
-    label: Page
-    delete: true
-    editor:
-      preview: true
-over_format: true
 collections:
-  - name: posts
-    label: Post
-    folder: source/_posts
-    sort: date:desc
-    create: true
-    editor:
-      preview: false
-    fields:
-      - label: Title
-        name: title
-        widget: string
-      - label: Publish Date
-        name: date
-        widget: datetime
-        format: YYYY-MM-DD HH:mm:ss
-        dateFormat: YYYY-MM-DD
-        timeFormat: HH:mm:ss
-        required: false
-      - label: Updeted Date
-        name: updated
-        widget: datetime
-        format: YYYY-MM-DD HH:mm:ss
-        required: false
-        dateFormat: YYYY-MM-DD
-        timeFormat: HH:mm:ss
-      - label: Tags
-        name: tag
-        widget: list
-        required: false
-      - label: Hidden
-        name: hide
-        widget: boolean
-        default: false
-        required: false
-      - label: Password
-        name: password
-        widget: list
-        required: false
-      - label: Body
-        name: body
-        widget: markdown
-        required: false
-      - label: Permalink
-        name: permalink
-        widget: string
-        required: false
-      - label: Comments
-        name: comments
-        widget: boolean
-        default: true
-        required: false
   - name: all_posts
     fields: &ref_0
       - label: Title
